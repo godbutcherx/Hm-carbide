@@ -1,1 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HM Carbide Swiss GmbH | Contact</title>
+    <style>
+        /* --- GENEL STİL --- */
+        :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: var(--light); color: #333; min-height: 100vh; display: flex; flex-direction: column; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* HEADER & MENÜ */
+        header { background: var(--primary); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+        .logo { display: flex; align-items: center; font-size: 1.4rem; font-weight: bold; }
+        .logo img { height: 50px; margin-right: 12px; border-radius: 4px; background: white; padding: 2px; }
+        .logo span { color: var(--secondary); margin-left: 5px; }
+        
+        nav ul { display: flex; gap: 20px; list-style: none; }
+        nav a { font-weight: 500; text-transform: uppercase; font-size: 0.9rem; }
+        nav a:hover { color: var(--secondary); }
+        
+        /* İLETİŞİM KUTULARI */
+        .contact-wrap { display: flex; flex-wrap: wrap; justify-content: center; padding: 50px 5%; gap: 40px; align-items: flex-start; }
+        
+        .left-panel { flex: 1; min-width: 300px; max-width: 500px; }
+        .info-box { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .map-box { width: 100%; height: 300px; border-radius: 8px; overflow: hidden; border: 2px solid #ccc; }
+        iframe { width: 100%; height: 100%; border: 0; }
+        
+        .form-box { flex: 1; min-width: 300px; max-width: 500px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .contact-form { display: flex; flex-direction: column; gap: 15px; }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; }
+        .btn-submit { padding: 15px; background: var(--secondary); color: white; border: none; font-weight: bold; border-radius: 4px; cursor: pointer; transition: 0.3s; }
+        .btn-submit:hover { background: #b0261d; }
+        
+        footer { background: #121a21; color: #bbb; text-align: center; padding: 20px; margin-top: auto; }
 
+        /* --- MOBİL MENÜ DÜZELTMESİ --- */
+        @media (max-width: 900px) {
+            header { flex-direction: column; gap: 15px; text-align: center; padding: 20px; }
+            nav ul { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+            nav ul li { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo">
+            HM CARBIDE <span>SWISS GmbH</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-i18n="nav_home">Anasayfa</a></li>
+                <li><a href="about.html" data-i18n="nav_about">Hakkımızda</a></li>
+                <li><a href="products.html" data-i18n="nav_products">Ürünlerimiz</a></li>
+                <li><a href="certificates.html" data-i18n="nav_certs">Sertifikalar</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">İletişim</a></li>
+            </ul>
+        </nav>
+        <select onchange="setLang(this.value)" id="langSel" style="padding:5px; background:transparent; color:white; border:1px solid #777; border-radius:4px;">
+            <option value="de">DE</option><option value="en">EN</option><option value="tr">TR</option>
+        </select>
+    </header>
+
+    <div class="contact-wrap">
+        <div class="left-panel">
+            <div class="info-box">
+                <h2 data-i18n="nav_contact" style="color:#1a252f; margin-bottom:20px;">Kontakt</h2>
+                <p><strong>HM Carbide Swiss GmbH</strong></p><br>
+                <p>📍 Romanshornerstrasse 122, 9322 Egnach, Switzerland</p><br>
+                <p>✉️ <a href="mailto:info@hmcarbide.ch" style="color:#d93025;">info@hmcarbide.ch</a></p>
+            </div>
+            <div class="map-box">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.049318856964!2d9.37487327684982!3d47.53900699607713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479af7d630210751%3A0xe0158924969e788e!2sRomanshornerstrasse%20122%2C%209322%20Egnach%2C%20Switzerland!5e0!3m2!1sen!2str!4v1700000000000!5m2!1sen!2str" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="form-box">
+            <h2 style="color:#1a252f; margin-bottom:20px;" data-i18n="form_title">Nachricht Senden</h2>
+            
+            <form action="https://formspree.io/f/xqajeedj" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Name" required data-i18n-ph="ph_name">
+                <input type="email" name="email" placeholder="E-Mail" required data-i18n-ph="ph_email">
+                <textarea name="message" rows="5" placeholder="Message..." required data-i18n-ph="ph_message"></textarea>
+                <button type="submit" class="btn-submit" data-i18n="form_btn">SENDEN</button>
+            </form>
+        </div>
+    </div>
+
+    <footer><p>© 2024 HM Carbide Swiss GmbH.</p></footer>
+    <script>
+        const txt = { 
+            de: {nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", form_title:"Nachricht Senden", form_btn:"SENDEN", ph_name:"Name", ph_email:"E-Mail Adresse", ph_message:"Ihre Nachricht..."}, 
+            en: {nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", form_title:"Send Message", form_btn:"SEND", ph_name:"Name", ph_email:"Email Address", ph_message:"Your Message..."}, 
+            tr: {nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", form_title:"Mesaj Gönderin", form_btn:"GÖNDER", ph_name:"Adınız", ph_email:"E-Posta Adresi", ph_message:"Mesajınız..."} 
+        };
+        function setLang(l){ localStorage.setItem('hm_lang', l); document.getElementById('langSel').value=l; document.querySelectorAll('[data-i18n]').forEach(e=>e.innerText=txt[l][e.getAttribute('data-i18n')]); document.querySelectorAll('[data-i18n-ph]').forEach(e=>e.placeholder=txt[l][e.getAttribute('data-i18n-ph')]);}
+        setLang(localStorage.getItem('hm_lang')||'de');
+    </script>
+</body>
+</html>
