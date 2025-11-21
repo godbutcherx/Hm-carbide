@@ -5,44 +5,113 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HM Carbide Swiss GmbH | Home</title>
     <style>
-        /* --- CSS --- */
+        /* --- CSS VARIABLES --- */
         :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, sans-serif; }
         body { background: var(--light); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
-        
-        /* Header & Menu */
-        header { background: var(--primary); color: white; padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .logo { display: flex; align-items: center; font-size: 1.4rem; font-weight: bold; }
-        .logo img { height: 50px; margin-right: 12px; border-radius: 4px; background: white; padding: 2px; }
+
+        /* --- PREMIUM HEADER (Yapışkan & Buzlu Cam) --- */
+        header {
+            background: rgba(26, 37, 47, 0.95); /* Hafif Şeffaf */
+            color: white;
+            padding: 0 5%;
+            height: 80px; /* Sabit Yükseklik */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky; /* Sayfa kayınca üstte kalsın */
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px); /* Buzlu Cam Efekti */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Gölge */
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Logo Alanı */
+        .logo { display: flex; align-items: center; font-size: 1.3rem; font-weight: 700; letter-spacing: 0.5px; }
+        .logo img { height: 45px; margin-right: 12px; border-radius: 4px; background: white; padding: 2px; }
         .logo span { color: var(--secondary); margin-left: 5px; }
+
+        /* --- MODERN MENÜ ANIMASYONU --- */
+        nav ul { display: flex; gap: 30px; list-style: none; height: 100%; align-items: center; }
+        nav a {
+            position: relative;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            padding: 10px 0;
+            color: rgba(255,255,255,0.85);
+        }
         
-        nav ul { display: flex; gap: 20px; list-style: none; }
-        nav a { font-weight: 500; text-transform: uppercase; font-size: 0.9rem; }
-        nav a:hover { color: var(--secondary); }
+        /* Hover (Üzerine Gelince) Efekti */
+        nav a:hover { color: white; }
+        
+        /* Kırmızı Çizgi Animasyonu */
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--secondary);
+            transition: width 0.3s ease-in-out; /* Kayma Hızı */
+        }
+        nav a:hover::after { width: 100%; } /* Üzerine gelince çizgi uzar */
 
         /* Dil Seçici */
-        .lang-switch select { background: transparent; color: white; border: 1px solid #777; padding: 5px; border-radius: 4px; cursor: pointer; }
+        .lang-switch select { 
+            background: rgba(255,255,255,0.1); 
+            color: white; 
+            border: 1px solid rgba(255,255,255,0.2); 
+            padding: 8px 12px; 
+            border-radius: 20px; 
+            cursor: pointer; 
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        .lang-switch select:hover { background: rgba(255,255,255,0.2); border-color: white; }
         .lang-switch select option { color: black; }
 
-        /* Hero Section - GÖRSEL AYARI: prod4.png */
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/prod4.png');
-            background-size: cover; background-position: center; color: white;
-            height: 85vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/prod4.png');
+            background-size: cover; background-position: center; background-attachment: fixed; /* Parallax Efekti */
+            color: white;
+            height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px;
         }
-        .hero h1 { font-size: 3rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .btn { padding: 15px 40px; background: var(--secondary); color: white; font-weight: bold; border-radius: 2px; margin-top: 20px; }
-        .btn:hover { background: #b0261d; }
+        .hero h1 { 
+            font-size: 3.5rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 2px; font-weight: 800;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .hero p { font-size: 1.5rem; font-weight: 300; opacity: 0.9; margin-bottom: 40px; }
+        
+        /* Modern Buton */
+        .btn { 
+            padding: 18px 45px; 
+            background: var(--secondary); 
+            color: white; 
+            font-weight: bold; 
+            border-radius: 50px; /* Yuvarlak hatlar */
+            box-shadow: 0 5px 15px rgba(217, 48, 37, 0.4); /* Buton gölgesi */
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn:hover { 
+            background: #b0261d; 
+            transform: translateY(-3px); /* Hoverda yukarı kalkma */
+            box-shadow: 0 10px 20px rgba(217, 48, 37, 0.6);
+        }
 
-        footer { background: #121a21; color: #7f8c8d; text-align: center; padding: 20px; margin-top: auto; }
+        footer { background: #0f1519; color: #7f8c8d; text-align: center; padding: 30px; margin-top: auto; font-size: 0.9rem; border-top: 1px solid #222; }
 
-        /* --- MOBİL MENÜ DÜZELTMESİ --- */
+        /* Mobil Uyumu */
         @media (max-width: 900px) {
-            header { flex-direction: column; gap: 15px; text-align: center; padding: 20px; }
-            nav ul { display: flex; flex-direction: column; gap: 10px; width: 100%; }
-            nav ul li { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
-            .hero h1 { font-size: 2rem; }
+            header { height: auto; flex-direction: column; gap: 15px; padding: 20px; position: relative; }
+            nav ul { flex-direction: column; gap: 15px; width: 100%; }
+            nav a { display: block; border-bottom: 1px solid rgba(255,255,255,0.05); width: 100%; text-align: center; }
+            nav a::after { display: none; } /* Mobilde çizgiyi kapat */
+            .hero h1 { font-size: 2.2rem; }
         }
     </style>
 </head>
@@ -68,7 +137,7 @@
 
     <section class="hero">
         <h1 data-i18n="hero_title">Perfektion in der Produktion</h1>
-        <p data-i18n="hero_sub" style="font-size: 1.5rem; font-weight:300;">HM Carbide Swiss GmbH</p>
+        <p data-i18n="hero_sub">HM Carbide Swiss GmbH</p>
         <a href="products.html" class="btn" data-i18n="hero_btn">PRODUKTE ANSEHEN</a>
     </section>
 
