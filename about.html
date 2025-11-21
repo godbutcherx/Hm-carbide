@@ -24,4 +24,51 @@
         /* İÇERİK ALANI */
         .container { max-width: 800px; margin: 50px auto; padding: 30px; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-radius: 8px; }
         
-        footer { background: #121a21; color
+        footer { background: #121a21; color: #7f8c8d; text-align: center; padding: 20px; margin-top: auto; }
+
+        /* --- MOBİL MENÜ DÜZELTMESİ --- */
+        @media (max-width: 900px) {
+            header { flex-direction: column; gap: 15px; text-align: center; padding: 20px; }
+            nav ul { display: flex; flex-direction: column; gap: 10px; width: 100%; }
+            nav ul li { border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo">
+            HM CARBIDE <span>SWISS GmbH</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" data-i18n="nav_home">Anasayfa</a></li>
+                <li><a href="about.html" data-i18n="nav_about">Hakkımızda</a></li>
+                <li><a href="products.html" data-i18n="nav_products">Ürünlerimiz</a></li>
+                <li><a href="certificates.html" data-i18n="nav_certs">Sertifikalar</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">İletişim</a></li>
+            </ul>
+        </nav>
+        <select onchange="setLang(this.value)" id="langSel" style="padding:5px; background:transparent; color:white; border:1px solid #777; border-radius:4px;">
+            <option value="de">DE</option><option value="en">EN</option><option value="tr">TR</option>
+        </select>
+    </header>
+
+    <div class="container">
+        <h2 data-i18n="nav_about" style="color:#1a252f; border-bottom:3px solid #d93025; display:inline-block; margin-bottom:20px;">Über Uns</h2>
+        <div id="contentArea"></div>
+    </div>
+
+    <footer><p>© 2024 HM Carbide Swiss GmbH.</p></footer>
+
+    <script>
+        const txt = {
+            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", content: "<h3>Willkommen bei HM Carbide Swiss GmbH</h3><br><p>Ihrem zuverlässigen Partner für verschleiß- und druckfeste Hartmetallprodukte.</p><p>Unser Unternehmen beliefert Industriekunden in der Schweiz und ganz Europa mit hochwertigen Hartmetallstäben.</p><p>Dank umfangreicher Lagerbestände und einem effizienten Logistiknetzwerk sind wir in der Lage, Bestellungen besonders schnell zu bearbeiten.</p>" },
+            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", content: "<h3>Welcome to HM Carbide Swiss GmbH</h3><br><p>Your reliable partner for wear-resistant carbide products.</p><p>Our company supplies industrial customers in Switzerland and throughout Europe with high-quality carbide rods.</p><p>Thanks to extensive stock levels, we process orders particularly quickly.</p>" },
+            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", content: "<h3>HM Carbide Swiss GmbH'ya Hoş Geldiniz</h3><br><p>Aşınmaya ve basınca dayanıklı karbür ürünlerde güvenilir iş ortağınız.</p><p>Şirketimiz, İsviçre ve tüm Avrupa'daki endüstriyel müşterilere yüksek kaliteli karbür çubuklar tedarik etmektedir.</p><p>Geniş stoklarımız sayesinde siparişleri hızlıca teslim ediyoruz.</p>" }
+        };
+        function setLang(l){ localStorage.setItem('hm_lang', l); document.getElementById('langSel').value=l; document.querySelectorAll('[data-i18n]').forEach(e=>e.innerText=txt[l][e.getAttribute('data-i18n')]); document.getElementById('contentArea').innerHTML = txt[l].content; }
+        setLang(localStorage.getItem('hm_lang')||'de');
+    </script>
+</body>
+</html>
