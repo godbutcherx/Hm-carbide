@@ -5,88 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HM Carbide Swiss GmbH | Home</title>
     <style>
-        /* --- CSS VARIABLES --- */
+        /* --- CSS TEMEL AYARLAR --- */
         :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, sans-serif; }
         body { background: var(--light); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-        /* --- PREMIUM HEADER --- */
+        /* --- HEADER (ÜST MENÜ) --- */
         header {
-            background: rgba(26, 37, 47, 0.95); /* Hafif Şeffaf */
+            background: rgba(26, 37, 47, 0.95); /* Hafif Şeffaf Koyu */
             color: white;
-            padding: 0 5%;
+            padding: 0 4%;
             height: 80px;
             display: flex;
-            justify-content: space-between; /* Ögeleri sola, ortaya ve sağa dağıt */
             align-items: center;
+            justify-content: space-between;
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(12px); /* Buzlu Cam */
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+            backdrop-filter: blur(10px); /* Buzlu Cam */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* LOGO (SOLDA) */
-        .logo { display: flex; align-items: center; font-size: 1.3rem; font-weight: 700; letter-spacing: 0.5px; z-index: 1001; flex: 1; }
-        .logo img { height: 45px; margin-right: 12px; border-radius: 4px; background: white; padding: 2px; }
+        /* 1. SOL: LOGO */
+        .logo { display: flex; align-items: center; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.5px; flex: 1; }
+        .logo img { height: 45px; margin-right: 10px; border-radius: 4px; background: white; padding: 2px; }
         .logo span { color: var(--secondary); margin-left: 5px; }
 
-        /* MENÜ (ORTADA) */
+        /* 2. ORTA: MENÜLER (Baloncuk Efektli) */
         nav { flex: 2; display: flex; justify-content: center; }
-        nav ul { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; align-items: center; }
+        nav ul { display: flex; gap: 5px; list-style: none; margin: 0; padding: 0; align-items: center; }
         
-        /* --- BALONCUK EFEKTLİ MENÜ --- */
         nav a { 
             position: relative; 
-            font-size: 0.95rem; 
+            font-size: 0.9rem; 
             font-weight: 600; 
             text-transform: uppercase; 
-            padding: 10px 20px; /* Baloncuk için genişlik */
-            color: rgba(255,255,255,0.8);
-            border-radius: 30px; /* Yuvarlak kenarlar (Hap şekli) */
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Yumuşak geçiş */
+            padding: 10px 18px; 
+            color: rgba(255,255,255,0.85);
+            border-radius: 25px; 
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
         }
 
-        /* Hover Durumu (Üzerine Gelince) */
+        /* Mouse Üzerine Gelince (Hover) */
         nav a:hover { 
             color: white;
-            background: rgba(255, 255, 255, 0.15); /* Şeffaf Beyaz Baloncuk */
-            transform: scale(1.1); /* Hafif Büyüme */
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); /* Parlama */
+            background: rgba(255, 255, 255, 0.15); /* Parlak Baloncuk */
+            transform: scale(1.05); 
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); 
         }
-        
-        /* Aktif Sayfa Görünümü (Opsiyonel) */
-        nav a.active { background: var(--secondary); color: white; }
 
-        /* SAĞ TARAF (DİL + MOBİL MENÜ) */
+        /* 3. SAĞ: DİL & MOBİL MENÜ İKONU */
         .header-right { 
             display: flex; 
             align-items: center; 
-            gap: 20px; 
+            gap: 15px; 
             flex: 1; 
-            justify-content: flex-end; /* En sağa yasla */
-            z-index: 1001; 
+            justify-content: flex-end; 
         }
-
-        .lang-switch select { 
-            background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.2); 
-            padding: 8px 12px; border-radius: 20px; cursor: pointer; font-size: 0.85rem; 
-            transition: 0.3s;
-        }
-        .lang-switch select:hover { background: rgba(255,255,255,0.2); border-color: white; }
-        .lang-switch select option { color: black; }
-
-        .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: white; }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/prod4.png');
-            background-size: cover; background-position: center; background-attachment: fixed;
-            color: white; height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px;
-        }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; text-transform: uppercase; font-weight: 800; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
-        .btn { 
-            padding: 18px 45px; background: var(--secondary); color: white; font-weight: bold; 
-            border-radius: 50px
