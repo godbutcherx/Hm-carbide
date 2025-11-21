@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HM Carbide Swiss GmbH | Home</title>
     <style>
-        /* --- CSS TEMEL AYARLAR --- */
+        /* --- TEMEL AYARLAR --- */
         :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, sans-serif; }
         body { background: var(--light); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-        /* --- HEADER (ÜST MENÜ) --- */
+        /* --- HEADER --- */
         header {
-            background: rgba(26, 37, 47, 0.95); /* Hafif Şeffaf Koyu */
+            background: rgba(26, 37, 47, 0.95);
             color: white;
             padding: 0 4%;
             height: 80px;
@@ -23,44 +23,101 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px); /* Buzlu Cam */
+            backdrop-filter: blur(10px);
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* 1. SOL: LOGO */
+        /* LOGO */
         .logo { display: flex; align-items: center; font-size: 1.2rem; font-weight: 700; letter-spacing: 0.5px; flex: 1; }
         .logo img { height: 45px; margin-right: 10px; border-radius: 4px; background: white; padding: 2px; }
         .logo span { color: var(--secondary); margin-left: 5px; }
 
-        /* 2. ORTA: MENÜLER (Baloncuk Efektli) */
+        /* MENÜ (BALONCUK EFEKTLİ) */
         nav { flex: 2; display: flex; justify-content: center; }
         nav ul { display: flex; gap: 5px; list-style: none; margin: 0; padding: 0; align-items: center; }
         
         nav a { 
-            position: relative; 
-            font-size: 0.9rem; 
-            font-weight: 600; 
-            text-transform: uppercase; 
-            padding: 10px 18px; 
-            color: rgba(255,255,255,0.85);
-            border-radius: 25px; 
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+            position: relative; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; 
+            padding: 10px 18px; color: rgba(255,255,255,0.85); border-radius: 25px; 
+            transition: all 0.3s ease;
         }
 
-        /* Mouse Üzerine Gelince (Hover) */
+        /* Hover Efekti */
         nav a:hover { 
-            color: white;
-            background: rgba(255, 255, 255, 0.15); /* Parlak Baloncuk */
-            transform: scale(1.05); 
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); 
+            color: white; background: rgba(255, 255, 255, 0.15); 
+            transform: scale(1.05); box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); 
         }
 
-        /* 3. SAĞ: DİL & MOBİL MENÜ İKONU */
-        .header-right { 
-            display: flex; 
-            align-items: center; 
-            gap: 15px; 
-            flex: 1; 
-            justify-content: flex-end; 
+        /* SAĞ TARAF */
+        .header-right { display: flex; align-items: center; gap: 15px; flex: 1; justify-content: flex-end; }
+        
+        .lang-switch select { 
+            background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3); 
+            padding: 6px 10px; border-radius: 15px; cursor: pointer; font-size: 0.8rem; outline: none; 
         }
+        .lang-switch select option { color: black; }
+
+        .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: white; margin-left: 10px; }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/prod4.png');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            color: white; height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px;
+        }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; text-transform: uppercase; font-weight: 800; text-shadow: 0 5px 15px rgba(0,0,0,0.5); }
+        .btn { 
+            padding: 15px 40px; background: var(--secondary); color: white; font-weight: bold; 
+            border-radius: 50px; box-shadow: 0 5px 15px rgba(217, 48, 37, 0.4); transition: transform 0.3s; margin-top: 20px; display: inline-block;
+        }
+        .btn:hover { background: #b0261d; transform: translateY(-3px); }
+        footer { background: #0f1519; color: #7f8c8d; text-align: center; padding: 30px; margin-top: auto; }
+
+        /* MOBİL UYUMU */
+        @media (max-width: 1000px) {
+            .menu-toggle { display: block; }
+            nav {
+                position: absolute; top: 80px; left: 0; width: 100%; background: #1a252f;
+                flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            }
+            nav.active { max-height: 450px; }
+            nav ul { flex-direction: column; gap: 10px; width: 100%; padding: 20px 0; }
+            nav a { display: block; width: 90%; margin: 0 auto; text-align: center; }
+            .logo { font-size: 1rem; flex: unset; }
+            .header-right { flex: unset; }
+            .hero h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="images/logo.jpg" alt="Logo"><span>HM CARBIDE SWISS</span></div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html" data-i18n="nav_home">Anasayfa</a></li>
+                <li><a href="about.html" data-i18n="nav_about">Hakkımızda</a></li>
+                <li><a href="products.html" data-i18n="nav_products">Ürünlerimiz</a></li>
+                <li><a href="certificates.html" data-i18n="nav_certs">Sertifikalar</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">İletişim</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="lang-switch"><select onchange="setLang(this.value)" id="langSel"><option value="de">DE</option><option value="en">EN</option><option value="tr">TR</option></select></div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        </div>
+    </header>
+    <section class="hero">
+        <h1 data-i18n="hero_title">Perfektion in der Produktion</h1>
+        <p data-i18n="hero_sub" style="font-size: 1.5rem; font-weight:300;">HM Carbide Swiss GmbH</p>
+        <a href="products.html" class="btn" data-i18n="hero_btn">PRODUKTE ANSEHEN</a>
+    </section>
+    <footer><p>© 2024 HM Carbide Swiss GmbH. Romanshornerstrasse 122, 9322 Egnach</p></footer>
+    <script>
+        function toggleMenu() { document.getElementById('navbar').classList.toggle('active'); }
+        const txt = {
+            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", hero_title:"Perfektion in der Produktion", hero_sub:"Ihr Partner für Hartmetall", hero_btn:"PRODUKTE ANSEHEN" },
+            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", hero_title:"Perfection in Production", hero_sub:"Your Partner for Carbide", hero_btn:"VIEW PRODUCTS" },
+            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", hero_title:"Üretimde Mükemmellik", hero_sub:"Karbür Çözüm Ortağınız", hero_btn:"ÜRÜNLERİ İNCELE" }
+        };
+        function setLang(l){ localStorage.setItem('hm_lang', l); document.getElementById('langSel').value=l; document.querySelectorAll('[data-i18n]').forEach(e
