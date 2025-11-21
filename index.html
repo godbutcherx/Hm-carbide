@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HM Carbide Swiss GmbH | Precision in Production</title>
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-color: #1a252f; /* Dark Swiss Slate */
+            --secondary-color: #d93025; /* Swiss Red */
+            --accent-color: #ecf0f1; /* Silver/Carbide Grey */
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --dark-bg: #121212;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+        
+        body { background-color: var(--light-bg); color: var(--text-color); line-height: 1.6; }
+        
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
+
+        /* --- HEADER & NAV --- */
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+        .logo span { color: var(--secondary-color); }
+        
+        nav ul { display: flex; gap: 20px; }
+        nav a { font-size: 0.95rem; text-transform: uppercase; opacity: 0.8; }
+        nav a:hover { opacity: 1; color: var(--secondary-color); }
+
+        .lang-switch select {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.3);
+            padding: 5px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .lang-switch select option { color: black; }
+
+        /* --- SECTIONS GENERAL --- */
+        section { padding: 100px 5% 60px; min-height: 80vh; }
+        h2 { font-size: 2.5rem; margin-bottom: 40px; text-align: center; color: var(--primary-color); position: relative; }
+        h2::after {
+            content: ''; display: block; width: 60px; height: 4px; 
+            background: var(--secondary-color); margin: 10px auto 0;
+        }
+
+        /* --- HERO SECTION --- */
+        #home {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1565619624098-e659889ba36f?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100vh;
+        }
+
+        .hero-text h1 { font-size: 3.5rem; margin-bottom: 20px; text-transform: uppercase; }
+        .hero-text p { font-size: 1.5rem; font-weight: 300; margin-bottom: 30px; }
+        .btn {
+            padding: 15px 40px; background: var(--secondary-color); color: white; 
+            font-weight: bold; border-radius: 2px; letter-spacing: 1px;
+        }
+        .btn:hover { background: #b0261d; }
+
+        /* --- ABOUT SECTION --- */
+        #about { background: white; text-align: center; max-width: 900px; margin: 0 auto; }
+        .about-content p { margin-bottom: 20px; font-size: 1.1rem; color: #555; }
+
+        /* --- PRODUCTS SECTION --- */
+        #products { background: #f1f2f6; }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .product-card:hover { transform: translateY(-5px); }
+        .card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .card-img {
+            height: 200px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+        .card-body { padding: 20px; }
+        
+        /* Scrollable Table Area */
+        .table-container {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #eee;
+            margin-top: 15px;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #eee; font-size: 0.9rem; }
+        th { background: #f8f9fa; position: sticky; top: 0; }
+
+        /* --- CERTIFICATES --- */
+        #certificates { background: white; text-align: center; }
+        .cert-placeholder {
+            border: 2px dashed #ccc;
+            padding: 50px;
+            display: inline-block;
+            margin: 20px;
+            color: #888;
+            border-radius: 10px;
+        }
+
+        /* --- CONTACT & FOOTER --- */
+        #contact { background: var(--primary-color); color: white; }
+        #contact h2 { color: white; }
+        .contact-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+            gap: 40px;
+        }
+        .contact-info { font-size: 1.2rem; }
+        .contact-info p { margin: 15px 0; display: flex; align-items: center; gap: 10px; }
+        .map-placeholder {
+            width: 100%; max-width: 500px; height: 300px; background: #34495e;
+            display: flex; justify-content: center; align-items: center; color: #aaa;
+        }
+
+        footer {
+            background: #121a21; color: #7f8c8d; text-align: center; padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav ul { display: none; } /* Simplified for this demo, usually hamburger menu */
+            .hero-text h1 { font-size: 2rem; }
+            section { padding-top: 80px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            HM CARBIDE <span>SWISS</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home" data-i18n="nav_home">Anasayfa</a></li>
+                <li><a href="#about" data-i18n="nav_about">Hakkımızda</a></li>
+                <li><a href="#products" data-i18n="nav_products">Ürünlerimiz</a></li>
+                <li><a href="#certificates" data-i18n="nav_certs">Sertifikalar</a></li>
+                <li><a href="#contact" data-i18n="nav_contact">İletişim</a></li>
+            </ul>
+        </nav>
+        <div class="lang-switch">
+            <select id="languageSelector" onchange="changeLanguage(this.value)">
+                <option value="de">Deutsch</option>
+                <option value="en">English</option>
+                <option value="tr">Türkçe</option>
+            </select>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="hero-text">
+            <h1 data-i18n="hero_title">Perfektion in der Produktion</h1>
+            <p data-i18n="hero_sub">HM Carbide Swiss GmbH</p>
+            <a href="#products" class="btn" data-i18n="hero_btn">PRODUKTE ANSEHEN</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 data-i18n="nav_about">Über Uns</h2>
+        <div class="about-content" id="about-text">
+            </div>
+    </section>
+
+    <section id="products">
+        <h2 data-i18n="nav_products">Unsere Produkte</h2>
+        <p style="text-align:center; margin-bottom:30px;" data-i18n="prod_desc">Hochwertige Hartmetallstäbe für höchste Präzision.</p>
+        
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <div class="card-header">
+                    <h3 data-i18n="cat_1_title">Hartmetallstab in voller Länge</h3>
+                </div>
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1612692606077-301235013a40?q=80&w=800&auto=format&fit=crop');"></div>
+                <div class="card-body">
+                    <div class="table-container">
+                        <table id="table-full">
+                            <thead><tr><th>Dimension (mm)</th></tr></thead>
+                            <tbody></tbody> </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-header">
+                    <h3 data-i18n="cat_2_title">Hartmetallstab mit Wasserkühlkanal</h3>
+                </div>
+                <div class="card-img" style="background-image: url('https://plus.unsplash.com/premium_photo-1661964096432-020eb1b8909c?q=80&w=800&auto=format&fit=crop');"></div>
+                <div class="card-body">
+                    <div class="table-container">
+                        <table id="table-coolant">
+                            <thead><tr><th>Dimension (mm)</th></tr></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="card-header">
+                    <h3 data-i18n="cat_3_title">Gekürzter Hartmetallstab</h3>
+                </div>
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1535295972055-1c762f4483e5?q=80&w=800&auto=format&fit=crop');"></div>
+                <div class="card-body">
+                    <div class="table-container">
+                        <table id="table-cut">
+                            <thead><tr><th>Dimension (mm)</th></tr></thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="certificates">
+        <h2 data-i18n="nav_certs">Zertifikate</h2>
+        <div class="cert-placeholder">
+            <h3>ISO 9001:2015</h3>
+            <p>Quality Management System</p>
+        </div>
+        <div class="cert-placeholder">
+            <h3>Swiss Made</h3>
+            <p>Original Quality</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 data-i18n="nav_contact">Kontakt</h2>
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <p><strong>HM Carbide Swiss GmbH</strong></p>
+                <p>📍 Romanshornerstrasse 122, 9322 Egnach, Switzerland</p>
+                <p>✉️ <a href="mailto:info@hmcarbide.ch">info@hmcarbide.ch</a></p>
+            </div>
+            <div class="map-placeholder">
+                Google Maps Area (API Key Required)
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 HM Carbide Swiss GmbH. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- 1. LANGUAGE DATA ---
+        const translations = {
+            de: {
+                nav_home: "Startseite",
+                nav_about: "Über Uns",
+                nav_products: "Produkte",
+                nav_certs: "Zertifikate",
+                nav_contact: "Kontakt",
+                hero_title: "Perfektion in der Produktion",
+                hero_sub: "Ihr Partner für Hartmetall",
+                hero_btn: "PRODUKTE ANSEHEN",
+                prod_desc: "Präzision, Langlebigkeit und Belastbarkeit.",
+                cat_1_title: "Hartmetallstab in voller Länge",
+                cat_2_title: "Hartmetallstab mit Wasserkühlkanal",
+                cat_3_title: "Gekürzter Hartmetallstab",
+                about_content: `
+                    <h3>Willkommen bei HM Carbide Swiss GmbH</h3>
+                    <br>
+                    <p>Ihrem zuverlässigen Partner für verschleiß- und druckfeste Hartmetallprodukte.</p>
+                    <p>Unser Unternehmen beliefert Industriekunden in der Schweiz und ganz Europa mit hochwertigen Hartmetallstäben, die höchsten Ansprüchen an Präzision, Langlebigkeit und Belastbarkeit gerecht werden.</p>
+                    <p>Dank umfangreicher Lagerbestände und einem effizienten Logistiknetzwerk sind wir in der Lage, Bestellungen besonders schnell zu bearbeiten – in der Schweiz oft noch am selben Tag.</p>
+                    <p>Derzeit arbeiten wir aktiv daran, unseren Expressversand auch auf Deutschland und weitere europäische Regionen auszuweiten, um unsere Kunden flächendeckend und zuverlässig zu bedienen.</p>
+                    <p>Vertrauen Sie auf unsere Erfahrung, Qualität und Verlässlichkeit – für eine nachhaltige und partnerschaftliche Zusammenarbeit.</p>
+                `
+            },
+            en: {
+                nav_home: "Home",
+                nav_about: "About Us",
+                nav_products: "Products",
+                nav_certs: "Certificates",
+                nav_contact: "Contact",
+                hero_title: "Perfection in Production",
+                hero_sub: "Your Partner for Carbide",
+                hero_btn: "VIEW PRODUCTS",
+                prod_desc: "Precision, durability, and resilience.",
+                cat_1_title: "Solid Carbide Rod (Full Length)",
+                cat_2_title: "Carbide Rod with Coolant Duct",
+                cat_3_title: "Cut-to-Length Carbide Rod",
+                about_content: `
+                    <h3>Welcome to HM Carbide Swiss GmbH</h3>
+                    <br>
+                    <p>Your reliable partner for wear-resistant and pressure-resistant carbide products.</p>
+                    <p>Our company supplies industrial customers in Switzerland and throughout Europe with high-quality carbide rods that meet the highest standards of precision, durability, and resilience.</p>
+                    <p>Thanks to extensive stock levels and an efficient logistics network, we are able to process orders particularly quickly – often on the same day within Switzerland.</p>
+                    <p>We are currently actively working on extending our express shipping to Germany and other European regions to serve our customers comprehensively and reliably.</p>
+                    <p>Trust in our experience, quality, and reliability – for a sustainable and cooperative partnership.</p>
+                `
+            },
+            tr: {
+                nav_home: "Anasayfa",
+                nav_about: "Hakkımızda",
+                nav_products: "Ürünlerimiz",
+                nav_certs: "Sertifikalar",
+                nav_contact: "İletişim",
+                hero_title: "Üretimde Mükemmellik",
+                hero_sub: "Karbür Çözüm Ortağınız",
+                hero_btn: "ÜRÜNLERİ İNCELE",
+                prod_desc: "Hassasiyet, dayanıklılık ve yüksek performans.",
+                cat_1_title: "Tam Boy Karbür Çubuk",
+                cat_2_title: "Su Soğutma Kanallı Karbür Çubuk",
+                cat_3_title: "Kesilmiş (Kısa) Karbür Çubuk",
+                about_content: `
+                    <h3>HM Carbide Swiss GmbH'ya Hoş Geldiniz</h3>
+                    <br>
+                    <p>Aşınmaya ve basınca dayanıklı karbür ürünlerde güvenilir iş ortağınız.</p>
+                    <p>Şirketimiz, İsviçre ve tüm Avrupa'daki endüstriyel müşterilere, hassasiyet, uzun ömür ve dayanıklılık konusundaki en yüksek talepleri karşılayan yüksek kaliteli karbür çubuklar tedarik etmektedir.</p>
+                    <p>Geniş stoklarımız ve verimli lojistik ağımız sayesinde siparişleri özellikle hızlı bir şekilde işleyebiliyoruz – İsviçre içinde genellikle aynı gün.</p>
+                    <p>Şu anda, müşterilerimize kapsamlı ve güvenilir bir şekilde hizmet vermek için ekspres teslimatımızı Almanya ve diğer Avrupa bölgelerine de genişletmek için aktif olarak çalışıyoruz.</p>
+                    <p>Sürdürülebilir ve ortaklığa dayalı bir işbirliği için deneyimimize, kalitemize ve güvenilirliğimize güvenin.</p>
+                `
+            }
+        };
+
+        // --- 2. PRODUCT DATA (ARRAYS) ---
+        const productsFull = [
+            "1X330", "2X330", "3X330", "4X330", "5X330", "6X330", "7X330", "8X330", "9X330", "10X330",
+            "11X330", "12X330", "13X330", "14X330", "15X330", "16X330", "17X330", "18X330", "19X330", "20X330",
+            "21X330", "22X330", "23X330", "24X330", "25X330", "26X330", "27X330", "28X330", "29X330", "30X330", "32X330"
+        ];
+
+        const productsCoolant = [
+            "4x330", "6x330", "8x330", "10x330", "12x330", "14x330", "16x330", 
+            "18x330", "20x330", "22x330", "23x330", "24x330", "25x330"
+        ];
+
+        const productsCut = [
+            "3x40", "3x50", "4x40", "4x50", "5x50", "6x50", "6x57", "6x60",
+            "8x58", "8x63", "10x66", "10x72", "12x73", "12x83", "14x75", "14x83",
+            "16x82", "16x92", "18x92", "20x104"
+        ];
+
+        // --- 3. FUNCTIONS ---
+
+        function renderTable(tableId, dataArray) {
+            const tbody = document.querySelector(`#${tableId} tbody`);
+            let html = "";
+            // Use Set to remove duplicates if any exist in source list
+            const uniqueData = [...new Set(dataArray)];
+            uniqueData.forEach(dim => {
+                html += `<tr><td>ø ${dim} mm</td></tr>`;
+            });
+            tbody.innerHTML = html;
+        }
+
+        function changeLanguage(lang) {
+            // Update text elements
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update HTML Content (About Us needs HTML tags)
+            const aboutSection = document.getElementById('about-text');
+            if (aboutSection) {
+                aboutSection.innerHTML = translations[lang].about_content;
+            }
+
+            // Update Selector
+            document.getElementById('languageSelector').value = lang;
+            
+            // Save preference
+            localStorage.setItem('hm_carbide_lang', lang);
+        }
+
+        function detectLanguage() {
+            // 1. Check Local Storage
+            const storedLang = localStorage.getItem('hm_carbide_lang');
+            if (storedLang) return storedLang;
+
+            // 2. Check Browser Language
+            const browserLang = navigator.language || navigator.userLanguage;
+            if (browserLang.startsWith('tr')) return 'tr';
+            if (browserLang.startsWith('de')) return 'de';
+            
+            // 3. Default
+            return 'de'; // Swiss company defaults to German if not TR
+        }
+
+        // --- 4. INITIALIZATION ---
+        document.addEventListener('DOMContentLoaded', () => {
+            // Render Product Tables
+            renderTable('table-full', productsFull);
+            renderTable('table-coolant', productsCoolant);
+            renderTable('table-cut', productsCut);
+
+            // Set Language
+            const currentLang = detectLanguage();
+            changeLanguage(currentLang);
+        });
+
+    </script>
+</body>
+</html>
