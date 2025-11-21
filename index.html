@@ -11,40 +11,43 @@
         body { background: var(--light); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-        /* --- HEADER --- */
+        /* --- HEADER (GÜNCELLENDİ: DAHA YÜKSEK) --- */
         header {
             background: rgba(26, 37, 47, 0.98);
             color: white;
             padding: 0 4%;
-            height: 80px;
+            height: 100px; /* Yükseklik artırıldı (Logo sığsın diye) */
             display: flex;
             align-items: center;
             justify-content: space-between;
             position: sticky;
             top: 0;
-            z-index: 10000; 
+            z-index: 10000;
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255,255,255,0.05);
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
-        /* LOGO */
-        .logo { display: flex; align-items: center; font-size: 1.2rem; font-weight: 700; z-index: 10002; flex: 1; }
-        .logo img { height: 45px; margin-right: 10px; border-radius: 4px; background: white; padding: 2px; }
-        .logo span { color: var(--secondary); margin-left: 5px; }
+        /* LOGO (BÜYÜTÜLDÜ) */
+        .logo { display: flex; align-items: center; font-size: 1.4rem; font-weight: 800; z-index: 10002; flex: 1.2; }
+        .logo img { 
+            height: 70px; /* Logo boyutu artırıldı */
+            margin-right: 15px; border-radius: 4px; background: white; padding: 4px; 
+        }
+        .logo span { color: var(--secondary); margin-left: 0; white-space: nowrap; } /* Yazı kaymasın */
 
-        /* MENÜ (PC) */
+        /* MENÜ (BALONCUK EFEKTLİ) */
         nav { flex: 2; display: flex; justify-content: center; z-index: 10001; }
         nav ul { display: flex; gap: 5px; list-style: none; margin: 0; padding: 0; align-items: center; }
         
         nav a { 
-            position: relative; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; 
-            padding: 10px 18px; color: rgba(255,255,255,0.85); border-radius: 25px; 
+            position: relative; font-size: 0.95rem; font-weight: 600; text-transform: uppercase; 
+            padding: 12px 20px; color: rgba(255,255,255,0.9); border-radius: 30px; 
             transition: all 0.3s ease;
         }
         nav a:hover { 
             color: white; background: rgba(255, 255, 255, 0.15); 
-            transform: scale(1.05); box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); 
+            transform: scale(1.05); box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); 
         }
 
         /* SAĞ TARAF */
@@ -52,66 +55,54 @@
         
         .lang-switch select { 
             background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3); 
-            padding: 8px 12px; border-radius: 15px; cursor: pointer; font-size: 0.85rem; outline: none; 
+            padding: 8px 12px; border-radius: 15px; cursor: pointer; font-size: 0.9rem; outline: none; 
             appearance: none; -webkit-appearance: none; text-align: center;
         }
         .lang-switch select option { color: black; }
+        .menu-toggle { display: none; font-size: 2.2rem; cursor: pointer; color: white; margin-left: 15px; }
 
-        .menu-toggle { display: none; font-size: 2rem; cursor: pointer; color: white; margin-left: 15px; }
-
-        /* --- HERO (ANA GÖRSEL ALANI) --- */
+        /* HERO */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/prod4.png');
             background-size: cover; background-position: center; background-attachment: fixed;
             color: white; height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px;
         }
-        
-        /* GÜNCELLENEN BAŞLIK */
-        .hero h1 { 
-            font-size: 3.5rem; margin-bottom: 15px; text-transform: uppercase; font-weight: 900; /* En Kalın */
-            text-shadow: 0 5px 20px rgba(0,0,0,0.6); letter-spacing: 2px;
-        }
-        
-        /* GÜNCELLENEN ŞİRKET İSMİ (HM Carbide Swiss GmbH) */
-        .hero p { 
-            font-size: 2.2rem; /* Büyütüldü */
-            font-weight: 700; /* İnce (300) yerine Kalın (700) yapıldı */
-            margin-bottom: 40px;
-            text-shadow: 2px 2px 10px rgba(0,0,0,1); /* Okunması için güçlü gölge */
-            letter-spacing: 1px;
-        }
-
+        .hero h1 { font-size: 3.5rem; margin-bottom: 15px; text-transform: uppercase; font-weight: 900; text-shadow: 0 5px 20px rgba(0,0,0,0.6); letter-spacing: 2px; }
+        .hero p { font-size: 2.2rem; font-weight: 700; margin-bottom: 40px; text-shadow: 2px 2px 10px rgba(0,0,0,1); letter-spacing: 1px; }
         .btn { 
             padding: 15px 45px; background: var(--secondary); color: white; font-weight: bold; font-size: 1.1rem;
-            border-radius: 50px; box-shadow: 0 5px 15px rgba(217, 48, 37, 0.5); transition: transform 0.3s; 
-            display: inline-block;
+            border-radius: 50px; box-shadow: 0 5px 15px rgba(217, 48, 37, 0.5); transition: transform 0.3s; display: inline-block;
         }
         .btn:hover { background: #b0261d; transform: translateY(-3px); }
-        
         footer { background: #0f1519; color: #7f8c8d; text-align: center; padding: 30px; margin-top: auto; }
 
-        /* --- MOBİL UYUMU --- */
-        @media (max-width: 1000px) {
+        /* MOBİL UYUMU */
+        @media (max-width: 1100px) {
             .menu-toggle { display: block; }
             nav {
-                position: fixed; top: 80px; left: 0; width: 100%; background: #1a252f;
-                flex-direction: column; height: 0; overflow: hidden; transition: height 0.4s ease-out;
+                position: fixed; top: 100px; /* Header boyu kadar aşağıdan başla */
+                left: 0; width: 100%; background: #1a252f; flex-direction: column; height: 0; overflow: hidden; transition: height 0.4s ease-out;
                 box-shadow: 0 10px 20px rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.1);
             }
             nav.active { height: auto; padding-bottom: 20px; }
             nav ul { flex-direction: column; gap: 0; width: 100%; padding: 10px 0; }
             nav a { display: block; width: 100%; text-align: center; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 0; }
             nav a:hover { transform: none; box-shadow: none; background: rgba(255,255,255,0.05); }
-            .logo { font-size: 1rem; flex: unset; }
+            
+            .logo { font-size: 1rem; flex: unset; } /* Mobilde yazıyı küçült */
+            .logo img { height: 50px; } /* Mobilde logo biraz küçülsün */
             .header-right { flex: unset; }
             .hero h1 { font-size: 2.2rem; }
-            .hero p { font-size: 1.4rem; } /* Mobilde çok büyük olmasın diye ayarlandı */
+            .hero p { font-size: 1.4rem; }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo"><img src="images/logo.jpg" alt="Logo"><span>HM CARBIDE SWISS</span></div>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo">
+            <span>HM CARBIDE SWISS GmbH</span>
+        </div>
         <nav id="navbar">
             <ul>
                 <li><a href="index.html" data-i18n="nav_home">Anasayfa</a></li>
