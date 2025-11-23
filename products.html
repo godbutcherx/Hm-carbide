@@ -6,8 +6,8 @@
     <title>HM Carbide Swiss GmbH | Products</title>
     <style>
         /* --- 1. TEMEL AYARLAR --- */
-        :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; --border-color: #e9ecef; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; }
         body { background: #ffffff; color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
 
@@ -30,31 +30,55 @@
         .lang-switch select option { color: black; }
         .menu-toggle { display: none; font-size: 2.2rem; cursor: pointer; color: white; margin-left: 15px; }
 
-        /* --- 3. PRODUCTS CSS --- */
-        .prod-container { padding: 50px 5%; margin-top: 20px; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-bottom: 80px; }
-        .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s; }
-        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .card-head { background: var(--primary); color: white; padding: 15px; text-align: center; }
-        .card-img-wrapper { height: 250px; overflow: hidden; background: #eee; display: flex; justify-content: center; align-items: center; }
-        .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-        .card:hover .card-img-wrapper img { transform: scale(1.1); }
-        .table-wrap { max-height: 300px; overflow-y: auto; padding: 10px; }
-        table { width: 100%; border-collapse: collapse; }
-        td { padding: 10px; border-bottom: 1px solid #eee; font-size: 0.95rem; }
+        /* --- 3. ARAMA ÇUBUĞU (YENİ EKLENDİ) --- */
+        .search-section { padding: 40px 5% 0; text-align: center; }
+        .search-wrapper { position: relative; max-width: 600px; margin: 0 auto; }
+        .search-input { 
+            width: 100%; padding: 15px 25px; font-size: 1.1rem; border: 2px solid #eee; border-radius: 50px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05); transition: 0.3s; outline: none; color: var(--primary);
+        }
+        .search-input:focus { border-color: var(--secondary); box-shadow: 0 5px 25px rgba(217, 48, 37, 0.15); }
+        .search-icon { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 1.2rem; pointer-events: none; }
 
-        /* --- 4. TEKNİK TABLO (YENİ) --- */
+        /* --- 4. PRODUCTS CSS --- */
+        .prod-container { padding: 40px 5%; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-bottom: 80px; }
+        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s, box-shadow 0.3s; border: 1px solid var(--border-color); display: flex; flex-direction: column;}
+        .card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
+        .card-head { background: var(--primary); color: white; padding: 20px; text-align: center; font-size: 1.1rem; letter-spacing: 0.5px; }
+        .card-img-wrapper { height: 220px; overflow: hidden; background: #f8f9fa; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid var(--border-color); }
+        .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .card:hover .card-img-wrapper img { transform: scale(1.08); }
+        
+        /* TABLO TASARIMI */
+        .table-wrap { max-height: 350px; overflow-y: auto; padding: 0; flex-grow: 1; }
+        .table-wrap::-webkit-scrollbar { width: 6px; }
+        .table-wrap::-webkit-scrollbar-track { background: #f1f1f1; }
+        .table-wrap::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+        .table-wrap::-webkit-scrollbar-thumb:hover { background: #aaa; }
+
+        .prod-table { width: 100%; border-collapse: collapse; text-align: left; }
+        .prod-table th { position: sticky; top: 0; background: #e9ecef; color: var(--primary); font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; padding: 12px 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); z-index: 10; }
+        .prod-table td { padding: 12px 15px; border-bottom: 1px solid var(--border-color); font-size: 0.95rem; color: #555; vertical-align: middle; }
+        .prod-table tbody tr:nth-child(even) { background-color: #f8f9fa; }
+        .prod-table tbody tr:hover { background-color: #f1f2f6; color: var(--primary); }
+        .prod-table.detailed td + td, .prod-table.detailed th + th { border-left: 1px solid var(--border-color); }
+        .prod-table td { font-variant-numeric: tabular-nums; font-weight: 500; }
+
+        /* --- 5. TEKNİK TABLO --- */
         .tech-specs-section { padding: 0 5% 80px; }
         .section-title { font-size: 2rem; text-align: center; margin-bottom: 40px; color: var(--primary); position: relative; padding-bottom: 15px; }
-        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: var(--secondary); }
+        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: var(--secondary); border-radius: 2px; }
         
-        .tech-table-wrapper { overflow-x: auto; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
-        .tech-table { width: 100%; border-collapse: collapse; min-width: 700px; background: white; }
+        .tech-table-wrapper { overflow-x: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 1px solid var(--border-color); }
+        .tech-table { width: 100%; border-collapse: collapse; min-width: 800px; background: white; }
         .tech-table thead { background: var(--primary); color: white; }
-        .tech-table th, .tech-table td { padding: 15px; text-align: center; border-bottom: 1px solid #eee; font-size: 0.95rem; }
-        .tech-table th { font-weight: 600; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 0.5px; }
-        .tech-table tbody tr:hover { background-color: #f9f9f9; }
-        .tech-table tbody tr:hover td { color: var(--secondary); font-weight: 600; }
+        .tech-table th { padding: 18px 15px; text-align: center; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; border-right: 1px solid rgba(255,255,255,0.1); }
+        .tech-table td { padding: 15px; text-align: center; border-bottom: 1px solid var(--border-color); font-size: 1rem; color: #444; font-weight: 500; border-right: 1px solid var(--border-color); }
+        .tech-table td:last-child, .tech-table th:last-child { border-right: none; }
+        .tech-table tbody tr:nth-child(even) { background-color: #f8f9fa; }
+        .tech-table tbody tr:hover { background-color: #eef2f5; }
+        .tech-table tbody td:first-child { font-weight: 700; color: var(--primary); background: #fcfcfc; }
 
         /* Scroll Reveal */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
@@ -94,23 +118,55 @@
     </header>
 
     <div class="prod-container">
-        <h2 style="text-align:center; margin-bottom:40px; color:#1a252f; font-size: 2.5rem;" data-i18n="nav_products">Produkte</h2>
+        <h2 style="text-align:center; margin-bottom:20px; color:#1a252f; font-size: 2.5rem; font-weight: 800;" data-i18n="nav_products">Produkte</h2>
         
+        <div class="search-section reveal">
+            <div class="search-wrapper">
+                <input type="text" id="productSearch" class="search-input" placeholder="Dimension suchen (z.B. 12x330)..." onkeyup="filterProducts()" data-i18n-ph="search_ph">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
+
+        <br><br>
+
         <div class="grid">
             <div class="card reveal">
                 <div class="card-head"><h3 data-i18n="p1">Hartmetallstab in voller Länge</h3></div>
                 <div class="card-img-wrapper"><img src="images/prod1.jpg" alt="Rod"></div>
-                <div class="table-wrap"><table id="t1"></table></div>
+                <div class="table-wrap">
+                    <table id="t1" class="prod-table">
+                        <thead><tr><th>Dimension (mm)</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
             </div>
+
             <div class="card reveal">
                 <div class="card-head"><h3 data-i18n="p2">Hartmetallstab mit Wasserkühlkanal</h3></div>
                 <div class="card-img-wrapper"><img src="images/prod6.jpg" alt="Coolant"></div>
-                <div class="table-wrap"><table id="t2"></table></div>
+                <div class="table-wrap">
+                    <table id="t2" class="prod-table detailed">
+                        <thead>
+                            <tr>
+                                <th>Dim (mm)</th>
+                                <th>ID (mm)</th>
+                                <th>DIST</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
             </div>
+
             <div class="card reveal">
                 <div class="card-head"><h3 data-i18n="p3">Gekürzter Hartmetallstab</h3></div>
                 <div class="card-img-wrapper"><img src="images/prod7.jpg" alt="Cut"></div>
-                <div class="table-wrap"><table id="t3"></table></div>
+                <div class="table-wrap">
+                    <table id="t3" class="prod-table">
+                        <thead><tr><th>Dimension (mm)</th></tr></thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
@@ -160,31 +216,103 @@
         function toggleMenu() { document.getElementById('navbar').classList.toggle('active'); }
         window.addEventListener('scroll', reveal); function reveal(){ var reveals = document.querySelectorAll('.reveal'); for(var i=0; i<reveals.length; i++){ var windowheight=window.innerHeight; var revealtop=reveals[i].getBoundingClientRect().top; if(revealtop < windowheight - 50){ reveals[i].classList.add('active'); } } } reveal();
 
-        const d1 = ["1X330","2X330","3X330","4X330","5X330","6X330","8X330","10X330","12X330","16X330","20X330","32X330"];
-        const d2 = ["4x330","6x330","8x330","10x330","12x330","14x330","16x330","18x330","20x330","25x330"];
-        const d3 = ["3x40","4x50","6x50","8x63","10x72","12x83","16x92","20x104"];
-        function fill(id, arr){ document.getElementById(id).innerHTML = arr.map(x=>`<tr><td>ø ${x} mm</td></tr>`).join(''); }
-        fill('t1', d1); fill('t2', d2); fill('t3', d3);
+        // --- VERİ SETLERİ ---
+        const d1 = [
+            "1x330", "2x330", "3x330", "4x330", "5x330", "6x330", "7x330", "8x330", "9x330", "10x330",
+            "11x330", "12x330", "13x330", "14x330", "15x330", "16x330", "17x330", "18x330", "19x330", "20x330",
+            "21x330", "22x330", "23x330", "24x330", "25x330", "26x330", "27x330", "28x330", "29x330", "30x330",
+            "32x330"
+        ];
+        const d2_detailed = [
+            { dim: "4 x 330", id: "0.5", dist: "1.6" },
+            { dim: "4 x 330", id: "0.8", dist: "1.7" },
+            { dim: "6 x 330", id: "1.0", dist: "2.4" },
+            { dim: "6 x 330", id: "1.0", dist: "3.0" },
+            { dim: "8 x 330", id: "1.0", dist: "2.6" },
+            { dim: "8 x 330", id: "1.0", dist: "3.9" },
+            { dim: "10 x 330", id: "1.0", dist: "2.5" },
+            { dim: "10 x 330", id: "1.4", dist: "4.9" },
+            { dim: "12 x 330", id: "1.2", dist: "3.5" },
+            { dim: "12 x 330", id: "1.8", dist: "5.0" },
+            { dim: "14 x 330", id: "1.5", dist: "5.0" },
+            { dim: "14 x 330", id: "1.8", dist: "5.8" },
+            { dim: "16 x 330", id: "1.0", dist: "5.0" },
+            { dim: "16 x 330", id: "2.0", dist: "7.8" },
+            { dim: "18 x 330", id: "2.0", dist: "6.0" },
+            { dim: "18 x 330", id: "2.0", dist: "8.8" },
+            { dim: "20 x 330", id: "2.0", dist: "6.0" },
+            { dim: "20 x 330", id: "2.5", dist: "9.8" },
+            { dim: "22 x 330", id: "2.0", dist: "6.0" },
+            { dim: "22 x 330", id: "2.5", dist: "10.8" },
+            { dim: "23 x 330", id: "2.0", dist: "7.5" },
+            { dim: "24 x 330", id: "2.0", dist: "7.5" },
+            { dim: "24 x 330", id: "3.0", dist: "11.8" },
+            { dim: "25 x 330", id: "2.0", dist: "7.5" },
+            { dim: "25 x 330", id: "3.0", dist: "11.8" }
+        ];
+        const d3 = [
+            "3x40", "3x50", "4x40", "4x50", "5x50", "6x50", "6x57", "6x60", 
+            "8x58", "8x63", "10x66", "10x72", "12x73", "12x83", "14x75", 
+            "14x83", "16x82", "16x92", "18x92", "20x104"
+        ];
+
+        function fillSimple(id, arr){ document.querySelector(`#${id} tbody`).innerHTML = arr.map(x=>`<tr><td>ø ${x} mm</td></tr>`).join(''); }
+        function fillDetailed(id, arr) { document.querySelector(`#${id} tbody`).innerHTML = arr.map(item => `<tr><td>${item.dim}</td><td>${item.id}</td><td>${item.dist}</td></tr>`).join(''); }
+
+        fillSimple('t1', d1);
+        fillDetailed('t2', d2_detailed);
+        fillSimple('t3', d3);
+
+        // --- ARAMA FONKSİYONU (YENİ) ---
+        function filterProducts() {
+            const input = document.getElementById('productSearch').value.toLowerCase();
+            const tables = ['t1', 't2', 't3'];
+
+            tables.forEach(id => {
+                const table = document.getElementById(id);
+                const tbody = table.querySelector('tbody');
+                const rows = tbody.getElementsByTagName('tr');
+                let hasVisibleRow = false;
+
+                for (let i = 0; i < rows.length; i++) {
+                    const rowText = rows[i].textContent.toLowerCase();
+                    if (rowText.includes(input)) {
+                        rows[i].style.display = "";
+                        hasVisibleRow = true;
+                    } else {
+                        rows[i].style.display = "none";
+                    }
+                }
+
+                // Eğer tabloda hiç sonuç yoksa Kartı gizle
+                const card = table.closest('.card');
+                if (card) {
+                    card.style.display = hasVisibleRow ? "" : "none";
+                }
+            });
+        }
 
         const translations = {
             de: { 
                 nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", 
                 p1:"Hartmetallstab Voll", p2:"Mit Kühlkanal", p3:"Gekürzt",
-                tech_title: "Technische Daten", th_grain: "Korngröße (μm)", th_density: "Dichte (g/cm³)", th_hard: "Härte (HRA)", th_trs: "Biegefestigkeit (kgf/mm²)"
+                tech_title: "Technische Daten", th_grain: "Korngröße (μm)", th_density: "Dichte (g/cm³)", th_hard: "Härte (HRA)", th_trs: "Biegefestigkeit (kgf/mm²)",
+                search_ph: "Dimension suchen (z.B. 12x330)..."
             },
             en: { 
                 nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", 
                 p1:"Solid Rod", p2:"Coolant Duct", p3:"Cut-to-Length",
-                tech_title: "Technical Specifications", th_grain: "Grain Size (μm)", th_density: "Density (g/cm³)", th_hard: "Hardness (HRA)", th_trs: "TRS (kgf/mm²)"
+                tech_title: "Technical Specifications", th_grain: "Grain Size (μm)", th_density: "Density (g/cm³)", th_hard: "Hardness (HRA)", th_trs: "TRS (kgf/mm²)",
+                search_ph: "Search dimension (e.g. 12x330)..."
             },
             tr: { 
                 nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", 
                 p1:"Tam Boy Çubuk", p2:"Su Kanallı", p3:"Kesilmiş Çubuk",
-                tech_title: "Teknik Özellikler", th_grain: "Tane Boyutu (μm)", th_density: "Yoğunluk (g/cm³)", th_hard: "Sertlik (HRA)", th_trs: "Kırılma Dayanımı (kgf/mm²)"
+                tech_title: "Teknik Özellikler", th_grain: "Tane Boyutu (μm)", th_density: "Yoğunluk (g/cm³)", th_hard: "Sertlik (HRA)", th_trs: "Kırılma Dayanımı (kgf/mm²)",
+                search_ph: "Ölçü ara (örn. 12x330)..."
             }
         };
 
-        // OTOMATİK DİL ALGILAMA
         function detectAndSetLanguage() {
             let lang = localStorage.getItem('hm_lang');
             if (!lang) {
@@ -196,6 +324,7 @@
         function changeLanguage(lang) {
             localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang;
             document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; });
+            document.querySelectorAll('[data-i18n-ph]').forEach(e => e.placeholder = translations[lang][e.getAttribute('data-i18n-ph')]);
         }
         document.addEventListener('DOMContentLoaded', detectAndSetLanguage);
     </script>
