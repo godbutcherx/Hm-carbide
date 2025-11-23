@@ -5,90 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HM Carbide Swiss GmbH | About</title>
     <style>
-        /* --- 1. TEMEL AYARLAR --- */
         :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; --text-light: #555; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
         body { background: var(--light); color: var(--text); line-height: 1.8; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-        /* --- 2. PREMIUM HEADER (ANASAYFA İLE AYNI) --- */
-        header {
-            background: rgba(26, 37, 47, 0.95);
-            color: white;
-            padding: 0 4%;
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 10000;
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 4px 30px rgba(0,0,0,0.25);
-        }
-
+        header { background: rgba(26, 37, 47, 0.95); color: white; padding: 0 4%; height: 120px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10000; backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.08); box-shadow: 0 4px 30px rgba(0,0,0,0.25); }
         .logo-container { display: flex; align-items: center; flex: 1.4; z-index: 10002; }
         .logo-wrapper { position: relative; width: 85px; height: 85px; background: white; padding: 5px; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .logo-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 1.5s ease-in-out; }
-        .logo-main { z-index: 2; animation: logoAnimation 8s infinite; }
-        .logo-alt { z-index: 1; }
+        .logo-main { z-index: 2; animation: logoAnimation 8s infinite; } .logo-alt { z-index: 1; }
         @keyframes logoAnimation { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } 100% { opacity: 1; } }
-
         .logo-text { margin-left: 15px; padding-left: 15px; border-left: 2px solid rgba(255,255,255,0.2); display: flex; flex-direction: column; justify-content: center; }
         .logo-title { font-size: 1.4rem; font-weight: 800; color: white; letter-spacing: 1px; line-height: 1.1; }
         .logo-subtitle { font-size: 0.95rem; font-weight: 500; color: var(--secondary); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; }
-
         nav { flex: 2; display: flex; justify-content: center; z-index: 10001; }
         nav ul { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; align-items: center; }
         nav a { position: relative; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.85); border-radius: 25px; transition: all 0.3s ease; }
         nav a:hover { color: white; background: rgba(255, 255, 255, 0.15); transform: scale(1.05); box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); }
-
         .header-right { display: flex; align-items: center; gap: 15px; flex: 1; justify-content: flex-end; z-index: 10002; }
         .lang-switch select { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 8px 12px; border-radius: 15px; cursor: pointer; font-size: 0.9rem; outline: none; appearance: none; -webkit-appearance: none; text-align: center; }
         .lang-switch select option { color: black; }
         .menu-toggle { display: none; font-size: 2.2rem; cursor: pointer; color: white; margin-left: 15px; }
 
-        /* --- 3. ABOUT CONTENT STYLE --- */
         .page-header { padding: 160px 5% 60px; text-align: center; background: #f0f2f5; margin-top: -120px; }
         .page-title { font-size: 2.8rem; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
-        
         .container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
-        .content-box { 
-            background: white; padding: 50px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-            border-top: 5px solid var(--secondary);
-        }
+        .content-box { background: white; padding: 50px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-top: 5px solid var(--secondary); }
         .content-box h3 { font-size: 1.8rem; color: var(--primary); margin-bottom: 25px; line-height: 1.3; }
         .content-box p { margin-bottom: 20px; text-align: justify; color: var(--text-light); font-size: 1.1rem; }
-
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; } .reveal.active { opacity: 1; transform: translateY(0); }
         footer { background: #0f1519; color: #7f8c8d; text-align: center; padding: 30px; margin-top: auto; }
 
-        /* --- MOBİL UYUMU --- */
         @media (max-width: 1100px) {
             .menu-toggle { display: block; }
-            nav { position: fixed; top: 120px; left: 0; width: 100%; background: #1a252f; flex-direction: column; height: 0; overflow: hidden; transition: height 0.4s ease-out; box-shadow: 0 10px 20px rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.1); }
-            nav.active { height: auto; padding-bottom: 20px; }
+            nav { position: absolute; top: 90px; right: 20px; left: auto; width: 220px; background: rgba(26, 37, 47, 0.98); border-radius: 12px; flex-direction: column; height: auto; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; box-shadow: 0 10px 40px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); }
+            nav.active { max-height: 400px; }
             nav ul { flex-direction: column; gap: 0; width: 100%; padding: 10px 0; }
-            nav a { display: block; width: 100%; text-align: center; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 0; }
-            
-            .logo-container { flex: unset; } .logo-wrapper { width: 60px; height: 60px; } 
-            .logo-text { margin-left: 10px; padding-left: 10px; } .logo-title { font-size: 1.1rem; } .logo-subtitle { font-size: 0.75rem; }
-            .header-right { flex: unset; }
-            .page-title { font-size: 2rem; }
-            .content-box { padding: 30px; }
+            nav a { display: block; width: 100%; text-align: left; padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 0; }
+            .logo-container { flex: unset; } .logo-wrapper { width: 60px; height: 60px; } .logo-text { margin-left: 10px; padding-left: 10px; } .logo-title { font-size: 1.1rem; } .logo-subtitle { font-size: 0.75rem; } .header-right { flex: unset; }
+            .page-title { font-size: 2rem; } .content-box { padding: 30px; }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="logo-container">
-            <div class="logo-wrapper">
-                <img src="images/logo.jpg" alt="Logo" class="logo-img logo-main">
-                <img src="images/gem9.png" alt="Alt Logo" class="logo-img logo-alt">
-            </div>
+            <div class="logo-wrapper"><img src="images/logo.jpg" alt="Logo" class="logo-img logo-main"><img src="images/gem9.png" alt="Alt Logo" class="logo-img logo-alt"></div>
             <div class="logo-text"><div class="logo-title">HM CARBIDE</div><div class="logo-subtitle">SWISS GmbH</div></div>
         </div>
         <nav id="navbar">
@@ -107,11 +70,7 @@
     </header>
 
     <div class="page-header"><h1 class="page-title reveal" data-i18n="nav_about">Über Uns</h1></div>
-
-    <div class="container">
-        <div id="contentArea" class="content-box reveal"></div>
-    </div>
-
+    <div class="container"><div id="contentArea" class="content-box reveal"></div></div>
     <footer><p>© 2024 HM Carbide Swiss GmbH. Romanshornerstrasse 122, 9322 Egnach</p></footer>
 
     <script>
@@ -121,52 +80,19 @@
         const translations = {
             de: { 
                 nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", 
-                // YENİ ALMANCA ÇEVİRİ
                 content: "<h3>Die Kraft der Erfahrung, die Sicherheit von HM Carbide</h3><p>Dank unserer jahrelangen Erfahrung in der Zerspanungs- und Hartmetallindustrie kennen wir die Bedürfnisse der Fertigungswelt sehr genau. HM Carbide Swiss GmbH wurde gegründet, um dieses Wissen mit Schweizer Produktionsqualität zu verbinden und unseren Kunden die genauesten Rohstofflösungen anzubieten.</p><p>Mit unseren in der Schweiz ansässigen Operationen liefern wir nach europäischen Standards hergestellte Hartmetallstäbe zu wettbewerbsfähigen Bedingungen und mit zuverlässigem Lieferkettenmanagement an unsere Geschäftspartner. Unser Ziel ist es, die Stillstandzeiten in den Produktionslinien unserer Kunden zu minimieren und die Werkzeugstandzeiten zu maximieren.</p><p>Mit unserer Erfahrung aus der Vergangenheit und unserer Vision für die Zukunft sind wir als HM Carbide Swiss GmbH hier, um Ihrem Geschäft einen Mehrwert zu bieten.</p>" 
             },
             en: { 
                 nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", 
-                // YENİ İNGİLİZCE ÇEVİRİ
                 content: "<h3>The Power of Experience, The Assurance of HM Carbide</h3><p>With years of experience in the machining and carbide industry, we know the needs of the manufacturing world very well. HM Carbide Swiss GmbH was founded to combine this knowledge with Swiss production quality to offer our customers the most accurate raw material solutions.</p><p>With our Swiss-based operations, we deliver carbide rods produced to European standards to our business partners with competitive conditions and reliable supply chain management. Our goal is to minimize downtime in our customers' production lines and maximize tool life.</p><p>With our experience from the past and our vision for the future, as HM Carbide Swiss GmbH, we are here to add value to your business.</p>" 
             },
             tr: { 
                 nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", 
-                // YENİ TÜRKÇE METİN
                 content: "<h3>Tecrübenin Gücü, HM Carbide Güvencesi</h3><p>Talaşlı imalat ve karbür endüstrisindeki yıllara dayanan tecrübemizle, üretim dünyasının ihtiyaçlarını çok iyi biliyoruz. HM Carbide Swiss GmbH, bu bilgi birikimini İsviçre’nin üretim kalitesiyle harmanlayarak müşterilerine en doğru hammadde çözümlerini sunmak amacıyla kurulmuştur.</p><p>İsviçre merkezli operasyonlarımızla, Avrupa standartlarında üretilen karbür çubukları, rekabetçi koşullar ve güvenilir tedarik zinciri yönetimiyle iş ortaklarımıza ulaştırıyoruz. Amacımız; müşterilerimizin üretim hattındaki duruş sürelerini en aza indirmek ve takım ömürlerini maksimize etmektir.</p><p>Geçmişten gelen deneyimimiz ve geleceğe dönük vizyonumuzla, HM Carbide Swiss GmbH olarak işinize değer katmak için buradayız.</p>" 
             }
         };
-
-        // --- GÜNCELLENEN OTOMATİK DİL ALGILAMA ---
-        function detectAndSetLanguage() {
-            // 1. Önce kullanıcının kendi seçimi var mı?
-            let lang = localStorage.getItem('hm_lang');
-
-            // 2. Yoksa tarayıcı diline bak
-            if (!lang) {
-                const browserLang = navigator.language || navigator.userLanguage;
-                if (browserLang.startsWith('tr')) {
-                    lang = 'tr';
-                } else if (browserLang.startsWith('en')) {
-                    lang = 'en';
-                } else {
-                    lang = 'de'; // Varsayılan Almanca
-                }
-            }
-            
-            // Dili uygula
-            changeLanguage(lang);
-        }
-
-        function changeLanguage(lang) {
-            localStorage.setItem('hm_lang', lang); 
-            document.getElementById('langSel').value = lang; 
-            document.querySelectorAll('[data-i18n]').forEach(e => { 
-                const key = e.getAttribute('data-i18n'); 
-                if(translations[lang][key]) e.innerText = translations[lang][key]; 
-            }); 
-            document.getElementById('contentArea').innerHTML = translations[lang].content;
-        }
-
+        function detectAndSetLanguage() { let lang = localStorage.getItem('hm_lang'); if (!lang) { const browserLang = navigator.language || navigator.userLanguage; lang = browserLang.startsWith('tr') ? 'tr' : (browserLang.startsWith('en') ? 'en' : 'de'); } changeLanguage(lang); }
+        function changeLanguage(lang) { localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang; document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; }); document.getElementById('contentArea').innerHTML = translations[lang].content; }
         document.addEventListener('DOMContentLoaded', detectAndSetLanguage);
     </script>
 </body>
