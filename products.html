@@ -58,4 +58,72 @@
     <header>
         <div class="logo-container">
             <div class="logo-wrapper"><img src="images/logo.jpg" alt="Logo" class="logo-img logo-main"><img src="images/gem9.png" alt="Alt Logo" class="logo-img logo-alt"></div>
-            <div class="logo-text
+            <div class="logo-text"><div class="logo-title">HM CARBIDE</div><div class="logo-subtitle">SWISS GmbH</div></div>
+        </div>
+        <nav id="navbar">
+            <ul>
+                <li><a href="index.html" data-i18n="nav_home">Anasayfa</a></li>
+                <li><a href="about.html" data-i18n="nav_about">Hakkımızda</a></li>
+                <li><a href="products.html" data-i18n="nav_products">Ürünlerimiz</a></li>
+                <li><a href="certificates.html" data-i18n="nav_certs">Sertifikalar</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">İletişim</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="lang-switch"><select onchange="changeLanguage(this.value)" id="langSel"><option value="de">DE</option><option value="en">EN</option><option value="tr">TR</option></select></div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        </div>
+    </header>
+
+    <div class="prod-container">
+        <h2 style="text-align:center; margin-bottom:30px; color:#1a252f;" data-i18n="nav_products">Produkte</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-head"><h3 data-i18n="p1">Hartmetallstab in voller Länge</h3></div>
+                <div class="card-img-wrapper"><img src="images/prod1.jpg" alt="Rod"></div>
+                <div class="table-wrap"><table id="t1"></table></div>
+            </div>
+            <div class="card">
+                <div class="card-head"><h3 data-i18n="p2">Hartmetallstab mit Wasserkühlkanal</h3></div>
+                <div class="card-img-wrapper"><img src="images/prod6.jpg" alt="Coolant"></div>
+                <div class="table-wrap"><table id="t2"></table></div>
+            </div>
+            <div class="card">
+                <div class="card-head"><h3 data-i18n="p3">Gekürzter Hartmetallstab</h3></div>
+                <div class="card-img-wrapper"><img src="images/prod7.jpg" alt="Cut"></div>
+                <div class="table-wrap"><table id="t3"></table></div>
+            </div>
+        </div>
+    </div>
+
+    <footer><p>© 2024 HM Carbide Swiss GmbH. Romanshornerstrasse 122, 9322 Egnach</p></footer>
+
+    <script>
+        function toggleMenu() { document.getElementById('navbar').classList.toggle('active'); }
+        const d1 = ["1X330","2X330","3X330","4X330","5X330","6X330","8X330","10X330","12X330","16X330","20X330","32X330"];
+        const d2 = ["4x330","6x330","8x330","10x330","12x330","14x330","16x330","18x330","20x330","25x330"];
+        const d3 = ["3x40","4x50","6x50","8x63","10x72","12x83","16x92","20x104"];
+        function fill(id, arr){ document.getElementById(id).innerHTML = arr.map(x=>`<tr><td>ø ${x} mm</td></tr>`).join(''); }
+        fill('t1', d1); fill('t2', d2); fill('t3', d3);
+        const translations = {
+            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", p1:"Hartmetallstab Voll", p2:"Mit Kühlkanal", p3:"Gekürzt" },
+            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", p1:"Solid Rod", p2:"Coolant Duct", p3:"Cut-to-Length" },
+            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", p1:"Tam Boy Çubuk", p2:"Su Kanallı", p3:"Kesilmiş Çubuk" }
+        };
+        // OTOMATİK DİL ALGILAMA
+        function detectAndSetLanguage() {
+            let lang = localStorage.getItem('hm_lang');
+            if (!lang) {
+                const browserLang = navigator.language || navigator.userLanguage;
+                lang = browserLang.startsWith('tr') ? 'tr' : (browserLang.startsWith('en') ? 'en' : 'de');
+            }
+            changeLanguage(lang);
+        }
+        function changeLanguage(lang) {
+            localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang;
+            document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; });
+        }
+        document.addEventListener('DOMContentLoaded', detectAndSetLanguage);
+    </script>
+</body>
+</html>
