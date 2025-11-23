@@ -5,115 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HM Carbide Swiss GmbH | Contact</title>
     <style>
-        /* --- CSS --- */
+        /* CSS HEADER AYNI */
         :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
         body { background: var(--light); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-        /* HEADER (Aynı Stil) */
-        header { background: rgba(26, 37, 47, 0.98); color: white; padding: 0 4%; height: 100px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10000; backdrop-filter: blur(10px); border-bottom: 1px solid rgba(255,255,255,0.05); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
-        .logo { display: flex; align-items: center; font-size: 1.4rem; font-weight: 800; z-index: 10002; flex: 1.2; }
-        .logo img { height: 70px; margin-right: 15px; border-radius: 4px; background: white; padding: 4px; }
-        .logo span { color: var(--secondary); margin-left: 0; white-space: nowrap; }
+        header { background: rgba(26, 37, 47, 0.95); color: white; padding: 0 4%; height: 120px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10000; backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.08); box-shadow: 0 4px 30px rgba(0,0,0,0.25); }
+        .logo-container { display: flex; align-items: center; flex: 1.4; z-index: 10002; }
+        .logo-wrapper { position: relative; width: 85px; height: 85px; background: white; padding: 5px; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 1.5s ease-in-out; }
+        .logo-main { z-index: 2; animation: logoAnimation 8s infinite; } .logo-alt { z-index: 1; }
+        @keyframes logoAnimation { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } 100% { opacity: 1; } }
+        .logo-text { margin-left: 15px; padding-left: 15px; border-left: 2px solid rgba(255,255,255,0.2); display: flex; flex-direction: column; justify-content: center; }
+        .logo-title { font-size: 1.4rem; font-weight: 800; color: white; letter-spacing: 1px; line-height: 1.1; }
+        .logo-subtitle { font-size: 0.95rem; font-weight: 500; color: var(--secondary); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; }
         nav { flex: 2; display: flex; justify-content: center; z-index: 10001; }
-        nav ul { display: flex; gap: 5px; list-style: none; margin: 0; padding: 0; align-items: center; }
-        nav a { position: relative; font-size: 0.95rem; font-weight: 600; text-transform: uppercase; padding: 12px 20px; color: rgba(255,255,255,0.9); border-radius: 30px; transition: all 0.3s ease; }
+        nav ul { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; align-items: center; }
+        nav a { position: relative; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.85); border-radius: 25px; transition: all 0.3s ease; }
         nav a:hover { color: white; background: rgba(255, 255, 255, 0.15); transform: scale(1.05); box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); }
         .header-right { display: flex; align-items: center; gap: 15px; flex: 1; justify-content: flex-end; z-index: 10002; }
         .lang-switch select { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 8px 12px; border-radius: 15px; cursor: pointer; font-size: 0.9rem; outline: none; appearance: none; -webkit-appearance: none; text-align: center; }
         .lang-switch select option { color: black; }
         .menu-toggle { display: none; font-size: 2.2rem; cursor: pointer; color: white; margin-left: 15px; }
 
-        /* CONTACT CONTENT */
-        .contact-wrap { display: flex; flex-wrap: wrap; justify-content: center; padding: 50px 5%; gap: 40px; align-items: flex-start; }
-        
+        /* CONTACT CSS */
+        .contact-wrap { display: flex; flex-wrap: wrap; justify-content: center; padding: 50px 5%; gap: 40px; align-items: flex-start; margin-top: 20px; }
         .left-panel { flex: 1; min-width: 300px; max-width: 500px; }
         .info-box { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        
-        /* Telefon Numarası Stili */
-        .phone-link { font-size: 1.1rem; font-weight: bold; color: #333; }
-        .phone-link:hover { color: var(--secondary); }
-
+        .phone-link { font-size: 1.1rem; font-weight: bold; color: #333; } .phone-link:hover { color: var(--secondary); }
         .map-box { width: 100%; height: 300px; border-radius: 8px; overflow: hidden; border: 2px solid #ccc; }
         iframe { width: 100%; height: 100%; border: 0; }
-        
         .form-box { flex: 1; min-width: 300px; max-width: 500px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .contact-form { display: flex; flex-direction: column; gap: 15px; }
         .contact-form input, .contact-form textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 1rem; }
         .btn-submit { padding: 15px; background: var(--secondary); color: white; border: none; font-weight: bold; border-radius: 4px; cursor: pointer; transition: 0.3s; }
         .btn-submit:hover { background: #b0261d; }
-        
         footer { background: #0f1519; color: #7f8c8d; text-align: center; padding: 30px; margin-top: auto; }
 
         @media (max-width: 1100px) {
             .menu-toggle { display: block; }
-            nav { position: fixed; top: 100px; left: 0; width: 100%; background: #1a252f; flex-direction: column; height: 0; overflow: hidden; transition: height 0.4s ease-out; box-shadow: 0 10px 20px rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.1); }
+            nav { position: fixed; top: 120px; left: 0; width: 100%; background: #1a252f; flex-direction: column; height: 0; overflow: hidden; transition: height 0.4s ease-out; box-shadow: 0 10px 20px rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.1); }
             nav.active { height: auto; padding-bottom: 20px; }
             nav ul { flex-direction: column; gap: 0; width: 100%; padding: 10px 0; }
             nav a { display: block; width: 100%; text-align: center; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 0; }
-            nav a:hover { transform: none; box-shadow: none; background: rgba(255,255,255,0.05); }
-            .logo { font-size: 1rem; flex: unset; } .logo img { height: 50px; } .header-right { flex: unset; }
+            .logo-container { flex: unset; } .logo-wrapper { width: 60px; height: 60px; } .logo-text { margin-left: 10px; padding-left: 10px; } .logo-title { font-size: 1.1rem; } .logo-subtitle { font-size: 0.75rem; } .header-right { flex: unset; }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo"><img src="images/logo.jpg" alt="Logo"><span>HM CARBIDE SWISS GmbH</span></div>
+        <div class="logo-container">
+            <div class="logo-wrapper"><img src="images/logo.jpg" alt="Logo" class="logo-img logo-main"><img src="images/gem9.png" alt="Alt Logo" class="logo-img logo-alt"></div>
+            <div class="logo-text"><div class="logo-title">HM CARBIDE</div><div class="logo-subtitle">SWISS GmbH</div></div>
+        </div>
         <nav id="navbar">
             <ul>
                 <li><a href="index.html" data-i18n="nav_home">Anasayfa</a></li>
-                <li><a href="about.html" data-i18n="nav_about">Hakkımızda</a></li>
-                <li><a href="products.html" data-i18n="nav_products">Ürünlerimiz</a></li>
-                <li><a href="certificates.html" data-i18n="nav_certs">Sertifikalar</a></li>
-                <li><a href="contact.html" data-i18n="nav_contact">İletişim</a></li>
-            </ul>
-        </nav>
-        <div class="header-right">
-            <div class="lang-switch"><select onchange="changeLanguage(this.value)" id="langSel"><option value="de">DE</option><option value="en">EN</option><option value="tr">TR</option></select></div>
-            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        </div>
-    </header>
-
-    <div class="contact-wrap">
-        <div class="left-panel">
-            <div class="info-box">
-                <h2 data-i18n="nav_contact" style="color:#1a252f; margin-bottom:20px;">Kontakt</h2>
-                <p><strong>HM Carbide Swiss GmbH</strong></p><br>
-                <p>📍 Romanshornerstrasse 122, 9322 Egnach, Switzerland</p><br>
-                <p>📞 <a href="tel:+41762909193" class="phone-link">+41 76 290 91 93</a></p><br>
-                <p>✉️ <a href="mailto:info@hmcarbide.ch" style="color:#d93025;">info@hmcarbide.ch</a></p>
-            </div>
-            <div class="map-box">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.049318856964!2d9.37487327684982!3d47.53900699607713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479af7d630210751%3A0xe0158924969e788e!2sRomanshornerstrasse%20122%2C%209322%20Egnach%2C%20Switzerland!5e0!3m2!1sen!2str!4v1700000000000!5m2!1sen!2str" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-        <div class="form-box">
-            <h2 style="color:#1a252f; margin-bottom:20px;" data-i18n="form_title">Nachricht Senden</h2>
-            
-            <form action="https://formspree.io/f/xqajeedj" method="POST" class="contact-form">
-                <input type="text" name="name" placeholder="Name" required data-i18n-ph="ph_name">
-                <input type="email" name="email" placeholder="E-Mail" required data-i18n-ph="ph_email">
-                <textarea name="message" rows="5" placeholder="Message..." required data-i18n-ph="ph_message"></textarea>
-                <button type="submit" class="btn-submit" data-i18n="form_btn">SENDEN</button>
-            </form>
-        </div>
-    </div>
-    <footer><p>© 2024 HM Carbide Swiss GmbH. Romanshornerstrasse 122, 9322 Egnach</p></footer>
-
-    <script>
-        function toggleMenu() { document.getElementById('navbar').classList.toggle('active'); }
-        const translations = {
-            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", form_title:"Nachricht Senden", form_btn:"SENDEN", ph_name:"Name", ph_email:"E-Mail Adresse", ph_message:"Ihre Nachricht..." },
-            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", form_title:"Send Message", form_btn:"SEND", ph_name:"Name", ph_email:"Email Address", ph_message:"Your Message..." },
-            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", form_title:"Mesaj Gönderin", form_btn:"GÖNDER", ph_name:"Adınız", ph_email:"E-Posta Adresi", ph_message:"Mesajınız..." }
-        };
-        function changeLanguage(lang) {
-            localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang;
-            document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; });
-            document.querySelectorAll('[data-i18n-ph]').forEach(e => e.placeholder = translations[lang][e.getAttribute('data-i18n-ph')]);
-        }
-        document.addEventListener('DOMContentLoaded', () => { changeLanguage(localStorage.getItem('hm_lang') || 'de'); });
-    </script>
-</body>
-</html>
+                <li>
