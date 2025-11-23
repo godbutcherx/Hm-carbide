@@ -7,154 +7,103 @@
     <style>
         /* --- 1. TEMEL AYARLAR --- */
         :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; --text-light: #777; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
         body { background: var(--light); color: var(--text); line-height: 1.7; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; transition: 0.3s all ease; }
-        h1, h2, h3 { font-weight: 700; color: var(--primary); }
-        section { padding: 80px 5%; } /* Bölümler arası standart boşluk */
-
-        /* --- 2. HEADER (YENİLENDİ: Şık Logo Alanı) --- */
-        header {
-            background: rgba(26, 37, 47, 0.95); /* Biraz daha koyu ve opak */
-            color: white;
-            padding: 0 4%;
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 10000;
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 4px 30px rgba(0,0,0,0.25);
-        }
-
-        /* LOGO KONTEYNERİ */
-        .logo-container {
-            display: flex;
-            align-items: center;
-            flex: 1.4;
-            z-index: 10002;
-        }
-
-        /* ANİMASYONLU LOGO GÖRSELİ */
-        .logo-wrapper {
-            position: relative;
-            width: 85px; height: 85px;
-            background: white;
-            padding: 5px;
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
+        
+        /* --- 2. HEADER --- */
+        header { background: rgba(26, 37, 47, 0.95); color: white; padding: 0 4%; height: 120px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10000; backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.08); box-shadow: 0 4px 30px rgba(0,0,0,0.25); }
+        
+        .logo-container { display: flex; align-items: center; flex: 1.4; z-index: 10002; }
+        .logo-wrapper { position: relative; width: 85px; height: 85px; background: white; padding: 5px; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .logo-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 1.5s ease-in-out; }
-        .logo-main { z-index: 2; animation: logoAnimation 8s infinite; }
-        .logo-alt { z-index: 1; }
+        .logo-main { z-index: 2; animation: logoAnimation 8s infinite; } .logo-alt { z-index: 1; }
         @keyframes logoAnimation { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } 100% { opacity: 1; } }
+        .logo-text { margin-left: 15px; padding-left: 15px; border-left: 2px solid rgba(255,255,255,0.2); display: flex; flex-direction: column; justify-content: center; }
+        .logo-title { font-size: 1.4rem; font-weight: 800; color: white; letter-spacing: 1px; line-height: 1.1; }
+        .logo-subtitle { font-size: 0.95rem; font-weight: 500; color: var(--secondary); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; }
 
-        /* YENİ YAZI TASARIMI */
-        .logo-text {
-            margin-left: 15px;
-            padding-left: 15px;
-            border-left: 2px solid rgba(255,255,255,0.2); /* Dikey Ayırıcı Çizgi */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .logo-title {
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: white;
-            letter-spacing: 1px;
-            line-height: 1.1;
-        }
-        .logo-subtitle {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: var(--secondary); /* İsviçre Kırmızısı */
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: 3px;
-        }
-
-        /* MENÜ (AYNI) */
+        /* MENÜ (PC) */
         nav { flex: 2; display: flex; justify-content: center; z-index: 10001; }
         nav ul { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; align-items: center; }
         nav a { position: relative; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.85); border-radius: 25px; transition: all 0.3s ease; }
         nav a:hover { color: white; background: rgba(255, 255, 255, 0.15); transform: scale(1.05); box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); }
 
-        /* SAĞ TARAF (AYNI) */
         .header-right { display: flex; align-items: center; gap: 15px; flex: 1; justify-content: flex-end; z-index: 10002; }
         .lang-switch select { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 8px 12px; border-radius: 15px; cursor: pointer; font-size: 0.9rem; outline: none; appearance: none; -webkit-appearance: none; text-align: center; }
         .lang-switch select option { color: black; }
         .menu-toggle { display: none; font-size: 2.2rem; cursor: pointer; color: white; margin-left: 15px; }
 
-        /* --- 3. HERO SLAYT GÖSTERİSİ (AYNI) --- */
-        .hero { position: relative; height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; color: white; overflow: hidden; margin-top: -120px; /* Headerın altına girmesi için */ padding-top: 120px; }
+        /* --- HERO & CONTENT --- */
+        .hero { position: relative; height: 90vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; color: white; overflow: hidden; margin-top: -120px; padding-top: 120px; }
         .hero-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
-        .hero-slideshow img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 2s ease-in-out; transform: scale(1.05); /* Hafif zoom efekti */ }
+        .hero-slideshow img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 2s ease-in-out; transform: scale(1.05); }
         .hero-slideshow img.active { opacity: 1; transform: scale(1); }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(26,37,47,0.6), rgba(26,37,47,0.8)); z-index: -1; }
-        .hero-content { position: relative; z-index: 2; max-width: 800px; }
         .hero h1 { font-size: 3.8rem; margin-bottom: 20px; text-transform: uppercase; font-weight: 900; text-shadow: 0 5px 30px rgba(0,0,0,0.7); letter-spacing: 2px; line-height: 1.2; }
         .hero p { font-size: 1.8rem; font-weight: 600; margin-bottom: 40px; text-shadow: 0 2px 15px rgba(0,0,0,0.8); letter-spacing: 1px; color: rgba(255,255,255,0.9); }
-        
-        /* BUTONLAR (Ortak Stil) */
-        .btn { padding: 15px 40px; background: var(--secondary); color: white; font-weight: 700; font-size: 1rem; border-radius: 50px; box-shadow: 0 10px 20px rgba(217, 48, 37, 0.3); transition: all 0.3s; display: inline-block; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer;}
+        .btn { padding: 15px 40px; background: var(--secondary); color: white; font-weight: 700; font-size: 1rem; border-radius: 50px; box-shadow: 0 10px 20px rgba(217, 48, 37, 0.3); transition: all 0.3s; display: inline-block; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer; }
         .btn:hover { background: #b0261d; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(217, 48, 37, 0.5); }
         .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); box-shadow: none; }
-        .btn-outline:hover { background: var(--primary); color: white; box-shadow: 0 10px 20px rgba(26,37,47,0.2); }
-
-        /* --- 4. YENİ BÖLÜMLER (Hakkımızda & Ürünler) --- */
+        .btn-outline:hover { background: var(--primary); color: white; }
+        
+        section { padding: 80px 5%; }
         .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 60px; position: relative; padding-bottom: 20px; }
         .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--secondary); border-radius: 2px; }
-
-        /* HAKKIMIZDA ÖNİZLEME */
+        
         .about-preview { display: flex; align-items: center; gap: 60px; }
-        .about-text { flex: 1; }
-        .about-text p { font-size: 1.1rem; color: var(--text-light); margin-bottom: 30px; }
+        .about-text { flex: 1; } .about-text p { font-size: 1.1rem; color: var(--text-light); margin-bottom: 30px; }
         .about-image { flex: 1; height: 450px; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .about-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .about-image:hover img { transform: scale(1.05); }
-
-        /* ÜRÜNLER ÖNİZLEME */
+        
         .products-preview { background: white; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .product-card { background: var(--light); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s; text-align: center; group; }
+        .product-card { background: var(--light); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s; text-align: center; }
         .product-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
-        .product-img { height: 260px; overflow: hidden; position: relative; }
-        .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .product-img { height: 260px; overflow: hidden; } .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .product-card:hover .product-img img { transform: scale(1.1); }
-        .product-info { padding: 30px; }
-        .product-info h3 { font-size: 1.3rem; margin-bottom: 20px; }
-        .btn-sm { padding: 10px 25px; font-size: 0.9rem; }
-
-        /* FOOTER (AYNI) */
+        .product-info { padding: 30px; } .product-info h3 { font-size: 1.3rem; margin-bottom: 20px; } .btn-sm { padding: 10px 25px; font-size: 0.9rem; }
+        
         footer { background: #0f1519; color: #7f8c8d; text-align: center; padding: 40px 20px; margin-top: auto; font-size: 0.9rem; }
 
-        /* --- MOBİL UYUMU --- */
+        /* --- MOBİL UYUMU & MİNİMAL MENÜ --- */
         @media (max-width: 1100px) {
             .menu-toggle { display: block; }
-            nav { position: fixed; top: 120px; left: 0; width: 100%; background: #1a252f; flex-direction: column; height: 0; overflow: hidden; transition: height 0.4s ease-out; box-shadow: 0 10px 20px rgba(0,0,0,0.3); border-top: 1px solid rgba(255,255,255,0.1); }
-            nav.active { height: auto; padding-bottom: 20px; }
+            
+            /* MİNİMAL KÖŞE MENÜ */
+            nav { 
+                position: absolute; 
+                top: 90px; /* Headerın altında */
+                right: 20px; /* Sağ köşeye yasla */
+                left: auto; /* Sola yayılmasın */
+                width: 220px; /* Minimal genişlik */
+                background: rgba(26, 37, 47, 0.98); 
+                border-radius: 12px; /* Yuvarlak köşeler */
+                flex-direction: column; 
+                height: auto; /* Yükseklik içeriğe göre */
+                max-height: 0; 
+                overflow: hidden; 
+                transition: max-height 0.4s ease-out; 
+                box-shadow: 0 10px 40px rgba(0,0,0,0.4); 
+                border: 1px solid rgba(255,255,255,0.1);
+            }
+            nav.active { max-height: 400px; /* Açılınca */ }
+            
             nav ul { flex-direction: column; gap: 0; width: 100%; padding: 10px 0; }
-            nav a { display: block; width: 100%; text-align: center; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 0; }
+            nav a { 
+                display: block; width: 100%; text-align: left; padding: 12px 20px; 
+                border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 0; 
+            }
+            nav a:hover { background: rgba(255,255,255,0.1); color: var(--secondary); }
             
-            .logo-container { flex: unset; }
-            .logo-wrapper { width: 60px; height: 60px; }
-            .logo-text { margin-left: 10px; padding-left: 10px; }
-            .logo-title { font-size: 1.1rem; }
-            .logo-subtitle { font-size: 0.75rem; }
-
+            /* Mobil Düzenlemeler */
+            .logo-container { flex: unset; } .logo-wrapper { width: 60px; height: 60px; } 
+            .logo-text { margin-left: 10px; padding-left: 10px; } .logo-title { font-size: 1.1rem; } .logo-subtitle { font-size: 0.75rem; }
             .header-right { flex: unset; }
-            
             .hero { margin-top: -120px; padding-top: 120px; height: auto; min-height: 90vh; }
-            .hero h1 { font-size: 2.5rem; }
-            .hero p { font-size: 1.3rem; }
-
-            .about-preview { flex-direction: column; text-align: center; gap: 40px; }
-            .about-image { width: 100%; height: 350px; }
+            .hero h1 { font-size: 2.5rem; } .hero p { font-size: 1.3rem; }
+            .about-preview { flex-direction: column; text-align: center; gap: 40px; } .about-image { width: 100%; height: 350px; }
             .section-title { font-size: 2rem; margin-bottom: 40px; }
         }
     </style>
@@ -162,16 +111,9 @@
 <body>
     <header>
         <div class="logo-container">
-            <div class="logo-wrapper">
-                <img src="images/logo.jpg" alt="HM Carbide Logo" class="logo-img logo-main">
-                <img src="images/gem9.png" alt="HM Carbide Alt Logo" class="logo-img logo-alt">
-            </div>
-            <div class="logo-text">
-                <div class="logo-title">HM CARBIDE</div>
-                <div class="logo-subtitle">SWISS GmbH</div>
-            </div>
+            <div class="logo-wrapper"><img src="images/logo.jpg" alt="Logo" class="logo-img logo-main"><img src="images/gem9.png" alt="Alt Logo" class="logo-img logo-alt"></div>
+            <div class="logo-text"><div class="logo-title">HM CARBIDE</div><div class="logo-subtitle">SWISS GmbH</div></div>
         </div>
-        
         <nav id="navbar">
             <ul>
                 <li><a href="index.html" data-i18n="nav_home">Anasayfa</a></li>
@@ -182,25 +124,14 @@
             </ul>
         </nav>
         <div class="header-right">
-            <div class="lang-switch">
-                <select onchange="changeLanguage(this.value)" id="langSel">
-                    <option value="de">DE</option><option value="en">EN</option><option value="tr">TR</option>
-                </select>
-            </div>
+            <div class="lang-switch"><select onchange="changeLanguage(this.value)" id="langSel"><option value="de">DE</option><option value="en">EN</option><option value="tr">TR</option></select></div>
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
     </header>
 
     <section class="hero">
         <div class="hero-slideshow">
-            <img src="images/gem1.png" class="active" alt="Slide 1">
-            <img src="images/gem2.png" alt="Slide 2">
-            <img src="images/gem3.png" alt="Slide 3">
-            <img src="images/gem4.png" alt="Slide 4">
-            <img src="images/gem5.png" alt="Slide 5">
-            <img src="images/gem6.png" alt="Slide 6">
-            <img src="images/gem7.png" alt="Slide 7">
-            <img src="images/gem8.png" alt="Slide 8">
+            <img src="images/gem1.png" class="active" alt="Slide 1"><img src="images/gem2.png" alt="Slide 2"><img src="images/gem3.png" alt="Slide 3"><img src="images/gem4.png" alt="Slide 4"><img src="images/gem5.png" alt="Slide 5"><img src="images/gem6.png" alt="Slide 6"><img src="images/gem7.png" alt="Slide 7"><img src="images/gem8.png" alt="Slide 8">
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -213,97 +144,37 @@
     <section class="about-preview">
         <div class="about-text">
             <h2 class="section-title" style="text-align: left; margin-bottom: 30px;" data-i18n="about_title">Über Uns</h2>
-            <p data-i18n="about_text">HM Carbide Swiss GmbH ist Ihr zuverlässiger Partner für hochwertige Hartmetallprodukte. Mit Schweizer Präzision und modernster Technologie fertigen wir Lösungen, die höchsten Ansprüchen an Qualität und Langlebigkeit gerecht werden.</p>
+            <p data-i18n="about_text">HM Carbide Swiss GmbH ist Ihr zuverlässiger Partner für hochwertige Hartmetallprodukte.</p>
             <a href="about.html" class="btn btn-outline" data-i18n="about_btn">MEHR ERFAHREN</a>
         </div>
-        <div class="about-image">
-            <img src="images/prod1.jpg" alt="HM Carbide Production"> </div>
+        <div class="about-image"><img src="images/prod1.jpg" alt="Production"></div>
     </section>
 
     <section class="products-preview">
         <h2 class="section-title" data-i18n="products_title">Unsere Produkte</h2>
         <div class="product-grid">
-            <div class="product-card">
-                <div class="product-img"><img src="images/prod1.jpg" alt="Solid Rod"></div>
-                <div class="product-info">
-                    <h3 data-i18n="p1_title">Hartmetallstab Voll</h3>
-                    <a href="products.html" class="btn btn-sm" data-i18n="btn_details">DETAILS</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-img"><img src="images/prod6.jpg" alt="Coolant Rod"></div>
-                <div class="product-info">
-                    <h3 data-i18n="p2_title">Stab mit Kühlkanal</h3>
-                    <a href="products.html" class="btn btn-sm" data-i18n="btn_details">DETAILS</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <div class="product-img"><img src="images/prod7.jpg" alt="Cut Rod"></div>
-                <div class="product-info">
-                    <h3 data-i18n="p3_title">Gekürzter Stab</h3>
-                    <a href="products.html" class="btn btn-sm" data-i18n="btn_details">DETAILS</a>
-                </div>
-            </div>
+            <div class="product-card"><div class="product-img"><img src="images/prod1.jpg" alt="Rod"></div><div class="product-info"><h3 data-i18n="p1_title">Hartmetallstab Voll</h3><a href="products.html" class="btn btn-sm" data-i18n="btn_details">DETAILS</a></div></div>
+            <div class="product-card"><div class="product-img"><img src="images/prod6.jpg" alt="Coolant"></div><div class="product-info"><h3 data-i18n="p2_title">Stab mit Kühlkanal</h3><a href="products.html" class="btn btn-sm" data-i18n="btn_details">DETAILS</a></div></div>
+            <div class="product-card"><div class="product-img"><img src="images/prod7.jpg" alt="Cut"></div><div class="product-info"><h3 data-i18n="p3_title">Gekürzter Stab</h3><a href="products.html" class="btn btn-sm" data-i18n="btn_details">DETAILS</a></div></div>
         </div>
     </section>
 
     <footer><p>© 2024 HM Carbide Swiss GmbH. Romanshornerstrasse 122, 9322 Egnach</p></footer>
 
     <script>
-        // Menü ve Slayt Motoru
         function toggleMenu() { document.getElementById('navbar').classList.toggle('active'); }
         let currentSlide = 0; const slides = document.querySelectorAll('.hero-slideshow img');
-        setInterval(() => {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }, 5000);
+        setInterval(() => { slides[currentSlide].classList.remove('active'); currentSlide = (currentSlide + 1) % slides.length; slides[currentSlide].classList.add('active'); }, 5000);
 
-        // DİL VE ÇEVİRİLER (GÜNCELLENDİ - Yeni Bölümler Eklendi)
         const translations = {
-            de: { 
-                nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", 
-                hero_title:"Perfektion in der Produktion", hero_sub:"Präzision aus der Schweiz für die Welt.", hero_btn_contact:"KONTAKT AUFNEHMEN",
-                // Yeni Çeviriler
-                about_title: "Über Uns",
-                about_text: "HM Carbide Swiss GmbH ist Ihr zuverlässiger Partner für hochwertige Hartmetallprodukte. Mit Schweizer Präzision und modernster Technologie fertigen wir Lösungen, die höchsten Ansprüchen an Qualität und Langlebigkeit gerecht werden.",
-                about_btn: "MEHR ERFAHREN",
-                products_title: "Unsere Produkte",
-                p1_title: "Hartmetallstab Voll", p2_title: "Stab mit Kühlkanal", p3_title: "Gekürzter Stab",
-                btn_details: "DETAILS"
-            },
-            en: { 
-                nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", 
-                hero_title:"Perfection in Production", hero_sub:"Precision from Switzerland for the World.", hero_btn_contact:"GET IN TOUCH",
-                // Yeni Çeviriler
-                about_title: "About Us",
-                about_text: "HM Carbide Swiss GmbH is your reliable partner for high-quality carbide products. With Swiss precision and state-of-the-art technology, we manufacture solutions that meet the highest demands for quality and durability.",
-                about_btn: "LEARN MORE",
-                products_title: "Our Products",
-                p1_title: "Solid Carbide Rod", p2_title: "Rod with Coolant Duct", p3_title: "Cut-to-Length Rod",
-                btn_details: "DETAILS"
-            },
-            tr: { 
-                nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", 
-                hero_title:"Üretimde Mükemmellik", hero_sub:"Dünya için İsviçre hassasiyeti.", hero_btn_contact:"İLETİŞİME GEÇİN",
-                // Yeni Çeviriler
-                about_title: "Hakkımızda",
-                about_text: "HM Carbide Swiss GmbH, yüksek kaliteli karbür ürünler için güvenilir ortağınızdır. İsviçre hassasiyeti ve en son teknoloji ile kalite ve dayanıklılık konusundaki en yüksek talepleri karşılayan çözümler üretiyoruz.",
-                about_btn: "DAHA FAZLA BİLGİ",
-                products_title: "Ürünlerimiz",
-                p1_title: "Tam Boy Karbür Çubuk", p2_title: "Su Kanallı Çubuk", p3_title: "Kesilmiş Çubuk",
-                btn_details: "İNCELE"
-            }
+            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", hero_title:"Perfektion in der Produktion", hero_sub:"Präzision aus der Schweiz für die Welt.", hero_btn_contact:"KONTAKT AUFNEHMEN", about_title: "Über Uns", about_text: "HM Carbide Swiss GmbH ist Ihr zuverlässiger Partner für hochwertige Hartmetallprodukte. Mit Schweizer Präzision und modernster Technologie fertigen wir Lösungen.", about_btn: "MEHR ERFAHREN", products_title: "Unsere Produkte", p1_title: "Hartmetallstab Voll", p2_title: "Stab mit Kühlkanal", p3_title: "Gekürzter Stab", btn_details: "DETAILS" },
+            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", hero_title:"Perfection in Production", hero_sub:"Precision from Switzerland for the World.", hero_btn_contact:"GET IN TOUCH", about_title: "About Us", about_text: "HM Carbide Swiss GmbH is your reliable partner for high-quality carbide products. With Swiss precision and state-of-the-art technology, we manufacture solutions.", about_btn: "LEARN MORE", products_title: "Our Products", p1_title: "Solid Carbide Rod", p2_title: "Rod with Coolant Duct", p3_title: "Cut-to-Length Rod", btn_details: "DETAILS" },
+            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", hero_title:"Üretimde Mükemmellik", hero_sub:"Dünya için İsviçre hassasiyeti.", hero_btn_contact:"İLETİŞİME GEÇİN", about_title: "Hakkımızda", about_text: "HM Carbide Swiss GmbH, yüksek kaliteli karbür ürünler için güvenilir ortağınızdır. İsviçre hassasiyeti ve en son teknoloji ile çözümler üretiyoruz.", about_btn: "DAHA FAZLA BİLGİ", products_title: "Ürünlerimiz", p1_title: "Tam Boy Karbür Çubuk", p2_title: "Su Kanallı Çubuk", p3_title: "Kesilmiş Çubuk", btn_details: "İNCELE" }
         };
-        function changeLanguage(lang) {
-            localStorage.setItem('hm_lang', lang);
-            document.getElementById('langSel').value = lang;
-            document.querySelectorAll('[data-i18n]').forEach(e => {
-                const key = e.getAttribute('data-i18n');
-                if(translations[lang][key]) e.innerText = translations[lang][key];
-            });
-        }
-        document.addEventListener('DOMContentLoaded', () => { changeLanguage(localStorage.getItem('hm_lang') || 'de'); });
+        function changeLanguage(lang) { localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang; document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; }); }
+        // Otomatik Dil
+        function detectAndSetLanguage() { let lang = localStorage.getItem('hm_lang'); if (!lang) { const browserLang = navigator.language || navigator.userLanguage; lang = browserLang.startsWith('tr') ? 'tr' : (browserLang.startsWith('en') ? 'en' : 'de'); } changeLanguage(lang); }
+        document.addEventListener('DOMContentLoaded', detectAndSetLanguage);
     </script>
 </body>
 </html>
