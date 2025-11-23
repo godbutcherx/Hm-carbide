@@ -62,4 +62,65 @@
         <nav id="navbar">
             <ul>
                 <li><a href="index.html" data-i18n="nav_home">Anasayfa</a></li>
-                <li>
+                <li><a href="about.html" data-i18n="nav_about">Hakkımızda</a></li>
+                <li><a href="products.html" data-i18n="nav_products">Ürünlerimiz</a></li>
+                <li><a href="certificates.html" data-i18n="nav_certs">Sertifikalar</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">İletişim</a></li>
+            </ul>
+        </nav>
+        <div class="header-right">
+            <div class="lang-switch"><select onchange="changeLanguage(this.value)" id="langSel"><option value="de">DE</option><option value="en">EN</option><option value="tr">TR</option></select></div>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        </div>
+    </header>
+
+    <div class="contact-wrap">
+        <div class="left-panel">
+            <div class="info-box">
+                <h2 data-i18n="nav_contact" style="color:#1a252f; margin-bottom:20px;">Kontakt</h2>
+                <p><strong>HM Carbide Swiss GmbH</strong></p><br>
+                <p>📍 Romanshornerstrasse 122, 9322 Egnach, Switzerland</p><br>
+                <p>📞 <a href="tel:+41762909193" class="phone-link">+41 76 290 91 93</a></p><br>
+                <p>✉️ <a href="mailto:info@hmcarbide.ch" style="color:#d93025;">info@hmcarbide.ch</a></p>
+            </div>
+            <div class="map-box">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2696.049318856964!2d9.37487327684982!3d47.53900699607713!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479af7d630210751%3A0xe0158924969e788e!2sRomanshornerstrasse%20122%2C%209322%20Egnach%2C%20Switzerland!5e0!3m2!1sen!2str!4v1700000000000!5m2!1sen!2str" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+        <div class="form-box">
+            <h2 style="color:#1a252f; margin-bottom:20px;" data-i18n="form_title">Nachricht Senden</h2>
+            <form action="https://formspree.io/f/SIZIN_FORM_ID_BURAYA" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Name" required data-i18n-ph="ph_name">
+                <input type="email" name="email" placeholder="E-Mail" required data-i18n-ph="ph_email">
+                <textarea name="message" rows="5" placeholder="Message..." required data-i18n-ph="ph_message"></textarea>
+                <button type="submit" class="btn-submit" data-i18n="form_btn">SENDEN</button>
+            </form>
+        </div>
+    </div>
+    <footer><p>© 2024 HM Carbide Swiss GmbH. Romanshornerstrasse 122, 9322 Egnach</p></footer>
+
+    <script>
+        function toggleMenu() { document.getElementById('navbar').classList.toggle('active'); }
+        const translations = {
+            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", form_title:"Nachricht Senden", form_btn:"SENDEN", ph_name:"Name", ph_email:"E-Mail Adresse", ph_message:"Ihre Nachricht..." },
+            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", form_title:"Send Message", form_btn:"SEND", ph_name:"Name", ph_email:"Email Address", ph_message:"Your Message..." },
+            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", form_title:"Mesaj Gönderin", form_btn:"GÖNDER", ph_name:"Adınız", ph_email:"E-Posta Adresi", ph_message:"Mesajınız..." }
+        };
+        // OTOMATİK DİL
+        function detectAndSetLanguage() {
+            let lang = localStorage.getItem('hm_lang');
+            if (!lang) {
+                const browserLang = navigator.language || navigator.userLanguage;
+                lang = browserLang.startsWith('tr') ? 'tr' : (browserLang.startsWith('en') ? 'en' : 'de');
+            }
+            changeLanguage(lang);
+        }
+        function changeLanguage(lang) {
+            localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang;
+            document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; });
+            document.querySelectorAll('[data-i18n-ph]').forEach(e => e.placeholder = translations[lang][e.getAttribute('data-i18n-ph')]);
+        }
+        document.addEventListener('DOMContentLoaded', detectAndSetLanguage);
+    </script>
+</body>
+</html>
