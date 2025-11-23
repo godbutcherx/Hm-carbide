@@ -75,4 +75,24 @@
     <script>
         function toggleMenu() { document.getElementById('navbar').classList.toggle('active'); }
         const translations = {
-            de: { nav_home:"Startseite", nav_about
+            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt" },
+            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact" },
+            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim" }
+        };
+        // OTOMATİK DİL
+        function detectAndSetLanguage() {
+            let lang = localStorage.getItem('hm_lang');
+            if (!lang) {
+                const browserLang = navigator.language || navigator.userLanguage;
+                lang = browserLang.startsWith('tr') ? 'tr' : (browserLang.startsWith('en') ? 'en' : 'de');
+            }
+            changeLanguage(lang);
+        }
+        function changeLanguage(lang) {
+            localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang;
+            document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; });
+        }
+        document.addEventListener('DOMContentLoaded', detectAndSetLanguage);
+    </script>
+</body>
+</html>
