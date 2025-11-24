@@ -5,31 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HM Carbide Swiss GmbH | Certificates</title>
     <style>
+        /* CSS AYNI (YUKARIDAN KOPYALA) */
         :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
         body { background: var(--light); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-        header { background: rgba(26, 37, 47, 0.95); color: white; padding: 0 4%; height: 120px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10000; backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.08); box-shadow: 0 4px 30px rgba(0,0,0,0.25); }
+        header { background: rgba(255, 255, 255, 0.02); color: white; padding: 0 4%; height: 120px; display: flex; align-items: center; justify-content: space-between; position: fixed; width: 100%; top: 0; z-index: 10000; backdrop-filter: blur(5px); border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.5s ease-in-out; }
+        header.scrolled { background: rgba(26, 37, 47, 0.98); height: 100px; box-shadow: 0 4px 30px rgba(0,0,0,0.3); backdrop-filter: blur(15px); border-bottom: none; }
         .logo-container { display: flex; align-items: center; flex: 1.4; z-index: 10002; }
-        .logo-wrapper { position: relative; width: 85px; height: 85px; background: white; padding: 5px; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo-wrapper { position: relative; width: 85px; height: 85px; background: white; padding: 5px; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: all 0.4s; }
+        header.scrolled .logo-wrapper { width: 70px; height: 70px; }
         .logo-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 1.5s ease-in-out; }
         .logo-main { z-index: 2; animation: logoAnimation 8s infinite; } .logo-alt { z-index: 1; }
         @keyframes logoAnimation { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } 100% { opacity: 1; } }
-        .logo-text { margin-left: 15px; padding-left: 15px; border-left: 2px solid rgba(255,255,255,0.2); display: flex; flex-direction: column; justify-content: center; }
-        .logo-title { font-size: 1.4rem; font-weight: 800; color: white; letter-spacing: 1px; line-height: 1.1; }
-        .logo-subtitle { font-size: 0.95rem; font-weight: 500; color: var(--secondary); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; }
+        .logo-text { margin-left: 15px; padding-left: 15px; border-left: 2px solid rgba(255,255,255,0.4); display: flex; flex-direction: column; justify-content: center; }
+        .logo-title { font-size: 1.4rem; font-weight: 800; color: white; letter-spacing: 1px; line-height: 1.1; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .logo-subtitle { font-size: 0.95rem; font-weight: 500; color: var(--secondary); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
         nav { flex: 2; display: flex; justify-content: center; z-index: 10001; }
         nav ul { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; align-items: center; }
-        nav a { position: relative; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.85); border-radius: 25px; transition: all 0.3s ease; }
-        nav a:hover { color: white; background: rgba(255, 255, 255, 0.15); transform: scale(1.05); box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); }
+        nav a { position: relative; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.9); border-radius: 25px; transition: all 0.3s ease; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+        nav a:hover { color: var(--primary); background: rgba(255, 255, 255, 0.9); transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); text-shadow: none; }
         .header-right { display: flex; align-items: center; gap: 15px; flex: 1; justify-content: flex-end; z-index: 10002; }
-        .lang-switch select { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3); padding: 8px 12px; border-radius: 15px; cursor: pointer; font-size: 0.9rem; outline: none; appearance: none; -webkit-appearance: none; text-align: center; }
+        .lang-switch select { background: rgba(0,0,0,0.3); color: white; border: 1px solid rgba(255,255,255,0.5); padding: 8px 12px; border-radius: 15px; cursor: pointer; font-size: 0.9rem; outline: none; appearance: none; -webkit-appearance: none; text-align: center; backdrop-filter: blur(5px); }
         .lang-switch select option { color: black; }
-        .menu-toggle { display: none; font-size: 2.2rem; cursor: pointer; color: white; margin-left: 15px; }
+        .menu-toggle { display: none; font-size: 2rem; cursor: pointer; color: white; margin-left: 10px; }
 
-        .page-header { padding: 160px 5% 60px; text-align: center; background: #f0f2f5; margin-top: -120px; }
-        .page-title { font-size: 2.8rem; font-weight: 800; color: var(--primary); margin-bottom: 10px; }
+        /* PAGE HERO */
+        .page-header-section { background: linear-gradient(135deg, #141e26 0%, #1a252f 100%); padding: 180px 5% 60px; text-align: center; color: white; margin-bottom: 40px; }
+        .page-title { font-size: 2.8rem; font-weight: 800; margin-bottom: 10px; }
+
         .cert-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; padding: 60px 5%; }
         .cert-card { position: relative; background: white; width: 350px; height: 250px; padding: 40px; text-align: center; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; }
         .cert-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
@@ -38,20 +43,31 @@
         .cert-watermark { position: absolute; top: 50%; left: 50%; width: 120%; height: auto; object-fit: contain; opacity: 0; transform: translate(-50%, -50%) scale(0.8); transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); z-index: 1; pointer-events: none; }
         .cert-card:hover .cert-watermark { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; } .reveal.active { opacity: 1; transform: translateY(0); }
-        footer { background: #0f1519; color: #7f8c8d; text-align: center; padding: 30px; margin-top: auto; }
+        
+        /* FOOTER */
+        footer { background-color: #0f141a; color: #a0a0a0; padding-top: 60px; font-size: 0.95rem; border-top: 4px solid var(--secondary); }
+        .footer-container { display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 5% 40px; gap: 40px; }
+        .footer-col { flex: 1; min-width: 250px; }
+        .footer-col h4 { color: white; font-size: 1.1rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; border-left: 3px solid var(--secondary); padding-left: 10px; }
+        .footer-col ul { list-style: none; padding: 0; } .footer-col ul li { margin-bottom: 10px; } .footer-col a { color: #a0a0a0; text-decoration: none; transition: 0.3s; display: inline-block; } .footer-col a:hover { color: white; transform: translateX(5px); }
+        .contact-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+        .footer-linkedin { display: inline-flex; align-items: center; gap: 10px; background: #0077b5; color: white !important; padding: 10px 20px; border-radius: 4px; font-weight: bold; margin-top: 10px; }
+        .footer-bottom { background-color: #080b0e; padding: 20px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
+        .footer-legal a { margin-left: 20px; color: #777; }
 
         @media (max-width: 1100px) {
-            .menu-toggle { display: block; }
+            .menu-toggle { display: block; } header { padding: 0 5%; }
             nav { position: absolute; top: 90px; right: 20px; left: auto; width: 220px; background: rgba(26, 37, 47, 0.98); border-radius: 12px; flex-direction: column; height: auto; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; box-shadow: 0 10px 40px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); }
             nav.active { max-height: 400px; }
             nav ul { flex-direction: column; gap: 0; width: 100%; padding: 10px 0; }
             nav a { display: block; width: 100%; text-align: left; padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 0; }
             .logo-container { flex: unset; } .logo-wrapper { width: 60px; height: 60px; } .logo-text { margin-left: 10px; padding-left: 10px; } .logo-title { font-size: 1.1rem; } .logo-subtitle { font-size: 0.75rem; } .header-right { flex: unset; }
+            .footer-container { flex-direction: column; gap: 40px; } .footer-bottom { flex-direction: column; text-align: center; justify-content: center; }
         }
     </style>
 </head>
 <body>
-    <header>
+    <header id="main-header">
         <div class="logo-container">
             <div class="logo-wrapper"><img src="images/logo.jpg" alt="Logo" class="logo-img logo-main"><img src="images/gem9.png" alt="Alt Logo" class="logo-img logo-alt"></div>
             <div class="logo-text"><div class="logo-title">HM CARBIDE</div><div class="logo-subtitle">SWISS GmbH</div></div>
@@ -71,11 +87,13 @@
         </div>
     </header>
 
-    <div class="page-header"><h1 class="page-title reveal" data-i18n="nav_certs">Zertifikate</h1></div>
+    <div class="page-header-section"><h1 class="page-title reveal" data-i18n="nav_certs">Zertifikate</h1></div>
+
     <div class="cert-container">
         <div class="cert-card reveal"><h3>ISO 9001:2015</h3><p>Quality Management System</p></div>
         <div class="cert-card reveal"><h3 data-i18n="swiss_title">SCHWEIZER QUALITÄT</h3><p data-i18n="swiss_desc">Original Qualität</p><img src="images/gem10.png" class="cert-watermark" alt="Swiss Quality"></div>
     </div>
+
     <footer>
         <div class="footer-container">
             <div class="footer-col">
@@ -104,21 +122,20 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div style="display: flex; flex-direction: column; gap: 5px; text-align: left;">
-                <div>&copy; 2025 HM Carbide Swiss GmbH. All Rights Reserved.</div>
-                <div style="font-size: 1rem; color: #ccc; font-weight: 600;">UID: CHE-477.630.623 MWST</div>
-            </div>
+            <div style="display: flex; flex-direction: column; gap: 5px; text-align: left;"><div>&copy; 2025 HM Carbide Swiss GmbH. All Rights Reserved.</div><div style="font-size: 1rem; color: #ccc; font-weight: 600;">UID: CHE-477.630.623 MWST</div></div>
             <div class="footer-legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
         </div>
     </footer>
 
     <script>
+        window.addEventListener("scroll", function() { const header = document.getElementById("main-header"); if (window.scrollY > 50) header.classList.add("scrolled"); else header.classList.remove("scrolled"); });
         function toggleMenu() { document.getElementById('navbar').classList.toggle('active'); }
         window.addEventListener('scroll', reveal); function reveal(){ var reveals = document.querySelectorAll('.reveal'); for(var i=0; i<reveals.length; i++){ var windowheight=window.innerHeight; var revealtop=reveals[i].getBoundingClientRect().top; if(revealtop < windowheight - 50){ reveals[i].classList.add('active'); } } } reveal();
+
         const translations = {
-            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", swiss_title: "SCHWEIZER QUALITÄT", swiss_desc: "Original Qualität" },
-            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", swiss_title: "SWISS QUALITY", swiss_desc: "Original Quality" },
-            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", swiss_title: "İSVİÇRE KALİTESİ", swiss_desc: "Orijinal Kalite" }
+            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", swiss_title: "SCHWEIZER QUALITÄT", swiss_desc: "Original Qualität", nav_quick:"Quick Links", social_label:"Soziale Medien" },
+            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", swiss_title: "SWISS QUALITY", swiss_desc: "Original Quality", nav_quick:"Quick Links", social_label:"Social Media" },
+            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", swiss_title: "İSVİÇRE KALİTESİ", swiss_desc: "Orijinal Kalite", nav_quick:"Hızlı Linkler", social_label:"Sosyal Medya" }
         };
         function detectAndSetLanguage() { let lang = localStorage.getItem('hm_lang'); if (!lang) { const browserLang = navigator.language || navigator.userLanguage; lang = browserLang.startsWith('tr') ? 'tr' : (browserLang.startsWith('en') ? 'en' : 'de'); } changeLanguage(lang); }
         function changeLanguage(lang) { localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang; document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; }); }
