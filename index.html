@@ -11,7 +11,7 @@
         body { background: var(--light); color: var(--text); line-height: 1.7; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; transition: 0.3s all ease; }
         
-        /* --- 2. HEADER (DİNAMİK ŞEFFAF MENÜ) --- */
+        /* --- 2. HEADER --- */
         header {
             background: rgba(255, 255, 255, 0.02);
             color: white;
@@ -26,10 +26,8 @@
             z-index: 10000;
             backdrop-filter: blur(5px);
             border-bottom: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.5s ease-in-out; /* Geçiş süresi biraz uzatıldı */
+            transition: all 0.5s ease-in-out;
         }
-
-        /* Aşağı kaydırılınca devreye girecek stil */
         header.scrolled {
             background: rgba(26, 37, 47, 0.98);
             height: 100px;
@@ -42,11 +40,9 @@
         .logo-container { display: flex; align-items: center; flex: 1.4; z-index: 10002; }
         .logo-wrapper { position: relative; width: 85px; height: 85px; background: white; padding: 5px; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: all 0.4s; }
         header.scrolled .logo-wrapper { width: 70px; height: 70px; }
-
         .logo-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 1.5s ease-in-out; }
         .logo-main { z-index: 2; animation: logoAnimation 8s infinite; } .logo-alt { z-index: 1; }
         @keyframes logoAnimation { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } 100% { opacity: 1; } }
-        
         .logo-text { margin-left: 15px; padding-left: 15px; border-left: 2px solid rgba(255,255,255,0.4); display: flex; flex-direction: column; justify-content: center; }
         .logo-title { font-size: 1.4rem; font-weight: 800; color: white; letter-spacing: 1px; line-height: 1.1; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         .logo-subtitle { font-size: 0.95rem; font-weight: 500; color: var(--secondary); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
@@ -54,14 +50,8 @@
         /* MENÜ */
         nav { flex: 2; display: flex; justify-content: center; z-index: 10001; }
         nav ul { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; align-items: center; }
-        nav a { 
-            position: relative; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; 
-            padding: 10px 16px; color: rgba(255,255,255,0.9); border-radius: 25px; 
-            transition: all 0.3s ease; text-shadow: 0 2px 5px rgba(0,0,0,0.5);
-        }
-        nav a:hover { 
-            color: var(--primary); background: rgba(255, 255, 255, 0.9); transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); text-shadow: none;
-        }
+        nav a { position: relative; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.9); border-radius: 25px; transition: all 0.3s ease; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+        nav a:hover { color: var(--primary); background: rgba(255, 255, 255, 0.9); transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); text-shadow: none; }
 
         /* SAĞ TARAF */
         .header-right { display: flex; align-items: center; gap: 15px; flex: 1; justify-content: flex-end; z-index: 10002; }
@@ -81,13 +71,13 @@
         .btn:hover { background: #b0261d; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(217, 48, 37, 0.5); }
         .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); box-shadow: none; } .btn-outline:hover { background: var(--primary); color: white; }
         
-        /* --- 4. YENİ DOĞA BÖLÜMÜ (GÜNCELLENDİ) --- */
+        /* --- 4. YENİ DOĞA BÖLÜMÜ (KOYU MAVİ GRADYAN) --- */
         .nature-section {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 100px 5%; /* Padding artırıldı */
-            /* YENİ ARKA PLAN: Ambilight efekti için koyu gradyan */
+            padding: 100px 5%;
+            /* Ambilight Efektli Koyu Arka Plan */
             background: linear-gradient(135deg, #141e26 0%, #1a252f 100%);
             min-height: 70vh;
             position: relative;
@@ -97,7 +87,7 @@
         .nature-container {
             display: flex;
             align-items: center;
-            gap: 80px; /* Boşluk artırıldı */
+            gap: 80px;
             max-width: 1300px;
             margin: 0 auto;
         }
@@ -109,66 +99,55 @@
             justify-content: center;
         }
         
-        /* Gem10.png Görseli - BOYUT SINIRI KALDIRILDI */
+        /* FOTOĞRAF GÜNCELLEMESİ: DAHA BÜYÜK */
         .nature-image img {
-            width: 100%;
-            /* max-width kaldırıldı, artık tam boy */
+            width: 130%; /* Konteynerden taşarak daha büyük görünmesini sağla */
+            max-width: 700px; /* Limit arttırıldı */
             height: auto;
             object-fit: contain;
-            filter: drop-shadow(0 30px 50px rgba(0,0,0,0.3)); /* Gölge güçlendirildi */
+            filter: drop-shadow(0 30px 60px rgba(0,0,0,0.4)); /* Gölge güçlendirildi */
             transition: transform 0.5s ease;
+            transform: scale(1.1); /* Varsayılan olarak biraz zoomlu */
         }
-        .nature-image:hover img { transform: scale(1.03) rotate(1deg); }
+        .nature-image:hover img { transform: scale(1.15) rotate(1deg); }
 
-        .nature-content {
-            flex: 1;
-        }
+        .nature-content { flex: 1; z-index: 2; }
+        .nature-title { font-size: 2.8rem; font-weight: 800; color: #ffffff; margin-bottom: 15px; line-height: 1.2; }
+        .nature-subtitle { font-size: 1.3rem; font-weight: 600; color: var(--secondary); margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
+        .nature-desc { font-size: 1.15rem; color: rgba(255,255,255,0.9); line-height: 1.8; text-align: justify; padding-left: 25px; border-left: 4px solid var(--secondary); }
 
-        /* Metin renkleri koyu arka plana göre güncellendi */
-        .nature-title {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: #ffffff; /* Beyaz */
-            margin-bottom: 15px;
-            line-height: 1.2;
-        }
-
-        .nature-subtitle {
-            font-size: 1.3rem;
-            font-weight: 600;
-            color: var(--secondary);
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .nature-desc {
-            font-size: 1.15rem;
-            color: rgba(255,255,255,0.9); /* Kırık beyaz */
-            line-height: 1.8;
-            text-align: justify;
-            padding-left: 25px;
-            border-left: 4px solid var(--secondary); /* Çizgi rengi kırmızı yapıldı */
-        }
-
-        /* --- 5. DİĞER BÖLÜMLER --- */
-        section { padding: 80px 5%; }
-        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 60px; position: relative; padding-bottom: 20px; }
-        .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--secondary); border-radius: 2px; }
-        
-        .about-preview { display: flex; align-items: center; gap: 60px; background: #f8f9fa; }
+        /* --- 5. HAKKIMIZDA (BEYAZ ZEMİN - KONTRAST) --- */
+        .about-preview { display: flex; align-items: center; gap: 60px; background: #ffffff; padding: 100px 5%; }
+        .section-title { font-size: 2.5rem; text-align: left; margin-bottom: 30px; position: relative; padding-bottom: 20px; color: var(--primary); }
+        .section-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 80px; height: 4px; background: var(--secondary); border-radius: 2px; }
         .about-text { flex: 1; } .about-text p { font-size: 1.1rem; color: var(--text-light); margin-bottom: 30px; }
         .about-image { flex: 1; height: 450px; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .about-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; } .about-image:hover img { transform: scale(1.05); }
         
-        .products-preview { background: white; }
+        /* --- 6. ÜRÜNLER (KOYU ZEMİN - DOĞA BÖLÜMÜYLE AYNI) --- */
+        .products-preview { 
+            background: linear-gradient(135deg, #141e26 0%, #1a252f 100%); /* KOYU ARKA PLAN */
+            padding: 100px 5%;
+        }
+        /* Koyu zemin olduğu için başlığı ortala ve beyaz yap */
+        .products-preview .section-title { text-align: center; color: white; margin-bottom: 60px; }
+        .products-preview .section-title::after { left: 50%; transform: translateX(-50%); }
+
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .product-card { background: var(--light); border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.3s; text-align: center; }
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(0,0,0,0.15); }
-        .product-img { height: 260px; overflow: hidden; } .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .product-card:hover .product-img img { transform: scale(1.1); }
-        .product-info { padding: 30px; } .product-info h3 { font-size: 1.3rem; margin-bottom: 20px; } .btn-sm { padding: 10px 25px; font-size: 0.9rem; }
         
+        /* KARTLAR BEYAZ KALSIN Kİ PATLASIN */
+        .product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: all 0.3s; text-align: center; }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 25px 60px rgba(0,0,0,0.4); }
+        
+        .product-img { height: 260px; overflow: hidden; } 
+        .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .product-card:hover .product-img img { transform: scale(1.1); }
+        
+        .product-info { padding: 30px; } 
+        .product-info h3 { font-size: 1.3rem; margin-bottom: 20px; color: var(--primary); } /* Kart içi yazı koyu */
+        .btn-sm { padding: 10px 25px; font-size: 0.9rem; }
+        
+        /* FOOTER */
         footer { background-color: #0f141a; color: #a0a0a0; padding-top: 60px; font-size: 0.95rem; border-top: 4px solid var(--secondary); }
         .footer-container { display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 5% 40px; gap: 40px; }
         .footer-col { flex: 1; min-width: 250px; }
@@ -179,7 +158,6 @@
         .footer-bottom { background-color: #080b0e; padding: 20px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
         .footer-legal a { margin-left: 20px; color: #777; }
 
-        /* Animasyonlar */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; } .reveal.active { opacity: 1; transform: translateY(0); }
 
         /* MOBİL UYUMU */
@@ -193,10 +171,9 @@
             .logo-container { flex: unset; } .logo-wrapper { width: 60px; height: 60px; } .logo-text { margin-left: 10px; padding-left: 10px; } .logo-title { font-size: 1.1rem; } .logo-subtitle { font-size: 0.75rem; } .header-right { flex: unset; }
             .hero h1 { font-size: 2.5rem; } .hero p { font-size: 1.3rem; }
             
-            /* Doğa Bölümü Mobil */
             .nature-section { padding: 60px 5%; }
             .nature-container { flex-direction: column; text-align: center; gap: 40px; }
-            .nature-image img { width: 80%; max-width: 350px; } /* Mobilde çok devasa olmasın */
+            .nature-image img { width: 100%; max-width: 400px; margin-left: 0; transform: scale(1); } 
             .nature-desc { padding-left: 0; border-left: none; border-top: 3px solid var(--secondary); padding-top: 20px; text-align: center;}
 
             .about-preview { flex-direction: column; text-align: center; gap: 40px; } .about-image { width: 100%; height: 350px; }
@@ -252,7 +229,7 @@
         </div>
     </section>
 
-    <section class="about-preview">
+    <section class="about-preview reveal">
         <div class="about-text">
             <h2 class="section-title" style="text-align: left; margin-bottom: 30px;" data-i18n="about_title">Über Uns</h2>
             <p data-i18n="about_text">HM Carbide Swiss GmbH ist Ihr zuverlässiger Partner für hochwertige Hartmetallprodukte.</p>
@@ -261,7 +238,7 @@
         <div class="about-image"><img src="images/prod1.jpg" alt="Production"></div>
     </section>
 
-    <section class="products-preview">
+    <section class="products-preview reveal">
         <h2 class="section-title" data-i18n="products_title">Unsere Produkte</h2>
         <div class="product-grid">
             <div class="product-card"><div class="product-img"><img src="images/prod1.jpg" alt="Rod"></div><div class="product-info"><h3 data-i18n="p1_title">Hartmetallstab Voll</h3><a href="products.html" class="btn btn-sm" data-i18n="btn_details">DETAILS</a></div></div>
@@ -298,17 +275,16 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <div style="display: flex; flex-direction: column; gap: 5px; text-align: left;"><div>&copy; 2025 HM Carbide Swiss GmbH. All Rights Reserved.</div><div style="font-size: 1rem; color: #ccc; font-weight: 600;">UID: CHE-477.630.623 MWST</div></div>
+            <div style="display: flex; flex-direction: column; gap: 5px; text-align: left;"><div>© 2025 HM Carbide Swiss GmbH. All Rights Reserved.</div><div style="font-size: 1rem; color: #ccc; font-weight: 600;">UID: CHE-477.630.623 MWST</div></div>
             <div class="footer-legal"><a href="#">Impressum</a><a href="#">Datenschutz</a><a href="#">AGB</a></div>
         </div>
     </footer>
 
     <script>
-        // --- HEADER RENK DEĞİŞİMİ (SCROLL İLE - GECİKMELİ) ---
+        // HEADER SCROLL EFEKTİ - Gecikmeli
         window.addEventListener("scroll", function() {
             const header = document.getElementById("main-header");
-            // 300px aşağı inince kararacak (Daha geç)
-            if (window.scrollY > 300) {
+            if (window.scrollY > 400) { // 400px inince kararır
                 header.classList.add("scrolled");
             } else {
                 header.classList.remove("scrolled");
@@ -343,7 +319,7 @@
                 nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", 
                 hero_title:"Üretimde Mükemmellik", hero_sub:"Dünya için İsviçre hassasiyeti.", hero_btn_contact:"İLETİŞİME GEÇİN", 
                 about_title: "Hakkımızda", about_text: "HM Carbide Swiss GmbH, yüksek kaliteli karbür ürünler için güvenilir ortağınızdır.", about_btn: "DAHA FAZLA BİLGİ", 
-                products_title: "Ürünlerimiz", p1_title: "Tam Boy Çubuk", p2_title: "Su Kanallı Çubuk", p3_title: "Kesilmiş Çubuk", btn_details: "İNCELE", nav_quick:"Hızlı Linkler", social_label:"Sosyal Medya",
+                products_title: "Ürünlerimiz", p1_title: "Tam Boy Karbür Çubuk", p2_title: "Su Kanallı Çubuk", p3_title: "Kesilmiş Çubuk", btn_details: "İNCELE", nav_quick:"Hızlı Linkler", social_label:"Sosyal Medya",
                 nat_title: "Tungsten, Karbon, Kobalt... Özümüz Doğa.",
                 nat_sub: "Doğanın En Güçlü Cevherlerini, İsviçre Titizliğiyle Sunuyoruz.",
                 nat_desc: "\"Karbür çubukların eşsiz dayanıklılığı, yerin derinliklerinden gelen elementlerin gücünden doğar. Biz HM Carbide olarak, Tungstenin sertliğini ve Kobaltın bağlayıcılığını en iyi yansıtan ürünleri özenle seçiyor ve sizlerle buluşturuyoruz. Tedarik süreçlerimizde doğanın dengesine saygı duyuyor; sanayinin ihtiyacı olan bu gücü, çevre bilinci ve İsviçre kalite standartlarıyla sunmanın gururunu yaşıyoruz.\""
