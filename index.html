@@ -4,10 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HM Carbide Swiss GmbH | Home</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+
     <style>
         /* --- 1. TEMEL AYARLAR --- */
         :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; --text-light: #777; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Roboto, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         body { background: var(--light); color: var(--text); line-height: 1.7; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; transition: 0.3s all ease; }
         
@@ -45,26 +50,96 @@
         .logo-text { margin-left: 15px; padding-left: 15px; border-left: 2px solid rgba(255,255,255,0.4); display: flex; flex-direction: column; justify-content: center; }
         .logo-title { font-size: 1.4rem; font-weight: 800; color: white; letter-spacing: 1px; line-height: 1.1; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         .logo-subtitle { font-size: 0.95rem; font-weight: 500; color: var(--secondary); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
+        
         nav { flex: 2; display: flex; justify-content: center; z-index: 10001; }
         nav ul { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; align-items: center; }
-        nav a { position: relative; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.9); border-radius: 25px; transition: all 0.3s ease; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
+        nav a { position: relative; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.9); border-radius: 25px; transition: all 0.3s ease; text-shadow: 0 2px 5px rgba(0,0,0,0.5); letter-spacing: 1px; }
         nav a:hover { color: var(--primary); background: rgba(255, 255, 255, 0.9); transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); text-shadow: none; }
+        
         .header-right { display: flex; align-items: center; gap: 15px; flex: 1; justify-content: flex-end; z-index: 10002; }
-        .lang-switch select { background: rgba(0,0,0,0.3); color: white; border: 1px solid rgba(255,255,255,0.5); padding: 8px 12px; border-radius: 15px; cursor: pointer; font-size: 0.9rem; outline: none; appearance: none; -webkit-appearance: none; text-align: center; backdrop-filter: blur(5px); }
+        .lang-switch select { background: rgba(0,0,0,0.3); color: white; border: 1px solid rgba(255,255,255,0.5); padding: 8px 12px; border-radius: 15px; cursor: pointer; font-size: 0.85rem; font-weight: 600; outline: none; appearance: none; -webkit-appearance: none; text-align: center; backdrop-filter: blur(5px); }
         .lang-switch select option { color: black; }
         .menu-toggle { display: none; font-size: 2rem; cursor: pointer; color: white; margin-left: 10px; }
 
-        /* --- 3. HERO --- */
+        /* --- 3. HERO & ANİMASYONLAR --- */
         .hero { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; color: white; overflow: hidden; }
         .hero-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
         .hero-slideshow img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 2s ease-in-out; transform: scale(1.05); }
         .hero-slideshow img.active { opacity: 1; transform: scale(1); }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)); z-index: -1; }
-        .hero h1 { font-size: 4rem; margin-bottom: 20px; text-transform: uppercase; font-weight: 900; text-shadow: 0 5px 30px rgba(0,0,0,0.7); letter-spacing: 2px; line-height: 1.2; }
-        .hero p { font-size: 1.8rem; font-weight: 600; margin-bottom: 40px; text-shadow: 0 2px 15px rgba(0,0,0,0.8); letter-spacing: 1px; color: rgba(255,255,255,0.95); }
-        .btn { padding: 15px 45px; background: var(--secondary); color: white; font-weight: 700; font-size: 1.1rem; border-radius: 50px; box-shadow: 0 10px 20px rgba(217, 48, 37, 0.3); transition: all 0.3s; display: inline-block; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer; text-decoration: none; }
+        
+        /* IMPACT ANIMATION (AĞIR DÜŞÜŞ) */
+        @keyframes industrialDrop {
+            0% { transform: translateY(-150px) scale(1.1); opacity: 0; }
+            60% { transform: translateY(0) scale(1); opacity: 1; } /* Küt diye durur */
+            65% { transform: translateY(-5px); } /* Çok hafif bir tepki (titreşim) */
+            70% { transform: translateY(0); } /* Yerine oturur */
+            100% { transform: translateY(0) scale(1); opacity: 1; }
+        }
+
+        /* METALIC SHEEN (PARLAMA) */
+        @keyframes metalSheen {
+            0% { background-position: -200%; }
+            100% { background-position: 200%; }
+        }
+
+        /* HERO SLOGAN */
+        .hero h1 { 
+            font-size: 4.2rem; 
+            margin-bottom: 15px; 
+            text-transform: uppercase; 
+            font-weight: 900; 
+            letter-spacing: 2px; 
+            line-height: 1.1;
+            
+            /* Animasyon Tanımları */
+            opacity: 0; /* Başta görünmez */
+            animation: industrialDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            animation-delay: 0.5s; /* Sayfa açıldıktan yarım saniye sonra düşsün */
+            
+            /* Metalik Parlama için Maskeleme */
+            background: linear-gradient(75deg, 
+                #ffffff 20%, 
+                #b3b3b3 40%, 
+                #ffffff 50%, 
+                #b3b3b3 60%, 
+                #ffffff 80%);
+            background-size: 200% auto;
+            color: white; /* Fallback */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+            /* Parlama Animasyonu */
+            animation: industrialDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards, 
+                       metalSheen 3s linear infinite; /* Sürekli parlasın */
+            
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Gölge derinlik katar */
+        }
+        
+        /* HERO ALT BAŞLIK */
+        .hero p { 
+            font-size: 1.4rem; 
+            font-weight: 500; 
+            margin-bottom: 40px; 
+            letter-spacing: 4px; 
+            color: rgba(255,255,255,0.9); 
+            text-transform: uppercase;
+            
+            opacity: 0;
+            animation: industrialDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+            animation-delay: 0.8s; /* Başlıktan sonra düşsün */
+        }
+
+        .btn { 
+            padding: 15px 45px; background: var(--secondary); color: white; font-weight: 700; font-size: 1rem; 
+            border-radius: 50px; box-shadow: 0 10px 20px rgba(217, 48, 37, 0.3); transition: all 0.3s; 
+            display: inline-block; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; text-decoration: none; 
+            opacity: 0; animation: fadeUp 1s ease-out forwards; animation-delay: 1.5s; /* En son buton gelsin */
+        }
         .btn:hover { background: #b0261d; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(217, 48, 37, 0.5); }
-        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); box-shadow: none; } .btn-outline:hover { background: var(--primary); color: white; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); box-shadow: none; opacity: 1; animation: none; } 
+        .btn-outline:hover { background: var(--primary); color: white; }
         
         /* --- 4. YENİ DOĞA BÖLÜMÜ --- */
         .nature-section {
@@ -83,7 +158,7 @@
 
         /* --- 5. DİĞER BÖLÜMLER --- */
         section { padding: 80px 5%; }
-        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 60px; position: relative; padding-bottom: 20px; }
+        .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 60px; position: relative; padding-bottom: 20px; font-weight: 800; letter-spacing: 1px; }
         .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--secondary); border-radius: 2px; }
         
         .about-preview { display: flex; align-items: center; gap: 60px; background: #ffffff; padding: 100px 5%; }
@@ -93,7 +168,6 @@
         .about-image { flex: 1; height: 450px; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
         .about-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; } .about-image:hover img { transform: scale(1.05); }
         
-        /* ÜRÜNLER BÖLÜMÜ (KOYU) */
         .products-preview { background: linear-gradient(135deg, #141e26 0%, #1a252f 100%); padding: 100px 5%; }
         .products-preview .section-title { color: white; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
@@ -101,7 +175,7 @@
         .product-card:hover { transform: translateY(-10px); box-shadow: 0 25px 60px rgba(0,0,0,0.4); }
         .product-img { height: 260px; overflow: hidden; } .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .product-card:hover .product-img img { transform: scale(1.1); }
-        .product-info { padding: 30px; } .product-info h3 { font-size: 1.3rem; margin-bottom: 20px; color: var(--primary); } .btn-sm { padding: 10px 25px; font-size: 0.9rem; }
+        .product-info { padding: 30px; } .product-info h3 { font-size: 1.3rem; margin-bottom: 20px; color: var(--primary); font-weight: 700; } .btn-sm { padding: 10px 25px; font-size: 0.9rem; }
         
         /* FOOTER */
         footer { background-color: #0f141a; color: #a0a0a0; padding-top: 60px; font-size: 0.95rem; border-top: 4px solid var(--secondary); }
@@ -116,7 +190,7 @@
 
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; } .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* MOBİL UYUMU */
+        /* --- MOBİL UYUMU (GÜNCELLENDİ) --- */
         @media (max-width: 1100px) {
             .menu-toggle { display: block; } header { padding: 0 5%; }
             nav { position: absolute; top: 90px; right: 20px; left: auto; width: 220px; background: rgba(26, 37, 47, 0.98); border-radius: 12px; flex-direction: column; height: auto; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; box-shadow: 0 10px 40px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); }
@@ -124,7 +198,23 @@
             nav ul { flex-direction: column; gap: 0; width: 100%; padding: 10px 0; }
             nav a { display: block; width: 100%; text-align: left; padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 0; }
             .logo-container { flex: unset; } .logo-wrapper { width: 60px; height: 60px; } .logo-text { margin-left: 10px; padding-left: 10px; } .logo-title { font-size: 1.1rem; } .logo-subtitle { font-size: 0.75rem; } .header-right { flex: unset; }
-            .hero h1 { font-size: 2.5rem; } .hero p { font-size: 1.3rem; }
+            
+            /* MOBİL İÇİN FONT BOYUTU KÜÇÜLTÜLDÜ */
+            .hero h1 { 
+                font-size: 1.7rem; /* 4rem'den 1.7rem'e indi */
+                letter-spacing: 1px; 
+                margin-bottom: 10px;
+                padding: 0 10px; /* Kenarlardan biraz boşluk */
+            } 
+            .hero p { 
+                font-size: 0.9rem; /* Küçültüldü */
+                letter-spacing: 2px; 
+            }
+            .btn {
+                padding: 12px 30px;
+                font-size: 0.9rem;
+            }
+            
             .nature-section { padding: 60px 5%; } .nature-container { flex-direction: column; text-align: center; gap: 40px; } .nature-image img { width: 100%; max-width: 400px; margin-left: 0; transform: scale(1); } .nature-desc { padding-left: 0; border-left: none; border-top: 3px solid var(--secondary); padding-top: 20px; text-align: center;}
             .about-preview { flex-direction: column; text-align: center; gap: 40px; } .about-image { width: 100%; height: 350px; }
             .footer-container { flex-direction: column; gap: 40px; } .footer-bottom { flex-direction: column; text-align: center; justify-content: center; }
