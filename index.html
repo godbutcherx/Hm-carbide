@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&subset=latin-ext&display=swap" rel="stylesheet">
 
     <style>
         /* --- 1. TEMEL AYARLAR --- */
@@ -50,14 +50,12 @@
         .logo-text { margin-left: 15px; padding-left: 15px; border-left: 2px solid rgba(255,255,255,0.4); display: flex; flex-direction: column; justify-content: center; }
         .logo-title { font-size: 1.4rem; font-weight: 800; color: white; letter-spacing: 1px; line-height: 1.1; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         .logo-subtitle { font-size: 0.95rem; font-weight: 500; color: var(--secondary); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
-        
         nav { flex: 2; display: flex; justify-content: center; z-index: 10001; }
         nav ul { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; align-items: center; }
-        nav a { position: relative; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.9); border-radius: 25px; transition: all 0.3s ease; text-shadow: 0 2px 5px rgba(0,0,0,0.5); letter-spacing: 1px; }
+        nav a { position: relative; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.9); border-radius: 25px; transition: all 0.3s ease; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
         nav a:hover { color: var(--primary); background: rgba(255, 255, 255, 0.9); transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); text-shadow: none; }
-        
         .header-right { display: flex; align-items: center; gap: 15px; flex: 1; justify-content: flex-end; z-index: 10002; }
-        .lang-switch select { background: rgba(0,0,0,0.3); color: white; border: 1px solid rgba(255,255,255,0.5); padding: 8px 12px; border-radius: 15px; cursor: pointer; font-size: 0.85rem; font-weight: 600; outline: none; appearance: none; -webkit-appearance: none; text-align: center; backdrop-filter: blur(5px); }
+        .lang-switch select { background: rgba(0,0,0,0.3); color: white; border: 1px solid rgba(255,255,255,0.5); padding: 8px 12px; border-radius: 15px; cursor: pointer; font-size: 0.9rem; outline: none; appearance: none; -webkit-appearance: none; text-align: center; backdrop-filter: blur(5px); }
         .lang-switch select option { color: black; }
         .menu-toggle { display: none; font-size: 2rem; cursor: pointer; color: white; margin-left: 10px; }
 
@@ -68,85 +66,60 @@
         .hero-slideshow img.active { opacity: 1; transform: scale(1); }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)); z-index: -1; }
         
-        /* IMPACT ANIMATION (AĞIR DÜŞÜŞ) */
         @keyframes industrialDrop {
             0% { transform: translateY(-150px) scale(1.1); opacity: 0; }
-            60% { transform: translateY(0) scale(1); opacity: 1; } /* Küt diye durur */
-            65% { transform: translateY(-5px); } /* Çok hafif bir tepki (titreşim) */
-            70% { transform: translateY(0); } /* Yerine oturur */
+            60% { transform: translateY(0) scale(1); opacity: 1; } 
+            65% { transform: translateY(-5px); } 
+            70% { transform: translateY(0); } 
             100% { transform: translateY(0) scale(1); opacity: 1; }
         }
+        @keyframes metalSheen { 0% { background-position: -200%; } 100% { background-position: 200%; } }
 
-        /* METALIC SHEEN (PARLAMA) */
-        @keyframes metalSheen {
-            0% { background-position: -200%; }
-            100% { background-position: 200%; }
-        }
-
-        /* HERO SLOGAN */
+        /* HERO SLOGAN (DÜZELTME: Line Height Arttırıldı) */
         .hero h1 { 
             font-size: 4.2rem; 
             margin-bottom: 15px; 
-            text-transform: uppercase; 
+            /* text-transform: uppercase; -> KALDIRILDI (Elle büyük yazılacak) */
             font-weight: 900; 
             letter-spacing: 2px; 
-            line-height: 1.1;
+            line-height: 1.4; /* İ harfinin noktası kesilmesin diye arttırıldı */
+            padding-top: 10px; /* Üstten biraz boşluk */
             
-            /* Animasyon Tanımları */
-            opacity: 0; /* Başta görünmez */
+            opacity: 0; 
             animation: industrialDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-            animation-delay: 0.5s; /* Sayfa açıldıktan yarım saniye sonra düşsün */
+            animation-delay: 0.5s; 
             
-            /* Metalik Parlama için Maskeleme */
-            background: linear-gradient(75deg, 
-                #ffffff 20%, 
-                #b3b3b3 40%, 
-                #ffffff 50%, 
-                #b3b3b3 60%, 
-                #ffffff 80%);
+            background: linear-gradient(75deg, #ffffff 20%, #b3b3b3 40%, #ffffff 50%, #b3b3b3 60%, #ffffff 80%);
             background-size: 200% auto;
-            color: white; /* Fallback */
+            color: white;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             
-            /* Parlama Animasyonu */
-            animation: industrialDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards, 
-                       metalSheen 3s linear infinite; /* Sürekli parlasın */
-            
-            text-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Gölge derinlik katar */
+            animation: industrialDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards, metalSheen 3s linear infinite;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
         
         /* HERO ALT BAŞLIK */
         .hero p { 
             font-size: 1.4rem; 
-            font-weight: 500; 
+            font-weight: 600; 
             margin-bottom: 40px; 
-            letter-spacing: 4px; 
-            color: rgba(255,255,255,0.9); 
-            text-transform: uppercase;
+            letter-spacing: 3px; 
+            color: rgba(255,255,255,0.95); 
+            /* text-transform: uppercase; -> KALDIRILDI (Elle büyük yazılacak) */
             
             opacity: 0;
             animation: industrialDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-            animation-delay: 0.8s; /* Başlıktan sonra düşsün */
+            animation-delay: 0.8s; 
         }
 
-        .btn { 
-            padding: 15px 45px; background: var(--secondary); color: white; font-weight: 700; font-size: 1rem; 
-            border-radius: 50px; box-shadow: 0 10px 20px rgba(217, 48, 37, 0.3); transition: all 0.3s; 
-            display: inline-block; text-transform: uppercase; letter-spacing: 2px; border: none; cursor: pointer; text-decoration: none; 
-            opacity: 0; animation: fadeUp 1s ease-out forwards; animation-delay: 1.5s; /* En son buton gelsin */
-        }
+        .btn { padding: 15px 45px; background: var(--secondary); color: white; font-weight: 700; font-size: 1.1rem; border-radius: 50px; box-shadow: 0 10px 20px rgba(217, 48, 37, 0.3); transition: all 0.3s; display: inline-block; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer; text-decoration: none; opacity: 0; animation: fadeUp 1s ease-out forwards; animation-delay: 1.5s; }
         .btn:hover { background: #b0261d; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(217, 48, 37, 0.5); }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); box-shadow: none; opacity: 1; animation: none; } 
-        .btn-outline:hover { background: var(--primary); color: white; }
+        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); box-shadow: none; opacity: 1; animation: none; } .btn-outline:hover { background: var(--primary); color: white; }
         
-        /* --- 4. YENİ DOĞA BÖLÜMÜ --- */
-        .nature-section {
-            display: flex; align-items: center; justify-content: center; padding: 100px 5%;
-            background: linear-gradient(135deg, #141e26 0%, #1a252f 100%);
-            min-height: 70vh; position: relative; overflow: hidden;
-        }
+        /* --- 4. DOĞA BÖLÜMÜ --- */
+        .nature-section { display: flex; align-items: center; justify-content: center; padding: 100px 5%; background: linear-gradient(135deg, #141e26 0%, #1a252f 100%); min-height: 70vh; position: relative; overflow: hidden; }
         .nature-container { display: flex; align-items: center; gap: 80px; max-width: 1300px; margin: 0 auto; }
         .nature-image { flex: 1; position: relative; display: flex; justify-content: center; }
         .nature-image img { width: 130%; max-width: 700px; height: auto; object-fit: contain; filter: drop-shadow(0 30px 60px rgba(0,0,0,0.4)); transition: transform 0.5s ease; transform: scale(1.1); }
@@ -190,7 +163,6 @@
 
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; } .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* --- MOBİL UYUMU (GÜNCELLENDİ) --- */
         @media (max-width: 1100px) {
             .menu-toggle { display: block; } header { padding: 0 5%; }
             nav { position: absolute; top: 90px; right: 20px; left: auto; width: 220px; background: rgba(26, 37, 47, 0.98); border-radius: 12px; flex-direction: column; height: auto; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; box-shadow: 0 10px 40px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); }
@@ -198,23 +170,9 @@
             nav ul { flex-direction: column; gap: 0; width: 100%; padding: 10px 0; }
             nav a { display: block; width: 100%; text-align: left; padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 0; }
             .logo-container { flex: unset; } .logo-wrapper { width: 60px; height: 60px; } .logo-text { margin-left: 10px; padding-left: 10px; } .logo-title { font-size: 1.1rem; } .logo-subtitle { font-size: 0.75rem; } .header-right { flex: unset; }
-            
-            /* MOBİL İÇİN FONT BOYUTU KÜÇÜLTÜLDÜ */
-            .hero h1 { 
-                font-size: 1.7rem; /* 4rem'den 1.7rem'e indi */
-                letter-spacing: 1px; 
-                margin-bottom: 10px;
-                padding: 0 10px; /* Kenarlardan biraz boşluk */
-            } 
-            .hero p { 
-                font-size: 0.9rem; /* Küçültüldü */
-                letter-spacing: 2px; 
-            }
-            .btn {
-                padding: 12px 30px;
-                font-size: 0.9rem;
-            }
-            
+            /* Mobil Hero Font */
+            .hero h1 { font-size: 1.7rem; letter-spacing: 1px; margin-bottom: 10px; padding: 0 10px; line-height: 1.4; } 
+            .hero p { font-size: 0.9rem; letter-spacing: 2px; }
             .nature-section { padding: 60px 5%; } .nature-container { flex-direction: column; text-align: center; gap: 40px; } .nature-image img { width: 100%; max-width: 400px; margin-left: 0; transform: scale(1); } .nature-desc { padding-left: 0; border-left: none; border-top: 3px solid var(--secondary); padding-top: 20px; text-align: center;}
             .about-preview { flex-direction: column; text-align: center; gap: 40px; } .about-image { width: 100%; height: 350px; }
             .footer-container { flex-direction: column; gap: 40px; } .footer-bottom { flex-direction: column; text-align: center; justify-content: center; }
@@ -248,8 +206,8 @@
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 data-i18n="hero_title">Schweizer Disziplin, Maximale Beständigkeit</h1>
-            <p data-i18n="hero_sub">Präzision aus der Schweiz für die Welt</p>
+            <h1 data-i18n="hero_title">SCHWEIZER DISZIPLIN, MAXIMALE BESTÄNDIGKEIT</h1>
+            <p data-i18n="hero_sub">PRÄZISION AUS DER SCHWEIZ FÜR DIE WELT</p>
             <a href="contact.html" class="btn" data-i18n="hero_btn_contact">KONTAKT AUFNEHMEN</a>
         </div>
     </section>
@@ -330,7 +288,7 @@
         const translations = {
             de: { 
                 nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", 
-                hero_title:"Schweizer Disziplin, Maximale Beständigkeit", hero_sub:"Präzision aus der Schweiz für die Welt", hero_btn_contact:"KONTAKT AUFNEHMEN", 
+                hero_title:"SCHWEIZER DISZIPLIN, MAXIMALE BESTÄNDIGKEIT", hero_sub:"PRÄZISION AUS DER SCHWEIZ FÜR DIE WELT", hero_btn_contact:"KONTAKT AUFNEHMEN", 
                 about_title: "Über Uns", about_text: "HM Carbide Swiss GmbH ist Ihr zuverlässiger Partner für hochwertige Hartmetallprodukte.", about_btn: "MEHR ERFAHREN", 
                 products_title: "Unsere Produkte", p1_title: "Hartmetallstab Voll", p2_title: "Stab mit Kühlkanal", p3_title: "Gekürzter Stab", btn_details: "DETAILS", nav_quick:"Quick Links", social_label:"Soziale Medien",
                 nat_title: "Tungsten, Karbon, Kobalt... Unser Wesen ist Natur.",
@@ -339,7 +297,7 @@
             },
             en: { 
                 nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", 
-                hero_title:"Swiss Discipline, Maximum Durability", hero_sub:"Precision from Switzerland for the World", hero_btn_contact:"GET IN TOUCH", 
+                hero_title:"SWISS DISCIPLINE, MAXIMUM DURABILITY", hero_sub:"PRECISION FROM SWITZERLAND FOR THE WORLD", hero_btn_contact:"GET IN TOUCH", 
                 about_title: "About Us", about_text: "HM Carbide Swiss GmbH is your reliable partner for high-quality carbide products.", about_btn: "LEARN MORE", 
                 products_title: "Our Products", p1_title: "Solid Carbide Rod", p2_title: "Rod with Coolant Duct", p3_title: "Cut-to-Length Rod", btn_details: "DETAILS", nav_quick:"Quick Links", social_label:"Social Media",
                 nat_title: "Tungsten, Carbon, Cobalt... Our Essence is Nature.",
@@ -348,7 +306,8 @@
             },
             tr: { 
                 nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", 
-                hero_title:"İsviçre Disiplini, Maksimum Dayanım", hero_sub:"Dünya için İsviçre hassasiyeti", hero_btn_contact:"İLETİŞİME GEÇİN", 
+                // DÜZELTİLDİ: TÜRKÇE KARAKTERLER ELLE BÜYÜK YAZILDI (İ, Ş, Ç, Ü vs.)
+                hero_title:"İSVİÇRE DİSİPLİNİ, MAKSİMUM DAYANIM", hero_sub:"DÜNYA İÇİN İSVİÇRE HASSASİYETİ", hero_btn_contact:"İLETİŞİME GEÇİN", 
                 about_title: "Hakkımızda", about_text: "HM Carbide Swiss GmbH, yüksek kaliteli karbür ürünler için güvenilir ortağınızdır.", about_btn: "DAHA FAZLA BİLGİ", 
                 products_title: "Ürünlerimiz", p1_title: "Tam Boy Karbür Çubuk", p2_title: "Su Kanallı Çubuk", p3_title: "Kesilmiş Çubuk", btn_details: "İNCELE", nav_quick:"Hızlı Linkler", social_label:"Sosyal Medya",
                 nat_title: "Tungsten, Karbon, Kobalt... Özümüz Doğa.",
