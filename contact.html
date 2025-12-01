@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HM Carbide Swiss GmbH | Contact</title>
+    
     <meta name="author" content="HM Carbide Swiss GmbH">
     <meta name="description" content="Kontaktieren Sie HM Carbide Swiss GmbH.">
     <meta property="og:image" content="https://www.hmcarbide.ch/images/gem4.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&subset=latin-ext&display=swap" rel="stylesheet">
@@ -135,7 +137,7 @@
                     <img src="images/logo.jpg" alt="HM Carbide Logo" style="height: 50px; border-radius:4px;">
                     <span style="color:white; font-weight:800; font-size:1.2rem; line-height:1.2;">HM CARBIDE<br><span style="color:var(--secondary); font-size:0.9rem;">SWISS GmbH</span></span>
                 </div>
-                <p>Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt.</p>
+                <p data-i18n="footer_desc">Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt.</p>
             </div>
             <div class="footer-col">
                 <h4 data-i18n="nav_quick">Quick Links</h4>
@@ -167,9 +169,9 @@
         window.addEventListener('scroll', reveal); function reveal(){ var reveals = document.querySelectorAll('.reveal'); for(var i=0; i<reveals.length; i++){ var windowheight=window.innerHeight; var revealtop=reveals[i].getBoundingClientRect().top; if(revealtop < windowheight - 50){ reveals[i].classList.add('active'); } } } reveal();
 
         const translations = {
-            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", form_title:"Nachricht Senden", form_btn:"SENDEN", ph_name:"Name", ph_email:"E-Mail Adresse", ph_message:"Ihre Nachricht...", social_label: "Soziale Medien", nav_quick: "Quick Links", contact_info_title:"Kontaktinformationen" },
-            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", form_title:"Send Message", form_btn:"SEND", ph_name:"Name", ph_email:"Email Address", ph_message:"Your Message...", social_label: "Social Media", nav_quick: "Quick Links", contact_info_title:"Contact Information" },
-            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", form_title:"Mesaj Gönderin", form_btn:"GÖNDER", ph_name:"Adınız", ph_email:"E-Posta Adresi", ph_message:"Mesajınız...", social_label: "Sosyal Medya", nav_quick: "Hızlı Linkler", contact_info_title:"İletişim Bilgileri" }
+            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", form_title:"Nachricht Senden", form_btn:"SENDEN", ph_name:"Name", ph_email:"E-Mail Adresse", ph_message:"Ihre Nachricht...", social_label: "Soziale Medien", nav_quick: "Quick Links", contact_info_title:"Kontaktinformationen", footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt." },
+            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", form_title:"Send Message", form_btn:"SEND", ph_name:"Name", ph_email:"Email Address", ph_message:"Your Message...", social_label: "Social Media", nav_quick: "Quick Links", contact_info_title:"Contact Information", footer_desc: "Your reliable partner for wear-resistant and pressure-resistant carbide products. Swiss precision for the world." },
+            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", form_title:"Mesaj Gönderin", form_btn:"GÖNDER", ph_name:"Adınız", ph_email:"E-Posta Adresi", ph_message:"Mesajınız...", social_label: "Sosyal Medya", nav_quick: "Hızlı Linkler", contact_info_title:"İletişim Bilgileri", footer_desc: "Aşınmaya ve basınca dayanıklı karbür ürünler için güvenilir ortağınız. Dünya için İsviçre hassasiyeti." }
         };
         function detectAndSetLanguage() { let lang = localStorage.getItem('hm_lang'); if (!lang) { const browserLang = navigator.language || navigator.userLanguage; lang = browserLang.startsWith('tr') ? 'tr' : (browserLang.startsWith('en') ? 'en' : 'de'); } changeLanguage(lang); }
         function changeLanguage(lang) { localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang; document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; }); document.querySelectorAll('[data-i18n-ph]').forEach(e => e.placeholder = translations[lang][e.getAttribute('data-i18n-ph')]); }
