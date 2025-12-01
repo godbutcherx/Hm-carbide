@@ -4,57 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HM Carbide Swiss GmbH | Home</title>
-    <meta name="author" content="HM Carbide Swiss GmbH">
-    <meta name="description" content="HM Carbide Swiss GmbH - Ihr zuverlässiger Partner für hochwertige Hartmetallstäbe. Schweizer Präzision, Langlebigkeit und maximale Beständigkeit.">
-    <meta name="keywords" content="Hartmetall, Carbide Rods, Tungsten Carbide, Karbür Çubuk, Swiss Made, Hartmetallstäbe, HM Carbide, CNC, Werkzeuge">
-    <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#1a252f">
-
-    <meta property="og:site_name" content="HM Carbide Swiss GmbH">
+    
     <meta property="og:title" content="HM Carbide Swiss GmbH | Schweizer Präzision">
-    <meta property="og:description" content="Hochwertige Hartmetallprodukte mit Schweizer Disziplin und maximaler Beständigkeit.">
-    <meta property="og:image" content="https://www.hmcarbide.ch/images/gem4.png"> <meta property="og:url" content="https://www.hmcarbide.ch">
+    <meta property="og:description" content="Ihr zuverlässiger Partner für hochwertige Hartmetallprodukte.">
+    <meta property="og:image" content="https://www.hmcarbide.ch/images/gem4.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="https://www.hmcarbide.ch">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="de_CH">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&subset=latin-ext&display=swap" rel="stylesheet">
 
-    <link rel="icon" type="image/jpg" href="images/logo.jpg">
-
     <style>
-        /* --- 1. TEMEL AYARLAR --- */
+        /* CSS AYNI (Değişiklik yok) */
         :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; --text-light: #777; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         body { background: var(--light); color: var(--text); line-height: 1.7; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; transition: 0.3s all ease; }
         
-        /* --- 2. HEADER --- */
-        header {
-            background: rgba(255, 255, 255, 0.02);
-            color: white;
-            padding: 0 4%;
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 10000;
-            backdrop-filter: blur(5px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.5s ease-in-out;
-        }
-        header.scrolled {
-            background: rgba(26, 37, 47, 0.98);
-            height: 100px;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
-            backdrop-filter: blur(15px);
-            border-bottom: none;
-        }
-        
+        header { background: rgba(255, 255, 255, 0.02); color: white; padding: 0 4%; height: 120px; display: flex; align-items: center; justify-content: space-between; position: fixed; width: 100%; top: 0; z-index: 10000; backdrop-filter: blur(5px); border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.5s ease-in-out; }
+        header.scrolled { background: rgba(26, 37, 47, 0.98); height: 100px; box-shadow: 0 4px 30px rgba(0,0,0,0.3); backdrop-filter: blur(15px); border-bottom: none; }
         .logo-container { display: flex; align-items: center; flex: 1.4; z-index: 10002; }
         .logo-wrapper { position: relative; width: 85px; height: 85px; background: white; padding: 5px; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: all 0.4s; }
         header.scrolled .logo-wrapper { width: 70px; height: 70px; }
@@ -73,33 +44,20 @@
         .lang-switch select option { color: black; }
         .menu-toggle { display: none; font-size: 2rem; cursor: pointer; color: white; margin-left: 10px; }
 
-        /* --- 3. HERO & ANİMASYONLAR --- */
         .hero { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; color: white; overflow: hidden; }
         .hero-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
         .hero-slideshow img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 2s ease-in-out; transform: scale(1.05); }
         .hero-slideshow img.active { opacity: 1; transform: scale(1); }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)); z-index: -1; }
-        
         @keyframes industrialDrop { 0% { transform: translateY(-150px) scale(1.1); opacity: 0; } 60% { transform: translateY(0) scale(1); opacity: 1; } 65% { transform: translateY(-5px); } 70% { transform: translateY(0); } 100% { transform: translateY(0) scale(1); opacity: 1; } }
         @keyframes metalSheen { 0% { background-position: -200%; } 100% { background-position: 200%; } }
-
-        .hero h1 { 
-            font-size: 4.2rem; margin-bottom: 15px; font-weight: 900; letter-spacing: 2px; line-height: 1.4; padding-top: 10px; 
-            opacity: 0; animation: industrialDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; animation-delay: 0.5s; 
-            background: linear-gradient(75deg, #ffffff 20%, #b3b3b3 40%, #ffffff 50%, #b3b3b3 60%, #ffffff 80%);
-            background-size: 200% auto; color: white; -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            animation: industrialDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards, metalSheen 3s linear infinite; text-shadow: 0 10px 30px rgba(0,0,0,0.5); 
-        }
-        .hero p { 
-            font-size: 1.4rem; font-weight: 600; margin-bottom: 40px; letter-spacing: 3px; color: rgba(255,255,255,0.95); 
-            opacity: 0; animation: industrialDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; animation-delay: 0.8s; 
-        }
+        .hero h1 { font-size: 4.2rem; margin-bottom: 15px; font-weight: 900; letter-spacing: 2px; line-height: 1.4; padding-top: 10px; opacity: 0; animation: industrialDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; animation-delay: 0.5s; background: linear-gradient(75deg, #ffffff 20%, #b3b3b3 40%, #ffffff 50%, #b3b3b3 60%, #ffffff 80%); background-size: 200% auto; color: white; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: industrialDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards, metalSheen 3s linear infinite; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.4rem; font-weight: 600; margin-bottom: 40px; letter-spacing: 3px; color: rgba(255,255,255,0.95); opacity: 0; animation: industrialDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; animation-delay: 0.8s; }
         .btn { padding: 15px 45px; background: var(--secondary); color: white; font-weight: 700; font-size: 1.1rem; border-radius: 50px; box-shadow: 0 10px 20px rgba(217, 48, 37, 0.3); transition: all 0.3s; display: inline-block; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer; text-decoration: none; opacity: 0; animation: fadeUp 1s ease-out forwards; animation-delay: 1.5s; }
         .btn:hover { background: #b0261d; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(217, 48, 37, 0.5); }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); box-shadow: none; opacity: 1; animation: none; } .btn-outline:hover { background: var(--primary); color: white; }
         
-        /* --- 4. DOĞA BÖLÜMÜ --- */
         .nature-section { display: flex; align-items: center; justify-content: center; padding: 100px 5%; background: linear-gradient(135deg, #141e26 0%, #1a252f 100%); min-height: 70vh; position: relative; overflow: hidden; }
         .nature-container { display: flex; align-items: center; gap: 80px; max-width: 1300px; margin: 0 auto; }
         .nature-image { flex: 1; position: relative; display: flex; justify-content: center; }
@@ -110,12 +68,10 @@
         .nature-subtitle { font-size: 1.3rem; font-weight: 600; color: var(--secondary); margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
         .nature-desc { font-size: 1.15rem; color: rgba(255,255,255,0.9); line-height: 1.8; text-align: justify; padding-left: 25px; border-left: 4px solid var(--secondary); }
 
-        /* YENİ: BANNER (GEM4.PNG) */
         .full-width-banner { width: 100%; height: 50vh; overflow: hidden; position: relative; }
         .full-width-banner::after { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.2); }
         .full-width-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 
-        /* --- 5. DİĞER BÖLÜMLER --- */
         section { padding: 80px 5%; }
         .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 60px; position: relative; padding-bottom: 20px; font-weight: 800; letter-spacing: 1px; }
         .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--secondary); border-radius: 2px; }
@@ -136,12 +92,11 @@
         .product-card:hover .product-img img { transform: scale(1.1); }
         .product-info { padding: 30px; } .product-info h3 { font-size: 1.3rem; margin-bottom: 20px; color: var(--primary); font-weight: 700; } .btn-sm { padding: 10px 25px; font-size: 0.9rem; }
         
-        /* FOOTER */
         footer { background-color: #0f141a; color: #a0a0a0; padding-top: 60px; font-size: 0.95rem; border-top: 4px solid var(--secondary); }
         .footer-container { display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 5% 40px; gap: 40px; }
         .footer-col { flex: 1; min-width: 250px; }
-        .footer-col h4 { color: white; font-size: 1.1rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; border-left: 3px solid var(--secondary); padding-left: 10px; }
-        .footer-col ul { list-style: none; padding: 0; } .footer-col ul li { margin-bottom: 10px; } .footer-col a { color: #a0a0a0; text-decoration: none; transition: 0.3s; display: inline-block; } .footer-col a:hover { color: white; transform: translateX(5px); }
+        .footer-col h4 { color: white; font-size: 1.1rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; border-left: 3px solid var(--secondary); padding-left: 10px; font-weight: 700; }
+        .footer-col ul { list-style: none; padding: 0; } .footer-col ul li { margin-bottom: 10px; } .footer-col a { color: #a0a0a0; text-decoration: none; transition: 0.3s; display: inline-block; font-weight: 500; } .footer-col a:hover { color: white; transform: translateX(5px); }
         .contact-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
         .footer-linkedin { display: inline-flex; align-items: center; gap: 10px; background: #0077b5; color: white !important; padding: 10px 20px; border-radius: 4px; font-weight: bold; margin-top: 10px; }
         .footer-bottom { background-color: #080b0e; padding: 20px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
@@ -241,7 +196,7 @@
                     <img src="images/logo.jpg" alt="HM Carbide Logo" style="height: 50px; border-radius:4px;">
                     <span style="color:white; font-weight:800; font-size:1.2rem; line-height:1.2;">HM CARBIDE<br><span style="color:var(--secondary); font-size:0.9rem;">SWISS GmbH</span></span>
                 </div>
-                <p>Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt.</p>
+                <p data-i18n="footer_desc">Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt.</p>
             </div>
             <div class="footer-col">
                 <h4 data-i18n="nav_quick">Quick Links</h4>
@@ -282,7 +237,8 @@
                 products_title: "Unsere Produkte", p1_title: "Hartmetallstab Voll", p2_title: "Stab mit Kühlkanal", p3_title: "Gekürzter Stab", btn_details: "DETAILS", nav_quick:"Quick Links", social_label:"Soziale Medien",
                 nat_title: "Tungsten, Karbon, Kobalt... Unser Wesen ist Natur.",
                 nat_sub: "Wir bieten die stärksten Erze der Natur mit Schweizer Präzision.",
-                nat_desc: "Die einzigartige Haltbarkeit von Hartmetallstäben entsteht aus der Kraft der Elemente aus den Tiefen der Erde. Wir als HM Carbide wählen sorgfältig Produkte aus, die die Härte von Wolfram und die Bindekraft von Kobalt am besten widerspiegeln, und bringen sie zu Ihnen. Wir respektieren das Gleichgewicht der Natur in unseren Lieferprozessen; wir sind stolz darauf, diese Kraft, die die Industrie benötigt, mit Umweltbewusstsein und Schweizer Qualitätsstandards anzubieten."
+                nat_desc: "Die einzigartige Haltbarkeit von Hartmetallstäben entsteht aus der Kraft der Elemente aus den Tiefen der Erde. Wir als HM Carbide wählen sorgfältig Produkte aus, die die Härte von Wolfram und die Bindekraft von Kobalt am besten widerspiegeln, und bringen sie zu Ihnen. Wir respektieren das Gleichgewicht der Natur in unseren Lieferprozessen; wir sind stolz darauf, diese Kraft, die die Industrie benötigt, mit Umweltbewusstsein und Schweizer Qualitätsstandards anzubieten.",
+                footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt."
             },
             en: { 
                 nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", 
@@ -291,7 +247,8 @@
                 products_title: "Our Products", p1_title: "Solid Carbide Rod", p2_title: "Rod with Coolant Duct", p3_title: "Cut-to-Length Rod", btn_details: "DETAILS", nav_quick:"Quick Links", social_label:"Social Media",
                 nat_title: "Tungsten, Carbon, Cobalt... Our Essence is Nature.",
                 nat_sub: "We Offer Nature's Strongest Ores with Swiss Precision.",
-                nat_desc: "The unique durability of carbide rods stems from the power of elements coming from the depths of the earth. As HM Carbide, we carefully select and bring you products that best reflect the hardness of Tungsten and the binding power of Cobalt. We respect the balance of nature in our supply processes; we are proud to offer this power needed by the industry with environmental awareness and Swiss quality standards."
+                nat_desc: "The unique durability of carbide rods stems from the power of elements coming from the depths of the earth. As HM Carbide, we carefully select and bring you products that best reflect the hardness of Tungsten and the binding power of Cobalt. We respect the balance of nature in our supply processes; we are proud to offer this power needed by the industry with environmental awareness and Swiss quality standards.",
+                footer_desc: "Your reliable partner for wear-resistant and pressure-resistant carbide products. Swiss precision for the world."
             },
             tr: { 
                 nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", 
@@ -300,7 +257,8 @@
                 products_title: "Ürünlerimiz", p1_title: "Tam Boy Karbür Çubuk", p2_title: "Su Kanallı Çubuk", p3_title: "Kesilmiş Çubuk", btn_details: "İNCELE", nav_quick:"Hızlı Linkler", social_label:"Sosyal Medya",
                 nat_title: "Tungsten, Karbon, Kobalt... Özümüz Doğa.",
                 nat_sub: "Doğanın En Güçlü Cevherlerini, İsviçre Titizliğiyle Sunuyoruz.",
-                nat_desc: "\"Karbür çubukların eşsiz dayanıklılığı, yerin derinliklerinden gelen elementlerin gücünden doğar. Biz HM Carbide olarak, Tungstenin sertliğini ve Kobaltın bağlayıcılığını en iyi yansıtan ürünleri özenle seçiyor ve sizlerle buluşturuyoruz. Tedarik süreçlerimizde doğanın dengesine saygı duyuyor; sanayinin ihtiyacı olan bu gücü, çevre bilinci ve İsviçre kalite standartlarıyla sunmanın gururunu yaşıyoruz.\""
+                nat_desc: "\"Karbür çubukların eşsiz dayanıklılığı, yerin derinliklerinden gelen elementlerin gücünden doğar. Biz HM Carbide olarak, Tungstenin sertliğini ve Kobaltın bağlayıcılığını en iyi yansıtan ürünleri özenle seçiyor ve sizlerle buluşturuyoruz. Tedarik süreçlerimizde doğanın dengesine saygı duyuyor; sanayinin ihtiyacı olan bu gücü, çevre bilinci ve İsviçre kalite standartlarıyla sunmanın gururunu yaşıyoruz.\"",
+                footer_desc: "Aşınmaya ve basınca dayanıklı karbür ürünler için güvenilir ortağınız. Dünya için İsviçre hassasiyeti."
             }
         };
         function changeLanguage(lang) { localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang; document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; }); }
