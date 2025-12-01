@@ -15,12 +15,12 @@
 
     <style>
         :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; --border-color: #e9ecef; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; } /* FONT GÜNCELLENDİ */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         body { background: #ffffff; color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
 
         /* HEADER */
-        header { background: rgba(26, 37, 47, 0.95); color: white; padding: 0 4%; height: 120px; display: flex; align-items: center; justify-content: space-between; position: fixed; width: 100%; top: 0; z-index: 10000; backdrop-filter: blur(5px); border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.5s ease-in-out; }
+        header { background: rgba(255, 255, 255, 0.02); color: white; padding: 0 4%; height: 120px; display: flex; align-items: center; justify-content: space-between; position: fixed; width: 100%; top: 0; z-index: 10000; backdrop-filter: blur(5px); border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.5s ease-in-out; }
         header.scrolled { background: rgba(26, 37, 47, 0.98); height: 100px; box-shadow: 0 4px 30px rgba(0,0,0,0.3); backdrop-filter: blur(15px); border-bottom: none; }
         .logo-container { display: flex; align-items: center; flex: 1.4; z-index: 10002; }
         .logo-wrapper { position: relative; width: 85px; height: 85px; background: white; padding: 5px; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: all 0.4s; }
@@ -45,7 +45,7 @@
         .page-title { font-size: 3rem; font-weight: 900; margin-bottom: 10px; letter-spacing: 1px; }
         .page-subtitle { font-size: 1.1rem; letter-spacing: 1px; color: rgba(255,255,255,0.8); }
 
-        /* ARAMA */
+        /* SEARCH */
         .search-wrapper { position: relative; max-width: 600px; margin: 30px auto 0; }
         .search-input { width: 100%; padding: 15px 25px; font-size: 1.1rem; border: none; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: 0.3s; outline: none; color: var(--primary); font-family: 'Montserrat', sans-serif; }
         .search-input:focus { box-shadow: 0 10px 40px rgba(217, 48, 37, 0.3); }
@@ -62,6 +62,7 @@
         .card:hover .card-img-wrapper img { transform: scale(1.08); }
         
         .table-wrap { max-height: 350px; overflow-y: auto; padding: 0; flex-grow: 1; }
+        .table-wrap::-webkit-scrollbar { width: 6px; } .table-wrap::-webkit-scrollbar-track { background: #f1f1f1; } .table-wrap::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
         .prod-table { width: 100%; border-collapse: collapse; text-align: left; }
         .prod-table th { position: sticky; top: 0; background: #e9ecef; color: var(--primary); font-weight: 700; padding: 12px 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); z-index: 10; font-size: 0.85rem; text-transform: uppercase; }
         .prod-table td { padding: 12px 15px; border-bottom: 1px solid #eee; font-size: 0.95rem; color: #555; font-weight: 500; }
@@ -174,7 +175,7 @@
                     <img src="images/logo.jpg" alt="HM Carbide Logo" style="height: 50px; border-radius:4px;">
                     <span style="color:white; font-weight:800; font-size:1.2rem; line-height:1.2;">HM CARBIDE<br><span style="color:var(--secondary); font-size:0.9rem;">SWISS GmbH</span></span>
                 </div>
-                <p>Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt.</p>
+                <p data-i18n="footer_desc">Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt.</p>
             </div>
             <div class="footer-col">
                 <h4 data-i18n="nav_quick">Quick Links</h4>
@@ -228,12 +229,12 @@
         }
 
         const translations = {
-            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", p1:"Hartmetallstab Voll", p2:"Mit Kühlkanal", p3:"Gekürzt", tech_title: "Technische Daten", th_grain: "Korngröße (μm)", th_density: "Dichte (g/cm³)", th_hard: "Härte (HRA)", th_trs: "Biegefestigkeit (kgf/mm²)", search_ph: "Dimension suchen (z.B. 12x330)...", nav_quick:"Quick Links", social_label:"Soziale Medien" },
-            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", p1:"Solid Rod", p2:"Coolant Duct", p3:"Cut-to-Length", tech_title: "Technical Specifications", th_grain: "Grain Size (μm)", th_density: "Density (g/cm³)", th_hard: "Hardness (HRA)", th_trs: "TRS (kgf/mm²)", search_ph: "Search dimension (e.g. 12x330)...", nav_quick:"Quick Links", social_label:"Social Media" },
-            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", p1:"Tam Boy Çubuk", p2:"Su Kanallı", p3:"Kesilmiş Çubuk", tech_title: "Teknik Özellikler", th_grain: "Tane Boyutu (μm)", th_density: "Yoğunluk (g/cm³)", th_hard: "Sertlik (HRA)", th_trs: "Kırılma Dayanımı (kgf/mm²)", search_ph: "Ölçü ara (örn. 12x330)...", nav_quick:"Hızlı Linkler", social_label:"Sosyal Medya" }
+            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", p1:"Hartmetallstab Voll", p2:"Mit Kühlkanal", p3:"Gekürzt", tech_title: "Technische Daten", th_grain: "Korngröße (μm)", th_density: "Dichte (g/cm³)", th_hard: "Härte (HRA)", th_trs: "Biegefestigkeit (kgf/mm²)", search_ph: "Dimension suchen (z.B. 12x330)...", nav_quick:"Quick Links", social_label:"Soziale Medien", footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt." },
+            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", p1:"Solid Rod", p2:"Coolant Duct", p3:"Cut-to-Length", tech_title: "Technical Specifications", th_grain: "Grain Size (μm)", th_density: "Density (g/cm³)", th_hard: "Hardness (HRA)", th_trs: "TRS (kgf/mm²)", search_ph: "Search dimension (e.g. 12x330)...", nav_quick:"Quick Links", social_label:"Social Media", footer_desc: "Your reliable partner for wear-resistant and pressure-resistant carbide products. Swiss precision for the world." },
+            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", p1:"Tam Boy Çubuk", p2:"Su Kanallı", p3:"Kesilmiş Çubuk", tech_title: "Teknik Özellikler", th_grain: "Tane Boyutu (μm)", th_density: "Yoğunluk (g/cm³)", th_hard: "Sertlik (HRA)", th_trs: "Kırılma Dayanımı (kgf/mm²)", search_ph: "Ölçü ara (örn. 12x330)...", nav_quick:"Hızlı Linkler", social_label:"Sosyal Medya", footer_desc: "Aşınmaya ve basınca dayanıklı karbür ürünler için güvenilir ortağınız. Dünya için İsviçre hassasiyeti." }
         };
-        function detectAndSetLanguage() { let lang = localStorage.getItem('hm_lang'); if (!lang) { const browserLang = navigator.language || navigator.userLanguage; lang = browserLang.startsWith('tr') ? 'tr' : (browserLang.startsWith('en') ? 'en' : 'de'); } changeLanguage(lang); }
         function changeLanguage(lang) { localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang; document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; }); document.querySelectorAll('[data-i18n-ph]').forEach(e => e.placeholder = translations[lang][e.getAttribute('data-i18n-ph')]); }
+        function detectAndSetLanguage() { let lang = localStorage.getItem('hm_lang'); if (!lang) { const browserLang = navigator.language || navigator.userLanguage; lang = browserLang.startsWith('tr') ? 'tr' : (browserLang.startsWith('en') ? 'en' : 'de'); } changeLanguage(lang); }
         document.addEventListener('DOMContentLoaded', detectAndSetLanguage);
     </script>
 </body>
