@@ -32,10 +32,8 @@
         .lang-switch select option { color: black; }
         .menu-toggle { display: none; font-size: 2rem; cursor: pointer; color: white; margin-left: 10px; }
 
-        /* PAGE HERO (KOYU ARKA PLAN - BEYAZ SAYFA SORUNU ÇÖZÜMÜ) */
         .page-header-section { background: linear-gradient(135deg, #141e26 0%, #1a252f 100%); padding: 180px 5% 60px; text-align: center; color: white; margin-bottom: 40px; }
-        .page-title { font-size: 2.8rem; font-weight: 900; margin-bottom: 10px; }
-
+        .page-title { font-size: 3rem; font-weight: 900; margin-bottom: 10px; letter-spacing: 1px; }
         .cert-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; padding: 60px 5%; }
         .cert-card { position: relative; background: white; width: 350px; height: 250px; padding: 40px; text-align: center; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; }
         .cert-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); }
@@ -43,21 +41,20 @@
         .cert-card p { color: #888; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; z-index: 2; position: relative; }
         .cert-watermark { position: absolute; top: 50%; left: 50%; width: 120%; height: auto; object-fit: contain; opacity: 0; transform: translate(-50%, -50%) scale(0.8); transition: all 0.6s; z-index: 1; pointer-events: none; }
         .cert-card:hover .cert-watermark { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
-        
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; } .reveal.active { opacity: 1; transform: translateY(0); }
         .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 10005; display: flex; align-items: center; justify-content: center; animation: shake 5s infinite; }
         @keyframes shake { 0%, 100% { transform: rotate(0deg); } 10%, 30%, 50%, 70%, 90% { transform: rotate(-10deg); } 20%, 40%, 60%, 80% { transform: rotate(10deg); } }
         
-        /* FOOTER */
         footer { background-color: #0f141a; color: #a0a0a0; padding-top: 60px; font-size: 0.95rem; border-top: 4px solid var(--secondary); }
         .footer-container { display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 5% 40px; gap: 40px; }
         .footer-col { flex: 1; min-width: 250px; } .footer-col h4 { color: white; font-size: 1.1rem; margin-bottom: 20px; border-left: 3px solid var(--secondary); padding-left: 10px; font-weight: 700; }
         .footer-col ul { list-style: none; } .footer-col li { margin-bottom: 10px; } .footer-col a { color: #a0a0a0; text-decoration: none; font-weight: 500; }
         .footer-bottom { background-color: #080b0e; padding: 20px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
 
-        @media (max-width: 1100px) {
-            nav { position: absolute; top: 90px; right: 20px; left: auto; width: 220px; background: rgba(26, 37, 47, 0.98); border-radius: 12px; flex-direction: column; height: auto; max-height: 0; overflow: hidden; transition: 0.4s; }
+        @media (max-width: 1100px) { 
+            nav { position: absolute; top: 90px; right: 20px; left: auto; width: 220px; background: rgba(26, 37, 47, 0.98); border-radius: 12px; flex-direction: column; height: auto; max-height: 0; overflow: hidden; transition: 0.4s; } 
             nav.active { max-height: 400px; } nav ul { flex-direction: column; gap: 0; padding: 10px 0; } nav a { display: block; width: 100%; text-align: left; padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 0; }
-            .menu-toggle { display: block; } .footer-container { flex-direction: column; gap: 40px; } .footer-bottom { flex-direction: column; text-align: center; }
+            .menu-toggle { display: block; } .logo-container { flex: unset; } .header-right { flex: unset; } .footer-container { flex-direction: column; gap: 40px; } .footer-bottom { flex-direction: column; text-align: center; }
             .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 25px; }
         }
     </style>
@@ -80,8 +77,8 @@
     <footer>
         <div class="footer-container">
             <div class="footer-col"><div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;"><img src="images/logo.jpg" style="height:50px;border-radius:4px;"><span style="color:white;font-weight:800;font-size:1.2rem;">HM CARBIDE<br><span style="color:var(--secondary);font-size:0.9rem;">SWISS GmbH</span></span></div><p data-i18n="footer_desc">...</p></div>
-            <div class="footer-col"><h4 data-i18n="nav_quick">HIZLI LİNKLER</h4><ul><li><a href="index.html" data-i18n="nav_home">ANASAYFA</a></li><li><a href="products.html" data-i18n="nav_products">ÜRÜNLERİMİZ</a></li><li><a href="certificates.html" data-i18n="nav_certs">SERTİFİKALAR</a></li><li><a href="about.html" data-i18n="nav_about">HAKKIMIZDA</a></li><li><a href="contact.html" data-i18n="nav_contact">İLETİŞİM</a></li></ul></div>
-            <div class="footer-col"><h4 data-i18n="nav_contact">İLETİŞİM</h4><div class="contact-row"><span>📍</span><span>Romanshornerstrasse 122, 9322 Egnach</span></div><div class="contact-row"><span>📞</span><a href="tel:+41762909193">+41 76 290 91 93</a></div><div class="contact-row"><span>✉️</span><a href="mailto:info@hmcarbide.ch">info@hmcarbide.ch</a></div></div>
+            <div class="footer-col"><h4 data-i18n="nav_quick">SCHNELLZUGRIFF</h4><ul><li><a href="index.html" data-i18n="nav_home">ANASAYFA</a></li><li><a href="products.html" data-i18n="nav_products">ÜRÜNLERİMİZ</a></li><li><a href="certificates.html" data-i18n="nav_certs">SERTİFİKALAR</a></li><li><a href="about.html" data-i18n="nav_about">HAKKIMIZDA</a></li><li><a href="contact.html" data-i18n="nav_contact">İLETİŞİM</a></li></ul></div>
+            <div class="footer-col"><h4 data-i18n="nav_contact">KONTAKT</h4><div class="contact-row"><span>📍</span><span>Romanshornerstrasse 122, 9322 Egnach</span></div><div class="contact-row"><span>📞</span><a href="tel:+41762909193">+41 76 290 91 93</a></div><div class="contact-row"><span>✉️</span><a href="mailto:info@hmcarbide.ch">info@hmcarbide.ch</a></div></div>
         </div>
         <div class="footer-bottom"><div>© 2025 HM Carbide Swiss GmbH. All Rights Reserved.</div><div style="font-size:1rem;color:#ccc;font-weight:600;">UID: CHE-477.630.623 MWST</div></div>
     </footer>
@@ -92,7 +89,7 @@
         window.addEventListener('scroll', reveal); function reveal(){ var reveals = document.querySelectorAll('.reveal'); for(var i=0; i<reveals.length; i++){ var windowheight=window.innerHeight; var revealtop=reveals[i].getBoundingClientRect().top; if(revealtop < windowheight - 50){ reveals[i].classList.add('active'); } } } reveal();
 
         const translations = {
-            de: { nav_home:"ANASAYFA", nav_about:"HAKKIMIZDA", nav_products:"ÜRÜNLERİMİZ", nav_certs:"SERTİFİKALAR", nav_contact:"İLETİŞİM", swiss_title: "SCHWEIZER QUALITÄT", swiss_desc: "Original Qualität", nav_quick:"Quick Links", social_label:"Soziale Medien", footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt." },
+            de: { nav_home:"ANASAYFA", nav_about:"HAKKIMIZDA", nav_products:"ÜRÜNLERİMİZ", nav_certs:"SERTİFİKALAR", nav_contact:"İLETİŞİM", swiss_title: "SCHWEIZER QUALITÄT", swiss_desc: "Original Qualität", nav_quick:"Schnellzugriff", social_label:"Soziale Medien", footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt." },
             en: { nav_home:"HOME", nav_about:"ABOUT US", nav_products:"PRODUCTS", nav_certs:"CERTIFICATES", nav_contact:"CONTACT", swiss_title: "SWISS QUALITY", swiss_desc: "Original Quality", nav_quick:"Quick Links", social_label:"Social Media", footer_desc: "Your reliable partner for wear-resistant and pressure-resistant carbide products. Swiss precision for the world." },
             tr: { nav_home:"ANASAYFA", nav_about:"HAKKIMIZDA", nav_products:"ÜRÜNLERİMİZ", nav_certs:"SERTİFİKALAR", nav_contact:"İLETİŞİM", swiss_title: "İSVİÇRE KALİTESİ", swiss_desc: "ORİJİNAL KALİTE", nav_quick:"HIZLI LİNKLER", social_label:"SOSYAL MEDYA", footer_desc: "Aşınmaya ve basınca dayanıklı karbür ürünler için güvenilir ortağınız. Dünya için İsviçre hassasiyeti." }
         };
