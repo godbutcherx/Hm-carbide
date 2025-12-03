@@ -8,6 +8,9 @@
     <meta property="og:title" content="HM Carbide Swiss GmbH | Schweizer Präzision">
     <meta property="og:description" content="Ihr zuverlässiger Partner für hochwertige Hartmetallprodukte. Schweizer Disziplin, Maximale Beständigkeit.">
     <meta property="og:image" content="https://www.hmcarbide.ch/images/social.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://www.hmcarbide.ch">
     <meta property="og:type" content="website">
     
@@ -49,7 +52,7 @@
             border-bottom: none;
         }
         
-        /* LOGO ALANI */
+        /* LOGO */
         .logo-container { display: flex; align-items: center; flex: 1.4; z-index: 10002; text-decoration: none; cursor: pointer; }
         .logo-wrapper { position: relative; width: 85px; height: 85px; background: white; padding: 5px; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: all 0.4s; }
         header.scrolled .logo-wrapper { width: 70px; height: 70px; }
@@ -57,42 +60,11 @@
         .logo-main { z-index: 2; animation: logoAnimation 8s infinite; } .logo-alt { z-index: 1; }
         @keyframes logoAnimation { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } 100% { opacity: 1; } }
         
-        /* YENİ MARKA YAZISI STİLİ */
-        .logo-text {
-            margin-left: 15px;
-            padding-left: 15px;
-            border-left: 1px solid rgba(255,255,255,0.3);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .brand-name {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 1.5rem;
-            line-height: 1;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            /* Metalik Işıltı */
-            background: linear-gradient(to right, #ffffff 0%, #b3b3b3 20%, #ffffff 40%, #ffffff 100%);
-            background-size: 200% auto;
-            color: white;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 5s linear infinite;
-        }
-        .brand-sub {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: var(--secondary);
-            letter-spacing: 3px;
-            margin-top: 4px;
-        }
-        @keyframes shine {
-            0% { background-position: 200% center; }
-            100% { background-position: -200% center; }
-        }
+        /* MARKA İSMİ (METALİK) */
+        .logo-text { margin-left: 15px; padding-left: 15px; border-left: 1px solid rgba(255,255,255,0.3); display: flex; flex-direction: column; justify-content: center; }
+        .brand-name { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.5rem; line-height: 1; text-transform: uppercase; letter-spacing: 1px; background: linear-gradient(to right, #ffffff 0%, #b3b3b3 20%, #ffffff 40%, #ffffff 100%); background-size: 200% auto; color: white; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; }
+        .brand-sub { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.85rem; color: var(--secondary); letter-spacing: 3px; margin-top: 4px; }
+        @keyframes shine { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
 
         /* MENÜ */
         nav { flex: 2; display: flex; justify-content: center; z-index: 10001; }
@@ -105,7 +77,7 @@
         .lang-switch select option { color: black; }
         .menu-toggle { display: none; font-size: 2rem; cursor: pointer; color: white; margin-left: 10px; }
 
-        /* --- 3. HERO --- */
+        /* --- 3. HERO & ANİMASYONLAR --- */
         .hero { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; color: white; overflow: hidden; }
         .hero-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
         .hero-slideshow img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 2s ease-in-out; transform: scale(1.05); }
@@ -122,7 +94,7 @@
         @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); box-shadow: none; opacity: 1; animation: none; } .btn-outline:hover { background: var(--primary); color: white; }
         
-        /* --- 4. YENİ DOĞA BÖLÜMÜ --- */
+        /* --- 4. DOĞA BÖLÜMÜ --- */
         .nature-section { display: flex; align-items: center; justify-content: center; padding: 100px 5%; background: linear-gradient(135deg, #141e26 0%, #1a252f 100%); min-height: 70vh; position: relative; overflow: hidden; }
         .nature-container { display: flex; align-items: center; gap: 80px; max-width: 1300px; margin: 0 auto; }
         .nature-image { flex: 1; position: relative; display: flex; justify-content: center; }
@@ -133,7 +105,7 @@
         .nature-subtitle { font-size: 1.3rem; font-weight: 600; color: var(--secondary); margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
         .nature-desc { font-size: 1.15rem; color: rgba(255,255,255,0.9); line-height: 1.8; text-align: justify; padding-left: 25px; border-left: 4px solid var(--secondary); }
 
-        /* BANNER */
+        /* YENİ: BANNER (GEM4.PNG) */
         .full-width-banner { width: 100%; height: 50vh; overflow: hidden; position: relative; }
         .full-width-banner::after { content: ''; position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.2); }
         .full-width-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
@@ -164,15 +136,15 @@
         .footer-container { display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 5% 40px; gap: 40px; }
         .footer-col { flex: 1; min-width: 250px; }
         .footer-col h4 { color: white; font-size: 1.1rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; border-left: 3px solid var(--secondary); padding-left: 10px; font-weight: 700; }
-        .footer-col ul { list-style: none; padding: 0; } .footer-col ul li { margin-bottom: 10px; font-size: 0.9rem; } .footer-col a { color: #a0a0a0; text-decoration: none; font-weight: 500; font-size: 0.9rem;  text-transform: none; /* Hepsini büyük yapmayı engeller */ } .footer-col a:hover { color: white; transform: translateX(5px); }
-        .contact-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
-        .footer-linkedin { display: inline-flex; align-items: center; gap: 10px; background: #0077b5; color: white !important; padding: 10px 20px; border-radius: 4px; font-weight: bold; margin-top: 10px; }
+        .footer-col ul { list-style: none; padding: 0; } .footer-col ul li { margin-bottom: 10px; font-size: 0.9rem; } 
+        .footer-col a { color: #a0a0a0; text-decoration: none; font-weight: 500; font-size: 0.9rem; text-transform: none; } /* Footer linkleri baş harf büyük */
+        .footer-col a:hover { color: white; transform: translateX(5px); }
+        .contact-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; font-size: 0.9rem; }
+        .footer-linkedin { display: inline-flex; align-items: center; gap: 10px; background: #0077b5; color: white !important; padding: 10px 20px; border-radius: 4px; font-weight: bold; margin-top: 10px; text-transform: none; }
         .footer-bottom { background-color: #080b0e; padding: 20px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
         .footer-legal a { margin-left: 20px; color: #777; }
 
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; } .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* WHATSAPP BUTONU */
         .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 10005; display: flex; align-items: center; justify-content: center; animation: shake 5s infinite; }
         @keyframes shake { 0%, 100% { transform: rotate(0deg); } 10%, 30%, 50%, 70%, 90% { transform: rotate(-10deg); } 20%, 40%, 60%, 80% { transform: rotate(10deg); } }
 
@@ -182,11 +154,10 @@
             nav.active { max-height: 400px; }
             nav ul { flex-direction: column; gap: 0; width: 100%; padding: 10px 0; }
             nav a { display: block; width: 100%; text-align: left; padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 0; }
-            .logo-container { flex: unset; } .logo-wrapper { width: 60px; height: 60px; } .logo-text { margin-left: 10px; padding-left: 10px; } .header-right { flex: unset; }
-            
-            /* Mobilde Marka İsmi Boyutu */
+            .logo-container { flex: unset; } .logo-wrapper { width: 60px; height: 60px; } .logo-text { margin-left: 10px; padding-left: 10px; } 
+            /* Mobilde Marka Boyutu */
             .brand-name { font-size: 1.2rem; } .brand-sub { font-size: 0.7rem; letter-spacing: 2px; }
-            
+            .header-right { flex: unset; }
             .hero h1 { font-size: 1.7rem; letter-spacing: 1px; margin-bottom: 10px; padding: 0 10px; line-height: 1.4; } .hero p { font-size: 0.9rem; letter-spacing: 2px; }
             .nature-section { padding: 60px 5%; } .nature-container { flex-direction: column; text-align: center; gap: 40px; } .nature-image img { width: 100%; max-width: 400px; margin-left: 0; transform: scale(1); } .nature-desc { padding-left: 0; border-left: none; border-top: 3px solid var(--secondary); padding-top: 20px; text-align: center;}
             .about-preview { flex-direction: column; text-align: center; gap: 40px; } .about-image { width: 100%; height: 350px; }
@@ -263,147 +234,25 @@
     <footer>
         <div class="footer-container">
             <div class="footer-col"><div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;"><img src="images/logo.jpg" style="height:50px;border-radius:4px;"><span style="color:white;font-weight:800;font-size:1.2rem;">HM CARBIDE<br><span style="color:var(--secondary);font-size:0.9rem;">SWISS GmbH</span></span></div><p data-i18n="footer_desc">Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt.</p></div>
-            <div class="footer-col"><h4 data-i18n="nav_quick">SCHNELLZUGRIFF</h4><ul><li><a href="index.html" data-i18n="nav_home">Startseite</a></li><li><a href="products.html" data-i18n="nav_products">Produkte</a></li><li><a href="certificates.html" data-i18n="nav_certs">Zertifikate</a></li><li><a href="about.html" data-i18n="nav_about">Über Uns</a></li><li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li></ul></div>
-            <div class="footer-col"><h4 data-i18n="nav_contact">KONTAKT</h4><div class="contact-row"><span>📍</span><span>Romanshornerstrasse 122, 9322 Egnach</span></div><div class="contact-row"><span>📞</span><a href="tel:+41762909193">+41 76 290 91 93</a></div><div class="contact-row"><span>✉️</span><a href="mailto:info@hmcarbide.ch">info@hmcarbide.ch</a></div><a href="https://www.linkedin.com/company/hmcarbideswiss/" target="_blank" class="footer-linkedin"><svg style="width:16px; height:16px; fill:white;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>Follow on LinkedIn</a></div>
+            <div class="footer-col"><h4 data-i18n="nav_quick">Schnellzugriff</h4><ul><li><a href="index.html" data-i18n="nav_home">Startseite</a></li><li><a href="products.html" data-i18n="nav_products">Produkte</a></li><li><a href="certificates.html" data-i18n="nav_certs">Zertifikate</a></li><li><a href="about.html" data-i18n="nav_about">Über Uns</a></li><li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li></ul></div>
+            <div class="footer-col"><h4 data-i18n="nav_contact">Kontakt</h4><div class="contact-row"><span>📍</span><span>Romanshornerstrasse 122, 9322 Egnach</span></div><div class="contact-row"><span>📞</span><a href="tel:+41762909193">+41 76 290 91 93</a></div><div class="contact-row"><span>✉️</span><a href="mailto:info@hmcarbide.ch">info@hmcarbide.ch</a></div><a href="https://www.linkedin.com/company/hmcarbideswiss/" target="_blank" class="footer-linkedin"><svg style="width:16px; height:16px; fill:white;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>Follow on LinkedIn</a></div>
         </div>
         <div class="footer-bottom"><div>© 2025 HM Carbide Swiss GmbH. All Rights Reserved.</div><div style="font-size:1rem;color:#ccc;font-weight:600;">UID: CHE-477.630.623 MWST</div></div>
     </footer>
 
     <script>
-        window.addEventListener("scroll", function() { const header = document.getElementById("main-header"); if (window.scrollY > 50) header.classList.add("scrolled"); else header.classList.remove("scrolled"); });
+        // HEADER SCROLL EFEKTİ
+        window.addEventListener("scroll", function() { const header = document.getElementById("main-header"); if (window.scrollY > 300) header.classList.add("scrolled"); else header.classList.remove("scrolled"); });
+        
         function toggleMenu() { document.getElementById('navbar').classList.toggle('active'); }
         window.addEventListener('scroll', reveal); function reveal(){ var reveals = document.querySelectorAll('.reveal'); for(var i=0; i<reveals.length; i++){ var windowheight=window.innerHeight; var revealtop=reveals[i].getBoundingClientRect().top; if(revealtop < windowheight - 50){ reveals[i].classList.add('active'); } } } reveal();
 
         const translations = {
-            de: { 
-                nav_home:"Startseite", 
-                nav_about:"Über Uns", 
-                nav_products:"Produkte", 
-                nav_certs:"Zertifikate", 
-                nav_contact:"Kontakt", 
-                hero_title:"SCHWEIZER DISZIPLIN, MAXIMALE BESTÄNDIGKEIT", 
-                hero_sub:"PRÄZISION AUS DER SCHWEIZ FÜR DIE WELT", 
-                hero_btn_contact:"KONTAKT AUFNEHMEN", 
-                about_title: "Über Uns", 
-                about_text: "HM Carbide Swiss GmbH ist Ihr zuverlässiger Partner für hochwertige Hartmetallprodukte.", 
-                about_btn: "MEHR ERFAHREN", 
-                products_title: "Unsere Produkte", 
-                p1_title: "Hartmetallstab Voll", 
-                p2_title: "Stab mit Kühlkanal", 
-                p3_title: "Gekürzter Stab", 
-                btn_details: "DETAILS", 
-                nav_quick:"Schnellzugriff", 
-                social_label:"Soziale Medien", 
-                footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt." 
-            },
-            en: { 
-                nav_home:"Home", 
-                nav_about:"About Us", 
-                nav_products:"Products", 
-                nav_certs:"Certificates", 
-                nav_contact:"Contact", 
-                hero_title:"SWISS DISCIPLINE, MAXIMUM DURABILITY", 
-                hero_sub:"PRECISION FROM SWITZERLAND FOR THE WORLD", 
-                hero_btn_contact:"GET IN TOUCH", 
-                about_title: "About Us", 
-                about_text: "HM Carbide Swiss GmbH is your reliable partner for high-quality carbide products.", 
-                about_btn: "LEARN MORE", 
-                products_title: "Our Products", 
-                p1_title: "Solid Carbide Rod", 
-                p2_title: "Rod with Coolant Duct", 
-                p3_title: "Cut-to-Length Rod", 
-                btn_details: "DETAILS", 
-                nav_quick:"Quick Links", 
-                social_label:"Social Media", 
-                footer_desc: "Your reliable partner for wear-resistant and pressure-resistant carbide products. Swiss precision for the world." 
-            },
-            tr: { 
-                nav_home:"Anasayfa", 
-                nav_about:"Hakkımızda", 
-                nav_products:"Ürünlerimiz", 
-                nav_certs:"Sertifikalar", 
-                nav_contact:"İletişim", 
-                hero_title:"İSVİÇRE DİSİPLİNİ, MAKSİMUM DAYANIM", 
-                hero_sub:"DÜNYA İÇİN İSVİÇRE HASSASİYETİ", 
-                hero_btn_contact:"İLETİŞİME GEÇİN", 
-                about_title: "Hakkımızda", 
-                about_text: "HM Carbide Swiss GmbH, yüksek kaliteli karbür ürünler için güvenilir ortağınızdır.", 
-                about_btn: "DAHA FAZLA BİLGİ", 
-                products_title: "Ürünlerimiz", 
-                p1_title: "Tam Boy Karbür Çubuk", 
-                p2_title: "Su Kanallı Çubuk", 
-                p3_title: "Kesilmiş Çubuk", 
-                btn_details: "İNCELE", 
-                nav_quick:"Hızlı Linkler", 
-                social_label:"Sosyal Medya", 
-                footer_desc: "Aşınmaya ve basınca dayanıklı karbür ürünler için güvenilir ortağınız. Dünya için İsviçre hassasiyeti." 
-            }
-        };const translations = {
-            de: { 
-                nav_home:"Startseite", 
-                nav_about:"Über Uns", 
-                nav_products:"Produkte", 
-                nav_certs:"Zertifikate", 
-                nav_contact:"Kontakt", 
-                hero_title:"SCHWEIZER DISZIPLIN, MAXIMALE BESTÄNDIGKEIT", 
-                hero_sub:"PRÄZISION AUS DER SCHWEIZ FÜR DIE WELT", 
-                hero_btn_contact:"KONTAKT AUFNEHMEN", 
-                about_title: "Über Uns", 
-                about_text: "HM Carbide Swiss GmbH ist Ihr zuverlässiger Partner für hochwertige Hartmetallprodukte.", 
-                about_btn: "MEHR ERFAHREN", 
-                products_title: "Unsere Produkte", 
-                p1_title: "Hartmetallstab Voll", 
-                p2_title: "Stab mit Kühlkanal", 
-                p3_title: "Gekürzter Stab", 
-                btn_details: "DETAILS", 
-                nav_quick:"Schnellzugriff", 
-                social_label:"Soziale Medien", 
-                footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt." 
-            },
-            en: { 
-                nav_home:"Home", 
-                nav_about:"About Us", 
-                nav_products:"Products", 
-                nav_certs:"Certificates", 
-                nav_contact:"Contact", 
-                hero_title:"SWISS DISCIPLINE, MAXIMUM DURABILITY", 
-                hero_sub:"PRECISION FROM SWITZERLAND FOR THE WORLD", 
-                hero_btn_contact:"GET IN TOUCH", 
-                about_title: "About Us", 
-                about_text: "HM Carbide Swiss GmbH is your reliable partner for high-quality carbide products.", 
-                about_btn: "LEARN MORE", 
-                products_title: "Our Products", 
-                p1_title: "Solid Carbide Rod", 
-                p2_title: "Rod with Coolant Duct", 
-                p3_title: "Cut-to-Length Rod", 
-                btn_details: "DETAILS", 
-                nav_quick:"Quick Links", 
-                social_label:"Social Media", 
-                footer_desc: "Your reliable partner for wear-resistant and pressure-resistant carbide products. Swiss precision for the world." 
-            },
-            tr: { 
-                nav_home:"Anasayfa", 
-                nav_about:"Hakkımızda", 
-                nav_products:"Ürünlerimiz", 
-                nav_certs:"Sertifikalar", 
-                nav_contact:"İletişim", 
-                hero_title:"İSVİÇRE DİSİPLİNİ, MAKSİMUM DAYANIM", 
-                hero_sub:"DÜNYA İÇİN İSVİÇRE HASSASİYETİ", 
-                hero_btn_contact:"İLETİŞİME GEÇİN", 
-                about_title: "Hakkımızda", 
-                about_text: "HM Carbide Swiss GmbH, yüksek kaliteli karbür ürünler için güvenilir ortağınızdır.", 
-                about_btn: "DAHA FAZLA BİLGİ", 
-                products_title: "Ürünlerimiz", 
-                p1_title: "Tam Boy Karbür Çubuk", 
-                p2_title: "Su Kanallı Çubuk", 
-                p3_title: "Kesilmiş Çubuk", 
-                btn_details: "İNCELE", 
-                nav_quick:"Hızlı Linkler", 
-                social_label:"Sosyal Medya", 
-                footer_desc: "Aşınmaya ve basınca dayanıklı karbür ürünler için güvenilir ortağınız. Dünya için İsviçre hassasiyeti." 
-            }
+            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", form_title:"Nachricht Senden", form_btn:"SENDEN", ph_name:"Name", ph_email:"E-Mail Adresse", ph_message:"Ihre Nachricht...", social_label: "Soziale Medien", nav_quick:"Schnellzugriff", contact_info_title:"Kontaktinformationen", footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt." },
+            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", form_title:"Send Message", form_btn:"SEND", ph_name:"Name", ph_email:"Email Address", ph_message:"Your Message...", social_label: "Social Media", nav_quick: "Quick Links", contact_info_title:"Contact Information", footer_desc: "Your reliable partner for wear-resistant and pressure-resistant carbide products. Swiss precision for the world." },
+            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", form_title:"Mesaj Gönderin", form_btn:"GÖNDER", ph_name:"Adınız", ph_email:"E-Posta Adresi", ph_message:"Mesajınız...", social_label: "Sosyal Medya", nav_quick: "Hızlı Linkler", contact_info_title:"İletişim Bilgileri", footer_desc: "Aşınmaya ve basınca dayanıklı karbür ürünler için güvenilir ortağınız. Dünya için İsviçre hassasiyeti." }
         };
-        function changeLanguage(lang) { localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang; document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; }); }
+        function changeLanguage(lang) { localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang; document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; }); document.querySelectorAll('[data-i18n-ph]').forEach(e => e.placeholder = translations[lang][e.getAttribute('data-i18n-ph')]); }
         function detectAndSetLanguage() { let lang = localStorage.getItem('hm_lang'); if (!lang) { const browserLang = navigator.language || navigator.userLanguage; lang = browserLang.startsWith('tr') ? 'tr' : (browserLang.startsWith('en') ? 'en' : 'de'); } changeLanguage(lang); }
         document.addEventListener('DOMContentLoaded', detectAndSetLanguage);
     </script>
