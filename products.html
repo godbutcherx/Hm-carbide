@@ -4,14 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HM Carbide Swiss GmbH | Produkte</title>
-    
     <meta name="author" content="HM Carbide Swiss GmbH">
     <meta name="description" content="Hochwertige Hartmetallprodukte. Schweizer Präzision.">
     <meta property="og:image" content="https://www.hmcarbide.ch/images/social.jpg">
     <link rel="icon" type="image/jpg" href="images/logo.jpg">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&subset=latin-ext&display=swap" rel="stylesheet">
 
     <style>
@@ -19,14 +15,14 @@
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         body { background: #ffffff; color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
-
-        /* HEADER & NAV (STANDART) */
-        header { background: rgba(255, 255, 255, 0.02); color: white; padding: 0 4%; height: 120px; display: flex; align-items: center; justify-content: space-between; position: fixed; width: 100%; top: 0; z-index: 10000; backdrop-filter: blur(5px); border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.5s ease-in-out; }
+        
+        /* HEADER */
+        header { background: rgba(255, 255, 255, 0.02); color: white; padding: 0 4%; height: 120px; display: flex; align-items: center; justify-content: space-between; position: fixed; width: 100%; top: 0; z-index: 10000; backdrop-filter: blur(5px); border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.5s; }
         header.scrolled { background: rgba(26, 37, 47, 0.98); height: 100px; box-shadow: 0 4px 30px rgba(0,0,0,0.3); backdrop-filter: blur(15px); border-bottom: none; }
         .logo-container { display: flex; align-items: center; flex: 1.4; z-index: 10002; text-decoration: none; cursor: pointer; }
         .logo-wrapper { position: relative; width: 85px; height: 85px; background: white; padding: 5px; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: all 0.4s; }
         header.scrolled .logo-wrapper { width: 70px; height: 70px; }
-        .logo-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 1.5s ease-in-out; }
+        .logo-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 1.5s; }
         .logo-main { z-index: 2; animation: logoAnimation 8s infinite; } .logo-alt { z-index: 1; }
         @keyframes logoAnimation { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } 100% { opacity: 1; } }
         .logo-text { margin-left: 15px; padding-left: 15px; border-left: 2px solid rgba(255,255,255,0.4); display: flex; flex-direction: column; justify-content: center; }
@@ -45,14 +41,14 @@
         .page-header-section { background: linear-gradient(135deg, #141e26 0%, #1a252f 100%); padding: 180px 5% 60px; text-align: center; color: white; margin-bottom: 40px; }
         .page-title { font-size: 3rem; font-weight: 900; margin-bottom: 10px; letter-spacing: 1px; }
         .page-subtitle { font-size: 1.1rem; letter-spacing: 1px; color: rgba(255,255,255,0.8); }
-
+        
         /* ARAMA */
         .search-wrapper { position: relative; max-width: 600px; margin: 30px auto 0; }
         .search-input { width: 100%; padding: 15px 25px; font-size: 1.1rem; border: none; border-radius: 50px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: 0.3s; outline: none; color: var(--primary); font-family: 'Montserrat', sans-serif; }
         .search-input:focus { box-shadow: 0 10px 40px rgba(217, 48, 37, 0.3); }
         .search-icon { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 1.2rem; pointer-events: none; }
-
-        /* GRID VE KARTLAR */
+        
+        /* PRODUCTS */
         .prod-container { padding: 0 5%; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-bottom: 80px; }
         .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: transform 0.3s; border: 1px solid #eee; display: flex; flex-direction: column;}
@@ -61,16 +57,14 @@
         .card-img-wrapper { height: 220px; overflow: hidden; background: #f8f9fa; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #eee; }
         .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .card:hover .card-img-wrapper img { transform: scale(1.08); }
-        
         .table-wrap { max-height: 350px; overflow-y: auto; padding: 0; flex-grow: 1; }
-        .table-wrap::-webkit-scrollbar { width: 6px; } .table-wrap::-webkit-scrollbar-track { background: #f1f1f1; } .table-wrap::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
         .prod-table { width: 100%; border-collapse: collapse; text-align: left; }
         .prod-table th { position: sticky; top: 0; background: #e9ecef; color: var(--primary); font-weight: 700; padding: 12px 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); z-index: 10; font-size: 0.85rem; text-transform: uppercase; }
         .prod-table td { padding: 12px 15px; border-bottom: 1px solid #eee; font-size: 0.95rem; color: #555; font-weight: 500; }
         .prod-table tbody tr:nth-child(even) { background-color: #f8f9fa; } .prod-table tbody tr:hover { background-color: #f1f2f6; color: var(--primary); }
         .prod-table.detailed td + td, .prod-table.detailed th + th { border-left: 1px solid #eee; }
 
-        /* TEKNİK TABLO */
+        /* TECH TABLE */
         .tech-specs-section { padding: 0 5% 80px; }
         .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 40px; color: var(--primary); position: relative; padding-bottom: 15px; font-weight: 800; }
         .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: var(--secondary); border-radius: 2px; }
@@ -79,18 +73,22 @@
         .tech-table thead { background: var(--primary); color: white; }
         .tech-table th { padding: 18px 15px; text-align: center; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; border-right: 1px solid rgba(255,255,255,0.1); }
         .tech-table td { padding: 15px; text-align: center; border-bottom: 1px solid #eee; font-size: 1rem; color: #444; font-weight: 600; border-right: 1px solid #eee; }
-        .tech-table td:last-child { border-right: none; } .tech-table tbody tr:nth-child(even) { background-color: #f8f9fa; }
+        .tech-table td:last-child { border-right: none; } .tech-table tbody tr:nth-child(even) { background-color: #f8f9fa; } .tech-table tbody tr:hover { background-color: #eef2f5; }
 
         .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 10005; display: flex; align-items: center; justify-content: center; animation: shake 5s infinite; }
         @keyframes shake { 0%, 100% { transform: rotate(0deg); } 10%, 30%, 50%, 70%, 90% { transform: rotate(-10deg); } 20%, 40%, 60%, 80% { transform: rotate(10deg); } }
         .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; } .reveal.active { opacity: 1; transform: translateY(0); }
 
-        /* FOOTER & MOBİL */
-        footer { background-color: #0f141a; color: #a0a0a0; padding-top: 60px; font-size: 0.95rem; border-top: 4px solid var(--secondary); }
+        /* FOOTER (YAZI BOYUTU DÜZELTİLDİ) */
+        footer { background-color: #0f141a; color: #a0a0a0; padding-top: 60px; font-size: 0.9rem; border-top: 4px solid var(--secondary); }
         .footer-container { display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 5% 40px; gap: 40px; }
-        .footer-col { flex: 1; min-width: 250px; } .footer-col h4 { color: white; font-size: 1.1rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; border-left: 3px solid var(--secondary); padding-left: 10px; font-weight: 700; }
-        .footer-col ul { list-style: none; padding: 0; } .footer-col ul li { margin-bottom: 10px; } .footer-col a { color: #a0a0a0; text-decoration: none; transition: 0.3s; display: inline-block; font-weight: 500; } .footer-col a:hover { color: white; transform: translateX(5px); }
-        .contact-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
+        .footer-col { flex: 1; min-width: 250px; }
+        .footer-col h4 { color: white; font-size: 1.1rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; border-left: 3px solid var(--secondary); padding-left: 10px; font-weight: 700; }
+        .footer-col ul { list-style: none; padding: 0; } 
+        .footer-col ul li { margin-bottom: 10px; font-size: 0.9rem; } /* FONT BOYUTU SABİTLENDİ */
+        .footer-col a { color: #a0a0a0; text-decoration: none; transition: 0.3s; display: inline-block; font-weight: 500; font-size: 0.9rem; } /* FONT BOYUTU SABİTLENDİ */
+        .footer-col a:hover { color: white; transform: translateX(5px); }
+        .contact-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; font-size: 0.9rem; }
         .footer-linkedin { display: inline-flex; align-items: center; gap: 10px; background: #0077b5; color: white !important; padding: 10px 20px; border-radius: 4px; font-weight: bold; margin-top: 10px; }
         .footer-bottom { background-color: #080b0e; padding: 20px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
         .footer-legal a { margin-left: 20px; color: #777; }
@@ -110,7 +108,7 @@
 <body>
     <header id="main-header">
         <a href="index.html" class="logo-container"><div class="logo-wrapper"><img src="images/logo.jpg" alt="Logo" class="logo-img logo-main"><img src="images/gem9.png" alt="Alt Logo" class="logo-img logo-alt"></div><div class="logo-text"><div class="logo-title">HM CARBIDE</div><div class="logo-subtitle">SWISS GmbH</div></div></a>
-        <nav id="navbar"><ul><li><a href="index.html" data-i18n="nav_home">ANASAYFA</a></li><li><a href="about.html" data-i18n="nav_about">HAKKIMIZDA</a></li><li><a href="products.html" data-i18n="nav_products">ÜRÜNLERİMİZ</a></li><li><a href="certificates.html" data-i18n="nav_certs">SERTİFİKALAR</a></li><li><a href="contact.html" data-i18n="nav_contact">İLETİŞİM</a></li></ul></nav>
+        <nav id="navbar"><ul><li><a href="index.html" data-i18n="nav_home">STARTSEITE</a></li><li><a href="about.html" data-i18n="nav_about">ÜBER UNS</a></li><li><a href="products.html" data-i18n="nav_products">PRODUKTE</a></li><li><a href="certificates.html" data-i18n="nav_certs">ZERTIFIKATE</a></li><li><a href="contact.html" data-i18n="nav_contact">KONTAKT</a></li></ul></nav>
         <div class="header-right"><div class="lang-switch"><select onchange="changeLanguage(this.value)" id="langSel"><option value="de">DE</option><option value="en">EN</option><option value="tr">TR</option></select></div><div class="menu-toggle" onclick="toggleMenu()">☰</div></div>
     </header>
 
@@ -160,9 +158,9 @@
 
     <footer>
         <div class="footer-container">
-            <div class="footer-col"><div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;"><img src="images/logo.jpg" style="height:50px;border-radius:4px;"><span style="color:white;font-weight:800;font-size:1.2rem;">HM CARBIDE<br><span style="color:var(--secondary);font-size:0.9rem;">SWISS GmbH</span></span></div><p data-i18n="footer_desc">...</p></div>
-            <div class="footer-col"><h4 data-i18n="nav_quick">SCHNELLZUGRIFF</h4><ul><li><a href="index.html" data-i18n="nav_home">ANASAYFA</a></li><li><a href="products.html" data-i18n="nav_products">ÜRÜNLERİMİZ</a></li><li><a href="certificates.html" data-i18n="nav_certs">SERTİFİKALAR</a></li><li><a href="about.html" data-i18n="nav_about">HAKKIMIZDA</a></li><li><a href="contact.html" data-i18n="nav_contact">İLETİŞİM</a></li></ul></div>
-            <div class="footer-col"><h4 data-i18n="nav_contact">KONTAKT</h4><div class="contact-row"><span>📍</span><span>Romanshornerstrasse 122, 9322 Egnach</span></div><div class="contact-row"><span>📞</span><a href="tel:+41762909193">+41 76 290 91 93</a></div><div class="contact-row"><span>✉️</span><a href="mailto:info@hmcarbide.ch">info@hmcarbide.ch</a></div></div>
+            <div class="footer-col"><div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;"><img src="images/logo.jpg" style="height:50px;border-radius:4px;"><span style="color:white;font-weight:800;font-size:1.2rem;">HM CARBIDE<br><span style="color:var(--secondary);font-size:0.9rem;">SWISS GmbH</span></span></div><p data-i18n="footer_desc">Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt.</p></div>
+            <div class="footer-col"><h4 data-i18n="nav_quick">Schnellzugriff</h4><ul><li><a href="index.html" data-i18n="nav_home">Startseite</a></li><li><a href="products.html" data-i18n="nav_products">Produkte</a></li><li><a href="certificates.html" data-i18n="nav_certs">Zertifikate</a></li><li><a href="about.html" data-i18n="nav_about">Über Uns</a></li><li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li></ul></div>
+            <div class="footer-col"><h4 data-i18n="nav_contact">Kontakt</h4><div class="contact-row"><span>📍</span><span>Romanshornerstrasse 122, 9322 Egnach</span></div><div class="contact-row"><span>📞</span><a href="tel:+41762909193">+41 76 290 91 93</a></div><div class="contact-row"><span>✉️</span><a href="mailto:info@hmcarbide.ch">info@hmcarbide.ch</a></div><a href="https://www.linkedin.com/company/hmcarbideswiss/" target="_blank" class="footer-linkedin"><svg style="width:16px; height:16px; fill:white;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>Follow on LinkedIn</a></div>
         </div>
         <div class="footer-bottom"><div>© 2025 HM Carbide Swiss GmbH. All Rights Reserved.</div><div style="font-size:1rem;color:#ccc;font-weight:600;">UID: CHE-477.630.623 MWST</div></div>
     </footer>
@@ -175,28 +173,14 @@
         const d1 = []; for (let i = 1; i <= 30; i++) { d1.push(i + "x330"); } d1.push("32x330");
         const d2_detailed = [{ dim: "4 x 330", id: "0.5", dist: "1.6" }, { dim: "4 x 330", id: "0.8", dist: "1.7" }, { dim: "6 x 330", id: "1.0", dist: "2.4" }, { dim: "6 x 330", id: "1.0", dist: "3.0" }, { dim: "8 x 330", id: "1.0", dist: "2.6" }, { dim: "8 x 330", id: "1.0", dist: "3.9" }, { dim: "10 x 330", id: "1.0", dist: "2.5" }, { dim: "10 x 330", id: "1.4", dist: "4.9" }, { dim: "12 x 330", id: "1.2", dist: "3.5" }, { dim: "12 x 330", id: "1.8", dist: "5.0" }, { dim: "14 x 330", id: "1.5", dist: "5.0" }, { dim: "14 x 330", id: "1.8", dist: "5.8" }, { dim: "16 x 330", id: "1.0", dist: "5.0" }, { dim: "16 x 330", id: "2.0", dist: "7.8" }, { dim: "18 x 330", id: "2.0", dist: "6.0" }, { dim: "18 x 330", id: "2.0", dist: "8.8" }, { dim: "20 x 330", id: "2.0", dist: "6.0" }, { dim: "20 x 330", id: "2.5", dist: "9.8" }, { dim: "22 x 330", id: "2.0", dist: "6.0" }, { dim: "22 x 330", id: "2.5", dist: "10.8" }, { dim: "23 x 330", id: "2.0", dist: "7.5" }, { dim: "24 x 330", id: "2.0", dist: "7.5" }, { dim: "24 x 330", id: "3.0", dist: "11.8" }, { dim: "25 x 330", id: "2.0", dist: "7.5" }, { dim: "25 x 330", id: "3.0", dist: "11.8" }];
         const d3 = ["3x40", "3x50", "4x40", "4x50", "5x50", "6x50", "6x57", "6x60", "8x58", "8x63", "10x66", "10x72", "12x73", "12x83", "14x75", "14x83", "16x82", "16x92", "18x92", "20x104"];
-
         function fillSimple(id, arr){ document.querySelector(`#${id} tbody`).innerHTML = arr.map(x=>`<tr><td>ø ${x} mm</td></tr>`).join(''); }
         function fillDetailed(id, arr) { document.querySelector(`#${id} tbody`).innerHTML = arr.map(item => `<tr><td>${item.dim}</td><td>${item.id}</td><td>${item.dist}</td></tr>`).join(''); }
         fillSimple('t1', d1); fillDetailed('t2', d2_detailed); fillSimple('t3', d3);
-
-        function filterProducts() {
-            const input = document.getElementById('productSearch').value.toLowerCase().replace(/\s+/g, '');
-            ['t1', 't2', 't3'].forEach(id => {
-                const table = document.getElementById(id);
-                const rows = table.querySelector('tbody').getElementsByTagName('tr');
-                let hasVisible = false;
-                for(let i=0; i<rows.length; i++){
-                    const txt = rows[i].textContent.toLowerCase().replace(/\s+/g, '');
-                    if(txt.includes(input)) { rows[i].style.display = ""; hasVisible = true; } else { rows[i].style.display = "none"; }
-                }
-                table.closest('.card').style.display = hasVisible ? "" : "none";
-            });
-        }
+        function filterProducts() { const input = document.getElementById('productSearch').value.toLowerCase().replace(/\s+/g, ''); ['t1', 't2', 't3'].forEach(id => { const table = document.getElementById(id); const rows = table.querySelector('tbody').getElementsByTagName('tr'); let hasVisible = false; for(let i=0; i<rows.length; i++){ const txt = rows[i].textContent.toLowerCase().replace(/\s+/g, ''); if(txt.includes(input)) { rows[i].style.display = ""; hasVisible = true; } else { rows[i].style.display = "none"; } } table.closest('.card').style.display = hasVisible ? "" : "none"; }); }
 
         const translations = {
-            de: { nav_home:"ANASAYFA", nav_about:"HAKKIMIZDA", nav_products:"ÜRÜNLERİMİZ", nav_certs:"SERTİFİKALAR", nav_contact:"İLETİŞİM", p1:"Hartmetallstab Voll", p2:"Mit Kühlkanal", p3:"Gekürzt", tech_title: "Technische Daten", th_grain: "Korngröße (μm)", th_density: "Dichte (g/cm³)", th_hard: "Härte (HRA)", th_trs: "Biegefestigkeit (kgf/mm²)", search_ph: "Dimension suchen (z.B. 12x330)...", nav_quick:"Schnellzugriff", social_label:"Soziale Medien", footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt." },
-            en: { nav_home:"HOME", nav_about:"ABOUT US", nav_products:"PRODUCTS", nav_certs:"CERTIFICATES", nav_contact:"CONTACT", p1:"Solid Rod", p2:"Coolant Duct", p3:"Cut-to-Length", tech_title: "Technical Specifications", th_grain: "Grain Size (μm)", th_density: "Density (g/cm³)", th_hard: "Hardness (HRA)", th_trs: "TRS (kgf/mm²)", search_ph: "Search dimension (e.g. 12x330)...", nav_quick:"Quick Links", social_label:"Social Media", footer_desc: "Your reliable partner for wear-resistant and pressure-resistant carbide products. Swiss precision for the world." },
+            de: { nav_home:"STARTSEITE", nav_about:"ÜBER UNS", nav_products:"PRODUKTE", nav_certs:"ZERTIFIKATE", nav_contact:"KONTAKT", p1:"Hartmetallstab Voll", p2:"Mit Kühlkanal", p3:"Gekürzt", tech_title: "Technische Daten", th_grain: "Korngröße (μm)", th_density: "Dichte (g/cm³)", th_hard: "Härte (HRA)", th_trs: "Biegefestigkeit (kgf/mm²)", search_ph: "Dimension suchen (z.B. 12x330)...", nav_quick:"SCHNELLZUGRIFF", social_label:"Soziale Medien", footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt." },
+            en: { nav_home:"HOME", nav_about:"ABOUT US", nav_products:"PRODUCTS", nav_certs:"CERTIFICATES", nav_contact:"CONTACT", p1:"Solid Rod", p2:"Coolant Duct", p3:"Cut-to-Length", tech_title: "Technical Specifications", th_grain: "Grain Size (μm)", th_density: "Density (g/cm³)", th_hard: "Hardness (HRA)", th_trs: "TRS (kgf/mm²)", search_ph: "Search dimension (e.g. 12x330)...", nav_quick:"QUICK LINKS", social_label:"Social Media", footer_desc: "Your reliable partner for wear-resistant and pressure-resistant carbide products. Swiss precision for the world." },
             tr: { nav_home:"ANASAYFA", nav_about:"HAKKIMIZDA", nav_products:"ÜRÜNLERİMİZ", nav_certs:"SERTİFİKALAR", nav_contact:"İLETİŞİM", p1:"Tam Boy Karbür Çubuk", p2:"Su Kanallı Çubuk", p3:"Kesilmiş Çubuk", tech_title: "Teknik Özellikler", th_grain: "Tane Boyutu (μm)", th_density: "Yoğunluk (g/cm³)", th_hard: "Sertlik (HRA)", th_trs: "Kırılma Dayanımı (kgf/mm²)", search_ph: "Ölçü ara (örn. 12x330)...", nav_quick:"HIZLI LİNKLER", social_label:"SOSYAL MEDYA", footer_desc: "Aşınmaya ve basınca dayanıklı karbür ürünler için güvenilir ortağınız. Dünya için İsviçre hassasiyeti." }
         };
         function changeLanguage(lang) { localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang; document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; }); document.querySelectorAll('[data-i18n-ph]').forEach(e => e.placeholder = translations[lang][e.getAttribute('data-i18n-ph')]); }
