@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&subset=latin-ext&display=swap" rel="stylesheet">
     <link rel="icon" type="image/jpg" href="images/logo.jpg">
     <style>
+        /* STYLES AYNI */
         :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         body { background: var(--light); color: var(--text); line-height: 1.8; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
@@ -23,7 +24,7 @@
         .logo-title { font-size: 1.4rem; font-weight: 800; line-height: 1.1; } .logo-subtitle { font-size: 0.95rem; font-weight: 500; color: var(--secondary); margin-top: 3px; }
         nav { flex: 2; display: flex; justify-content: center; z-index: 10001; }
         nav ul { display: flex; gap: 10px; list-style: none; }
-        nav a { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.9); border-radius: 25px; }
+        nav a { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.9); border-radius: 25px; transition: all 0.3s ease; }
         nav a:hover { color: var(--primary); background: rgba(255, 255, 255, 0.9); }
         .header-right { display: flex; align-items: center; gap: 15px; flex: 1; justify-content: flex-end; z-index: 10002; }
         .lang-switch select { background: rgba(0,0,0,0.3); color: white; border: 1px solid rgba(255,255,255,0.5); padding: 8px 12px; border-radius: 15px; cursor: pointer; font-weight: 600; }
@@ -45,6 +46,7 @@
         .footer-container { display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 5% 40px; gap: 40px; }
         .footer-col { flex: 1; min-width: 250px; } .footer-col h4 { color: white; font-size: 1.1rem; margin-bottom: 20px; border-left: 3px solid var(--secondary); padding-left: 10px; font-weight: 700; }
         .footer-col ul { list-style: none; } .footer-col li { margin-bottom: 10px; } .footer-col a { color: #a0a0a0; text-decoration: none; font-weight: 500; }
+        .contact-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
         .footer-bottom { background-color: #080b0e; padding: 20px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
 
         @media (max-width: 1100px) { 
@@ -70,8 +72,8 @@
     <footer>
         <div class="footer-container">
             <div class="footer-col"><div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;"><img src="images/logo.jpg" style="height:50px;border-radius:4px;"><span style="color:white;font-weight:800;font-size:1.2rem;">HM CARBIDE<br><span style="color:var(--secondary);font-size:0.9rem;">SWISS GmbH</span></span></div><p data-i18n="footer_desc">...</p></div>
-            <div class="footer-col"><h4 data-i18n="nav_quick">HIZLI LİNKLER</h4><ul><li><a href="index.html" data-i18n="nav_home">ANASAYFA</a></li><li><a href="products.html" data-i18n="nav_products">ÜRÜNLERİMİZ</a></li><li><a href="certificates.html" data-i18n="nav_certs">SERTİFİKALAR</a></li><li><a href="about.html" data-i18n="nav_about">HAKKIMIZDA</a></li><li><a href="contact.html" data-i18n="nav_contact">İLETİŞİM</a></li></ul></div>
-            <div class="footer-col"><h4 data-i18n="nav_contact">İLETİŞİM</h4><div class="contact-row"><span>📍</span><span>Romanshornerstrasse 122, 9322 Egnach</span></div><div class="contact-row"><span>📞</span><a href="tel:+41762909193">+41 76 290 91 93</a></div><div class="contact-row"><span>✉️</span><a href="mailto:info@hmcarbide.ch">info@hmcarbide.ch</a></div></div>
+            <div class="footer-col"><h4 data-i18n="nav_quick">SCHNELLZUGRIFF</h4><ul><li><a href="index.html" data-i18n="nav_home">ANASAYFA</a></li><li><a href="products.html" data-i18n="nav_products">ÜRÜNLERİMİZ</a></li><li><a href="certificates.html" data-i18n="nav_certs">SERTİFİKALAR</a></li><li><a href="about.html" data-i18n="nav_about">HAKKIMIZDA</a></li><li><a href="contact.html" data-i18n="nav_contact">İLETİŞİM</a></li></ul></div>
+            <div class="footer-col"><h4 data-i18n="nav_contact">KONTAKT</h4><div class="contact-row"><span>📍</span><span>Romanshornerstrasse 122, 9322 Egnach</span></div><div class="contact-row"><span>📞</span><a href="tel:+41762909193">+41 76 290 91 93</a></div><div class="contact-row"><span>✉️</span><a href="mailto:info@hmcarbide.ch">info@hmcarbide.ch</a></div></div>
         </div>
         <div class="footer-bottom"><div>© 2025 HM Carbide Swiss GmbH. All Rights Reserved.</div><div style="font-size:1rem;color:#ccc;font-weight:600;">UID: CHE-477.630.623 MWST</div></div>
     </footer>
@@ -83,7 +85,7 @@
 
         const translations = {
             de: { nav_home:"ANASAYFA", nav_about:"HAKKIMIZDA", nav_products:"ÜRÜNLERİMİZ", nav_certs:"SERTİFİKALAR", nav_contact:"İLETİŞİM", 
-                content: "<h3>Die Kraft der Erfahrung, die Sicherheit von HM Carbide</h3><p>Dank unserer jahrelangen Erfahrung in der Zerspanungs- und Hartmetallindustrie kennen wir die Bedürfnisse der Fertigungswelt sehr genau. HM Carbide Swiss GmbH wurde gegründet, um dieses Wissen mit Schweizer Produktionsqualität zu verbinden und unseren Kunden die genauesten Rohstofflösungen anzubieten.</p><p>Mit unseren in der Schweiz ansässigen Operationen liefern wir nach europäischen Standards hergestellte Hartmetallstäbe zu wettbewerbsfähigen Bedingungen und mit zuverlässigem Lieferkettenmanagement an unsere Geschäftspartner. Unser Ziel ist es, die Stillstandzeiten in den Produktionslinien unserer Kunden zu minimieren und die Werkzeugstandzeiten zu maximieren.</p><p>Mit unserer Erfahrung aus der Vergangenheit und unserer Vision für die Zukunft sind wir als HM Carbide Swiss GmbH hier, um Ihrem Geschäft einen Mehrwert zu bieten.</p>", nav_quick:"Quick Links", social_label:"Soziale Medien", footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt." },
+                content: "<h3>Die Kraft der Erfahrung, die Sicherheit von HM Carbide</h3><p>Dank unserer jahrelangen Erfahrung in der Zerspanungs- und Hartmetallindustrie kennen wir die Bedürfnisse der Fertigungswelt sehr genau. HM Carbide Swiss GmbH wurde gegründet, um dieses Wissen mit Schweizer Produktionsqualität zu verbinden und unseren Kunden die genauesten Rohstofflösungen anzubieten.</p><p>Mit unseren in der Schweiz ansässigen Operationen liefern wir nach europäischen Standards hergestellte Hartmetallstäbe zu wettbewerbsfähigen Bedingungen und mit zuverlässigem Lieferkettenmanagement an unsere Geschäftspartner. Unser Ziel ist es, die Stillstandzeiten in den Produktionslinien unserer Kunden zu minimieren und die Werkzeugstandzeiten zu maximieren.</p><p>Mit unserer Erfahrung aus der Vergangenheit und unserer Vision für die Zukunft sind wir als HM Carbide Swiss GmbH hier, um Ihrem Geschäft einen Mehrwert zu bieten.</p>", nav_quick:"Schnellzugriff", social_label:"Soziale Medien", footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt." },
             en: { nav_home:"HOME", nav_about:"ABOUT US", nav_products:"PRODUCTS", nav_certs:"CERTIFICATES", nav_contact:"CONTACT", 
                 content: "<h3>The Power of Experience, The Assurance of HM Carbide</h3><p>With years of experience in the machining and carbide industry, we know the needs of the manufacturing world very well. HM Carbide Swiss GmbH was founded to combine this knowledge with Swiss production quality to offer our customers the most accurate raw material solutions.</p><p>With our Swiss-based operations, we deliver carbide rods produced to European standards to our business partners with competitive conditions and reliable supply chain management. Our goal is to minimize downtime in our customers' production lines and maximize tool life.</p><p>With our experience from the past and our vision for the future, as HM Carbide Swiss GmbH, we are here to add value to your business.</p>", nav_quick:"Quick Links", social_label:"Social Media", footer_desc: "Your reliable partner for wear-resistant and pressure-resistant carbide products. Swiss precision for the world." },
             tr: { nav_home:"ANASAYFA", nav_about:"HAKKIMIZDA", nav_products:"ÜRÜNLERİMİZ", nav_certs:"SERTİFİKALAR", nav_contact:"İLETİŞİM", 
