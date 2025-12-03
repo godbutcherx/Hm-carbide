@@ -8,12 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&subset=latin-ext&display=swap" rel="stylesheet">
     <link rel="icon" type="image/jpg" href="images/logo.jpg">
     <style>
-        /* CSS AYNI (YUKARIDAKİ GİBİ) */
-        :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; --text-light: #555; }
+        :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         body { background: var(--light); color: var(--text); line-height: 1.8; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
-
+        
         header { background: rgba(255, 255, 255, 0.02); color: white; padding: 0 4%; height: 120px; display: flex; align-items: center; justify-content: space-between; position: fixed; width: 100%; top: 0; z-index: 10000; backdrop-filter: blur(5px); border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.5s; }
         header.scrolled { background: rgba(26, 37, 47, 0.98); height: 100px; box-shadow: 0 4px 30px rgba(0,0,0,0.3); backdrop-filter: blur(15px); border-bottom: none; }
         .logo-container { display: flex; align-items: center; flex: 1.4; z-index: 10002; cursor: pointer; text-decoration: none; }
@@ -22,10 +21,11 @@
         .logo-main { z-index: 2; animation: logoAnimation 8s infinite; } .logo-alt { z-index: 1; }
         @keyframes logoAnimation { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } 100% { opacity: 1; } }
         .logo-text { margin-left: 15px; padding-left: 15px; border-left: 2px solid rgba(255,255,255,0.4); display: flex; flex-direction: column; justify-content: center; }
-        .logo-title { font-size: 1.4rem; font-weight: 800; line-height: 1.1; } .logo-subtitle { font-size: 0.95rem; font-weight: 500; color: var(--secondary); margin-top: 3px; }
+        .logo-title { font-size: 1.4rem; font-weight: 800; color: white; letter-spacing: 1px; line-height: 1.1; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .logo-subtitle { font-size: 0.95rem; font-weight: 500; color: var(--secondary); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
         nav { flex: 2; display: flex; justify-content: center; z-index: 10001; }
         nav ul { display: flex; gap: 10px; list-style: none; }
-        nav a { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.9); border-radius: 25px; transition: all 0.3s ease; }
+        nav a { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.9); border-radius: 25px; transition: all 0.3s ease; text-shadow: 0 2px 5px rgba(0,0,0,0.5); letter-spacing: 1px; }
         nav a:hover { color: var(--primary); background: rgba(255, 255, 255, 0.9); }
         .header-right { display: flex; align-items: center; gap: 15px; flex: 1; justify-content: flex-end; z-index: 10002; }
         .lang-switch select { background: rgba(0,0,0,0.3); color: white; border: 1px solid rgba(255,255,255,0.5); padding: 8px 12px; border-radius: 15px; cursor: pointer; font-weight: 600; }
@@ -42,11 +42,12 @@
         .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 10005; display: flex; align-items: center; justify-content: center; animation: shake 5s infinite; }
         @keyframes shake { 0%, 100% { transform: rotate(0deg); } 10%, 30%, 50%, 70%, 90% { transform: rotate(-10deg); } 20%, 40%, 60%, 80% { transform: rotate(10deg); } }
 
-        /* FOOTER */
         footer { background-color: #0f141a; color: #a0a0a0; padding-top: 60px; font-size: 0.95rem; border-top: 4px solid var(--secondary); }
         .footer-container { display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 5% 40px; gap: 40px; }
-        .footer-col { flex: 1; min-width: 250px; } .footer-col h4 { color: white; font-size: 1.1rem; margin-bottom: 20px; border-left: 3px solid var(--secondary); padding-left: 10px; font-weight: 700; text-transform: uppercase; }
-        .footer-col ul { list-style: none; } .footer-col li { margin-bottom: 10px; font-size: 0.9rem; } .footer-col a { color: #a0a0a0; text-decoration: none; font-weight: 500; font-size: 0.9rem; text-transform: none; } .footer-col a:hover { color: white; transform: translateX(5px); }
+        .footer-col { flex: 1; min-width: 250px; } .footer-col h4 { color: white; font-size: 1.1rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; border-left: 3px solid var(--secondary); padding-left: 10px; font-weight: 700; }
+        .footer-col ul { list-style: none; padding: 0; } .footer-col ul li { margin-bottom: 10px; font-size: 0.9rem; } 
+        .footer-col a { color: #a0a0a0; text-decoration: none; font-weight: 500; font-size: 0.9rem; text-transform: none; } 
+        .footer-col a:hover { color: white; transform: translateX(5px); }
         .contact-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; font-size: 0.9rem; }
         .footer-linkedin { display: inline-flex; align-items: center; gap: 10px; background: #0077b5; color: white !important; padding: 10px 20px; border-radius: 4px; font-weight: bold; margin-top: 10px; text-transform: none; }
         .footer-bottom { background-color: #080b0e; padding: 20px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
@@ -87,21 +88,12 @@
         window.addEventListener('scroll', reveal); function reveal(){ var reveals = document.querySelectorAll('.reveal'); for(var i=0; i<reveals.length; i++){ var windowheight=window.innerHeight; var revealtop=reveals[i].getBoundingClientRect().top; if(revealtop < windowheight - 50){ reveals[i].classList.add('active'); } } } reveal();
 
         const translations = {
-            de: { 
-                nav_home:"STARTSEITE", nav_about:"ÜBER UNS", nav_products:"PRODUKTE", nav_certs:"ZERTIFIKATE", nav_contact:"KONTAKT", 
-                content: "<h3>Die Kraft der Erfahrung, die Sicherheit von HM Carbide</h3><p>Dank unserer jahrelangen Erfahrung in der Zerspanungs- und Hartmetallindustrie kennen wir die Bedürfnisse der Fertigungswelt sehr genau. HM Carbide Swiss GmbH wurde gegründet, um dieses Wissen mit Schweizer Produktionsqualität zu verbinden und unseren Kunden die genauesten Rohstofflösungen anzubieten.</p><p>Mit unseren in der Schweiz ansässigen Operationen liefern wir nach europäischen Standards hergestellte Hartmetallstäbe zu wettbewerbsfähigen Bedingungen und mit zuverlässigem Lieferkettenmanagement an unsere Geschäftspartner. Unser Ziel ist es, die Stillstandzeiten in den Produktionslinien unserer Kunden zu minimieren und die Werkzeugstandzeiten zu maximieren.</p><p>Mit unserer Erfahrung aus der Vergangenheit und unserer Vision für die Zukunft sind wir als HM Carbide Swiss GmbH hier, um Ihrem Geschäft einen Mehrwert zu bieten.</p>", 
-                nav_quick:"SCHNELLZUGRIFF", social_label:"Soziale Medien", footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt." 
-            },
-            en: { 
-                nav_home:"HOME", nav_about:"ABOUT US", nav_products:"PRODUCTS", nav_certs:"CERTIFICATES", nav_contact:"CONTACT", 
-                content: "<h3>The Power of Experience, The Assurance of HM Carbide</h3><p>With years of experience in the machining and carbide industry, we know the needs of the manufacturing world very well. HM Carbide Swiss GmbH was founded to combine this knowledge with Swiss production quality to offer our customers the most accurate raw material solutions.</p><p>With our Swiss-based operations, we deliver carbide rods produced to European standards to our business partners with competitive conditions and reliable supply chain management. Our goal is to minimize downtime in our customers' production lines and maximize tool life.</p><p>With our experience from the past and our vision for the future, as HM Carbide Swiss GmbH, we are here to add value to your business.</p>", 
-                nav_quick:"QUICK LINKS", social_label:"Social Media", footer_desc: "Your reliable partner for wear-resistant and pressure-resistant carbide products. Swiss precision for the world." 
-            },
-            tr: { 
-                nav_home:"ANASAYFA", nav_about:"HAKKIMIZDA", nav_products:"ÜRÜNLERİMİZ", nav_certs:"SERTİFİKALAR", nav_contact:"İLETİŞİM", 
-                content: "<h3>Tecrübenin Gücü, HM Carbide Güvencesi</h3><p>Talaşlı imalat ve karbür endüstrisindeki yıllara dayanan tecrübemizle, üretim dünyasının ihtiyaçlarını çok iyi biliyoruz. HM Carbide Swiss GmbH, bu bilgi birikimini İsviçre’nin üretim kalitesiyle harmanlayarak müşterilerine en doğru hammadde çözümlerini sunmak amacıyla kurulmuştur.</p><p>İsviçre merkezli operasyonlarımızla, Avrupa standartlarında üretilen karbür çubukları, rekabetçi koşullar ve güvenilir tedarik zinciri yönetimiyle iş ortaklarımıza ulaştırıyoruz. Amacımız; müşterilerimizin üretim hattındaki duruş sürelerini en aza indirmek ve takım ömürlerini maksimize etmektir.</p><p>Geçmişten gelen deneyimimiz ve geleceğe dönük vizyonumuzla, HM Carbide Swiss GmbH olarak işinize değer katmak için buradayız.</p>", 
-                nav_quick:"HIZLI LİNKLER", social_label:"SOSYAL MEDYA", footer_desc: "Aşınmaya ve basınca dayanıklı karbür ürünler için güvenilir ortağınız. Dünya için İsviçre hassasiyeti." 
-            }
+            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", 
+                content: "<h3>Die Kraft der Erfahrung, die Sicherheit von HM Carbide</h3><p>Dank unserer jahrelangen Erfahrung in der Zerspanungs- und Hartmetallindustrie kennen wir die Bedürfnisse der Fertigungswelt sehr genau. HM Carbide Swiss GmbH wurde gegründet, um dieses Wissen mit Schweizer Produktionsqualität zu verbinden und unseren Kunden die genauesten Rohstofflösungen anzubieten.</p><p>Mit unseren in der Schweiz ansässigen Operationen liefern wir nach europäischen Standards hergestellte Hartmetallstäbe zu wettbewerbsfähigen Bedingungen und mit zuverlässigem Lieferkettenmanagement an unsere Geschäftspartner. Unser Ziel ist es, die Stillstandzeiten in den Produktionslinien unserer Kunden zu minimieren und die Werkzeugstandzeiten zu maximieren.</p><p>Mit unserer Erfahrung aus der Vergangenheit und unserer Vision für die Zukunft sind wir als HM Carbide Swiss GmbH hier, um Ihrem Geschäft einen Mehrwert zu bieten.</p>", nav_quick:"Schnellzugriff", social_label:"Soziale Medien", footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt." },
+            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", 
+                content: "<h3>The Power of Experience, The Assurance of HM Carbide</h3><p>With years of experience in the machining and carbide industry, we know the needs of the manufacturing world very well. HM Carbide Swiss GmbH was founded to combine this knowledge with Swiss production quality to offer our customers the most accurate raw material solutions.</p><p>With our Swiss-based operations, we deliver carbide rods produced to European standards to our business partners with competitive conditions and reliable supply chain management. Our goal is to minimize downtime in our customers' production lines and maximize tool life.</p><p>With our experience from the past and our vision for the future, as HM Carbide Swiss GmbH, we are here to add value to your business.</p>", nav_quick:"Quick Links", social_label:"Social Media", footer_desc: "Your reliable partner for wear-resistant and pressure-resistant carbide products. Swiss precision for the world." },
+            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", 
+                content: "<h3>Tecrübenin Gücü, HM Carbide Güvencesi</h3><p>Talaşlı imalat ve karbür endüstrisindeki yıllara dayanan tecrübemizle, üretim dünyasının ihtiyaçlarını çok iyi biliyoruz. HM Carbide Swiss GmbH, bu bilgi birikimini İsviçre’nin üretim kalitesiyle harmanlayarak müşterilerine en doğru hammadde çözümlerini sunmak amacıyla kurulmuştur.</p><p>İsviçre merkezli operasyonlarımızla, Avrupa standartlarında üretilen karbür çubukları, rekabetçi koşullar ve güvenilir tedarik zinciri yönetimiyle iş ortaklarımıza ulaştırıyoruz. Amacımız; müşterilerimizin üretim hattındaki duruş sürelerini en aza indirmek ve takım ömürlerini maksimize etmektir.</p><p>Geçmişten gelen deneyimimiz ve geleceğe dönük vizyonumuzla, HM Carbide Swiss GmbH olarak işinize değer katmak için buradayız.</p>", nav_quick:"Hızlı Linkler", social_label:"Sosyal Medya", footer_desc: "Aşınmaya ve basınca dayanıklı karbür ürünler için güvenilir ortağınız. Dünya için İsviçre hassasiyeti." }
         };
         function detectAndSetLanguage() { let lang = localStorage.getItem('hm_lang'); if (!lang) { const browserLang = navigator.language || navigator.userLanguage; lang = browserLang.startsWith('tr') ? 'tr' : (browserLang.startsWith('en') ? 'en' : 'de'); } changeLanguage(lang); }
         function changeLanguage(lang) { localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang; document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; }); document.getElementById('contentArea').innerHTML = translations[lang].content; }
