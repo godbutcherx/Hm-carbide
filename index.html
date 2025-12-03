@@ -8,131 +8,107 @@
     <meta property="og:title" content="HM Carbide Swiss GmbH | Schweizer Präzision">
     <meta property="og:description" content="Ihr zuverlässiger Partner für hochwertige Hartmetallprodukte.">
     <meta property="og:image" content="https://www.hmcarbide.ch/images/social.jpg">
-    <meta property="og:url" content="https://www.hmcarbide.ch">
-    <meta property="og:type" content="website">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&subset=latin-ext&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&subset=latin-ext&display=swap" rel="stylesheet">
     <link rel="icon" type="image/jpg" href="images/logo.jpg">
 
     <style>
-        /* --- 1. TEMEL AYARLAR --- */
-        :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; --text-light: #777; }
+        :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
         body { background: var(--light); color: var(--text); line-height: 1.7; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
         a { text-decoration: none; color: inherit; transition: 0.3s all ease; }
-        
-        /* --- HEADER --- */
-        header { background: rgba(255, 255, 255, 0.02); color: white; padding: 0 4%; height: 120px; display: flex; align-items: center; justify-content: space-between; position: fixed; width: 100%; top: 0; z-index: 10000; backdrop-filter: blur(5px); border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.5s ease-in-out; }
+
+        /* HEADER */
+        header { background: rgba(255, 255, 255, 0.02); padding: 0 4%; height: 120px; display: flex; align-items: center; justify-content: space-between; position: fixed; width: 100%; top: 0; z-index: 10000; backdrop-filter: blur(5px); border-bottom: 1px solid rgba(255,255,255,0.05); transition: all 0.5s; }
         header.scrolled { background: rgba(26, 37, 47, 0.98); height: 100px; box-shadow: 0 4px 30px rgba(0,0,0,0.3); backdrop-filter: blur(15px); border-bottom: none; }
         
+        /* LOGO - STANDARTLAŞTIRILDI */
         .logo-container { display: flex; align-items: center; flex: 1.4; z-index: 10002; text-decoration: none; cursor: pointer; }
-        .logo-wrapper { position: relative; width: 85px; height: 85px; background: white; padding: 5px; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: all 0.4s; }
-        header.scrolled .logo-wrapper { width: 70px; height: 70px; }
-        .logo-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 1.5s ease-in-out; }
+        .logo-wrapper { position: relative; width: 85px; height: 85px; background: white; padding: 5px; border-radius: 6px; overflow: hidden; }
+        .logo-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 1.5s; }
         .logo-main { z-index: 2; animation: logoAnimation 8s infinite; } .logo-alt { z-index: 1; }
         @keyframes logoAnimation { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } 100% { opacity: 1; } }
         .logo-text { margin-left: 15px; padding-left: 15px; border-left: 2px solid rgba(255,255,255,0.4); display: flex; flex-direction: column; justify-content: center; }
-        .logo-title { font-size: 1.4rem; font-weight: 800; color: white; letter-spacing: 1px; line-height: 1.1; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
-        .logo-subtitle { font-size: 0.95rem; font-weight: 500; color: var(--secondary); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; text-shadow: 0 2px 5px rgba(0,0,0,0.8); }
-        
+        /* Logo Font Ayarı - Tüm Sayfalarda Aynı */
+        .logo-title { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 900; color: white; letter-spacing: 1px; line-height: 1.1; }
+        .logo-subtitle { font-family: 'Montserrat', sans-serif; font-size: 0.9rem; font-weight: 600; color: var(--secondary); letter-spacing: 2px; text-transform: uppercase; margin-top: 3px; }
+
+        /* NAV - Üst Menü Hep Büyük Harf */
         nav { flex: 2; display: flex; justify-content: center; z-index: 10001; }
-        nav ul { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; align-items: center; }
-        nav a { position: relative; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.9); border-radius: 25px; transition: all 0.3s ease; text-shadow: 0 2px 5px rgba(0,0,0,0.5); letter-spacing: 1px; }
-        nav a:hover { color: var(--primary); background: rgba(255, 255, 255, 0.9); transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); text-shadow: none; }
+        nav ul { display: flex; gap: 10px; list-style: none; }
+        nav a { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.9); border-radius: 25px; transition: all 0.3s; }
+        nav a:hover { color: var(--primary); background: rgba(255, 255, 255, 0.9); }
         
         .header-right { display: flex; align-items: center; gap: 15px; flex: 1; justify-content: flex-end; z-index: 10002; }
-        .lang-switch select { background: rgba(0,0,0,0.3); color: white; border: 1px solid rgba(255,255,255,0.5); padding: 8px 12px; border-radius: 15px; cursor: pointer; font-size: 0.85rem; font-weight: 600; outline: none; appearance: none; -webkit-appearance: none; text-align: center; backdrop-filter: blur(5px); }
+        .lang-switch select { background: rgba(0,0,0,0.3); color: white; border: 1px solid rgba(255,255,255,0.5); padding: 8px 12px; border-radius: 15px; cursor: pointer; font-weight: 600; font-family: 'Montserrat', sans-serif; }
         .lang-switch select option { color: black; }
         .menu-toggle { display: none; font-size: 2rem; cursor: pointer; color: white; margin-left: 10px; }
 
-        /* --- HERO --- */
-        .hero { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; color: white; overflow: hidden; }
+        /* HERO & CONTENT */
+        .hero { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; overflow: hidden; }
         .hero-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
-        .hero-slideshow img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 2s ease-in-out; transform: scale(1.05); }
+        .hero-slideshow img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 2s; transform: scale(1.05); }
         .hero-slideshow img.active { opacity: 1; transform: scale(1); }
         .hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)); z-index: -1; }
+        .hero h1 { font-size: 4.2rem; font-weight: 900; letter-spacing: 2px; line-height: 1.4; color: white; text-transform: uppercase; margin-bottom: 15px; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.4rem; font-weight: 600; letter-spacing: 3px; color: rgba(255,255,255,0.95); margin-bottom: 40px; text-transform: uppercase; }
+        .btn { padding: 15px 45px; background: var(--secondary); color: white; font-weight: 700; border-radius: 50px; cursor: pointer; text-decoration: none; display: inline-block; } .btn:hover { background: #b0261d; transform: translateY(-3px); }
+        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); box-shadow: none; } .btn-outline:hover { background: var(--primary); color: white; }
         
-        @keyframes industrialDrop { 0% { transform: translateY(-150px) scale(1.1); opacity: 0; } 60% { transform: translateY(0) scale(1); opacity: 1; } 65% { transform: translateY(-5px); } 70% { transform: translateY(0); } 100% { transform: translateY(0) scale(1); opacity: 1; } }
-        @keyframes metalSheen { 0% { background-position: -200%; } 100% { background-position: 200%; } }
-
-        .hero h1 { font-size: 4.2rem; margin-bottom: 15px; font-weight: 900; letter-spacing: 2px; line-height: 1.4; padding-top: 10px; opacity: 0; animation: industrialDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; animation-delay: 0.5s; background: linear-gradient(75deg, #ffffff 20%, #b3b3b3 40%, #ffffff 50%, #b3b3b3 60%, #ffffff 80%); background-size: 200% auto; color: white; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: industrialDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards, metalSheen 3s linear infinite; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.4rem; font-weight: 600; margin-bottom: 40px; letter-spacing: 3px; color: rgba(255,255,255,0.95); opacity: 0; animation: industrialDrop 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards; animation-delay: 0.8s; }
-        .btn { padding: 15px 45px; background: var(--secondary); color: white; font-weight: 700; font-size: 1.1rem; border-radius: 50px; box-shadow: 0 10px 20px rgba(217, 48, 37, 0.3); transition: all 0.3s; display: inline-block; text-transform: uppercase; letter-spacing: 1px; border: none; cursor: pointer; text-decoration: none; opacity: 0; animation: fadeUp 1s ease-out forwards; animation-delay: 1.5s; }
-        .btn:hover { background: #b0261d; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(217, 48, 37, 0.5); }
-        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); box-shadow: none; opacity: 1; animation: none; } .btn-outline:hover { background: var(--primary); color: white; }
-        
-        /* DOĞA BÖLÜMÜ */
-        .nature-section { display: flex; align-items: center; justify-content: center; padding: 100px 5%; background: linear-gradient(135deg, #141e26 0%, #1a252f 100%); min-height: 70vh; position: relative; overflow: hidden; }
-        .nature-container { display: flex; align-items: center; gap: 80px; max-width: 1300px; margin: 0 auto; }
-        .nature-image { flex: 1; position: relative; display: flex; justify-content: center; }
-        .nature-image img { width: 130%; max-width: 700px; height: auto; object-fit: contain; filter: drop-shadow(0 30px 60px rgba(0,0,0,0.4)); transition: transform 0.5s ease; transform: scale(1.1); }
+        .nature-section { display: flex; align-items: center; justify-content: center; padding: 100px 5%; background: linear-gradient(135deg, #141e26 0%, #1a252f 100%); min-height: 70vh; }
+        .nature-container { display: flex; align-items: center; gap: 80px; max-width: 1300px; }
+        .nature-image { flex: 1; display: flex; justify-content: center; } .nature-image img { width: 130%; max-width: 700px; filter: drop-shadow(0 30px 60px rgba(0,0,0,0.4)); transition: transform 0.5s; transform: scale(1.1); }
         .nature-image:hover img { transform: scale(1.15) rotate(1deg); }
-        .nature-content { flex: 1; z-index: 2; }
-        .nature-title { font-size: 2.8rem; font-weight: 800; color: #ffffff; margin-bottom: 15px; line-height: 1.2; }
-        .nature-subtitle { font-size: 1.3rem; font-weight: 600; color: var(--secondary); margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; }
-        .nature-desc { font-size: 1.15rem; color: rgba(255,255,255,0.9); line-height: 1.8; text-align: justify; padding-left: 25px; border-left: 4px solid var(--secondary); }
+        .nature-content { flex: 1; } .nature-title { font-size: 2.8rem; font-weight: 800; color: white; line-height: 1.2; }
+        .nature-subtitle { font-size: 1.3rem; font-weight: 600; color: var(--secondary); margin-bottom: 30px; letter-spacing: 1px; }
+        .nature-desc { font-size: 1.15rem; color: rgba(255,255,255,0.9); padding-left: 25px; border-left: 4px solid var(--secondary); text-align: justify; }
 
-        /* DİĞER BÖLÜMLER */
         section { padding: 80px 5%; }
         .section-title { font-size: 2.5rem; text-align: center; margin-bottom: 60px; position: relative; padding-bottom: 20px; font-weight: 800; letter-spacing: 1px; }
         .section-title::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--secondary); border-radius: 2px; }
         
         .about-preview { display: flex; align-items: center; gap: 60px; background: #ffffff; padding: 100px 5%; }
-        .about-preview .section-title { text-align: left; color: var(--primary); }
-        .about-preview .section-title::after { left: 0; transform: none; }
-        .about-text { flex: 1; } .about-text p { font-size: 1.1rem; color: var(--text-light); margin-bottom: 30px; }
-        .about-image { flex: 1; height: 450px; border-radius: 12px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
-        .about-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; } .about-image:hover img { transform: scale(1.05); }
+        .about-preview .section-title { text-align: left; color: var(--primary); } .about-preview .section-title::after { left: 0; transform: none; }
+        .about-text { flex: 1; } .about-text p { font-size: 1.1rem; color: #777; margin-bottom: 30px; }
+        .about-image { flex: 1; height: 450px; border-radius: 12px; overflow: hidden; } .about-image img { width: 100%; height: 100%; object-fit: cover; }
         
         .products-preview { background: linear-gradient(135deg, #141e26 0%, #1a252f 100%); padding: 100px 5%; }
         .products-preview .section-title { color: white; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.2); transition: all 0.3s; text-align: center; }
-        .product-card:hover { transform: translateY(-10px); box-shadow: 0 25px 60px rgba(0,0,0,0.4); }
+        .product-card { background: white; border-radius: 12px; overflow: hidden; text-align: center; transition: 0.3s; } .product-card:hover { transform: translateY(-10px); }
         .product-img { height: 260px; overflow: hidden; } .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
         .product-card:hover .product-img img { transform: scale(1.1); }
         .product-info { padding: 30px; } .product-info h3 { font-size: 1.3rem; margin-bottom: 20px; color: var(--primary); font-weight: 700; } .btn-sm { padding: 10px 25px; font-size: 0.9rem; }
-        
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; } .reveal.active { opacity: 1; transform: translateY(0); }
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 10005; display: flex; align-items: center; justify-content: center; animation: shake 5s infinite; }
+        @keyframes shake { 0%, 100% { transform: rotate(0deg); } 10%, 30%, 50%, 70%, 90% { transform: rotate(-10deg); } 20%, 40%, 60%, 80% { transform: rotate(10deg); } }
+
         /* FOOTER */
         footer { background-color: #0f141a; color: #a0a0a0; padding-top: 60px; font-size: 0.95rem; border-top: 4px solid var(--secondary); }
         .footer-container { display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 5% 40px; gap: 40px; }
         .footer-col { flex: 1; min-width: 250px; }
         .footer-col h4 { color: white; font-size: 1.1rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; border-left: 3px solid var(--secondary); padding-left: 10px; font-weight: 700; }
-        .footer-col ul { list-style: none; padding: 0; } .footer-col ul li { margin-bottom: 10px; } .footer-col a { color: #a0a0a0; text-decoration: none; transition: 0.3s; display: inline-block; font-weight: 500; } .footer-col a:hover { color: white; transform: translateX(5px); }
+        .footer-col ul { list-style: none; } .footer-col li { margin-bottom: 10px; } 
+        /* Footer Linkleri Normal Yazım */
+        .footer-col a { color: #a0a0a0; text-decoration: none; font-weight: 500; font-size: 0.9rem; text-transform: none; } 
+        .footer-col a:hover { color: white; transform: translateX(5px); }
         .contact-row { display: flex; align-items: center; gap: 10px; margin-bottom: 15px; }
-        .footer-linkedin { display: inline-flex; align-items: center; gap: 10px; background: #0077b5; color: white !important; padding: 10px 20px; border-radius: 4px; font-weight: bold; margin-top: 10px; }
+        .footer-linkedin { display: inline-flex; align-items: center; gap: 10px; background: #0077b5; color: white !important; padding: 10px 20px; border-radius: 4px; font-weight: bold; margin-top: 10px; text-transform: none; }
         .footer-bottom { background-color: #080b0e; padding: 20px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
         .footer-legal a { margin-left: 20px; color: #777; }
 
-        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 10005; display: flex; align-items: center; justify-content: center; animation: shake 5s infinite; }
-        @keyframes shake { 0%, 100% { transform: rotate(0deg); } 10%, 30%, 50%, 70%, 90% { transform: rotate(-10deg); } 20%, 40%, 60%, 80% { transform: rotate(10deg); } }
-
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; } .reveal.active { opacity: 1; transform: translateY(0); }
-
-        /* MOBİL UYUMU & FONT KÜÇÜLTME */
         @media (max-width: 1100px) {
-            /* Menü */
-            nav { position: absolute; top: 90px; right: 20px; left: auto; width: 220px; background: rgba(26, 37, 47, 0.98); border-radius: 12px; flex-direction: column; height: auto; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; box-shadow: 0 10px 40px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); }
-            nav.active { max-height: 400px; }
-            nav ul { flex-direction: column; gap: 0; width: 100%; padding: 10px 0; }
-            nav a { display: block; width: 100%; text-align: left; padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 0; }
             .menu-toggle { display: block; } header { padding: 0 5%; }
+            nav { position: absolute; top: 90px; right: 20px; left: auto; width: 220px; background: rgba(26, 37, 47, 0.98); border-radius: 12px; flex-direction: column; height: auto; max-height: 0; overflow: hidden; transition: 0.4s; box-shadow: 0 10px 40px rgba(0,0,0,0.4); }
+            nav.active { max-height: 400px; } nav ul { flex-direction: column; gap: 0; padding: 10px 0; } nav a { display: block; width: 100%; text-align: left; padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 0; }
             .logo-container { flex: unset; } .logo-wrapper { width: 60px; height: 60px; } .logo-text { margin-left: 10px; padding-left: 10px; } .logo-title { font-size: 1.1rem; } .logo-subtitle { font-size: 0.75rem; } .header-right { flex: unset; }
-            
-            /* FONT KÜÇÜLTME */
-            .hero h1 { font-size: 1.8rem; letter-spacing: 1px; margin-bottom: 10px; padding: 0 10px; line-height: 1.3; } 
-            .hero p { font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 30px; }
-            .section-title { font-size: 1.8rem; margin-bottom: 30px; }
-            .nature-title { font-size: 1.8rem; }
-            .nature-subtitle { font-size: 1rem; }
-            .nature-desc { font-size: 1rem; }
-            
-            .nature-section { padding: 60px 5%; } .nature-container { flex-direction: column; text-align: center; gap: 40px; } .nature-image img { width: 100%; max-width: 400px; margin-left: 0; transform: scale(1); } .nature-desc { padding-left: 0; border-left: none; border-top: 3px solid var(--secondary); padding-top: 20px; text-align: center;}
-            .about-preview { flex-direction: column; text-align: center; gap: 40px; } .about-image { width: 100%; height: 350px; }
-            .footer-container { flex-direction: column; gap: 40px; } .footer-bottom { flex-direction: column; text-align: center; justify-content: center; }
+            .hero h1 { font-size: 1.7rem; letter-spacing: 1px; margin-bottom: 10px; padding: 0 10px; line-height: 1.4; } .hero p { font-size: 0.9rem; letter-spacing: 2px; }
+            .nature-section { padding: 60px 5%; } .nature-container { flex-direction: column; gap: 40px; } .nature-image img { width: 100%; max-width: 400px; } .nature-desc { padding-left: 0; border-left: none; border-top: 3px solid var(--secondary); padding-top: 20px; }
+            .about-preview { flex-direction: column; gap: 40px; } .about-image { width: 100%; height: 350px; }
+            .footer-container { flex-direction: column; gap: 40px; } .footer-bottom { flex-direction: column; text-align: center; }
             .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 25px; }
         }
     </style>
@@ -146,7 +122,7 @@
 
     <section class="hero">
         <div class="hero-slideshow">
-            <img src="images/gem1.png" class="active" alt="Slide 1"><img src="images/gem2.png" alt="Slide 2"><img src="images/gem3.png" alt="Slide 3"><img src="images/gem4.png" alt="Slide 4"><img src="images/gem5.png" alt="Slide 5"><img src="images/gem6.png" alt="Slide 6"><img src="images/gem7.png" alt="Slide 7"><img src="images/gem8.png" alt="Slide 8">
+            <img src="images/gem1.png" class="active"><img src="images/gem2.png"><img src="images/gem3.png"><img src="images/gem4.png"><img src="images/gem5.png"><img src="images/gem6.png"><img src="images/gem7.png"><img src="images/gem8.png">
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -158,34 +134,26 @@
 
     <section class="nature-section reveal">
         <div class="nature-container">
-            <div class="nature-image">
-                <img src="images/gem10.png" alt="Essence of Nature">
-            </div>
+            <div class="nature-image"><img src="images/gem10.png" alt="Essence of Nature"></div>
             <div class="nature-content">
                 <h2 class="nature-title" data-i18n="nat_title">Tungsten, Karbon, Kobalt... Unser Wesen ist Natur.</h2>
                 <h4 class="nature-subtitle" data-i18n="nat_sub">Wir bieten die stärksten Erze der Natur mit Schweizer Präzision.</h4>
-                <p class="nature-desc" data-i18n="nat_desc">
-                    "Die einzigartige Haltbarkeit von Hartmetallstäben entsteht aus der Kraft der Elemente aus den Tiefen der Erde. Wir als HM Carbide wählen sorgfältig Produkte aus, die die Härte von Wolfram und die Bindekraft von Kobalt am besten widerspiegeln, und bringen sie zu Ihnen. Wir respektieren das Gleichgewicht der Natur in unseren Lieferprozessen; wir sind stolz darauf, diese Kraft, die die Industrie benötigt, mit Umweltbewusstsein und Schweizer Qualitätsstandards anzubieten."
-                </p>
+                <p class="nature-desc" data-i18n="nat_desc">"..."</p>
             </div>
         </div>
     </section>
 
     <section class="about-preview reveal">
-        <div class="about-text">
-            <h2 class="section-title" data-i18n="about_title">Über Uns</h2>
-            <p data-i18n="about_text">HM Carbide Swiss GmbH ist Ihr zuverlässiger Partner für hochwertige Hartmetallprodukte.</p>
-            <a href="about.html" class="btn btn-outline" data-i18n="about_btn">MEHR ERFAHREN</a>
-        </div>
+        <div class="about-text"><h2 class="section-title" data-i18n="about_title">Über Uns</h2><p data-i18n="about_text">...</p><a href="about.html" class="btn btn-outline" data-i18n="about_btn">MEHR ERFAHREN</a></div>
         <div class="about-image"><img src="images/prod1.jpg" alt="Production"></div>
     </section>
 
     <section class="products-preview reveal">
         <h2 class="section-title" data-i18n="products_title">Unsere Produkte</h2>
         <div class="product-grid">
-            <div class="product-card"><div class="product-img"><img src="images/prod1.jpg" alt="Rod"></div><div class="product-info"><h3 data-i18n="p1_title">Hartmetallstab Voll</h3><a href="products.html" class="btn btn-sm" data-i18n="btn_details">DETAILS</a></div></div>
-            <div class="product-card"><div class="product-img"><img src="images/prod6.jpg" alt="Coolant"></div><div class="product-info"><h3 data-i18n="p2_title">Stab mit Kühlkanal</h3><a href="products.html" class="btn btn-sm" data-i18n="btn_details">DETAILS</a></div></div>
-            <div class="product-card"><div class="product-img"><img src="images/gem7.png" alt="Cut"></div><div class="product-info"><h3 data-i18n="p3_title">Gekürzter Stab</h3><a href="products.html" class="btn btn-sm" data-i18n="btn_details">DETAILS</a></div></div>
+            <div class="product-card"><div class="product-img"><img src="images/prod1.jpg"></div><div class="product-info"><h3 data-i18n="p1_title">Hartmetallstab Voll</h3><a href="products.html" class="btn btn-sm" data-i18n="btn_details">DETAILS</a></div></div>
+            <div class="product-card"><div class="product-img"><img src="images/prod6.jpg"></div><div class="product-info"><h3 data-i18n="p2_title">Stab mit Kühlkanal</h3><a href="products.html" class="btn btn-sm" data-i18n="btn_details">DETAILS</a></div></div>
+            <div class="product-card"><div class="product-img"><img src="images/gem7.png"></div><div class="product-info"><h3 data-i18n="p3_title">Gekürzter Stab</h3><a href="products.html" class="btn btn-sm" data-i18n="btn_details">DETAILS</a></div></div>
         </div>
     </section>
 
@@ -193,7 +161,7 @@
 
     <footer>
         <div class="footer-container">
-            <div class="footer-col"><div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;"><img src="images/logo.jpg" style="height:50px;border-radius:4px;"><span style="color:white;font-weight:800;font-size:1.2rem;">HM CARBIDE<br><span style="color:var(--secondary);font-size:0.9rem;">SWISS GmbH</span></span></div><p data-i18n="footer_desc">Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt.</p></div>
+            <div class="footer-col"><div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;"><img src="images/logo.jpg" style="height:50px;border-radius:4px;"><span style="color:white;font-weight:800;font-size:1.2rem;">HM CARBIDE<br><span style="color:var(--secondary);font-size:0.9rem;">SWISS GmbH</span></span></div><p data-i18n="footer_desc">...</p></div>
             <div class="footer-col"><h4 data-i18n="nav_quick">Schnellzugriff</h4><ul><li><a href="index.html" data-i18n="nav_home">Startseite</a></li><li><a href="products.html" data-i18n="nav_products">Produkte</a></li><li><a href="certificates.html" data-i18n="nav_certs">Zertifikate</a></li><li><a href="about.html" data-i18n="nav_about">Über Uns</a></li><li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li></ul></div>
             <div class="footer-col"><h4 data-i18n="nav_contact">Kontakt</h4><div class="contact-row"><span>📍</span><span>Romanshornerstrasse 122, 9322 Egnach</span></div><div class="contact-row"><span>📞</span><a href="tel:+41762909193">+41 76 290 91 93</a></div><div class="contact-row"><span>✉️</span><a href="mailto:info@hmcarbide.ch">info@hmcarbide.ch</a></div><a href="https://www.linkedin.com/company/hmcarbideswiss/" target="_blank" class="footer-linkedin"><svg style="width:16px; height:16px; fill:white;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>Follow on LinkedIn</a></div>
         </div>
@@ -203,34 +171,30 @@
     <script>
         window.addEventListener("scroll", function() { const header = document.getElementById("main-header"); if (window.scrollY > 50) header.classList.add("scrolled"); else header.classList.remove("scrolled"); });
         function toggleMenu() { document.getElementById('navbar').classList.toggle('active'); }
-        let currentSlide = 0; const slides = document.querySelectorAll('.hero-slideshow img'); setInterval(() => { slides[currentSlide].classList.remove('active'); currentSlide = (currentSlide + 1) % slides.length; slides[currentSlide].classList.add('active'); }, 5000);
         window.addEventListener('scroll', reveal); function reveal(){ var reveals = document.querySelectorAll('.reveal'); for(var i=0; i<reveals.length; i++){ var windowheight=window.innerHeight; var revealtop=reveals[i].getBoundingClientRect().top; if(revealtop < windowheight - 50){ reveals[i].classList.add('active'); } } } reveal();
 
         const translations = {
-            de: { 
-                nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", 
+            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", 
                 hero_title:"SCHWEIZER DISZIPLIN, MAXIMALE BESTÄNDIGKEIT", hero_sub:"PRÄZISION AUS DER SCHWEIZ FÜR DIE WELT", hero_btn_contact:"KONTAKT AUFNEHMEN", 
                 about_title: "Über Uns", about_text: "HM Carbide Swiss GmbH ist Ihr zuverlässiger Partner für hochwertige Hartmetallprodukte.", about_btn: "MEHR ERFAHREN", 
                 products_title: "Unsere Produkte", p1_title: "Hartmetallstab Voll", p2_title: "Stab mit Kühlkanal", p3_title: "Gekürzter Stab", btn_details: "DETAILS", nav_quick:"Schnellzugriff", social_label:"Soziale Medien", footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt.",
                 nat_title: "Tungsten, Karbon, Kobalt... Unser Wesen ist Natur.", nat_sub: "Wir bieten die stärksten Erze der Natur mit Schweizer Präzision.", nat_desc: "Die einzigartige Haltbarkeit von Hartmetallstäben entsteht aus der Kraft der Elemente aus den Tiefen der Erde. Wir als HM Carbide wählen sorgfältig Produkte aus, die die Härte von Wolfram und die Bindekraft von Kobalt am besten widerspiegeln, und bringen sie zu Ihnen. Wir respektieren das Gleichgewicht der Natur in unseren Lieferprozessen; wir sind stolz darauf, diese Kraft, die die Industrie benötigt, mit Umweltbewusstsein und Schweizer Qualitätsstandards anzubieten."
             },
-            en: { 
-                nav_home:"HOME", nav_about:"ABOUT US", nav_products:"PRODUCTS", nav_certs:"CERTIFICATES", nav_contact:"CONTACT", 
+            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", 
                 hero_title:"SWISS DISCIPLINE, MAXIMUM DURABILITY", hero_sub:"PRECISION FROM SWITZERLAND FOR THE WORLD", hero_btn_contact:"GET IN TOUCH", 
                 about_title: "About Us", about_text: "HM Carbide Swiss GmbH is your reliable partner for high-quality carbide products.", about_btn: "LEARN MORE", 
                 products_title: "Our Products", p1_title: "Solid Carbide Rod", p2_title: "Rod with Coolant Duct", p3_title: "Cut-to-Length Rod", btn_details: "DETAILS", nav_quick:"Quick Links", social_label:"Social Media", footer_desc: "Your reliable partner for wear-resistant and pressure-resistant carbide products. Swiss precision for the world.",
                 nat_title: "Tungsten, Carbon, Cobalt... Our Essence is Nature.", nat_sub: "We Offer Nature's Strongest Ores with Swiss Precision.", nat_desc: "The unique durability of carbide rods stems from the power of elements coming from the depths of the earth. As HM Carbide, we carefully select and bring you products that best reflect the hardness of Tungsten and the binding power of Cobalt. We respect the balance of nature in our supply processes; we are proud to offer this power needed by the industry with environmental awareness and Swiss quality standards."
             },
-            tr: { 
-                nav_home:"ANASAYFA", nav_about:"HAKKIMIZDA", nav_products:"ÜRÜNLERİMİZ", nav_certs:"SERTİFİKALAR", nav_contact:"İLETİŞİM", 
+            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", 
                 hero_title:"İSVİÇRE DİSİPLİNİ, MAKSİMUM DAYANIM", hero_sub:"DÜNYA İÇİN İSVİÇRE HASSASİYETİ", hero_btn_contact:"İLETİŞİME GEÇİN", 
-                about_title: "HAKKIMIZDA", about_text: "HM Carbide Swiss GmbH, yüksek kaliteli karbür ürünler için güvenilir ortağınızdır.", about_btn: "DAHA FAZLA BİLGİ", 
-                products_title: "ÜRÜNLERİMİZ", p1_title: "Tam Boy Karbür Çubuk", p2_title: "Su Kanallı Çubuk", p3_title: "Kesilmiş Çubuk", btn_details: "İNCELE", nav_quick:"HIZLI LİNKLER", social_label:"SOSYAL MEDYA", footer_desc: "Aşınmaya ve basınca dayanıklı karbür ürünler için güvenilir ortağınız. Dünya için İsviçre hassasiyeti.",
+                about_title: "Hakkımızda", about_text: "HM Carbide Swiss GmbH, yüksek kaliteli karbür ürünler için güvenilir ortağınızdır.", about_btn: "DAHA FAZLA BİLGİ", 
+                products_title: "Ürünlerimiz", p1_title: "Tam Boy Karbür Çubuk", p2_title: "Su Kanallı Çubuk", p3_title: "Kesilmiş Çubuk", btn_details: "İNCELE", nav_quick:"Hızlı Linkler", social_label:"Sosyal Medya", footer_desc: "Aşınmaya ve basınca dayanıklı karbür ürünler için güvenilir ortağınız. Dünya için İsviçre hassasiyeti.",
                 nat_title: "Tungsten, Karbon, Kobalt... Özümüz Doğa.", nat_sub: "Doğanın En Güçlü Cevherlerini, İsviçre Titizliğiyle Sunuyoruz.", nat_desc: "\"Karbür çubukların eşsiz dayanıklılığı, yerin derinliklerinden gelen elementlerin gücünden doğar. Biz HM Carbide olarak, Tungstenin sertliğini ve Kobaltın bağlayıcılığını en iyi yansıtan ürünleri özenle seçiyor ve sizlerle buluşturuyoruz. Tedarik süreçlerimizde doğanın dengesine saygı duyuyor; sanayinin ihtiyacı olan bu gücü, çevre bilinci ve İsviçre kalite standartlarıyla sunmanın gururunu yaşıyoruz.\""
             }
         };
-        function detectAndSetLanguage() { let lang = localStorage.getItem('hm_lang'); if (!lang) { const browserLang = navigator.language || navigator.userLanguage; lang = browserLang.startsWith('tr') ? 'tr' : (browserLang.startsWith('en') ? 'en' : 'de'); } changeLanguage(lang); }
         function changeLanguage(lang) { localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang; document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; }); }
+        function detectAndSetLanguage() { let lang = localStorage.getItem('hm_lang'); if (!lang) { const browserLang = navigator.language || navigator.userLanguage; lang = browserLang.startsWith('tr') ? 'tr' : (browserLang.startsWith('en') ? 'en' : 'de'); } changeLanguage(lang); }
         document.addEventListener('DOMContentLoaded', detectAndSetLanguage);
     </script>
 </body>
