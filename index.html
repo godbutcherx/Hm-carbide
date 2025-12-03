@@ -31,56 +31,21 @@
         .logo-main { z-index: 2; animation: logoAnimation 8s infinite; } .logo-alt { z-index: 1; }
         @keyframes logoAnimation { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } 100% { opacity: 1; } }
         /* --- YENİ PREMIUM LOGO STİLİ --- */
-        .logo-text {
-            margin-left: 15px;
-            padding-left: 15px;
-            border-left: 1px solid rgba(255,255,255,0.3); /* İnce zarif çizgi */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
+        .logo-text { margin-left: 15px; padding-left: 15px; border-left: 1px solid rgba(255,255,255,0.3); /* İnce zarif çizgi */ display: flex; flex-direction: column; justify-content: center; }
 
         /* HM CARBIDE - Metalik Işıltı Efekti */
-        .brand-name {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900; /* En kalın */
-            font-size: 1.5rem;
-            line-height: 1;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            
-            /* Metalik Geçiş Arka Planı */
-            background: linear-gradient(to right, #ffffff 0%, #b3b3b3 20%, #ffffff 40%, #ffffff 100%);
-            background-size: 200% auto;
-            color: white; /* Yedek renk */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            
-            /* Animasyon: 5 saniyede bir ışık geçer */
-            animation: shine 5s linear infinite;
-        }
+        .brand-name { font-family: 'Montserrat', sans-serif; font-weight: 900; /* En kalın */ font-size: 1.5rem; line-height: 1; text-transform: uppercase; letter-spacing: 1px; /* Metalik Geçiş Arka Planı */ background: linear-gradient(to right, #ffffff 0%, #b3b3b3 20%, #ffffff 40%, #ffffff 100%); background-size: 200% auto; color: white; /* Yedek renk */-webkit-background-clip: text; -webkit-text-fill-color: transparent; /* Animasyon: 5 saniyede bir ışık geçer */  animation: shine 5s linear infinite; }
 
         /* SWISS GmbH - İsviçre Kırmızısı ve Zarif */
-        .brand-sub {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: var(--secondary); /* Kırmızı */
-            letter-spacing: 3px; /* Harfler arası açık (Premium his) */
-            margin-top: 4px;
-        }
+        .brand-sub { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.85rem; color: var(--secondary); /* Kırmızı */ letter-spacing: 3px; /* Harfler arası açık (Premium his) */ margin-top: 4px; }
 
         /* Işıltı Animasyonu */
-        @keyframes shine {
-            0% { background-position: 200% center; }
-            100% { background-position: -200% center; }
-        }
+        @keyframes shine { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
 
         /* Mobilde boyut ayarı */
         @media (max-width: 1100px) {
             .brand-name { font-size: 1.2rem; }
-            .brand-sub { font-size: 0.7rem; letter-spacing: 2px; }
-        }
+            .brand-sub { font-size: 0.7rem; letter-spacing: 2px; } }
 
         /* NAV - Üst Menü Hep Büyük Harf */
         nav { flex: 2; display: flex; justify-content: center; z-index: 10001; }
