@@ -1,0 +1,45 @@
+<?php include 'header.php'; ?>
+
+    <div class="page-header-section">
+        <h1 class="page-title reveal" data-i18n="nav_products">PRODUKTE</h1>
+        <p class="page-subtitle reveal" style="color:rgba(255,255,255,0.7);">High Performance Carbide Rods</p>
+        <div class="search-wrapper reveal">
+            <input type="text" id="productSearch" class="search-input" placeholder="Dimension suchen..." onkeyup="filterProducts()" data-i18n-ph="search_ph">
+            <span class="search-icon">🔍</span>
+        </div>
+    </div>
+
+    <div class="prod-container">
+        <div class="grid">
+            <div class="card reveal">
+                <div class="card-head"><h3 data-i18n="p1">Hartmetallstab Voll</h3></div>
+                <div class="card-img-wrapper"><img src="images/prod1.jpg" alt="Rod"></div>
+                <div class="table-wrap"><table id="t1" class="prod-table"><thead><tr><th>Dimension (mm)</th></tr></thead><tbody></tbody></table></div>
+            </div>
+            <div class="card reveal">
+                <div class="card-head"><h3 data-i18n="p2">Su Kanallı Çubuk</h3></div>
+                <div class="card-img-wrapper"><img src="images/prod6.jpg" alt="Coolant"></div>
+                <div class="table-wrap"><table id="t2" class="prod-table detailed"><thead><tr><th>Dim (mm)</th><th>ID (mm)</th><th>DIST</th></tr></thead><tbody></tbody></table></div>
+            </div>
+            <div class="card reveal">
+                <div class="card-head"><h3 data-i18n="p3">Gekürzt</h3></div>
+                <div class="card-img-wrapper"><img src="images/gem7.png" alt="Cut"></div>
+                <div class="table-wrap"><table id="t3" class="prod-table"><thead><tr><th>Dimension (mm)</th></tr></thead><tbody></tbody></table></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="tech-specs-section reveal">
+        <h2 class="section-title" data-i18n="tech_title">Technische Daten</h2>
+        <div class="tech-table-wrapper">
+            <table class="tech-table">
+                <thead><tr><th>Grade</th><th>WC %</th><th>Co %</th><th data-i18n="th_grain">Grain Size</th><th data-i18n="th_density">Density</th><th data-i18n="th_hard">Hardness</th><th data-i18n="th_trs">TRS</th></tr></thead>
+                <tbody>
+                    <tr><td>HM 12Co</td><td>88</td><td>12</td><td>0.4</td><td>14.25 ± 0.1</td><td>92.5 ± 0.5</td><td>>350</td></tr>
+                    <tr><td>HM 10Co</td><td>90</td><td>10</td><td>0.8</td><td>14.4 ± 0.1</td><td>91.8 ± 0.5</td><td>>350</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+<?php include 'footer.php'; ?>

@@ -1,169 +1,20 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HM Carbide Swiss GmbH | Certificates</title>
-    <meta property="og:image" content="https://www.hmcarbide.ch/images/social.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&subset=latin-ext&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/jpg" href="images/logo.jpg">
-    <style>
-        /* --- 1. GLOBAL STYLE --- */
-        :root { --primary: #1a252f; --secondary: #d93025; --light: #f8f9fa; --text: #333; --text-light: #777; }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-        body { background: #ffffff; color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
-        a { text-decoration: none; color: inherit; transition: 0.3s all ease; }
+<?php include 'header.php'; ?>
 
-        /* HEADER */
-        header {
-            background: rgba(255, 255, 255, 0.02);
-            color: white;
-            padding: 0 4%;
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 10000;
-            backdrop-filter: blur(5px);
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-            transition: all 0.5s ease-in-out;
-        }
-        header.scrolled {
-            background: rgba(26, 37, 47, 0.98);
-            height: 100px;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.3);
-            backdrop-filter: blur(15px);
-            border-bottom: none;
-        }
-        
-        /* LOGO */
-        .logo-container { display: flex; align-items: center; flex: 1.4; z-index: 10002; text-decoration: none; cursor: pointer; }
-        .logo-wrapper { position: relative; width: 85px; height: 85px; background: white; padding: 5px; border-radius: 6px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.1); transition: all 0.4s; }
-        header.scrolled .logo-wrapper { width: 70px; height: 70px; }
-        .logo-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity 1.5s ease-in-out; }
-        .logo-main { z-index: 2; animation: logoAnimation 8s infinite; } .logo-alt { z-index: 1; }
-        @keyframes logoAnimation { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } 100% { opacity: 1; } }
-        
-        /* MARKA İSMİ */
-        .logo-text { margin-left: 15px; padding-left: 15px; border-left: 1px solid rgba(255,255,255,0.3); display: flex; flex-direction: column; justify-content: center; }
-        .brand-name { font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 1.5rem; line-height: 1; text-transform: uppercase; letter-spacing: 1px; background: linear-gradient(to right, #ffffff 0%, #b3b3b3 20%, #ffffff 40%, #ffffff 100%); background-size: 200% auto; color: white; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shine 5s linear infinite; }
-        .brand-sub { font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 0.85rem; color: var(--secondary); letter-spacing: 3px; margin-top: 4px; }
-        @keyframes shine { 0% { background-position: 200% center; } 100% { background-position: -200% center; } }
-
-        /* MENÜ */
-        nav { flex: 2; display: flex; justify-content: center; z-index: 10001; }
-        nav ul { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; align-items: center; }
-        nav a { position: relative; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; padding: 10px 16px; color: rgba(255,255,255,0.9); border-radius: 25px; transition: all 0.3s ease; text-shadow: 0 2px 5px rgba(0,0,0,0.5); letter-spacing: 1px; }
-        nav a:hover { color: var(--primary); background: rgba(255, 255, 255, 0.9); transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); text-shadow: none; }
-        
-        .header-right { display: flex; align-items: center; gap: 15px; flex: 1; justify-content: flex-end; z-index: 10002; }
-        .lang-switch select { background: rgba(0,0,0,0.3); color: white; border: 1px solid rgba(255,255,255,0.5); padding: 8px 12px; border-radius: 15px; cursor: pointer; font-size: 0.85rem; font-weight: 600; outline: none; appearance: none; -webkit-appearance: none; text-align: center; backdrop-filter: blur(5px); }
-        .lang-switch select option { color: black; }
-        .menu-toggle { display: none; font-size: 2rem; cursor: pointer; color: white; margin-left: 10px; }
-        
-        /* --- 2. CERTIFICATES PAGE SPECIFIC --- */
-        .page-header-section { background: linear-gradient(135deg, #141e26 0%, #1a252f 100%); padding: 180px 5% 60px; text-align: center; color: white; margin-bottom: 40px; }
-        .page-title { font-size: 3rem; font-weight: 900; margin-bottom: 10px; letter-spacing: 1px; text-transform: uppercase; }
-        
-        .cert-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; padding: 60px 5%; }
-        .cert-card { position: relative; background: white; width: 350px; height: 250px; padding: 40px; text-align: center; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; border: 1px solid #eee; }
-        .cert-card:hover { transform: translateY(-10px); box-shadow: 0 20px 50px rgba(0,0,0,0.1); border-color: var(--secondary); }
-        .cert-card h3 { font-size: 1.8rem; color: var(--primary); margin-bottom: 10px; z-index: 2; position: relative; font-weight: 800; }
-        .cert-card p { color: #888; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; z-index: 2; position: relative; }
-        .cert-watermark { position: absolute; top: 50%; left: 50%; width: 120%; height: auto; object-fit: contain; opacity: 0; transform: translate(-50%, -50%) scale(0.8); transition: all 0.6s; z-index: 1; pointer-events: none; }
-        .cert-card:hover .cert-watermark { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
-
-        /* --- 3. FOOTER & ANIMATIONS --- */
-        footer { background-color: #0f141a; color: #a0a0a0; padding-top: 60px; font-size: 0.95rem; border-top: 4px solid var(--secondary); margin-top: auto; }
-        .footer-container { display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 5% 40px; gap: 40px; }
-        .footer-col { flex: 1; min-width: 250px; }
-        .footer-col h4 { color: white; font-size: 1.1rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; border-left: 3px solid var(--secondary); padding-left: 10px; font-weight: 700; }
-        .footer-col ul { list-style: none; padding: 0; } .footer-col ul li { margin-bottom: 10px; font-size: 0.9rem; } 
-        .footer-col a { color: #a0a0a0; text-decoration: none; font-weight: 500; font-size: 0.9rem; text-transform: none; }
-        .footer-col a:hover { color: white; transform: translateX(5px); }
-        .contact-row { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; font-size: 0.9rem; }
-        .contact-icon { width: 18px; height: 18px; fill: var(--secondary); flex-shrink: 0; }
-        .footer-linkedin { display: inline-flex; align-items: center; gap: 10px; background: #0077b5; color: white !important; padding: 10px 20px; border-radius: 4px; font-weight: bold; margin-top: 10px; text-transform: none; }
-        .footer-bottom { background-color: #080b0e; padding: 20px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); font-size: 0.85rem; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 15px; }
-        .footer-legal a { margin-left: 20px; color: #777; }
-
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; } .reveal.active { opacity: 1; transform: translateY(0); }
-        
-        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 3px #999; z-index: 10005; display: flex; align-items: center; justify-content: center; animation: vibe 4s infinite; }
-        @keyframes vibe { 
-            0%, 2%, 4%, 6%, 8%, 10% { transform: translate3d(-2px, 0, 0); } 
-            1%, 3%, 5%, 7%, 9% { transform: translate3d(2px, 0, 0); } 
-            11% { transform: translate3d(0, 0, 0); } 
-        }
-
-        @media (max-width: 1100px) {
-            .menu-toggle { display: block; } header { padding: 0 5%; }
-            nav { position: absolute; top: 90px; right: 20px; left: auto; width: 220px; background: rgba(26, 37, 47, 0.98); border-radius: 12px; flex-direction: column; height: auto; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; box-shadow: 0 10px 40px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); }
-            nav.active { max-height: 400px; }
-            nav ul { flex-direction: column; gap: 0; width: 100%; padding: 10px 0; }
-            nav a { display: block; width: 100%; text-align: left; padding: 12px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); border-radius: 0; }
-            .logo-container { flex: unset; } .logo-wrapper { width: 60px; height: 60px; } .logo-text { margin-left: 10px; padding-left: 10px; } 
-            .brand-name { font-size: 1.2rem; } .brand-sub { font-size: 0.7rem; letter-spacing: 2px; }
-            .header-right { flex: unset; }
-            .footer-container { flex-direction: column; gap: 40px; } .footer-bottom { flex-direction: column; text-align: center; justify-content: center; }
-            .whatsapp-float { bottom: 20px; right: 20px; width: 50px; height: 50px; font-size: 25px; }
-        }
-    </style>
-</head>
-<body>
-    <header id="main-header">
-        <a href="index.html" class="logo-container">
-            <div class="logo-wrapper"><img src="images/logo.jpg" alt="Logo" class="logo-img logo-main"><img src="images/gem9.png" alt="Alt Logo" class="logo-img logo-alt"></div>
-            <div class="logo-text">
-                <span class="brand-name">HM Carbide</span>
-                <span class="brand-sub">Swiss GmbH</span>
-            </div>
-        </a>
-        <nav id="navbar"><ul><li><a href="index.html" data-i18n="nav_home">Startseite</a></li><li><a href="about.html" data-i18n="nav_about">Über Uns</a></li><li><a href="products.html" data-i18n="nav_products">Produkte</a></li><li><a href="certificates.html" data-i18n="nav_certs">Zertifikate</a></li><li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li></ul></nav>
-        <div class="header-right"><div class="lang-switch"><select onchange="changeLanguage(this.value)" id="langSel"><option value="de">DE</option><option value="en">EN</option><option value="tr">TR</option></select></div><div class="menu-toggle" onclick="toggleMenu()">☰</div></div>
-    </header>
-
-    <div class="page-header-section"><h1 class="page-title reveal" data-i18n="nav_certs">ZERTIFIKATE</h1></div>
-
-    <div class="cert-container">
-        <div class="cert-card reveal"><h3>ISO 9001:2015</h3><p>Quality Management System</p></div>
-        <div class="cert-card reveal"><h3 data-i18n="swiss_title">SCHWEIZER QUALITÄT</h3><p data-i18n="swiss_desc">Original Qualität</p><img src="images/gem9.png" class="cert-watermark" alt="Swiss Quality"></div>
+    <div class="page-header-section">
+        <h1 class="page-title reveal" data-i18n="nav_certs">ZERTIFIKATE</h1>
     </div>
 
-    <a href="https://wa.me/41762909193" class="whatsapp-float" target="_blank"><svg style="width:35px; height:35px; fill:white;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.017-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg></a>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-col"><div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;"><img src="images/logo.jpg" style="height:50px;border-radius:4px;"><span style="color:white;font-weight:800;font-size:1.2rem;">HM CARBIDE<br><span style="color:var(--secondary);font-size:0.9rem;">SWISS GmbH</span></span></div><p data-i18n="footer_desc">Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt.</p></div>
-            <div class="footer-col"><h4 data-i18n="nav_quick">Schnellzugriff</h4><ul><li><a href="index.html" data-i18n="nav_home">Startseite</a></li><li><a href="products.html" data-i18n="nav_products">Produkte</a></li><li><a href="certificates.html" data-i18n="nav_certs">Zertifikate</a></li><li><a href="about.html" data-i18n="nav_about">Über Uns</a></li><li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li></ul></div>
-            <div class="footer-col"><h4 data-i18n="nav_contact">Kontakt</h4>
-                <div class="contact-row"><svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span>Romanshornerstrasse 122, 9322 Egnach</span></div>
-                <div class="contact-row"><svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg><a href="tel:+41762909193">+41 76 290 91 93</a></div>
-                <div class="contact-row"><svg class="contact-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><a href="mailto:info@hmcarbide.ch">info@hmcarbide.ch</a></div>
-                <a href="https://www.linkedin.com/company/hmcarbideswiss/" target="_blank" class="footer-linkedin"><svg style="width:16px; height:16px; fill:white;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>Follow on LinkedIn</a>
-            </div>
+    <div class="cert-container">
+        <div class="cert-card reveal">
+            <h3>ISO 9001:2015</h3>
+            <p>Quality Management System</p>
         </div>
-        <div class="footer-bottom"><div>© 2025 HM Carbide Swiss GmbH. All Rights Reserved.</div><div style="font-size:1rem;color:#ccc;font-weight:600;">UID: CHE-477.630.623 MWST</div></div>
-    </footer>
+        
+        <div class="cert-card reveal">
+            <h3 data-i18n="swiss_title">SCHWEIZER QUALITÄT</h3>
+            <p data-i18n="swiss_desc">Original Qualität</p>
+            <img src="images/gem9.png" class="cert-watermark" alt="Swiss Quality">
+        </div>
+    </div>
 
-    <script>
-        window.addEventListener("scroll", function() { const header = document.getElementById("main-header"); if (window.scrollY > 50) header.classList.add("scrolled"); else header.classList.remove("scrolled"); });
-        function toggleMenu() { document.getElementById('navbar').classList.toggle('active'); }
-        window.addEventListener('scroll', reveal); function reveal(){ var reveals = document.querySelectorAll('.reveal'); for(var i=0; i<reveals.length; i++){ var windowheight=window.innerHeight; var revealtop=reveals[i].getBoundingClientRect().top; if(revealtop < windowheight - 50){ reveals[i].classList.add('active'); } } } reveal();
-
-        const translations = {
-            de: { nav_home:"Startseite", nav_about:"Über Uns", nav_products:"Produkte", nav_certs:"Zertifikate", nav_contact:"Kontakt", swiss_title: "SCHWEIZER QUALITÄT", swiss_desc: "Original Qualität", nav_quick:"Schnellzugriff", social_label:"Soziale Medien", footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt." },
-            en: { nav_home:"Home", nav_about:"About Us", nav_products:"Products", nav_certs:"Certificates", nav_contact:"Contact", swiss_title: "SWISS QUALITY", swiss_desc: "Original Quality", nav_quick:"Quick Links", social_label:"Social Media", footer_desc: "Your reliable partner for wear-resistant and pressure-resistant carbide products. Swiss precision for the world." },
-            tr: { nav_home:"Anasayfa", nav_about:"Hakkımızda", nav_products:"Ürünlerimiz", nav_certs:"Sertifikalar", nav_contact:"İletişim", swiss_title: "İSVİÇRE KALİTESİ", swiss_desc: "ORİJİNAL KALİTE", nav_quick:"Hızlı Linkler", social_label:"Sosyal Medya", footer_desc: "Aşınmaya ve basınca dayanıklı karbür ürünler için güvenilir ortağınız. Dünya için İsviçre hassasiyeti." }
-        };
-        function changeLanguage(lang) { localStorage.setItem('hm_lang', lang); document.getElementById('langSel').value = lang; document.querySelectorAll('[data-i18n]').forEach(e => { const key = e.getAttribute('data-i18n'); if(translations[lang][key]) e.innerText = translations[lang][key]; }); }
-        function detectAndSetLanguage() { let lang = localStorage.getItem('hm_lang'); if (!lang) { const browserLang = navigator.language || navigator.userLanguage; lang = browserLang.startsWith('tr') ? 'tr' : (browserLang.startsWith('en') ? 'en' : 'de'); } changeLanguage(lang); }
-        document.addEventListener('DOMContentLoaded', detectAndSetLanguage);
-    </script>
-</body>
-</html>
+<?php include 'footer.php'; ?>
