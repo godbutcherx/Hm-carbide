@@ -1,4 +1,4 @@
-// --- DİL ÇEVİRİLERİ ---
+// --- DİL ÇEVİRİLERİ (HTML Entity - %100 Güvenli) ---
 const translations = {
     de: { 
         nav_home: "Startseite", nav_about: "&Uuml;ber Uns", nav_products: "Produkte", nav_certs: "Zertifikate", nav_contact: "Kontakt",
@@ -12,9 +12,7 @@ const translations = {
         swiss_title: "SCHWEIZER QUALITÄT", swiss_desc: "Original Qualität",
         contact_info_title: "Kontaktinformationen", form_title: "Nachricht Senden", form_btn: "SENDEN", ph_name: "Name", ph_email: "E-Mail", ph_message: "Ihre Nachricht...",
         about_content: `<h3>Die Kraft der Erfahrung, die Sicherheit von HM Carbide</h3><p>Dank unserer jahrelangen Erfahrung in der Zerspanungs- und Hartmetallindustrie kennen wir die Bedürfnisse der Fertigungswelt sehr genau. HM Carbide Swiss GmbH wurde gegründet, um dieses Wissen mit Schweizer Produktionsqualität zu verbinden und unseren Kunden die genauesten Rohstofflösungen anzubieten.</p><p>Mit unseren in der Schweiz ansässigen Operationen liefern wir nach europäischen Standards hergestellte Hartmetallstäbe zu wettbewerbsfähigen Bedingungen und mit zuverlässigem Lieferkettenmanagement an unsere Geschäftspartner. Unser Ziel ist es, die Stillstandzeiten in den Produktionslinien unserer Kunden zu minimieren und die Werkzeugstandzeiten zu maximieren.</p><p>Mit unserer Erfahrung aus der Vergangenheit und unserer Vision für die Zukunft sind wir als HM Carbide Swiss GmbH hier, um Ihrem Geschäft einen Mehrwert zu bieten.</p>`,
-        // ALERT MESAJLARI (DÜZ METİN)
-        alert_success: "Ihre Nachricht wurde erfolgreich gesendet!", 
-        alert_error: "Fehler beim Senden der Nachricht."
+        alert_success: "Ihre Nachricht wurde erfolgreich gesendet!", alert_error: "Fehler beim Senden der Nachricht."
     },
     en: { 
         nav_home: "Home", nav_about: "About Us", nav_products: "Products", nav_certs: "Certificates", nav_contact: "Contact",
@@ -28,9 +26,7 @@ const translations = {
         swiss_title: "SWISS QUALITY", swiss_desc: "Original Quality",
         contact_info_title: "Contact Info", form_title: "Send Message", form_btn: "SEND", ph_name: "Name", ph_email: "Email", ph_message: "Your Message...",
         about_content: `<h3>The Power of Experience, The Assurance of HM Carbide</h3><p>With years of experience in the machining and carbide industry, we know the needs of the manufacturing world very well. HM Carbide Swiss GmbH was founded to combine this knowledge with Swiss production quality to offer our customers the most accurate raw material solutions.</p><p>With our Swiss-based operations, we deliver carbide rods produced to European standards to our business partners with competitive conditions and reliable supply chain management. Our goal is to minimize downtime in our customers' production lines and maximize tool life.</p><p>As HM Carbide Swiss GmbH, we are here to add value to your business.</p>`,
-        // ALERT MESAJLARI (DÜZ METİN)
-        alert_success: "Your message has been sent successfully!", 
-        alert_error: "Error sending message."
+        alert_success: "Your message has been sent successfully!", alert_error: "Error sending message."
     },
     tr: { 
         nav_home: "Anasayfa", nav_about: "Hakkımızda", nav_products: "Ürünlerimiz", nav_certs: "Sertifikalar", nav_contact: "İletişim",
@@ -44,9 +40,7 @@ const translations = {
         swiss_title: "İSVİÇRE KALİTESİ", swiss_desc: "ORİJİNAL KALİTE",
         contact_info_title: "İletişim Bilgileri", form_title: "Mesaj Gönderin", form_btn: "GÖNDER", ph_name: "Adınız", ph_email: "E-Posta", ph_message: "Mesajınız...",
         about_content: `<h3>Tecrübenin Gücü, HM Carbide Güvencesi</h3><p>Talaşlı imalat ve karbür endüstrisindeki yıllara dayanan tecrübemizle, üretim dünyasının ihtiyaçlarını çok iyi biliyoruz. HM Carbide Swiss GmbH, bu bilgi birikimini İsviçre’nin üretim kalitesiyle harmanlayarak müşterilerine en doğru hammadde çözümlerini sunmak amacıyla kurulmuştur.</p><p>İsviçre merkezli operasyonlarımızla, Avrupa standartlarında üretilen karbür çubukları, rekabetçi koşullar ve güvenilir tedarik zinciri yönetimiyle iş ortaklarımıza ulaştırıyoruz. Amacımız; müşterilerimizin üretim hattındaki duruş sürelerini en aza indirmek ve takım ömürlerini maksimize etmektir.</p><p>Geçmişten gelen deneyimimiz ve geleceğe dönük vizyonumuzla, HM Carbide Swiss GmbH olarak işinize değer katmak için buradayız.</p>`,
-        // ALERT MESAJLARI (DÜZ METİN - Karakter sorunu çözüldü)
-        alert_success: "Mesajınız başarıyla gönderildi!", 
-        alert_error: "Bir hata oluştu, lütfen tekrar deneyin."
+        alert_success: "Mesajınız başarıyla gönderildi!", alert_error: "Bir hata oluştu, lütfen tekrar deneyin."
     }
 };
 
@@ -101,9 +95,14 @@ function filterProducts() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    emailjs.init("YZquRq4Ohz6CEdGZJ"); 
-
+    // 1. ÖNCE SAYFAYI GÖSTER (Reveal)
     setTimeout(reveal, 100);
+
+    // 2. EmailJS Sadece Varsa Başlat (HATA BURADAYDI)
+    if (typeof emailjs !== 'undefined') {
+        emailjs.init("YZquRq4Ohz6CEdGZJ");
+    }
+
     let lang = localStorage.getItem('hm_lang');
     if (!lang) {
         const browserLang = navigator.language || navigator.userLanguage;
@@ -112,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     changeLanguage(lang);
     fillProducts();
     
+    // Header Scroll
     window.addEventListener("scroll", () => {
         const header = document.getElementById("main-header");
         if(header) {
@@ -121,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         reveal();
     });
 
+    // Slider
     let currentSlide = 0;
     const slides = document.querySelectorAll('.hero-slideshow img');
     if(slides.length > 0) {
@@ -131,8 +132,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 5000); 
     }
 
+    // --- FORM GÖNDERME İŞLEMİ ---
     const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
+    // Eğer form varsa VE emailjs yüklüyse çalıştır
+    if (contactForm && typeof emailjs !== 'undefined') {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
             const btn = document.getElementById('submit-btn');
@@ -144,7 +147,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             emailjs.sendForm(serviceID, templateID, this)
                 .then(function() {
-                    alert(translations[lang].alert_success); // DÜZELTİLDİ
+                    alert(translations[lang].alert_success);
                     btn.innerText = originalText;
                     contactForm.reset();
                 }, function(error) {
