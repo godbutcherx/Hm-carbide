@@ -3,7 +3,7 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
 body { background: var(--light); color: var(--text); line-height: 1.7; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
 a { text-decoration: none; color: inherit; transition: 0.3s all ease; }
-img { max-width: 100%; height: auto; } /* Resimler asla taşmasın */
+img { max-width: 100%; height: auto; }
 
 /* --- 2. HEADER & MENU --- */
 header {
@@ -26,9 +26,9 @@ header.scrolled .logo-wrapper, header.header-inner .logo-wrapper { width: 70px; 
 
 /* MENÜ */
 nav { flex: 3; display: flex; justify-content: center; z-index: 10001; }
-nav ul { display: flex; gap: 5px; list-style: none; margin: 0; padding: 0; align-items: center; }
+nav ul { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; align-items: center; }
 nav a { 
-    position: relative; font-size: 0.85rem; font-weight: 700; text-transform: uppercase; 
+    position: relative; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; 
     padding: 10px 15px; color: rgba(255,255,255,0.95); border-radius: 25px; transition: all 0.3s ease; 
     white-space: nowrap; letter-spacing: 0.5px;
 }
@@ -37,14 +37,6 @@ nav a:hover { color: var(--primary); background: rgba(255, 255, 255, 0.9); trans
 .lang-switch select { background: rgba(0,0,0,0.3); color: white; border: 1px solid rgba(255,255,255,0.5); padding: 5px 10px; border-radius: 15px; cursor: pointer; font-size: 0.8rem; outline: none; }
 .lang-switch select option { color: black; }
 .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: white; margin-left: 10px; }
-
-/* İÇ SAYFA HEADER */
-.page-header-section { 
-    background: linear-gradient(135deg, #141e26 0%, #1a252f 100%); 
-    padding: 180px 5% 60px; text-align: center; color: white; margin-bottom: 40px; 
-    position: relative; z-index: 1; 
-}
-.page-title { font-size: 3rem; font-weight: 900; margin-bottom: 10px; letter-spacing: 1px; text-transform: uppercase; }
 
 /* MOBİL */
 @media (max-width: 1100px) {
@@ -56,54 +48,90 @@ nav a:hover { color: var(--primary); background: rgba(255, 255, 255, 0.9); trans
     .logo-container { flex: unset; } .header-right { flex: unset; }
 }
 
-/* CERTIFICATES (DÜZELTME: Logo taşmasını engelle) */
-.cert-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; padding: 60px 5%; }
-.cert-card { 
-    position: relative; background: white; width: 350px; height: 250px; padding: 40px; 
-    text-align: center; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-    transition: 0.4s; display: flex; flex-direction: column; justify-content: center; align-items: center; 
-    overflow: hidden; /* Taşmayı engeller */
-    border: 1px solid #eee; 
-}
-.cert-card:hover { transform: translateY(-10px); border-color: var(--secondary); }
-.cert-watermark { 
-    position: absolute; top: 50%; left: 50%; 
-    width: 80%; /* %120 yerine %80 yapıldı, taşmasın diye */
-    max-width: 250px; 
-    opacity: 0; transform: translate(-50%, -50%) scale(0.8); transition: 0.6s; pointer-events: none; 
-}
-.cert-card:hover .cert-watermark { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
-
-/* DİĞER CSS AYARLARI */
+/* HERO (VURGULU YAZILAR) */
 .hero { position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 20px; color: white; overflow: hidden; }
 .hero-slideshow { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; }
 .hero-slideshow img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 2s ease-in-out; transform: scale(1.05); }
 .hero-slideshow img.active { opacity: 1; transform: scale(1); }
-.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)); z-index: -1; }
-.btn { padding: 15px 45px; background: var(--secondary); color: white; font-weight: 700; border-radius: 50px; box-shadow: 0 10px 20px rgba(217, 48, 37, 0.3); transition: 0.3s; display: inline-block; cursor: pointer; border: none; }
-.btn:hover { background: #b0261d; transform: translateY(-3px); }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)); z-index: -1; }
+
+/* ANASAYFA YAZI VURGULARI */
+.hero h1 { 
+    font-size: 4rem; margin-bottom: 20px; font-weight: 900; letter-spacing: 2px; line-height: 1.2; 
+    text-shadow: 0 10px 30px rgba(0,0,0,0.8); /* Gölge ile vurgu */
+    opacity: 0; animation: industrialDrop 1s forwards 0.5s; 
+    background: linear-gradient(75deg, #ffffff 20%, #e0e0e0 40%, #ffffff 50%, #e0e0e0 60%, #ffffff 80%); 
+    background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+}
+.hero p { 
+    font-size: 1.6rem; font-weight: 700; margin-bottom: 40px; letter-spacing: 3px; 
+    color: #ffffff; text-shadow: 0 5px 15px rgba(0,0,0,0.9); /* Gölge */
+    opacity: 0; animation: industrialDrop 1s forwards 0.8s; 
+}
+
+@keyframes industrialDrop { 0% { transform: translateY(-150px) scale(1.1); opacity: 0; } 60% { transform: translateY(0) scale(1); opacity: 1; } 100% { transform: translateY(0) scale(1); opacity: 1; } }
+@keyframes metalSheen { 0% { background-position: -200%; } 100% { background-position: 200%; } }
+
+.btn { padding: 18px 50px; background: var(--secondary); color: white; font-weight: 800; font-size: 1.1rem; border-radius: 50px; box-shadow: 0 10px 20px rgba(217, 48, 37, 0.4); transition: 0.3s; display: inline-block; cursor: pointer; border: none; text-decoration: none; }
+.btn:hover { background: #b0261d; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(217, 48, 37, 0.6); }
+.btn-outline { padding: 15px 45px; background: transparent; border: 2px solid var(--primary); color: var(--primary); box-shadow: none; font-weight: 700; border-radius: 50px; transition:0.3s; }
+.btn-outline:hover { background: var(--primary); color: white; }
+
+/* ARAMA ÇUBUĞU (BÜYÜTÜLDÜ) */
+.search-wrapper { position: relative; max-width: 800px; width: 90%; margin: 40px auto 0; }
+.search-input { 
+    width: 100%; padding: 20px 30px; font-size: 1.3rem; /* Font büyüdü */
+    border: 2px solid #eee; border-radius: 50px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); 
+    outline: none; transition: 0.3s; 
+}
+.search-input:focus { border-color: var(--secondary); box-shadow: 0 15px 50px rgba(217, 48, 37, 0.15); }
+.search-icon { position: absolute; right: 25px; top: 50%; transform: translateY(-50%); color: #aaa; font-size: 1.5rem; }
+
+/* PRODUCTS */
+.page-header-section { background: linear-gradient(135deg, #141e26 0%, #1a252f 100%); padding: 180px 5% 80px; text-align: center; color: white; margin-bottom: 40px; position: relative; z-index: 1; }
+.page-title { font-size: 3rem; font-weight: 900; margin-bottom: 15px; letter-spacing: 1px; text-transform: uppercase; }
+.prod-container { padding: 0 5%; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-bottom: 80px; }
+.card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eee; transition:0.3s; }
+.card:hover { transform: translateY(-10px); box-shadow: 0 25px 60px rgba(0,0,0,0.15); }
+.card-head { background: var(--primary); color: white; padding: 25px; text-align: center; font-weight: 800; font-size:1.2rem; }
+.card-img-wrapper { height: 250px; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #eee; background:#fff; }
+.card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition:0.5s; }
+.card:hover .card-img-wrapper img { transform: scale(1.05); }
+.table-wrap { max-height: 350px; overflow-y: auto; padding: 0; }
+.prod-table { width: 100%; border-collapse: collapse; text-align: left; }
+.prod-table th { position: sticky; top: 0; background: #e9ecef; color: var(--primary); padding: 15px; z-index: 10; font-size: 0.9rem; font-weight:800; }
+.prod-table td { padding: 15px; border-bottom: 1px solid #eee; font-size: 1rem; color:#555; }
+.tech-table-wrapper { overflow-x: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+.tech-table { width: 100%; border-collapse: collapse; min-width: 800px; background: white; }
+.tech-table th, .tech-table td { padding: 18px; text-align: center; border: 1px solid #eee; font-size:1rem; }
+.tech-table thead { background: var(--primary); color: white; font-weight:800; }
+
+/* CERTIFICATES & OTHERS */
+.cert-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 50px; padding: 60px 5%; }
+.cert-card { position: relative; background: white; width: 350px; height: 250px; padding: 40px; text-align: center; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.4s; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; border: 1px solid #eee; }
+.cert-card:hover { transform: translateY(-10px); border-color: var(--secondary); }
+.cert-watermark { position: absolute; top: 50%; left: 50%; width: 80%; max-width: 250px; opacity: 0; transform: translate(-50%, -50%) scale(0.8); transition: 0.6s; pointer-events: none; }
+.cert-card:hover .cert-watermark { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
 
 /* FOOTER */
 footer { background-color: #0f141a; color: #a0a0a0; padding-top: 60px; font-size: 0.95rem; border-top: 4px solid var(--secondary); margin-top: auto; }
 .footer-container { display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 0 5% 40px; gap: 40px; }
 .footer-col { flex: 1; min-width: 250px; }
-.contact-row { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; font-size: 0.9rem; }
-.footer-col svg { width: 20px; height: 20px; fill: var(--secondary); vertical-align: middle; }
-.footer-linkedin { display: inline-flex; align-items: center; background: #0077b5; color: white !important; padding: 10px 20px; border-radius: 4px; font-weight: bold; margin-top: 10px; }
-.footer-linkedin svg { fill: white; margin-right: 5px; } 
+.footer-col h4 { color: white; font-size: 1.1rem; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; border-left: 3px solid var(--secondary); padding-left: 10px; font-weight: 700; }
+.footer-col ul { list-style: none; padding: 0; } .footer-col ul li { margin-bottom: 10px; } 
+.contact-row { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; font-size: 0.95rem; }
+.footer-col svg { width: 20px; height: 20px; fill: var(--secondary); vertical-align: middle; flex-shrink: 0; }
+.footer-linkedin { display: inline-flex; align-items: center; background: #0077b5; color: white !important; padding: 10px 25px; border-radius: 4px; font-weight: bold; margin-top: 15px; }
+.footer-linkedin svg { fill: white; margin-right: 8px; } 
 .footer-bottom { background-color: #080b0e; padding: 20px 5%; text-align: center; border-top: 1px solid rgba(255,255,255,0.05); }
-
-.prod-container { padding: 0 5%; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; margin-bottom: 80px; }
-.card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eee; }
-.card-head { background: var(--primary); color: white; padding: 20px; text-align: center; font-weight: 700; }
-.card-img-wrapper { height: 220px; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid #eee; }
-.card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; }
-.prod-table { width: 100%; border-collapse: collapse; }
-.prod-table td { padding: 12px 15px; border-bottom: 1px solid #eee; }
-.tech-table { width: 100%; border-collapse: collapse; min-width: 800px; }
-.tech-table th, .tech-table td { padding: 15px; text-align: center; border: 1px solid #eee; }
-.tech-table thead { background: var(--primary); color: white; }
 .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 40px; right: 40px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; display: flex; align-items: center; justify-content: center; z-index: 10005; }
+@keyframes vibe { 0%, 2%, 4%, 6%, 8%, 10% { transform: translate3d(-2px, 0, 0); } 1%, 3%, 5%, 7%, 9% { transform: translate3d(2px, 0, 0); } 11% { transform: translate3d(0, 0, 0); } }
 .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; } 
 .reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Mobilde Hero Yazı Küçültme */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2rem; }
+    .hero p { font-size: 1rem; }
+}
