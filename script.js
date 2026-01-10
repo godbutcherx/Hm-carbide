@@ -95,10 +95,9 @@ function filterProducts() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. ÖNCE SAYFAYI GÖSTER (Reveal)
     setTimeout(reveal, 100);
 
-    // 2. EmailJS Sadece Varsa Başlat (HATA BURADAYDI)
+    // 2. EmailJS Sadece Varsa Başlat
     if (typeof emailjs !== 'undefined') {
         emailjs.init("YZquRq4Ohz6CEdGZJ");
     }
@@ -145,13 +144,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const serviceID = "gorrxcaveman@gmail.com"; 
             const templateID = "template_u11karb";
 
+            // GÖNDERME ANINDAKİ DİLİ AL (DÜZELTME BURADA YAPILDI)
+            const currentLang = localStorage.getItem('hm_lang') || 'de';
+
             emailjs.sendForm(serviceID, templateID, this)
                 .then(function() {
-                    alert(translations[lang].alert_success);
+                    alert(translations[currentLang].alert_success); // ŞİMDİ DOĞRU DİLDE GELECEK
                     btn.innerText = originalText;
                     contactForm.reset();
                 }, function(error) {
-                    alert(translations[lang].alert_error + "\n" + JSON.stringify(error));
+                    alert(translations[currentLang].alert_error + "\n" + JSON.stringify(error));
                     btn.innerText = originalText;
                 });
         });
