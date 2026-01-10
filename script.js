@@ -1,4 +1,4 @@
-// --- DİL ÇEVİRİLERİ (HTML Entity Kodları ile güvenli hale getirildi) ---
+// --- DİL ÇEVİRİLERİ ---
 const translations = {
     de: { 
         nav_home: "Startseite", nav_about: "&Uuml;ber Uns", nav_products: "Produkte", nav_certs: "Zertifikate", nav_contact: "Kontakt",
@@ -10,7 +10,12 @@ const translations = {
         tech_title: "Technische Daten", th_grain: "Korngröße", th_density: "Dichte", th_hard: "Härte", th_trs: "Biegefestigkeit",
         swiss_title: "SCHWEIZER QUALITÄT", swiss_desc: "Original Qualität",
         contact_info_title: "Kontaktinformationen", form_title: "Nachricht Senden", form_btn: "SENDEN", ph_name: "Name", ph_email: "E-Mail", ph_message: "Nachricht...",
-        about_content: "<h3>Die Kraft der Erfahrung...</h3><p>Dank unserer jahrelangen Erfahrung...</p>"
+        about_content: `
+            <h3>Die Kraft der Erfahrung, die Sicherheit von HM Carbide</h3>
+            <p>Dank unserer jahrelangen Erfahrung in der Zerspanungs- und Hartmetallindustrie kennen wir die Bedürfnisse der Fertigungswelt sehr genau. HM Carbide Swiss GmbH wurde gegründet, um dieses Wissen mit Schweizer Produktionsqualität zu verbinden und unseren Kunden die genauesten Rohstofflösungen anzubieten.</p>
+            <p>Mit unseren in der Schweiz ansässigen Operationen liefern wir nach europäischen Standards hergestellte Hartmetallstäbe zu wettbewerbsfähigen Bedingungen und mit zuverlässigem Lieferkettenmanagement an unsere Geschäftspartner. Unser Ziel ist es, die Stillstandzeiten in den Produktionslinien unserer Kunden zu minimieren und die Werkzeugstandzeiten zu maximieren.</p>
+            <p>Mit unserer Erfahrung aus der Vergangenheit und unserer Vision für die Zukunft sind wir als HM Carbide Swiss GmbH hier, um Ihrem Geschäft einen Mehrwert zu bieten.</p>
+        `
     },
     en: { 
         nav_home: "Home", nav_about: "About Us", nav_products: "Products", nav_certs: "Certificates", nav_contact: "Contact",
@@ -22,7 +27,12 @@ const translations = {
         tech_title: "Technical Specs", th_grain: "Grain Size", th_density: "Density", th_hard: "Hardness", th_trs: "TRS",
         swiss_title: "SWISS QUALITY", swiss_desc: "Original Quality",
         contact_info_title: "Contact Info", form_title: "Send Message", form_btn: "SEND", ph_name: "Name", ph_email: "Email", ph_message: "Message...",
-        about_content: "<h3>The Power of Experience...</h3><p>With years of experience...</p>"
+        about_content: `
+            <h3>The Power of Experience, The Assurance of HM Carbide</h3>
+            <p>With years of experience in the machining and carbide industry, we know the needs of the manufacturing world very well. HM Carbide Swiss GmbH was founded to combine this knowledge with Swiss production quality to offer our customers the most accurate raw material solutions.</p>
+            <p>With our Swiss-based operations, we deliver carbide rods produced to European standards to our business partners with competitive conditions and reliable supply chain management. Our goal is to minimize downtime in our customers' production lines and maximize tool life.</p>
+            <p>As HM Carbide Swiss GmbH, we are here to add value to your business.</p>
+        `
     },
     tr: { 
         nav_home: "Anasayfa", 
@@ -42,7 +52,12 @@ const translations = {
         tech_title: "Teknik &Ouml;zellikler", th_grain: "Tane Boyutu", th_density: "Yo&#287;unluk", th_hard: "Sertlik", th_trs: "K&#305;r&#305;lma Dayan&#305;m&#305;",
         swiss_title: "&#304;SV&#304;&#199;RE KAL&#304;TES&#304;", swiss_desc: "OR&#304;J&#304;NAL KAL&#304;TE",
         contact_info_title: "&#304;leti&#351;im Bilgileri", form_title: "Mesaj G&ouml;nderin", form_btn: "G&Ouml;NDER", ph_name: "Ad&#305;n&#305;z", ph_email: "E-Posta", ph_message: "Mesaj&#305;n&#305;z...",
-        about_content: "<h3>Tecr&uuml;benin G&uuml;c&uuml;...</h3><p>Tala&#351;l&#305; imalat ve karb&uuml;r end&uuml;strisindeki...</p>"
+        about_content: `
+            <h3>Tecr&uuml;benin G&uuml;c&uuml;, HM Carbide G&uuml;vencesi</h3>
+            <p>Tala&#351;l&#305; imalat ve karb&uuml;r end&uuml;strisindeki y&#305;llara dayanan tecr&uuml;bemizle, &uuml;retim d&uuml;nyas&#305;n&#305;n ihtiya&#231;lar&#305;n&#305; &#231;ok iyi biliyoruz. HM Carbide Swiss GmbH, bu bilgi birikimini &#304;svi&#231;re&rsquo;nin &uuml;retim kalitesiyle harmanlayarak m&uuml;&#351;terilerine en do&#287;ru hammadde &#231;&ouml;z&uuml;mlerini sunmak amac&#305;yla kurulmu&#351;tur.</p>
+            <p>&#304;svi&#231;re merkezli operasyonlar&#305;m&#305;zla, Avrupa standartlar&#305;nda &uuml;retilen karb&uuml;r &#231;ubuklar&#305;, rekabet&#231;i ko&#351;ullar ve g&uuml;venilir tedarik zinciri y&ouml;netimiyle i&#351; ortaklar&#305;m&#305;za ula&#351;t&#305;r&#305;yoruz. Amac&#305;m&#305;z; m&uuml;&#351;terilerimizin &uuml;retim hatt&#305;ndaki duru&#351; s&uuml;relerini en aza indirmek ve tak&#305;m &ouml;m&uuml;rlerini maksimize etmektir.</p>
+            <p>Ge&#231;mi&#351;ten gelen deneyimimiz ve gelece&#287;e d&ouml;n&uuml;k vizyonumuzla, HM Carbide Swiss GmbH olarak i&#351;inize de&#287;er katmak i&#231;in buraday&#305;z.</p>
+        `
     }
 };
 
@@ -53,7 +68,7 @@ function changeLanguage(lang) {
 
     document.querySelectorAll('[data-i18n]').forEach(e => {
         const key = e.getAttribute('data-i18n');
-        if(translations[lang][key]) e.innerHTML = translations[lang][key]; // innerText yerine innerHTML
+        if(translations[lang][key]) e.innerHTML = translations[lang][key];
     });
     document.querySelectorAll('[data-i18n-ph]').forEach(e => {
         const key = e.getAttribute('data-i18n-ph');
@@ -101,8 +116,8 @@ function filterProducts() {
 
 // --- INIT (BAŞLATMA) ---
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Reveal'ı HEMEN çalıştır (Scroll beklemeden)
-    setTimeout(reveal, 100); 
+    // REVEAL'I HEMEN ÇAĞIR (Sayfanın boş görünmemesi için)
+    setTimeout(reveal, 100);
 
     let lang = localStorage.getItem('hm_lang');
     if (!lang) {
@@ -112,7 +127,6 @@ document.addEventListener('DOMContentLoaded', () => {
     changeLanguage(lang);
     fillProducts();
     
-    // Header Scroll
     window.addEventListener("scroll", () => {
         const header = document.getElementById("main-header");
         if(header) {
@@ -122,7 +136,6 @@ document.addEventListener('DOMContentLoaded', () => {
         reveal();
     });
 
-    // Slider
     let currentSlide = 0;
     const slides = document.querySelectorAll('.hero-slideshow img');
     if(slides.length > 0) {
@@ -141,8 +154,7 @@ function reveal() {
     reveals.forEach(r => {
         var windowHeight = window.innerHeight;
         var elementTop = r.getBoundingClientRect().top;
-        // Eğer element ekranın içindeyse veya ekranın biraz altındaysa göster
-        if(elementTop < windowHeight + 50) { 
+        if(elementTop < windowHeight + 100) { 
             r.classList.add('active');
         }
     });
