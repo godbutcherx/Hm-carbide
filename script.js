@@ -7,7 +7,8 @@ const translations = {
         nat_title: "Tungsten, Karbon, Kobalt... Unser Wesen ist Natur.", nat_sub: "Wir bieten die stärksten Erze der Natur mit Schweizer Präzision.", nat_desc: "Die einzigartige Haltbarkeit von Hartmetallstäben entsteht aus der Kraft der Elemente aus den Tiefen der Erde. Wir als HM Carbide wählen sorgfältig Produkte aus, die die Härte von Wolfram und die Bindekraft von Kobalt am besten widerspiegeln, und bringen sie zu Ihnen. Wir respektieren das Gleichgewicht der Natur in unseren Lieferprozessen; wir sind stolz darauf, diese Kraft, die die Industrie benötigt, mit Umweltbewusstsein und Schweizer Qualitätsstandards anzubieten.",
         about_title: "&Uuml;ber Uns", about_text: "HM Carbide Swiss GmbH ist Ihr zuverlässiger Partner.", about_btn: "MEHR ERFAHREN",
         p1: "Hartmetallstab Voll", p2: "Stab mit Kühlkanal", p3: "Gekürzter Stab", 
-        tech_title: "Technische Daten", th_grain: "Korngröße", th_density: "Dichte", th_hard: "Härte", th_trs: "Biegefestigkeit",
+        prod_subtitle: "Hochleistungs-Hartmetallstäbe", // YENİ EKLENDİ
+        tech_title: "Technische Daten", th_grain: "Korngröße", th_density: "Dichte", th_hard: "Härte", th_trs: "Biegefestigkeit", search_ph: "Dimension suchen (z.B. 12x330)...",
         swiss_title: "SCHWEIZER QUALITÄT", swiss_desc: "Original Qualität",
         contact_info_title: "Kontaktinformationen", form_title: "Nachricht Senden", form_btn: "SENDEN", ph_name: "Name", ph_email: "E-Mail", ph_message: "Ihre Nachricht...",
         about_content: `<h3>Die Kraft der Erfahrung, die Sicherheit von HM Carbide</h3><p>Dank unserer jahrelangen Erfahrung in der Zerspanungs- und Hartmetallindustrie kennen wir die Bedürfnisse der Fertigungswelt sehr genau. HM Carbide Swiss GmbH wurde gegründet, um dieses Wissen mit Schweizer Produktionsqualität zu verbinden und unseren Kunden die genauesten Rohstofflösungen anzubieten.</p><p>Mit unseren in der Schweiz ansässigen Operationen liefern wir nach europäischen Standards hergestellte Hartmetallstäbe zu wettbewerbsfähigen Bedingungen und mit zuverlässigem Lieferkettenmanagement an unsere Geschäftspartner. Unser Ziel ist es, die Stillstandzeiten in den Produktionslinien unserer Kunden zu minimieren und die Werkzeugstandzeiten zu maximieren.</p><p>Mit unserer Erfahrung aus der Vergangenheit und unserer Vision für die Zukunft sind wir als HM Carbide Swiss GmbH hier, um Ihrem Geschäft einen Mehrwert zu bieten.</p>`
@@ -19,7 +20,8 @@ const translations = {
         nat_title: "Tungsten, Carbon, Cobalt... Our Essence is Nature.", nat_sub: "Nature's strongest ores with Swiss precision.", nat_desc: "The unique durability of carbide rods stems from the power of elements from deep within the earth. As HM Carbide, we carefully select products that best reflect the hardness of tungsten and the binding power of cobalt, bringing them to you. We respect nature's balance in our supply processes; we are proud to offer this strength required by the industry with environmental awareness and Swiss quality standards.",
         about_title: "About Us", about_text: "Your reliable partner for high-quality carbide products.", about_btn: "LEARN MORE",
         p1: "Solid Carbide Rod", p2: "Rod with Coolant", p3: "Cut-to-Length Rod", 
-        tech_title: "Technical Specs", th_grain: "Grain Size", th_density: "Density", th_hard: "Hardness", th_trs: "TRS",
+        prod_subtitle: "High Performance Carbide Rods", // YENİ EKLENDİ
+        tech_title: "Technical Specs", th_grain: "Grain Size", th_density: "Density", th_hard: "Hardness", th_trs: "TRS", search_ph: "Search dimension (e.g. 12x330)...",
         swiss_title: "SWISS QUALITY", swiss_desc: "Original Quality",
         contact_info_title: "Contact Info", form_title: "Send Message", form_btn: "SEND", ph_name: "Name", ph_email: "Email", ph_message: "Your Message...",
         about_content: `<h3>The Power of Experience, The Assurance of HM Carbide</h3><p>With years of experience in the machining and carbide industry, we know the needs of the manufacturing world very well. HM Carbide Swiss GmbH was founded to combine this knowledge with Swiss production quality to offer our customers the most accurate raw material solutions.</p><p>With our Swiss-based operations, we deliver carbide rods produced to European standards to our business partners with competitive conditions and reliable supply chain management. Our goal is to minimize downtime in our customers' production lines and maximize tool life.</p><p>As HM Carbide Swiss GmbH, we are here to add value to your business.</p>`
@@ -40,7 +42,8 @@ const translations = {
         nat_desc: "Karb&uuml;r &#231;ubuklar&#305;n e&#351;siz dayan&#305;kl&#305;l&#305;&#287;&#305;, yerin derinliklerinden gelen elementlerin g&uuml;c&uuml;nden do&#287;ar. HM Carbide olarak, tungstenin sertli&#287;ini ve kobalt&#305;n ba&#287;lay&#305;c&#305; g&uuml;c&uuml;n&uuml; en iyi yans&#305;tan &uuml;r&uuml;nleri &ouml;zenle se&#231;iyor ve size ula&#351;t&#305;r&#305;yoruz. Tedarik s&uuml;re&ccedil;lerimizde do&#287;an&#305;n dengesine sayg&#305; duyuyor; end&uuml;strinin ihtiya&#231; duydu&#287;u bu g&uuml;c&uuml;, &ccedil;evre bilinci ve &#304;svi&ccedil;re kalite standartlar&#305;yla sunmaktan gurur duyuyoruz.",
         about_title: "Hakk&#305;m&#305;zda", about_text: "Y&uuml;ksek kaliteli karb&uuml;r &uuml;r&uuml;nleri i&#231;in g&uuml;venilir orta&#287;&#305;n&#305;z.", about_btn: "DAHA FAZLA",
         p1: "Dolu Karb&uuml;r &#199;ubuk", p2: "So&#287;utma Kanall&#305; &#199;ubuk", p3: "Kesilmi&#351; &#199;ubuk",
-        tech_title: "Teknik &Ouml;zellikler", th_grain: "Tane Boyutu", th_density: "Yo&#287;unluk", th_hard: "Sertlik", th_trs: "K&#305;r&#305;lma Dayan&#305;m&#305;",
+        prod_subtitle: "Y&uuml;ksek Performansl&#305; Karb&uuml;r &#199;ubuklar", // YENİ EKLENDİ
+        tech_title: "Teknik &Ouml;zellikler", th_grain: "Tane Boyutu", th_density: "Yo&#287;unluk", th_hard: "Sertlik", th_trs: "K&#305;r&#305;lma Dayan&#305;m&#305;", search_ph: "Ölçü ara (örn. 12x330)...",
         swiss_title: "&#304;SV&#304;&#199;RE KAL&#304;TES&#304;", swiss_desc: "OR&#304;J&#304;NAL KAL&#304;TE",
         contact_info_title: "&#304;leti&#351;im Bilgileri", form_title: "Mesaj G&ouml;nderin", form_btn: "G&Ouml;NDER", 
         ph_name: "Ad&#305;n&#305;z", ph_email: "E-Posta", ph_message: "Mesaj&#305;n&#305;z...",
@@ -55,13 +58,11 @@ function changeLanguage(lang) {
 
     document.querySelectorAll('[data-i18n]').forEach(e => {
         const key = e.getAttribute('data-i18n');
-        if(translations[lang][key]) e.innerHTML = translations[lang][key]; // HTML desteği
+        if(translations[lang][key]) e.innerHTML = translations[lang][key];
     });
     
-    // Placeholderları düzelt (İsim ve Mesaj kutusu)
     document.querySelectorAll('[data-i18n-ph]').forEach(e => {
         const key = e.getAttribute('data-i18n-ph');
-        // Decode HTML entities for placeholder
         var tempDiv = document.createElement('div');
         tempDiv.innerHTML = translations[lang][key];
         e.placeholder = tempDiv.innerText;
