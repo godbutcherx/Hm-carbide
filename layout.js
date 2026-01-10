@@ -1,15 +1,15 @@
+// --- HEADER YÜKLEME ---
 function loadHeader() {
     // Sayfanın adını kontrol et (index.html mi değil mi?)
     const path = window.location.pathname;
     const isHome = path.endsWith("index.html") || path.endsWith("/");
-    
-    // Eğer anasayfa DEĞİLSE, 'header-inner' sınıfını ekle (Koyu arka plan için)
     const headerClass = isHome ? "" : "header-inner";
 
     const headerHTML = `
     <header id="main-header" class="${headerClass}">
         <a href="index.html" class="logo-container">
             <div class="logo-wrapper">
+                <div class="logo-mask"></div> 
                 <img src="images/logo.jpg" alt="Logo" class="logo-img logo-main">
                 <img src="images/gem9.png" alt="Alt Logo" class="logo-img logo-alt">
             </div>
@@ -42,6 +42,7 @@ function loadHeader() {
     document.body.insertAdjacentHTML("afterbegin", headerHTML);
 }
 
+// --- FOOTER YÜKLEME ---
 function loadFooter() {
     const footerHTML = `
     <a href="https://wa.me/41762909193" class="whatsapp-float" target="_blank">
@@ -69,7 +70,7 @@ function loadFooter() {
             <div class="footer-col">
                 <h4 data-i18n="nav_contact">Kontakt</h4>
                 <div class="contact-row">
-                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5-2.5-1.12 2.5-2.5 2.5z"/></svg>
                     <span>Romanshornerstrasse 122, 9322 Egnach</span>
                 </div>
                 <div class="contact-row">
@@ -95,6 +96,7 @@ function loadFooter() {
     document.body.insertAdjacentHTML("beforeend", footerHTML);
 }
 
+// Sayfa yüklenince Header ve Footer'ı getir
 document.addEventListener('DOMContentLoaded', () => {
     loadHeader();
     loadFooter();
