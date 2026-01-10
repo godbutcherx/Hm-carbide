@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HM Carbide | Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="images/logo.jpg">
+</head>
+<body>
+    <div class="page-header-section">
+        <h1 class="page-title reveal" data-i18n="nav_contact">KONTAKT</h1>
+    </div>
+    <div class="contact-wrap reveal" style="display:flex; flex-wrap:wrap; justify-content:center; padding:0 5% 80px; gap:40px;">
+        <div class="left-panel" style="flex:1; min-width:300px;">
+            <div class="info-box" style="background:white; padding:30px; border-radius:8px; box-shadow:0 2px 20px rgba(0,0,0,0.05); margin-bottom:20px;">
+                <h3 style="margin-bottom:20px; color:var(--primary);" data-i18n="contact_info_title">Kontaktinformationen</h3>
+                <div style="margin-bottom:15px; border-bottom:1px solid #f0f0f0; padding-bottom:15px;"><p><strong>HM Carbide Swiss GmbH</strong></p><p>📍 Romanshornerstrasse 122, 9322 Egnach, Switzerland</p></div>
+                <div style="margin-bottom:15px; border-bottom:1px solid #f0f0f0; padding-bottom:15px;"><p>📞 <a href="tel:+41762909193" style="font-weight:bold;">+41 76 290 91 93</a></p></div>
+                <div><p>✉️ <a href="mailto:info@hmcarbide.ch" style="color:#d93025;">info@hmcarbide.ch</a></p></div>
+            </div>
+            <div class="map-box" style="width:100%; height:300px; border-radius:8px; overflow:hidden;"><iframe src="https://maps.google.com/maps?q=Romanshornerstrasse%20122%2C%209322%20Egnach&t=&z=13&ie=UTF8&iwloc=&output=embed" style="width:100%; height:100%; border:0;" loading="lazy"></iframe></div>
+        </div>
+        <div class="form-box" style="flex:1; min-width:300px; background:white; padding:40px; border-radius:8px; box-shadow:0 5px 30px rgba(0,0,0,0.05); border-top:4px solid var(--secondary);">
+            <h2 style="color:#1a252f; margin-bottom:20px;" data-i18n="form_title">Nachricht Senden</h2>
+            <form action="https://formspree.io/f/xqajeedj" method="POST" style="display:flex; flex-direction:column; gap:20px;">
+                <input type="text" name="name" placeholder="Name" required data-i18n-ph="ph_name" style="padding:15px; border:1px solid #eee; background:#fcfcfc;">
+                <input type="email" name="email" placeholder="E-Mail" required data-i18n-ph="ph_email" style="padding:15px; border:1px solid #eee; background:#fcfcfc;">
+                <textarea name="message" rows="5" placeholder="Ihre Nachricht..." required data-i18n-ph="ph_message" style="padding:15px; border:1px solid #eee; background:#fcfcfc;"></textarea>
+                <button type="submit" class="btn" data-i18n="form_btn">SENDEN</button>
+            </form>
+        </div>
+    </div>
+    <script src="layout.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
