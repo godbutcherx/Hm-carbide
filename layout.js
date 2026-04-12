@@ -88,7 +88,7 @@ function loadFooter() {
             </div>
         </div>
         <div class="footer-bottom">
-            <div>© 2025 HM Carbide Swiss GmbH. All Rights Reserved.</div>
+            <div>© 2026 HM Carbide Swiss GmbH. All Rights Reserved.</div>
             <div style="font-size:1rem;color:#ccc;font-weight:600;">UID: CHE-477.630.623 MWST</div>
         </div>
     </footer>
