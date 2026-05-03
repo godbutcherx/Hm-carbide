@@ -104,12 +104,10 @@ function loadFooter() {
     <div class="cookie-banner" id="cookieBanner">
         <div class="cookie-content">
             <div class="cookie-text">
-                <strong data-i18n="cookie_title">🍪 Cookie-Einstellungen</strong>
-                <p data-i18n="cookie_desc">Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und unsere Website zu analysieren. Gemäß DSGVO benötigen wir Ihre Zustimmung. <a href="#" style="color:var(--secondary);" data-i18n="cookie_more">Mehr erfahren</a></p>
+                <p>This website uses cookies. By using this site, you agree to their use. All details can be found in our <a href="privacy.html" style="color:var(--secondary); text-decoration:underline; text-underline-offset:3px;">privacy policy.</a></p>
             </div>
             <div class="cookie-actions">
-                <button class="cookie-btn cookie-reject" onclick="setCookie('rejected')" data-i18n="cookie_reject">Ablehnen</button>
-                <button class="cookie-btn cookie-accept" onclick="setCookie('accepted')" data-i18n="cookie_accept">Alle akzeptieren</button>
+                <button class="cookie-btn cookie-accept" onclick="setCookie('accepted')">OK</button>
             </div>
         </div>
     </div>
