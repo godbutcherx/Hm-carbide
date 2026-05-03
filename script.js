@@ -12,7 +12,8 @@ const translations = {
         swiss_title: "SCHWEIZER QUALITÄT", swiss_desc: "Original Qualität",
         contact_info_title: "Kontaktinformationen", form_title: "Nachricht Senden", form_btn: "SENDEN", ph_name: "Name", ph_email: "E-Mail", ph_message: "Ihre Nachricht...",
         about_content: `<h3>Die Kraft der Erfahrung, die Sicherheit von HM Carbide</h3><p>Dank unserer jahrelangen Erfahrung in der Zerspanungs- und Hartmetallindustrie kennen wir die Bedürfnisse der Fertigungswelt sehr genau. HM Carbide Swiss GmbH wurde gegründet, um dieses Wissen mit Schweizer Produktionsqualität zu verbinden und unseren Kunden die genauesten Rohstofflösungen anzubieten.</p><p>Mit unseren in der Schweiz ansässigen Operationen liefern wir nach europäischen Standards hergestellte Hartmetallstäbe zu wettbewerbsfähigen Bedingungen und mit zuverlässigem Lieferkettenmanagement an unsere Geschäftspartner. Unser Ziel ist es, die Stillstandzeiten in den Produktionslinien unserer Kunden zu minimieren und die Werkzeugstandzeiten zu maximieren.</p><p>Mit unserer Erfahrung aus der Vergangenheit und unserer Vision für die Zukunft sind wir als HM Carbide Swiss GmbH hier, um Ihrem Geschäft einen Mehrwert zu bieten.</p>`,
-        alert_success: "Ihre Nachricht wurde erfolgreich gesendet!", alert_error: "Fehler beim Senden der Nachricht."
+        alert_success: "Ihre Nachricht wurde erfolgreich gesendet!", alert_error: "Fehler beim Senden der Nachricht.",
+        cookie_title: "🍪 Cookie-Einstellungen", cookie_desc: "Wir verwenden Cookies gemäß DSGVO, um Ihre Erfahrung zu verbessern.", cookie_more: "Mehr erfahren", cookie_reject: "Ablehnen", cookie_accept: "Alle akzeptieren"
     },
     en: { 
         nav_home: "Home", nav_about: "About Us", nav_products: "Products", nav_certs: "Certificates", nav_contact: "Contact",
@@ -26,7 +27,8 @@ const translations = {
         swiss_title: "SWISS QUALITY", swiss_desc: "Original Quality",
         contact_info_title: "Contact Info", form_title: "Send Message", form_btn: "SEND", ph_name: "Name", ph_email: "Email", ph_message: "Your Message...",
         about_content: `<h3>The Power of Experience, The Assurance of HM Carbide</h3><p>With years of experience in the machining and carbide industry, we know the needs of the manufacturing world very well. HM Carbide Swiss GmbH was founded to combine this knowledge with Swiss production quality to offer our customers the most accurate raw material solutions.</p><p>With our Swiss-based operations, we deliver carbide rods produced to European standards to our business partners with competitive conditions and reliable supply chain management. Our goal is to minimize downtime in our customers' production lines and maximize tool life.</p><p>As HM Carbide Swiss GmbH, we are here to add value to your business.</p>`,
-        alert_success: "Your message has been sent successfully!", alert_error: "Error sending message."
+        alert_success: "Your message has been sent successfully!", alert_error: "Error sending message.",
+        cookie_title: "🍪 Cookie Settings", cookie_desc: "We use cookies in accordance with GDPR to improve your experience.", cookie_more: "Learn more", cookie_reject: "Reject", cookie_accept: "Accept all"
     },
     tr: { 
         nav_home: "Anasayfa", nav_about: "Hakkımızda", nav_products: "Ürünlerimiz", nav_certs: "Sertifikalar", nav_contact: "İletişim",
@@ -40,7 +42,8 @@ const translations = {
         swiss_title: "İSVİÇRE KALİTESİ", swiss_desc: "ORİJİNAL KALİTE",
         contact_info_title: "İletişim Bilgileri", form_title: "Mesaj Gönderin", form_btn: "GÖNDER", ph_name: "Adınız", ph_email: "E-Posta", ph_message: "Mesajınız...",
         about_content: `<h3>Tecrübenin Gücü, HM Carbide Güvencesi</h3><p>Talaşlı imalat ve karbür endüstrisindeki yıllara dayanan tecrübemizle, üretim dünyasının ihtiyaçlarını çok iyi biliyoruz. HM Carbide Swiss GmbH, bu bilgi birikimini İsviçre’nin üretim kalitesiyle harmanlayarak müşterilerine en doğru hammadde çözümlerini sunmak amacıyla kurulmuştur.</p><p>İsviçre merkezli operasyonlarımızla, Avrupa standartlarında üretilen karbür çubukları, rekabetçi koşullar ve güvenilir tedarik zinciri yönetimiyle iş ortaklarımıza ulaştırıyoruz. Amacımız; müşterilerimizin üretim hattındaki duruş sürelerini en aza indirmek ve takım ömürlerini maksimize etmektir.</p><p>Geçmişten gelen deneyimimiz ve geleceğe dönük vizyonumuzla, HM Carbide Swiss GmbH olarak işinize değer katmak için buradayız.</p>`,
-        alert_success: "Mesajınız başarıyla gönderildi!", alert_error: "Bir hata oluştu, lütfen tekrar deneyin."
+        alert_success: "Mesajınız başarıyla gönderildi!", alert_error: "Bir hata oluştu, lütfen tekrar deneyin.",
+        cookie_title: "🍪 Çerez Ayarları", cookie_desc: "GDPR kapsamında deneyiminizi geliştirmek için çerezler kullanıyoruz.", cookie_more: "Daha fazla", cookie_reject: "Reddet", cookie_accept: "Tümünü kabul et"
     }
 };
 
