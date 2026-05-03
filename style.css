@@ -377,3 +377,36 @@ footer { background: var(--footer-bg); color: #8a9099; padding-top: 60px; font-s
 
 /* Particle background — light temada gizle */
 [data-theme="light"] #hmc-bg-canvas { opacity: 0 !important; }
+
+/* ── EK LIGHT TEMA DÜZELTMELERİ ── */
+
+/* Anasayfa about-preview inline style override */
+[data-theme="light"] .about-preview h2,
+[data-theme="light"] .about-preview div h2 { color: var(--primary) !important; }
+[data-theme="light"] .about-preview p,
+[data-theme="light"] .about-preview div p  { color: var(--text-muted) !important; }
+
+/* Teknik özellikler başlık */
+[data-theme="light"] .tech-specs-section h2,
+[data-theme="light"] .tech-specs-section .section-title { color: var(--primary) !important; }
+
+/* İletişim form input yazı rengi */
+[data-theme="light"] .form-box input,
+[data-theme="light"] .form-box textarea,
+[data-theme="light"] #user_name,
+[data-theme="light"] #user_email,
+[data-theme="light"] #user_message {
+    color: #1a252f !important;
+    background: #e8eaf0 !important;
+    border-color: rgba(0,0,0,0.12) !important;
+}
+[data-theme="light"] .form-box input::placeholder,
+[data-theme="light"] .form-box textarea::placeholder,
+[data-theme="light"] #user_name::placeholder,
+[data-theme="light"] #user_email::placeholder,
+[data-theme="light"] #user_message::placeholder { color: #9aa0ad !important; }
+
+/* Cursor — light temada koyu renk */
+[data-theme="light"] .hmc-cursor {
+    background: radial-gradient(circle, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.12) 50%, transparent 70%) !important;
+}
