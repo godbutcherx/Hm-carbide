@@ -11,8 +11,7 @@
       height: 18px;
       pointer-events: none;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.28) 0%, rgba(180,180,180,0.14) 40%, transparent 70%);
-      backdrop-filter: blur(2px);
+      background: radial-gradient(circle, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.15) 50%, transparent 70%);
       transform: translate(-50%, -50%);
       z-index: 99999;
       transition: width 0.15s, height 0.15s, background 0.15s;
