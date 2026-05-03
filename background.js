@@ -5,7 +5,7 @@
 (function () {
   const canvas = document.createElement('canvas');
   canvas.id = 'hmc-bg-canvas';
-  document.body.prepend(canvas);
+  document.body.prepend(canvas); 
 
   const ctx = canvas.getContext('2d');
   let W, H, particles = [];
