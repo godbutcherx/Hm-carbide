@@ -34,8 +34,14 @@ function loadHeader() {
                     <option value="tr">TR</option>
                 </select>
             </div>
-            <button class="theme-toggle" id="themeToggle" onclick="toggleTheme(event)" title="Theme">
-                <span class="theme-icon">☀️</span>
+            <button class="theme-toggle" id="themeToggle" onclick="toggleTheme(event)" title="Toggle Theme">
+                <svg class="theme-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <!-- Kristal / elmas formu -->
+                  <polygon points="9,1 16,7 9,17 2,7" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linejoin="round"/>
+                  <polygon points="9,1 16,7 9,10 2,7" stroke="currentColor" stroke-width="0.8" fill="currentColor" fill-opacity="0.25" stroke-linejoin="round"/>
+                  <line x1="2" y1="7" x2="16" y2="7" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+                  <line x1="9" y1="1" x2="9" y2="17" stroke="currentColor" stroke-width="0.6" opacity="0.3"/>
+                </svg>
             </button>
             <div class="menu-toggle" onclick="toggleMenu()" style="color:white;">☰</div>
         </div>
@@ -117,8 +123,7 @@ function applyTheme(theme) {
     const isDark = theme === 'dark';
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('hmc_theme', theme);
-    const icon = document.querySelector('.theme-icon');
-    if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+    // icon SVG — statik kalır
 }
 
 function toggleTheme(event) {
