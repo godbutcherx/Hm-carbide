@@ -97,6 +97,9 @@ function loadFooter() {
         <div class="footer-bottom">
             <div>© 2026 HM Carbide Swiss GmbH. All Rights Reserved.</div>
             <div style="font-size:1rem;color:#ccc;font-weight:600;">UID: CHE-477.630.623 MWST</div>
+            <div style="margin-top:10px;">
+                <a href="privacy.html" style="color:#8a9099; font-size:0.8rem; text-decoration:underline; text-underline-offset:3px; transition:0.3s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='#8a9099'">Privacy Policy</a>
+            </div>
         </div>
     </footer>
 
