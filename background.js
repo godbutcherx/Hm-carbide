@@ -7,24 +7,31 @@
     * { cursor: none !important; }
     .hmc-cursor {
       position: fixed;
-      width: 18px;
-      height: 18px;
+      width: 12px;
+      height: 12px;
       pointer-events: none;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.3) 45%, transparent 70%);
-      box-shadow: 0 0 8px rgba(255,255,255,0.4);
-      mix-blend-mode: difference;
+      background: white;
       transform: translate(-50%, -50%);
       z-index: 99999;
-      transition: width 0.15s, height 0.15s, background 0.15s;
+      transition: transform 0.1s, opacity 0.2s;
+      opacity: 0.85;
     }
-    .hmc-cursor.click {
-      animation: hmcClick 0.25s ease forwards;
+    .hmc-cursor-ring {
+      position: fixed;
+      width: 32px;
+      height: 32px;
+      pointer-events: none;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.5);
+      transform: translate(-50%, -50%);
+      z-index: 99998;
+      transition: transform 0.12s ease-out, width 0.2s, height 0.2s, border-color 0.2s;
     }
-    @keyframes hmcClick {
-      0%   { transform: translate(-50%, -50%) scale(1);   background: radial-gradient(circle, rgba(232,57,46,0.6) 0%, transparent 70%); }
-      100% { transform: translate(-50%, -50%) scale(1.8); background: radial-gradient(circle, rgba(232,57,46,0)   0%, transparent 70%); }
-    }
+    .hmc-cursor.click { transform: translate(-50%, -50%) scale(0.5); }
+    .hmc-cursor-ring.click { width: 48px; height: 48px; border-color: rgba(232,57,46,0.7); }
+    [data-theme="light"] .hmc-cursor { background: #1a252f; opacity: 0.8; }
+    [data-theme="light"] .hmc-cursor-ring { border-color: rgba(26,37,47,0.4); }
   `;
   document.head.appendChild(style);
 
@@ -32,18 +39,36 @@
   cursor.className = 'hmc-cursor';
   document.body.appendChild(cursor);
 
+  const ring = document.createElement('div');
+  ring.className = 'hmc-cursor-ring';
+  document.body.appendChild(ring);
+
+  let ringX = 0, ringY = 0;
+  let dotX = 0, dotY = 0;
+
   document.addEventListener('mousemove', e => {
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top  = e.clientY + 'px';
+    dotX = e.clientX; dotY = e.clientY;
+    cursor.style.left = dotX + 'px';
+    cursor.style.top  = dotY + 'px';
   });
+
+  // Ring hafif gecikmeli takip eder
+  (function animateRing() {
+    ringX += (dotX - ringX) * 0.18;
+    ringY += (dotY - ringY) * 0.18;
+    ring.style.left = ringX + 'px';
+    ring.style.top  = ringY + 'px';
+    requestAnimationFrame(animateRing);
+  })();
 
   document.addEventListener('mousedown', () => {
     cursor.classList.add('click');
-    setTimeout(() => cursor.classList.remove('click'), 250);
+    ring.classList.add('click');
+    setTimeout(() => { cursor.classList.remove('click'); ring.classList.remove('click'); }, 250);
   });
 
-  document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
-  document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; });
+  document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; ring.style.opacity = '0'; });
+  document.addEventListener('mouseenter', () => { cursor.style.opacity = '0.85'; ring.style.opacity = '1'; });
 
   // ── 2. PARTICLE BACKGROUND ────────────────────────
   const canvas = document.createElement('canvas');
