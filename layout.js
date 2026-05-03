@@ -113,61 +113,18 @@ function loadFooter() {
 }
 
 // --- TEMA SİSTEMİ ---
-function applyTheme(theme, animate, clickX, clickY) {
+function applyTheme(theme) {
     const isDark = theme === 'dark';
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('hmc_theme', theme);
-
     const icon = document.querySelector('.theme-icon');
     if (icon) icon.textContent = isDark ? '☀️' : '🌙';
-
-    if (!animate) return;
-
-    // Tıklanan noktadan en uzak köşeye mesafeyi hesapla
-    const corners = [
-        { x: 0, y: 0 },
-        { x: window.innerWidth, y: 0 },
-        { x: 0, y: window.innerHeight },
-        { x: window.innerWidth, y: window.innerHeight }
-    ];
-    const maxDist = Math.max(...corners.map(c =>
-        Math.sqrt(Math.pow(c.x - clickX, 2) + Math.pow(c.y - clickY, 2))
-    ));
-
-    // Geçiş overlay'i
-    const overlay = document.createElement('div');
-    overlay.style.cssText = `
-        position: fixed;
-        top: ${clickY}px;
-        left: ${clickX}px;
-        width: 0; height: 0;
-        border-radius: 50%;
-        background: ${isDark ? '#111318' : '#f5f6fa'};
-        transform: translate(-50%, -50%);
-        z-index: 99998;
-        pointer-events: none;
-        transition: width 1.5s cubic-bezier(0.4,0,0.2,1), height 1.5s cubic-bezier(0.4,0,0.2,1);
-    `;
-    document.body.appendChild(overlay);
-
-    requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-            const size = maxDist * 2.2;
-            overlay.style.width  = size + 'px';
-            overlay.style.height = size + 'px';
-        });
-    });
-
-    setTimeout(() => overlay.remove(), 1600);
 }
 
 function toggleTheme(event) {
     const current = document.documentElement.getAttribute('data-theme') || 'dark';
     const next = current === 'dark' ? 'light' : 'dark';
-    const rect = event.currentTarget.getBoundingClientRect();
-    const cx = rect.left + rect.width / 2;
-    const cy = rect.top + rect.height / 2;
-    applyTheme(next, true, cx, cy);
+    applyTheme(next);
 }
 
 function initTheme() {
