@@ -15,25 +15,11 @@
   --header-scrolled: rgba(17,19,24,0.97);
 }
 
-[data-theme="light"] {
-  --primary:    #1a252f;
-  --secondary:  #e8392e;
-  --bg:         #f5f6fa;
-  --bg2:        #ffffff;
-  --bg3:        #eef0f5;
-  --border:     rgba(0,0,0,0.08);
-  --text:       #3a4050;
-  --text-muted: #7a8090;
-  --card-bg:    #ffffff;
-  --input-bg:   #eef0f5;
-  --footer-bg:  #1a252f;
-  --header-bg:  rgba(245,246,250,0.15);
-  --header-scrolled: rgba(245,246,250,0.97);
-}
+
 /* --- 1. TEMEL AYARLAR --- */
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
-body { background: var(--bg); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; }
+body { background: var(--bg); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; overflow-x: hidden; transition: background 0.5s, color 0.5s; }
 a { text-decoration: none; color: inherit; transition: 0.3s all ease; }
 img { max-width: 100%; height: auto; display: block; }
 
@@ -200,7 +186,6 @@ footer { background: var(--footer-bg); color: #8a9099; padding-top: 60px; font-s
 
 /* --- BACKGROUND CANVAS --- */
 #hmc-bg-canvas { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; transition: opacity 0.5s; }
-[data-theme="light"] #hmc-bg-canvas { opacity: 0; }
 
 /* --- MOBİL --- */
 @media (max-width: 900px) {
@@ -239,22 +224,6 @@ footer { background: var(--footer-bg); color: #8a9099; padding-top: 60px; font-s
   display: flex; align-items: center;
 }
 .theme-toggle:hover { background: rgba(255,255,255,0.15); transform: scale(1.05); }
-[data-theme="light"] .theme-toggle { background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.12); }
-[data-theme="light"] nav a { color: var(--primary); }
-[data-theme="light"] nav a:hover { background: rgba(0,0,0,0.07); color: var(--primary); }
-[data-theme="light"] .brand-name { color: var(--primary); }
-[data-theme="light"] .brand-sub { color: var(--secondary); }
-[data-theme="light"] .logo-text { border-left-color: rgba(0,0,0,0.15); }
-[data-theme="light"] .lang-switch select { background: rgba(0,0,0,0.05); color: var(--primary); border-color: rgba(0,0,0,0.15); }
-[data-theme="light"] .menu-toggle { color: var(--primary) !important; }
-[data-theme="light"] .page-header-section { background: linear-gradient(135deg, #dde0e8 0%, #eef0f5 100%); }
-[data-theme="light"] .page-title { color: var(--primary); }
-[data-theme="light"] .nature-section { background: #eef0f5; }
-[data-theme="light"] .nature-section h2 { color: var(--primary); }
-[data-theme="light"] .footer-col p { color: #c8cdd6; }
-[data-theme="light"] .footer-col ul li a { color: #c8cdd6; }
-[data-theme="light"] .contact-row, [data-theme="light"] .contact-row a { color: #c8cdd6; }
-[data-theme="light"] .footer-bottom { color: #aaa; }
 
 /* ── COOKIE BANNER ── */
 .cookie-banner {
@@ -272,7 +241,6 @@ footer { background: var(--footer-bg); color: #8a9099; padding-top: 60px; font-s
 .cookie-content { max-width: 1200px; margin: 0 auto; padding: 20px 5%; display: flex; align-items: center; gap: 30px; flex-wrap: wrap; }
 .cookie-text { flex: 1; min-width: 280px; }
 .cookie-text strong { color: white; font-size: 1rem; display: block; margin-bottom: 6px; }
-[data-theme="light"] .cookie-text strong { color: var(--primary); }
 .cookie-text p { color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
 .cookie-actions { display: flex; gap: 12px; flex-shrink: 0; }
 .cookie-btn { padding: 10px 22px; border-radius: 25px; font-weight: 700; font-size: 0.85rem; cursor: pointer; border: none; transition: 0.3s; font-family: 'Montserrat', sans-serif; }
@@ -285,3 +253,127 @@ footer { background: var(--footer-bg); color: #8a9099; padding-top: 60px; font-s
   .cookie-content { flex-direction: column; gap: 16px; }
   .cookie-actions { width: 100%; justify-content: flex-end; }
 }
+
+/* ══════════════════════════════════════
+   LIGHT TEMA — TAM RENK SETİ
+══════════════════════════════════════ */
+[data-theme="light"] {
+  --primary:    #1a252f;
+  --secondary:  #e8392e;
+  --bg:         #f0f2f7;
+  --bg2:        #ffffff;
+  --bg3:        #e8eaf0;
+  --border:     rgba(0,0,0,0.09);
+  --text:       #2c3340;
+  --text-muted: #6b7280;
+  --card-bg:    #ffffff;
+  --input-bg:   #e8eaf0;
+  --footer-bg:  #1a252f;
+  --header-bg:  rgba(240,242,247,0.6);
+  --header-scrolled: rgba(240,242,247,0.97);
+}
+
+/* Header */
+[data-theme="light"] header { color: #1a252f; }
+[data-theme="light"] header.scrolled,
+[data-theme="light"] header.header-inner { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+[data-theme="light"] .brand-name { color: #1a252f; }
+[data-theme="light"] .brand-sub  { color: var(--secondary); }
+[data-theme="light"] .logo-text  { border-left-color: rgba(0,0,0,0.15); }
+[data-theme="light"] nav a       { color: #1a252f; }
+[data-theme="light"] nav a:hover { background: rgba(0,0,0,0.07); color: #1a252f; }
+[data-theme="light"] .lang-switch select { background: rgba(0,0,0,0.06); color: #1a252f; border-color: rgba(0,0,0,0.15); }
+[data-theme="light"] .lang-switch select option { color: #111; }
+[data-theme="light"] .menu-toggle { color: #1a252f !important; }
+[data-theme="light"] .theme-toggle { background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.12); }
+[data-theme="light"] nav { background: transparent; }
+
+/* Hero — değişmez, zaten karanlık overlay var */
+
+/* İç sayfa başlık */
+[data-theme="light"] .page-header-section {
+  background: linear-gradient(135deg, #1a252f 0%, #2d3f50 100%);
+}
+[data-theme="light"] .page-title   { color: white; }
+[data-theme="light"] .page-subtitle { color: rgba(255,255,255,0.7); }
+
+/* Search */
+[data-theme="light"] .search-input { background: rgba(255,255,255,0.9); color: #1a252f; border-color: rgba(255,255,255,0.4); }
+[data-theme="light"] .search-input::placeholder { color: #9aa0ad; }
+
+/* Nature section */
+[data-theme="light"] .nature-section { background: #1a252f; border-color: rgba(255,255,255,0.05); }
+[data-theme="light"] .nature-section h2 { color: white; }
+[data-theme="light"] .nature-section h4 { color: var(--secondary); }
+[data-theme="light"] .nature-section p  { color: rgba(255,255,255,0.8); }
+
+/* About preview */
+[data-theme="light"] .about-preview { background: var(--bg); border-color: var(--border); }
+[data-theme="light"] .about-preview h2 { color: var(--primary); }
+[data-theme="light"] .about-preview p  { color: var(--text-muted); }
+
+/* Kartlar */
+[data-theme="light"] .card { background: var(--bg2); border-color: var(--border); }
+[data-theme="light"] .card:hover { box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+[data-theme="light"] .card-head { background: #1a252f; color: white; border-color: var(--border); }
+[data-theme="light"] .card-img-wrapper { background: var(--bg2); border-color: var(--border); }
+[data-theme="light"] .table-wrap::-webkit-scrollbar-track { background: var(--bg3); }
+[data-theme="light"] .prod-table th { background: var(--bg3); color: #1a252f; border-color: var(--border); }
+[data-theme="light"] .prod-table td { color: var(--text); border-color: var(--border); }
+[data-theme="light"] .prod-table tr:hover td { background: rgba(0,0,0,0.02); }
+
+/* Teknik tablo */
+[data-theme="light"] .tech-table         { background: var(--bg2); }
+[data-theme="light"] .tech-table th,
+[data-theme="light"] .tech-table td      { border-color: var(--border); color: var(--text); }
+[data-theme="light"] .tech-table thead   { background: #1a252f; }
+[data-theme="light"] .tech-table thead th { color: white; }
+[data-theme="light"] .tech-table-wrapper  { border-color: var(--border); }
+[data-theme="light"] .tech-specs-section .section-title { color: var(--primary); }
+
+/* Sertifikalar */
+[data-theme="light"] .cert-card { background: var(--bg2); border-color: var(--border); }
+[data-theme="light"] .cert-card h3 { color: var(--primary); }
+[data-theme="light"] .cert-card p  { color: var(--text-muted); }
+
+/* Hakkımızda */
+[data-theme="light"] .content-box { background: var(--bg2) !important; border-color: var(--border) !important; box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important; }
+[data-theme="light"] .content-box h3 { color: var(--primary); }
+[data-theme="light"] .content-box p  { color: var(--text); }
+
+/* İletişim */
+[data-theme="light"] .info-box { background: var(--bg2) !important; border-color: var(--border) !important; }
+[data-theme="light"] .info-box h3 { color: var(--primary) !important; }
+[data-theme="light"] .info-box p,
+[data-theme="light"] .info-box strong { color: var(--text) !important; }
+[data-theme="light"] .info-box div[style*="border-bottom"] { border-color: var(--border) !important; }
+[data-theme="light"] .form-box { background: var(--bg2) !important; border-color: var(--border) !important; }
+[data-theme="light"] .form-box h2 { color: var(--primary) !important; }
+[data-theme="light"] #user_name,
+[data-theme="light"] #user_email,
+[data-theme="light"] #user_message { background: var(--bg3) !important; border-color: var(--border) !important; color: var(--primary) !important; }
+[data-theme="light"] #user_name::placeholder,
+[data-theme="light"] #user_email::placeholder,
+[data-theme="light"] #user_message::placeholder { color: #9aa0ad; }
+
+/* Footer — her iki temada koyu kalır */
+[data-theme="light"] footer         { background: #1a252f; border-color: rgba(255,255,255,0.08); }
+[data-theme="light"] .footer-col p  { color: #8a9099; }
+[data-theme="light"] .footer-col h4 { color: white; }
+[data-theme="light"] .footer-col ul li a   { color: #8a9099; }
+[data-theme="light"] .footer-col ul li a:hover { color: white; }
+[data-theme="light"] .contact-row,
+[data-theme="light"] .contact-row a { color: #8a9099; }
+[data-theme="light"] .contact-row a:hover { color: white; }
+[data-theme="light"] .footer-bottom { background: #111820; color: #5a6170; border-color: rgba(255,255,255,0.05); }
+
+/* Cookie banner */
+[data-theme="light"] .cookie-banner { box-shadow: 0 -10px 40px rgba(0,0,0,0.1); }
+[data-theme="light"] .cookie-text strong { color: var(--primary); }
+[data-theme="light"] .cookie-reject { border-color: var(--border); color: var(--text-muted); }
+
+/* Mobil nav */
+[data-theme="light"] nav { border-color: var(--border); }
+
+/* Particle background — light temada gizle */
+[data-theme="light"] #hmc-bg-canvas { opacity: 0 !important; }
