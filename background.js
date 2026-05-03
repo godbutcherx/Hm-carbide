@@ -1,5 +1,50 @@
-// HM Carbide — Particle Background
+// HM Carbide — Particle Background + Custom Cursor
 (function () {
+
+  // ── 1. CUSTOM CURSOR ──────────────────────────────
+  const style = document.createElement('style');
+  style.textContent = `
+    * { cursor: none !important; }
+    .hmc-cursor {
+      position: fixed;
+      width: 18px;
+      height: 18px;
+      pointer-events: none;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.28) 0%, rgba(180,180,180,0.14) 40%, transparent 70%);
+      backdrop-filter: blur(2px);
+      transform: translate(-50%, -50%);
+      z-index: 99999;
+      transition: width 0.15s, height 0.15s, background 0.15s;
+    }
+    .hmc-cursor.click {
+      animation: hmcClick 0.25s ease forwards;
+    }
+    @keyframes hmcClick {
+      0%   { transform: translate(-50%, -50%) scale(1);   background: radial-gradient(circle, rgba(232,57,46,0.6) 0%, transparent 70%); }
+      100% { transform: translate(-50%, -50%) scale(1.8); background: radial-gradient(circle, rgba(232,57,46,0)   0%, transparent 70%); }
+    }
+  `;
+  document.head.appendChild(style);
+
+  const cursor = document.createElement('div');
+  cursor.className = 'hmc-cursor';
+  document.body.appendChild(cursor);
+
+  document.addEventListener('mousemove', e => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top  = e.clientY + 'px';
+  });
+
+  document.addEventListener('mousedown', () => {
+    cursor.classList.add('click');
+    setTimeout(() => cursor.classList.remove('click'), 250);
+  });
+
+  document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; });
+  document.addEventListener('mouseenter', () => { cursor.style.opacity = '1'; });
+
+  // ── 2. PARTICLE BACKGROUND ────────────────────────
   const canvas = document.createElement('canvas');
   canvas.id = 'hmc-bg-canvas';
   document.body.prepend(canvas);
@@ -24,7 +69,6 @@
       this.targetA = 0;
       this.vx = 0;
       this.vy = 0;
-      // Koyu zemin için açık gri-beyaz parçacıklar
       const v = 180 + Math.floor(Math.random() * 60);
       this.color = `${v},${v},${v + 6}`;
     }
@@ -90,4 +134,5 @@
 
   init();
   loop();
+
 })();
