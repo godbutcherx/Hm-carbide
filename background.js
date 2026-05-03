@@ -1,76 +1,7 @@
 // HM Carbide — Particle Background + Custom Cursor
 (function () {
 
-  // ── 1. CUSTOM CURSOR ──────────────────────────────
-  const style = document.createElement('style');
-  style.textContent = `
-    * { cursor: none !important; }
-    .hmc-cursor {
-      position: fixed;
-      width: 12px;
-      height: 12px;
-      pointer-events: none;
-      border-radius: 50%;
-      background: white;
-      transform: translate(-50%, -50%);
-      z-index: 99999;
-      transition: transform 0.1s, opacity 0.2s;
-      opacity: 0.85;
-    }
-    .hmc-cursor-ring {
-      position: fixed;
-      width: 32px;
-      height: 32px;
-      pointer-events: none;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.5);
-      transform: translate(-50%, -50%);
-      z-index: 99998;
-      transition: transform 0.12s ease-out, width 0.2s, height 0.2s, border-color 0.2s;
-    }
-    .hmc-cursor.click { transform: translate(-50%, -50%) scale(0.5); }
-    .hmc-cursor-ring.click { width: 48px; height: 48px; border-color: rgba(232,57,46,0.7); }
-    [data-theme="light"] .hmc-cursor { background: #1a252f; opacity: 0.8; }
-    [data-theme="light"] .hmc-cursor-ring { border-color: rgba(26,37,47,0.4); }
-  `;
-  document.head.appendChild(style);
-
-  const cursor = document.createElement('div');
-  cursor.className = 'hmc-cursor';
-  document.body.appendChild(cursor);
-
-  const ring = document.createElement('div');
-  ring.className = 'hmc-cursor-ring';
-  document.body.appendChild(ring);
-
-  let ringX = 0, ringY = 0;
-  let dotX = 0, dotY = 0;
-
-  document.addEventListener('mousemove', e => {
-    dotX = e.clientX; dotY = e.clientY;
-    cursor.style.left = dotX + 'px';
-    cursor.style.top  = dotY + 'px';
-  });
-
-  // Ring hafif gecikmeli takip eder
-  (function animateRing() {
-    ringX += (dotX - ringX) * 0.18;
-    ringY += (dotY - ringY) * 0.18;
-    ring.style.left = ringX + 'px';
-    ring.style.top  = ringY + 'px';
-    requestAnimationFrame(animateRing);
-  })();
-
-  document.addEventListener('mousedown', () => {
-    cursor.classList.add('click');
-    ring.classList.add('click');
-    setTimeout(() => { cursor.classList.remove('click'); ring.classList.remove('click'); }, 250);
-  });
-
-  document.addEventListener('mouseleave', () => { cursor.style.opacity = '0'; ring.style.opacity = '0'; });
-  document.addEventListener('mouseenter', () => { cursor.style.opacity = '0.85'; ring.style.opacity = '1'; });
-
-  // ── 2. PARTICLE BACKGROUND ────────────────────────
+  // ── PARTICLE BACKGROUND ────────────────────────
   const canvas = document.createElement('canvas');
   canvas.id = 'hmc-bg-canvas';
   document.body.prepend(canvas);
