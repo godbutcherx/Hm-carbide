@@ -1,6 +1,5 @@
 // --- HEADER YÜKLEME ---
 function loadHeader() {
-    // Sayfanın adını kontrol et (index.html mi değil mi?)
     const path = window.location.pathname;
     const isHome = path.endsWith("index.html") || path.endsWith("/");
     const headerClass = isHome ? "" : "header-inner";
@@ -9,7 +8,7 @@ function loadHeader() {
     <header id="main-header" class="${headerClass}">
         <a href="index.html" class="logo-container">
             <div class="logo-wrapper">
-                <div class="logo-mask"></div> 
+                <div class="logo-mask"></div>
                 <img src="images/logo.jpg" alt="Logo" class="logo-img logo-main">
                 <img src="images/gem9.png" alt="Alt Logo" class="logo-img logo-alt">
             </div>
@@ -35,6 +34,9 @@ function loadHeader() {
                     <option value="tr">TR</option>
                 </select>
             </div>
+            <button class="theme-toggle" id="themeToggle" onclick="toggleTheme(event)" title="Theme">
+                <span class="theme-icon">☀️</span>
+            </button>
             <div class="menu-toggle" onclick="toggleMenu()" style="color:white;">☰</div>
         </div>
     </header>
@@ -92,12 +94,122 @@ function loadFooter() {
             <div style="font-size:1rem;color:#ccc;font-weight:600;">UID: CHE-477.630.623 MWST</div>
         </div>
     </footer>
+
+    <!-- COOKIE BANNER -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <strong data-i18n="cookie_title">🍪 Cookie-Einstellungen</strong>
+                <p data-i18n="cookie_desc">Wir verwenden Cookies, um Ihre Erfahrung zu verbessern und unsere Website zu analysieren. Gemäß DSGVO benötigen wir Ihre Zustimmung. <a href="#" style="color:var(--secondary);" data-i18n="cookie_more">Mehr erfahren</a></p>
+            </div>
+            <div class="cookie-actions">
+                <button class="cookie-btn cookie-reject" onclick="setCookie('rejected')" data-i18n="cookie_reject">Ablehnen</button>
+                <button class="cookie-btn cookie-accept" onclick="setCookie('accepted')" data-i18n="cookie_accept">Alle akzeptieren</button>
+            </div>
+        </div>
+    </div>
     `;
     document.body.insertAdjacentHTML("beforeend", footerHTML);
 }
 
-// Sayfa yüklenince Header ve Footer'ı getir
+// --- TEMA SİSTEMİ ---
+function applyTheme(theme, animate, clickX, clickY) {
+    const isDark = theme === 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('hmc_theme', theme);
+
+    const icon = document.querySelector('.theme-icon');
+    if (icon) icon.textContent = isDark ? '☀️' : '🌙';
+
+    if (!animate) return;
+
+    // Tıklanan noktadan en uzak köşeye mesafeyi hesapla
+    const corners = [
+        { x: 0, y: 0 },
+        { x: window.innerWidth, y: 0 },
+        { x: 0, y: window.innerHeight },
+        { x: window.innerWidth, y: window.innerHeight }
+    ];
+    const maxDist = Math.max(...corners.map(c =>
+        Math.sqrt(Math.pow(c.x - clickX, 2) + Math.pow(c.y - clickY, 2))
+    ));
+
+    // Geçiş overlay'i
+    const overlay = document.createElement('div');
+    overlay.style.cssText = `
+        position: fixed;
+        top: ${clickY}px;
+        left: ${clickX}px;
+        width: 0; height: 0;
+        border-radius: 50%;
+        background: ${isDark ? '#111318' : '#f5f6fa'};
+        transform: translate(-50%, -50%);
+        z-index: 99998;
+        pointer-events: none;
+        transition: width 1.5s cubic-bezier(0.4,0,0.2,1), height 1.5s cubic-bezier(0.4,0,0.2,1);
+    `;
+    document.body.appendChild(overlay);
+
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            const size = maxDist * 2.2;
+            overlay.style.width  = size + 'px';
+            overlay.style.height = size + 'px';
+        });
+    });
+
+    setTimeout(() => overlay.remove(), 1600);
+}
+
+function toggleTheme(event) {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    const next = current === 'dark' ? 'light' : 'dark';
+    const rect = event.currentTarget.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    applyTheme(next, true, cx, cy);
+}
+
+function initTheme() {
+    const saved = localStorage.getItem('hmc_theme');
+    let theme;
+    if (saved) {
+        theme = saved;
+    } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        theme = prefersDark ? 'dark' : 'light';
+    }
+    applyTheme(theme, false, 0, 0);
+}
+
+// --- COOKIE ---
+function setCookie(val) {
+    localStorage.setItem('hmc_cookie', val);
+    const banner = document.getElementById('cookieBanner');
+    if (banner) {
+        banner.style.transform = 'translateY(100%)';
+        banner.style.opacity = '0';
+        setTimeout(() => banner.remove(), 400);
+    }
+}
+
+function initCookie() {
+    const consent = localStorage.getItem('hmc_cookie');
+    if (!consent) {
+        setTimeout(() => {
+            const banner = document.getElementById('cookieBanner');
+            if (banner) banner.classList.add('show');
+        }, 1200);
+    } else {
+        const banner = document.getElementById('cookieBanner');
+        if (banner) banner.remove();
+    }
+}
+
+// Sayfa yüklenince
 document.addEventListener('DOMContentLoaded', () => {
     loadHeader();
     loadFooter();
+    initTheme();
+    initCookie();
 });
