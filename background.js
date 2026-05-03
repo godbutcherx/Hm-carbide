@@ -1,19 +1,16 @@
 // HM Carbide — Particle Background
-// Kullanım: Her HTML sayfasında </body> kapanmadan önce:
-// <script src="background.js"></script>
-
 (function () {
   const canvas = document.createElement('canvas');
   canvas.id = 'hmc-bg-canvas';
-  document.body.prepend(canvas); 
+  document.body.prepend(canvas);
 
   const ctx = canvas.getContext('2d');
   let W, H, particles = [];
   const mouse = { x: -9999, y: -9999 };
 
-  const WAKE_RADIUS  = 120;
-  const GAP          = 26;
-  const FLOAT_SPEED  = 0.0005;
+  const WAKE_RADIUS = 120;
+  const GAP         = 26;
+  const FLOAT_SPEED = 0.0005;
 
   class Particle {
     constructor(x, y) {
@@ -21,14 +18,15 @@
       this.oy = y + (Math.random() - 0.5) * 8;
       this.x  = this.ox;
       this.y  = this.oy;
-      this.phase = Math.random() * Math.PI * 2;
-      this.size  = 0.7 + Math.random() * 0.9;
-      this.alpha = 0;
+      this.phase  = Math.random() * Math.PI * 2;
+      this.size   = 0.7 + Math.random() * 0.9;
+      this.alpha  = 0;
       this.targetA = 0;
       this.vx = 0;
       this.vy = 0;
-      const v = 148 + Math.floor(Math.random() * 55);
-      this.color = `${v},${v},${v + 8}`;
+      // Koyu zemin için açık gri-beyaz parçacıklar
+      const v = 180 + Math.floor(Math.random() * 60);
+      this.color = `${v},${v},${v + 6}`;
     }
 
     update(t) {
@@ -38,7 +36,7 @@
 
       if (dist < WAKE_RADIUS && mouse.x > 0) {
         const ratio = 1 - dist / WAKE_RADIUS;
-        this.targetA = 0.12 + ratio * 0.52;
+        this.targetA = 0.14 + ratio * 0.55;
         const angle = Math.atan2(dy, dx);
         const push  = ratio * 2.0;
         this.vx += Math.cos(angle + Math.PI) * push * 0.055;
@@ -49,15 +47,12 @@
 
       this.vx += (this.ox - this.x) * 0.055;
       this.vy += (this.oy - this.y) * 0.055;
-
-      this.x += Math.sin(t * FLOAT_SPEED + this.phase) * 0.10;
-      this.y += Math.cos(t * FLOAT_SPEED + this.phase * 1.3) * 0.09;
-
+      this.x  += Math.sin(t * FLOAT_SPEED + this.phase) * 0.10;
+      this.y  += Math.cos(t * FLOAT_SPEED + this.phase * 1.3) * 0.09;
       this.vx *= 0.83;
       this.vy *= 0.83;
       this.x  += this.vx;
       this.y  += this.vy;
-
       this.alpha += (this.targetA - this.alpha) * 0.07;
     }
 
@@ -83,7 +78,6 @@
 
   let t = 0;
   function loop() {
-    // Zemin — sitenin kendi background rengini korur, sadece canvas temizlenir
     ctx.clearRect(0, 0, W, H);
     t++;
     particles.forEach(p => { p.update(t); p.draw(); });
