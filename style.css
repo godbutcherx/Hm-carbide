@@ -62,8 +62,8 @@ nav ul { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; alig
 nav a { position: relative; font-size: 0.9rem; font-weight: 700; padding: 10px 15px; color: var(--text); border-radius: 25px; transition: all 0.3s ease; white-space: nowrap; letter-spacing: 0.5px; }
 nav a:hover { color: #fff; background: rgba(255,255,255,0.1); transform: scale(1.05); }
 .header-right { display: flex; align-items: center; gap: 10px; flex: 1; justify-content: flex-end; z-index: 10002; }
-.lang-switch select { background: rgba(255,255,255,0.07); color: white; border: 1px solid rgba(255,255,255,0.2); padding: 5px 10px; border-radius: 15px; cursor: pointer; font-size: 0.8rem; outline: none; }
-.lang-switch select option { color: #111; background: white; }
+
+
 .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: white; margin-left: 10px; }
 
 /* --- HERO --- */
@@ -215,18 +215,6 @@ footer { background: var(--footer-bg); color: #8a9099; padding-top: 60px; font-s
   .brand-sub { font-size: 0.7rem; }
 }
 
-/* ── TEMA TOGGLE ── */
-.theme-toggle {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 20px;
-  padding: 6px 12px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: 0.3s;
-  display: flex; align-items: center;
-}
-.theme-toggle:hover { background: rgba(255,255,255,0.15); transform: scale(1.05); }
 
 /* ── COOKIE BANNER ── */
 .cookie-banner {
@@ -285,10 +273,10 @@ footer { background: var(--footer-bg); color: #8a9099; padding-top: 60px; font-s
 [data-theme="light"] .logo-text  { border-left-color: rgba(0,0,0,0.15); }
 [data-theme="light"] nav a       { color: #1a252f; }
 [data-theme="light"] nav a:hover { background: rgba(0,0,0,0.07); color: #1a252f; }
-[data-theme="light"] .lang-switch select { background: rgba(0,0,0,0.06); color: #1a252f; border-color: rgba(0,0,0,0.15); }
-[data-theme="light"] .lang-switch select option { color: #111; }
+[data-theme="light"] 
+[data-theme="light"] 
 [data-theme="light"] .menu-toggle { color: #1a252f !important; }
-[data-theme="light"] .theme-toggle { background: rgba(0,0,0,0.06); border-color: rgba(0,0,0,0.12); }
+
 [data-theme="light"] nav { background: transparent; }
 
 /* Hero — değişmez, zaten karanlık overlay var */
@@ -484,8 +472,8 @@ h2 {
 }
 .content-box p {
     font-family: 'Lato', sans-serif;
-    font-size: 1rem;
-    line-height: 1.9;
+    font-size: 1.08rem;
+    line-height: 2.0;
 }
 
 /* Nature section */
@@ -550,4 +538,143 @@ h2 {
 }
 .prod-table td {
     font-family: 'Lato', sans-serif;
+}
+
+/* ══════════════════════════════════════
+   FAN SEÇİCİ — Dil & Tema
+══════════════════════════════════════ */
+.fan-selector {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.fan-active {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
+    transition: all 0.25s;
+    font-size: 1.3rem;
+    position: relative;
+    z-index: 2;
+    user-select: none;
+}
+.fan-active:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.3);
+}
+.fan-theme-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.7);
+}
+
+/* Seçenekler — başta gizli */
+.fan-options {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.fan-option {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(17,19,24,0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: rgba(255,255,255,0.7);
+    opacity: 0;
+    transform: translateX(0) scale(0.5);
+    transition: opacity 0.25s, transform 0.35s cubic-bezier(0.34,1.56,0.64,1), background 0.2s;
+    pointer-events: none;
+    backdrop-filter: blur(8px);
+}
+.fan-option:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.35);
+    color: white;
+}
+.fan-option-theme {
+    font-size: 0.8rem;
+}
+
+/* AÇIK — fan yayılır */
+.fan-selector.open .fan-active {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.3);
+}
+
+/* Dil fanı — 3 seçenek sola doğru açılır */
+#langFan.open .fan-option:nth-child(1) {
+    opacity: 1;
+    transform: translateX(-130px) scale(1);
+    pointer-events: all;
+    transition-delay: 0s;
+}
+#langFan.open .fan-option:nth-child(2) {
+    opacity: 1;
+    transform: translateX(-88px) scale(1);
+    pointer-events: all;
+    transition-delay: 0.04s;
+}
+#langFan.open .fan-option:nth-child(3) {
+    opacity: 1;
+    transform: translateX(-46px) scale(1);
+    pointer-events: all;
+    transition-delay: 0.08s;
+}
+
+/* Tema fanı — 2 seçenek sola açılır */
+#themeFan.open .fan-option:nth-child(1) {
+    opacity: 1;
+    transform: translateX(-88px) scale(1);
+    pointer-events: all;
+    transition-delay: 0s;
+}
+#themeFan.open .fan-option:nth-child(2) {
+    opacity: 1;
+    transform: translateX(-46px) scale(1);
+    pointer-events: all;
+    transition-delay: 0.05s;
+}
+
+/* Light tema uyumu */
+[data-theme="light"] .fan-active {
+    background: rgba(0,0,0,0.05);
+    border-color: rgba(0,0,0,0.15);
+}
+[data-theme="light"] .fan-active:hover {
+    background: rgba(0,0,0,0.1);
+}
+[data-theme="light"] .fan-option {
+    background: rgba(240,242,247,0.97);
+    border-color: rgba(0,0,0,0.12);
+    color: #1a252f;
+}
+[data-theme="light"] .fan-option:hover {
+    background: rgba(0,0,0,0.08);
+}
+[data-theme="light"] .fan-theme-icon { color: rgba(26,37,47,0.7); }
+
+/* Mobil — fan gizle, eski select göster */
+@media (max-width: 900px) {
+    .fan-selector { display: none; }
 }
