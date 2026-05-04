@@ -49,14 +49,8 @@ const translations = {
 
 function changeLanguage(lang) {
     localStorage.setItem('hm_lang', lang);
-    document.documentElement.lang = lang;
     const select = document.getElementById('langSel');
     if(select) select.value = lang;
-
-    // Segmented language buttons (if present)
-    document.querySelectorAll('[data-lang]').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
-    });
 
     document.querySelectorAll('[data-i18n]').forEach(e => {
         const key = e.getAttribute('data-i18n');
@@ -118,11 +112,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     changeLanguage(lang);
     fillProducts();
-
-    // Segmented language buttons click handler
-    document.querySelectorAll('[data-lang]').forEach(btn => {
-        btn.addEventListener('click', () => changeLanguage(btn.getAttribute('data-lang')));
-    });
     
     // Header Scroll
     window.addEventListener("scroll", () => {
