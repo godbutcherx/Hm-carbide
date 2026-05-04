@@ -565,8 +565,7 @@ h2 {
     overflow: visible;
     /* Yerleşim adımı — üst üste binmeyi azaltmak için */
     --fan-btn: 34px;
-    --fan-slot: 40px;
-    --fan-gap: 6px; /* Aktif ile yan dil arası boşluk */
+    --fan-gap: 6px; /* Aktif ile yan seçenek arası boşluk */
     transition:
         width 560ms cubic-bezier(0.22, 1, 0.36, 1),
         min-width 560ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -582,14 +581,15 @@ h2 {
     min-width: 128px;
 }
 
+/* Tek yan düğmesi (karşı tema) — dil seçiciye göre daha dar */
 #themeFan:is(:hover, :focus-within, .open) {
-    width: 122px;
-    min-width: 122px;
+    width: 94px;
+    min-width: 94px;
 }
 
 /* Tema açılınca dil ikonunu sola kaydır (solda “yedek” yer açar) */
 .header-right:has(#themeFan:is(:hover, :focus-within, .open)) #langFan {
-    transform: translateX(-76px);
+    transform: translateX(-56px);
 }
 
 #langFan {
@@ -600,16 +600,18 @@ h2 {
         transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Baloncuk: kutu ile birlikte büyüse de hep ORTADA (sol/sağ kayma düzelir) */
 .fan-selector::before {
     content: "";
     position: absolute;
+    left: 50%;
     top: 50%;
-    /* Aktiv 36px buton kutunun ortasında — kutunun sağından uzaklık (40… geniş yerle aynı hiza) */
-    right: calc((100% - 36px) / 2);
-    transform: translateY(-50%) scaleX(0.42) scaleY(0.88);
-    transform-origin: right center;
+    right: auto;
     width: 170px;
     height: 44px;
+    margin: 0;
+    transform: translate(-50%, -50%) scale(0.38, 0.88);
+    transform-origin: center center;
     border-radius: 999px;
     background: rgba(255,255,255,0.065);
     border: 1px solid rgba(255,255,255,0.12);
@@ -628,14 +630,14 @@ h2 {
 }
 
 #themeFan::before {
-    width: min(142px, calc(100% + 24px));
+    width: min(96px, calc(100% + 22px));
 }
 
 .fan-selector:hover::before,
 .fan-selector:focus-within::before,
 .fan-selector.open::before {
     opacity: 1;
-    transform: translateY(-50%) scaleX(1) scaleY(1.03);
+    transform: translate(-50%, -50%) scale(1, 1.03);
     /* Hafif organik damla silüeti — keyframe'e gerek yok, daha akışkan çıkış */
     border-radius: 38% 62% 60% 40% / 52% 48% 54% 46%;
 }
@@ -753,22 +755,14 @@ h2 {
     transition-delay: 44ms;
 }
 
-/* Tema fanı — 2 seçenek sağa/sola açılır (hover + click) */
-#themeFan.open .fan-option:nth-child(1),
-#themeFan:hover .fan-option:nth-child(1),
-#themeFan:focus-within .fan-option:nth-child(1) {
+/* Tema: dil ile aynı mantık — sadece karşı tema sağda (2 daire = aktif + 1 peer) */
+#themeFan.open .fan-theme-peer,
+#themeFan:hover .fan-theme-peer,
+#themeFan:focus-within .fan-theme-peer {
     opacity: 1;
-    transform: translate3d(calc(var(--fan-slot) * -1), 0, 0) scale(1);
+    transform: translate3d(calc(var(--fan-btn) + var(--fan-gap)), 0, 0) scale(1);
     pointer-events: all;
     transition-delay: 0ms;
-}
-#themeFan.open .fan-option:nth-child(2),
-#themeFan:hover .fan-option:nth-child(2),
-#themeFan:focus-within .fan-option:nth-child(2) {
-    opacity: 1;
-    transform: translate3d(var(--fan-slot), 0, 0) scale(1);
-    pointer-events: all;
-    transition-delay: 48ms;
 }
 
 /* Açılan fan diğerinin üzerine binmesin: etkileşimde üst kata al */
