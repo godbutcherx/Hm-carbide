@@ -49,6 +49,7 @@ const translations = {
 
 function changeLanguage(lang) {
     localStorage.setItem('hm_lang', lang);
+    document.documentElement.lang = lang;
     const select = document.getElementById('langSel');
     if(select) select.value = lang;
 
