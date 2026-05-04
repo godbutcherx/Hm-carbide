@@ -20,10 +20,43 @@
     <title>HM Carbide Swiss GmbH | Schweizer Präzision</title>
     <link rel="canonical" href="https://www.hmcarbide.ch/">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/jpg" href="images/logo.jpg">
 </head>
 <body>
+    <header id="main-header">
+        <a href="index.html" class="logo-container" aria-label="HM Carbide Swiss GmbH">
+            <div class="logo-wrapper">
+                <div class="logo-mask"></div>
+                <img src="images/logo.jpg" alt="Logo" class="logo-img logo-main">
+                <img src="images/gem9.png" alt="Alt Logo" class="logo-img logo-alt">
+            </div>
+            <div class="logo-text">
+                <span class="brand-name">HM Carbide</span>
+                <span class="brand-sub">Swiss GmbH</span>
+            </div>
+        </a>
+
+        <nav id="navbar" aria-label="Primary">
+            <ul>
+                <li><a href="index.html" data-i18n="nav_home">Startseite</a></li>
+                <li><a href="about.html" data-i18n="nav_about">&Uuml;ber Uns</a></li>
+                <li><a href="products.html" data-i18n="nav_products">Produkte</a></li>
+                <li><a href="certificates.html" data-i18n="nav_certs">Zertifikate</a></li>
+                <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-right">
+            <div class="lang-segment" role="group" aria-label="Language">
+                <button type="button" class="lang-pill" data-lang="de">DE</button>
+                <button type="button" class="lang-pill" data-lang="en">EN</button>
+                <button type="button" class="lang-pill" data-lang="tr">TR</button>
+            </div>
+            <div class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">☰</div>
+        </div>
+    </header>
+
     <section class="hero">
         <div class="hero-slideshow">
             <img src="images/gem1.png" class="active" alt="Slide 1">
@@ -74,8 +107,6 @@
         </div>
     </section>
 
-    <script src="layout.js"></script>
     <script src="script.js"></script>
-    <script src="background.js"></script>
 </body>
 </html>
