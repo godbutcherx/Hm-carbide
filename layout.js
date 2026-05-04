@@ -47,12 +47,7 @@ function loadHeader() {
                     </span>
                 </div>
                 <div class="fan-options" id="themeOptions">
-                    <button class="fan-option fan-option-theme" data-theme="dark" onclick="selectTheme('dark')" title="Dark">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2" fill="currentColor" opacity="0.9"/></svg>
-                    </button>
-                    <button class="fan-option fan-option-theme" data-theme="light" onclick="selectTheme('light')" title="Light">
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
-                    </button>
+                    <button type="button" class="fan-option fan-option-theme fan-theme-peer" data-theme="" onclick="selectThemeFromPeer(this)" title="">&nbsp;</button>
                 </div>
             </div>
 
@@ -133,16 +128,46 @@ function loadFooter() {
 }
 
 // --- TEMA SİSTEMİ ---
+const THEME_PEER_SVG = {
+    dark:
+        '<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2" fill="currentColor" opacity="0.9"/></svg>',
+    light:
+        '<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>',
+};
+
 function applyTheme(theme) {
-    const isDark = theme === 'dark';
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('hmc_theme', theme);
-    // icon SVG — statik kalır
+    refreshThemePeer();
 }
 
 function selectTheme(theme) {
     applyTheme(theme);
     closeFan('themeFan');
+}
+
+function selectThemeFromPeer(btn) {
+    const code = btn && btn.dataset.theme;
+    if (code) selectTheme(code);
+}
+
+/** Sadece KARŞI tema yan düğmesinde (aktif ortada kalır → toplam 2 daire). */
+function refreshThemePeer() {
+    const theme =
+        document.documentElement.getAttribute('data-theme') ||
+        localStorage.getItem('hmc_theme') ||
+        'dark';
+    const other = theme === 'dark' ? 'light' : 'dark';
+    const fan = document.getElementById('themeFan');
+    const btn = document.querySelector('#themeOptions .fan-theme-peer');
+
+    if (fan) fan.dataset.currentTheme = theme;
+    if (btn) {
+        btn.dataset.theme = other;
+        btn.innerHTML = THEME_PEER_SVG[other];
+        btn.title = other === 'dark' ? 'Dark' : 'Light';
+        btn.setAttribute('aria-label', other === 'dark' ? 'Dark theme' : 'Light theme');
+    }
 }
 
 const LANG_PEER_ORDER = ['de', 'en', 'tr'];
