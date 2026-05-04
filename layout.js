@@ -27,22 +27,37 @@ function loadHeader() {
             </ul>
         </nav>
         <div class="header-right">
-            <div class="lang-switch">
-                <select onchange="changeLanguage(this.value)" id="langSel">
-                    <option value="de">DE</option>
-                    <option value="en">EN</option>
-                    <option value="tr">TR</option>
-                </select>
+
+            <!-- DIL SEÇİCİ — bayrak fan -->
+            <div class="fan-selector" id="langFan">
+                <div class="fan-active" id="langActive" onclick="toggleFan('langFan')">
+                    <span class="fan-flag" id="activeLangFlag">🇩🇪</span>
+                </div>
+                <div class="fan-options" id="langOptions">
+                    <button class="fan-option" data-lang="de" onclick="selectLang('de')">🇩🇪</button>
+                    <button class="fan-option" data-lang="en" onclick="selectLang('en')">🇬🇧</button>
+                    <button class="fan-option" data-lang="tr" onclick="selectLang('tr')">🇹🇷</button>
+                </div>
             </div>
-            <button class="theme-toggle" id="themeToggle" onclick="toggleTheme(event)" title="Toggle Theme">
-                <svg class="theme-icon" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <!-- Sol yarı dolu (koyu), sağ yarı boş (açık) — tema sembolü -->
-                  <circle cx="9" cy="9" r="7.5" stroke="currentColor" stroke-width="1.2"/>
-                  <path d="M9 1.5 A7.5 7.5 0 0 1 9 16.5 Z" fill="currentColor"/>
-                  <line x1="9" y1="1.5" x2="9" y2="16.5" stroke="currentColor" stroke-width="1"/>
-                </svg>
-            </button>
-            <div class="menu-toggle" onclick="toggleMenu()" style="color:white;">☰</div>
+
+            <!-- TEMA SEÇİCİ — fan -->
+            <div class="fan-selector" id="themeFan">
+                <div class="fan-active" id="themeActive" onclick="toggleFan('themeFan')">
+                    <span class="fan-theme-icon" id="activeThemeIcon">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.2"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/><line x1="8" y1="1.5" x2="8" y2="14.5" stroke="currentColor" stroke-width="0.9"/></svg>
+                    </span>
+                </div>
+                <div class="fan-options" id="themeOptions">
+                    <button class="fan-option fan-option-theme" data-theme="dark" onclick="selectTheme('dark')" title="Dark">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2" fill="currentColor" opacity="0.9"/></svg>
+                    </button>
+                    <button class="fan-option fan-option-theme" data-theme="light" onclick="selectTheme('light')" title="Light">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
     </header>
     `;
@@ -126,11 +141,40 @@ function applyTheme(theme) {
     // icon SVG — statik kalır
 }
 
-function toggleTheme(event) {
-    const current = document.documentElement.getAttribute('data-theme') || 'dark';
-    const next = current === 'dark' ? 'light' : 'dark';
-    applyTheme(next);
+function selectTheme(theme) {
+    applyTheme(theme);
+    closeFan('themeFan');
 }
+
+function selectLang(lang) {
+    changeLanguage(lang);
+    // Aktif bayrağı güncelle
+    const flags = { de: '🇩🇪', en: '🇬🇧', tr: '🇹🇷' };
+    const el = document.getElementById('activeLangFlag');
+    if (el) el.textContent = flags[lang] || '🇩🇪';
+    closeFan('langFan');
+}
+
+function toggleFan(id) {
+    const fan = document.getElementById(id);
+    if (!fan) return;
+    const isOpen = fan.classList.contains('open');
+    // Tüm fanları kapat
+    document.querySelectorAll('.fan-selector').forEach(f => f.classList.remove('open'));
+    if (!isOpen) fan.classList.add('open');
+}
+
+function closeFan(id) {
+    const fan = document.getElementById(id);
+    if (fan) fan.classList.remove('open');
+}
+
+// Dışarı tıklayınca kapat
+document.addEventListener('click', e => {
+    if (!e.target.closest('.fan-selector')) {
+        document.querySelectorAll('.fan-selector').forEach(f => f.classList.remove('open'));
+    }
+});
 
 function initTheme() {
     const saved = localStorage.getItem('hmc_theme');
@@ -141,7 +185,14 @@ function initTheme() {
         const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
         theme = prefersDark ? 'dark' : 'light';
     }
-    applyTheme(theme, false, 0, 0);
+    applyTheme(theme);
+}
+
+function initLangFlag() {
+    const lang = localStorage.getItem('hm_lang') || 'de';
+    const flags = { de: '🇩🇪', en: '🇬🇧', tr: '🇹🇷' };
+    const el = document.getElementById('activeLangFlag');
+    if (el) el.textContent = flags[lang] || '🇩🇪';
 }
 
 // --- COOKIE ---
@@ -173,5 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loadHeader();
     loadFooter();
     initTheme();
+    initLangFlag();
     initCookie();
 });
