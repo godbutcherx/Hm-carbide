@@ -34,9 +34,8 @@ function loadHeader() {
                     <span class="fan-flag" id="activeLangFlag">🇩🇪</span>
                 </div>
                 <div class="fan-options" id="langOptions">
-                    <button class="fan-option" data-lang="de" onclick="selectLang('de')">🇩🇪</button>
-                    <button class="fan-option" data-lang="en" onclick="selectLang('en')">🇬🇧</button>
-                    <button class="fan-option" data-lang="tr" onclick="selectLang('tr')">🇹🇷</button>
+                    <button type="button" class="fan-option fan-lang-peer fan-lang-peer--left" data-lang="" onclick="selectLangFromPeer(this)" title="">&nbsp;</button>
+                    <button type="button" class="fan-option fan-lang-peer fan-lang-peer--right" data-lang="" onclick="selectLangFromPeer(this)" title="">&nbsp;</button>
                 </div>
             </div>
 
@@ -146,13 +145,43 @@ function selectTheme(theme) {
     closeFan('themeFan');
 }
 
+const LANG_PEER_ORDER = ['de', 'en', 'tr'];
+const LANG_FLAGS = { de: '🇩🇪', en: '🇬🇧', tr: '🇹🇷' };
+
+/** Aktif dil ortada; diğer iki dil doğrudan sol ve sağda (liste sırasına göre). */
+function refreshLangPeers() {
+    const lang = localStorage.getItem('hm_lang') || 'de';
+    const others = LANG_PEER_ORDER.filter((c) => c !== lang);
+    const langFan = document.getElementById('langFan');
+    const af = document.getElementById('activeLangFlag');
+    const leftBtn = document.querySelector('#langOptions .fan-lang-peer--left');
+    const rightBtn = document.querySelector('#langOptions .fan-lang-peer--right');
+
+    if (af) af.textContent = LANG_FLAGS[lang] || LANG_FLAGS.de;
+    if (langFan) langFan.dataset.currentLang = lang;
+
+    if (leftBtn && others[0]) {
+        leftBtn.dataset.lang = others[0];
+        leftBtn.textContent = LANG_FLAGS[others[0]];
+        leftBtn.title = others[0].toUpperCase();
+    }
+    if (rightBtn && others[1]) {
+        rightBtn.dataset.lang = others[1];
+        rightBtn.textContent = LANG_FLAGS[others[1]];
+        rightBtn.title = others[1].toUpperCase();
+    }
+}
+
 function selectLang(lang) {
     changeLanguage(lang);
-    // Aktif bayrağı güncelle
-    const flags = { de: '🇩🇪', en: '🇬🇧', tr: '🇹🇷' };
-    const el = document.getElementById('activeLangFlag');
-    if (el) el.textContent = flags[lang] || '🇩🇪';
+    localStorage.setItem('hm_lang', lang);
+    refreshLangPeers();
     closeFan('langFan');
+}
+
+function selectLangFromPeer(btn) {
+    const code = btn && btn.dataset.lang;
+    if (code) selectLang(code);
 }
 
 function toggleFan(id) {
@@ -189,10 +218,7 @@ function initTheme() {
 }
 
 function initLangFlag() {
-    const lang = localStorage.getItem('hm_lang') || 'de';
-    const flags = { de: '🇩🇪', en: '🇬🇧', tr: '🇹🇷' };
-    const el = document.getElementById('activeLangFlag');
-    if (el) el.textContent = flags[lang] || '🇩🇪';
+    refreshLangPeers();
 }
 
 // --- COOKIE ---
