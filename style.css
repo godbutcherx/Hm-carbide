@@ -61,7 +61,7 @@ nav { flex: 3; display: flex; justify-content: center; z-index: 10001; }
 nav ul { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; align-items: center; }
 nav a { position: relative; font-size: 0.9rem; font-weight: 700; padding: 10px 15px; color: var(--text); border-radius: 25px; transition: all 0.3s ease; white-space: nowrap; letter-spacing: 0.5px; }
 nav a:hover { color: #fff; background: rgba(255,255,255,0.1); transform: scale(1.05); }
-.header-right { display: flex; align-items: center; gap: 10px; flex: 1; justify-content: flex-end; z-index: 10002; }
+.header-right { display: flex; align-items: center; column-gap: 18px; row-gap: 10px; flex: 1; justify-content: flex-end; z-index: 10002; }
 
 
 .menu-toggle { display: none; font-size: 1.8rem; cursor: pointer; color: white; margin-left: 10px; }
@@ -547,6 +547,54 @@ h2 {
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
+    isolation: isolate;
+    width: 40px;
+    min-width: 40px;
+    height: 44px;
+    flex-shrink: 0;
+    /* Yerleşim adımı — üst üste binmeyi azaltmak için */
+    --fan-btn: 34px;
+    --fan-slot: 42px;
+}
+
+.fan-selector::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: calc((40px - 36px) / 2); /* aktiv düğüm hizası */
+    transform: translateY(-50%) scaleX(0.42) scaleY(0.88);
+    transform-origin: right center;
+    width: 170px;
+    height: 44px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.065);
+    border: 1px solid rgba(255,255,255,0.12);
+    opacity: 0;
+    z-index: 0;
+    will-change: transform, opacity, border-radius;
+    transition:
+        opacity 420ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 640ms cubic-bezier(0.22, 1, 0.36, 1),
+        border-radius 720ms cubic-bezier(0.45, 0, 0.2, 1);
+}
+
+/* Dil daha geniş açılıyor */
+#langFan::before {
+    width: 200px;
+}
+
+#themeFan::before {
+    width: 138px;
+}
+
+.fan-selector:hover::before,
+.fan-selector:focus-within::before,
+.fan-selector.open::before {
+    opacity: 1;
+    transform: translateY(-50%) scaleX(1) scaleY(1.03);
+    /* Hafif organik damla silüeti — keyframe'e gerek yok, daha akışkan çıkış */
+    border-radius: 38% 62% 60% 40% / 52% 48% 54% 46%;
 }
 
 .fan-active {
@@ -559,11 +607,23 @@ h2 {
     cursor: pointer;
     border: 1px solid rgba(255,255,255,0.15);
     background: rgba(255,255,255,0.05);
-    transition: all 0.25s;
+    transition:
+        background 340ms cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 340ms cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 340ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
     font-size: 1.3rem;
     position: relative;
     z-index: 2;
     user-select: none;
+}
+
+.fan-selector:is(:hover, :focus-within, .open) .fan-active {
+    transform: scale(1.02);
+}
+
+.fan-selector:is(:hover, :focus-within, .open) .fan-option {
+    z-index: 3;
 }
 .fan-active:hover {
     background: rgba(255,255,255,0.12);
@@ -579,19 +639,16 @@ h2 {
 /* Seçenekler — başta gizli */
 .fan-options {
     position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    inset: 0;
+    display: block;
+    overflow: visible;
     pointer-events: none;
     z-index: 1;
 }
 
 .fan-option {
-    width: 34px;
-    height: 34px;
+    width: var(--fan-btn);
+    height: var(--fan-btn);
     border-radius: 50%;
     border: 1px solid rgba(255,255,255,0.15);
     background: rgba(17,19,24,0.95);
@@ -602,10 +659,21 @@ h2 {
     font-size: 1.2rem;
     color: rgba(255,255,255,0.7);
     opacity: 0;
-    transform: translateX(0) scale(0.5);
-    transition: opacity 0.25s, transform 0.35s cubic-bezier(0.34,1.56,0.64,1), background 0.2s;
     pointer-events: none;
     backdrop-filter: blur(8px);
+    position: absolute;
+    left: calc(50% - var(--fan-btn) / 2);
+    top: calc(50% - var(--fan-btn) / 2);
+    /* Kapalı durumda aynı nokta + scale — layout taşması yok (üst üste binme düzelir) */
+    transform: translate3d(0, 0, 0) scale(0.48);
+    transition:
+        opacity 380ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+        background 220ms ease,
+        border-color 220ms ease,
+        box-shadow 220ms ease;
+    z-index: 1;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
 }
 .fan-option:hover {
     background: rgba(255,255,255,0.12);
@@ -617,43 +685,75 @@ h2 {
 }
 
 /* AÇIK — fan yayılır */
-.fan-selector.open .fan-active {
+.fan-selector.open .fan-active,
+.fan-selector:hover .fan-active,
+.fan-selector:focus-within .fan-active {
     background: rgba(255,255,255,0.12);
     border-color: rgba(255,255,255,0.3);
 }
 
-/* Dil fanı — 3 seçenek sola doğru açılır */
-#langFan.open .fan-option:nth-child(1) {
+/* Dil fanı — 3 seçenek sağa/sola açılır (hover + click) */
+#langFan.open .fan-option:nth-child(1),
+#langFan:hover .fan-option:nth-child(1),
+#langFan:focus-within .fan-option:nth-child(1) {
     opacity: 1;
-    transform: translateX(-130px) scale(1);
+    transform: translate3d(calc(var(--fan-slot) * -2), 0, 0) scale(1);
     pointer-events: all;
-    transition-delay: 0s;
+    transition-delay: 0ms;
 }
-#langFan.open .fan-option:nth-child(2) {
+#langFan.open .fan-option:nth-child(2),
+#langFan:hover .fan-option:nth-child(2),
+#langFan:focus-within .fan-option:nth-child(2) {
     opacity: 1;
-    transform: translateX(-88px) scale(1);
+    transform: translate3d(calc(var(--fan-slot) * -1), 0, 0) scale(1);
     pointer-events: all;
-    transition-delay: 0.04s;
+    transition-delay: 42ms;
 }
-#langFan.open .fan-option:nth-child(3) {
+#langFan.open .fan-option:nth-child(3),
+#langFan:hover .fan-option:nth-child(3),
+#langFan:focus-within .fan-option:nth-child(3) {
     opacity: 1;
-    transform: translateX(-46px) scale(1);
+    transform: translate3d(var(--fan-slot), 0, 0) scale(1);
     pointer-events: all;
-    transition-delay: 0.08s;
+    transition-delay: 84ms;
 }
 
-/* Tema fanı — 2 seçenek sola açılır */
-#themeFan.open .fan-option:nth-child(1) {
+/* Tema fanı — 2 seçenek sağa/sola açılır (hover + click) */
+#themeFan.open .fan-option:nth-child(1),
+#themeFan:hover .fan-option:nth-child(1),
+#themeFan:focus-within .fan-option:nth-child(1) {
     opacity: 1;
-    transform: translateX(-88px) scale(1);
+    transform: translate3d(calc(var(--fan-slot) * -1), 0, 0) scale(1);
     pointer-events: all;
-    transition-delay: 0s;
+    transition-delay: 0ms;
 }
-#themeFan.open .fan-option:nth-child(2) {
+#themeFan.open .fan-option:nth-child(2),
+#themeFan:hover .fan-option:nth-child(2),
+#themeFan:focus-within .fan-option:nth-child(2) {
     opacity: 1;
-    transform: translateX(-46px) scale(1);
+    transform: translate3d(var(--fan-slot), 0, 0) scale(1);
     pointer-events: all;
-    transition-delay: 0.05s;
+    transition-delay: 48ms;
+}
+
+/* Açılan fan diğerinin üzerine binmesin: etkileşimde üst kata al */
+#langFan:hover,
+#langFan:focus-within,
+#langFan.open {
+    position: relative;
+    z-index: 10006;
+}
+
+#themeFan:hover,
+#themeFan:focus-within,
+#themeFan.open {
+    position: relative;
+    z-index: 10006;
+}
+
+.fan-option:focus-visible {
+    outline: 2px solid rgba(232, 57, 46, 0.85);
+    outline-offset: 2px;
 }
 
 /* Light tema uyumu */
@@ -673,6 +773,11 @@ h2 {
     background: rgba(0,0,0,0.08);
 }
 [data-theme="light"] .fan-theme-icon { color: rgba(26,37,47,0.7); }
+
+[data-theme="light"] .fan-selector::before {
+    background: rgba(0,0,0,0.05);
+    border-color: rgba(0,0,0,0.10);
+}
 
 /* Mobil — fan gizle, eski select göster */
 @media (max-width: 900px) {
