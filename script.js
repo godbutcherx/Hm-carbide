@@ -38,7 +38,7 @@ const translations = {
         about_title: "Hakkımızda", about_text: "Yüksek kaliteli karbür ürünleri için güvenilir ortağınız.", about_btn: "DAHA FAZLA",
         p1: "Dolu Karbür Çubuk", p2: "Soğutma Kanallı Çubuk", p3: "Kesilmiş Çubuk",
         prod_subtitle: "Yüksek Performanslı Karbür Çubuklar",
-        tech_title: "TEKNİK ÖZELLİKLER", th_grain: "Tane Boyutu", th_density: "Yoğunluk", th_hard: "Sertlik", th_trs: "Kırılma Dayanımı", search_ph: "Ölçü ara (örn. 12x330)...",
+        tech_title: "Teknik Özellikler", th_grain: "Tane Boyutu", th_density: "Yoğunluk", th_hard: "Sertlik", th_trs: "Kırılma Dayanımı", search_ph: "Ölçü ara (örn. 12x330)...",
         swiss_title: "İSVİÇRE KALİTESİ", swiss_desc: "ORİJİNAL KALİTE",
         contact_info_title: "İletişim Bilgileri", form_title: "Mesaj Gönderin", form_btn: "GÖNDER", ph_name: "Adınız", ph_email: "E-Posta", ph_message: "Mesajınız...",
         about_content: `<h3>Tecrübenin Gücü, HM Carbide Güvencesi</h3><p>Talaşlı imalat ve karbür endüstrisindeki yıllara dayanan tecrübemizle, üretim dünyasının ihtiyaçlarını çok iyi biliyoruz. HM Carbide Swiss GmbH, bu bilgi birikimini İsviçre’nin üretim kalitesiyle harmanlayarak müşterilerine en doğru hammadde çözümlerini sunmak amacıyla kurulmuştur.</p><p>İsviçre merkezli operasyonlarımızla, Avrupa standartlarında üretilen karbür çubukları, rekabetçi koşullar ve güvenilir tedarik zinciri yönetimiyle iş ortaklarımıza ulaştırıyoruz. Amacımız; müşterilerimizin üretim hattındaki duruş sürelerini en aza indirmek ve takım ömürlerini maksimize etmektir.</p><p>Geçmişten gelen deneyimimiz ve geleceğe dönük vizyonumuzla, HM Carbide Swiss GmbH olarak işinize değer katmak için buradayız.</p>`,
