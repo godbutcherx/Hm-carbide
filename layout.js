@@ -27,7 +27,7 @@ function loadHeader() {
             </ul>
             <div class="mobile-controls">
                 <div class="mobile-controls-row">
-                    <span class="mobile-controls-label">Sprache</span>
+                    <span class="mobile-controls-label" data-i18n="mobile_lang">Sprache</span>
                     <div class="mobile-btn-group">
                         <button class="mobile-ctrl-btn" onclick="selectLang('de')">🇩🇪</button>
                         <button class="mobile-ctrl-btn" onclick="selectLang('en')">🇬🇧</button>
@@ -35,7 +35,7 @@ function loadHeader() {
                     </div>
                 </div>
                 <div class="mobile-controls-row">
-                    <span class="mobile-controls-label">Thema</span>
+                    <span class="mobile-controls-label" data-i18n="mobile_theme">Thema</span>
                     <div class="mobile-btn-group">
                         <button class="mobile-ctrl-btn" onclick="selectTheme('dark')">🌙</button>
                         <button class="mobile-ctrl-btn" onclick="selectTheme('light')">☀️</button>
@@ -56,15 +56,10 @@ function loadHeader() {
                 </div>
             </div>
 
-            <!-- TEMA SEÇİCİ — fan -->
-            <div class="fan-selector" id="themeFan">
-                <div class="fan-active" id="themeActive" onclick="toggleFan('themeFan')">
-                    <span class="fan-theme-icon" id="activeThemeIcon">🌙</span>
-                </div>
-                <div class="fan-options" id="themeOptions">
-                    <button type="button" class="fan-option fan-option-theme fan-theme-peer" data-theme="" onclick="selectThemeFromPeer(this)" title="">&nbsp;</button>
-                </div>
-            </div>
+            <!-- TEMA SEÇİCİ — direkt toggle -->
+            <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle theme" aria-label="Toggle theme">
+                <span id="activeThemeIcon">🌙</span>
+            </button>
 
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
@@ -148,12 +143,19 @@ const THEME_ICONS = { dark: '🌙', light: '☀️' };
 function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
     localStorage.setItem('hmc_theme', theme);
-    refreshThemePeer();
+    const icon = document.getElementById('activeThemeIcon');
+    if (icon) icon.textContent = THEME_ICONS[theme];
+}
+
+function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    const next = current === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+    refreshMobileActiveStates();
 }
 
 function selectTheme(theme) {
     applyTheme(theme);
-    closeFan('themeFan');
     refreshMobileActiveStates();
 }
 
@@ -162,25 +164,11 @@ function selectThemeFromPeer(btn) {
     if (code) selectTheme(code);
 }
 
-/** Sadece KARŞI tema yan düğmesinde (aktif ortada kalır → toplam 2 daire). */
+/** Eski fan peer — artık sadece icon sync için çağrılabilir. */
 function refreshThemePeer() {
-    const theme =
-        document.documentElement.getAttribute('data-theme') ||
-        localStorage.getItem('hmc_theme') ||
-        'dark';
-    const other = theme === 'dark' ? 'light' : 'dark';
-    const fan = document.getElementById('themeFan');
-    const btn = document.querySelector('#themeOptions .fan-theme-peer');
-    const activeIcon = document.getElementById('activeThemeIcon');
-
-    if (fan) fan.dataset.currentTheme = theme;
-    if (activeIcon) activeIcon.textContent = THEME_ICONS[theme];
-    if (btn) {
-        btn.dataset.theme = other;
-        btn.textContent = THEME_ICONS[other];
-        btn.title = other === 'dark' ? 'Dark' : 'Light';
-        btn.setAttribute('aria-label', other === 'dark' ? 'Dark theme' : 'Light theme');
-    }
+    const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+    const icon = document.getElementById('activeThemeIcon');
+    if (icon) icon.textContent = THEME_ICONS[theme];
 }
 
 const LANG_PEER_ORDER = ['de', 'en', 'tr'];
@@ -216,6 +204,16 @@ function selectLang(lang) {
     refreshLangPeers();
     closeFan('langFan');
     refreshMobileActiveStates();
+    // Mobil etiketleri i18n çalıştıktan sonra yenile
+    setTimeout(() => {
+        const els = document.querySelectorAll('.mobile-controls-label[data-i18n]');
+        els.forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (window.i18nData && window.i18nData[lang] && window.i18nData[lang][key]) {
+                el.textContent = window.i18nData[lang][key];
+            }
+        });
+    }, 50);
 }
 
 function selectLangFromPeer(btn) {
