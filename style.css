@@ -636,7 +636,98 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(255,255,255,0.7);
+    font-size: 1.1rem;
+    line-height: 1;
+}
+
+.fan-option-theme {
+    font-size: 1.1rem;
+}
+
+/* Mobil — fan seçicileri gizle */
+@media (max-width: 900px) {
+    .fan-selector { display: none; }
+}
+
+/* ── MOBİL KONTROLLER (nav içi) ── */
+.mobile-controls {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    .mobile-controls {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        border-top: 1px solid var(--border);
+        padding: 10px 0 6px;
+    }
+
+    .mobile-controls-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    .mobile-controls-label {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--text-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+    }
+
+    .mobile-btn-group {
+        display: flex;
+        gap: 6px;
+    }
+
+    .mobile-ctrl-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        border: 1px solid rgba(255,255,255,0.15);
+        background: rgba(255,255,255,0.05);
+        font-size: 1.2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s, border-color 0.2s, transform 0.15s;
+        line-height: 1;
+    }
+
+    .mobile-ctrl-btn:hover,
+    .mobile-ctrl-btn:active {
+        background: rgba(255,255,255,0.14);
+        border-color: rgba(255,255,255,0.35);
+        transform: scale(1.08);
+    }
+
+    .mobile-ctrl-btn.active {
+        border-color: var(--secondary);
+        background: rgba(232,57,46,0.15);
+    }
+
+    [data-theme="light"] .mobile-ctrl-btn {
+        border-color: rgba(0,0,0,0.12);
+        background: rgba(0,0,0,0.04);
+    }
+
+    [data-theme="light"] .mobile-ctrl-btn:hover {
+        background: rgba(0,0,0,0.1);
+        border-color: rgba(0,0,0,0.25);
+    }
+
+    [data-theme="light"] .mobile-ctrl-btn.active {
+        border-color: var(--secondary);
+        background: rgba(232,57,46,0.1);
+    }
+
+    [data-theme="light"] .mobile-controls-label {
+        color: #6b7280;
+    }
 }
 
 /* Seçenekler — başta gizli */
@@ -683,10 +774,6 @@ h2 {
     border-color: rgba(255,255,255,0.35);
     color: white;
 }
-.fan-option-theme {
-    font-size: 0.8rem;
-}
-
 /* AÇIK — fan yayılır */
 .fan-selector.open .fan-active,
 .fan-selector:hover .fan-active,
