@@ -205,8 +205,8 @@ footer { background: var(--footer-bg); color: #8a9099; padding-top: 60px; font-s
   .menu-toggle { display: block; }
   header { padding: 0 4%; }
   /* Nav dropdown — HER ZAMAN koyu, saydamlık yok */
-  nav { position: absolute; top: 75px; right: 10px; width: 220px; background: #111318 !important; border-radius: 12px; flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, border-color 0.1s; box-shadow: none; border: 1px solid transparent; }
-  nav.active { max-height: 400px; box-shadow: 0 10px 40px rgba(0,0,0,0.8); border-color: rgba(255,255,255,0.1); }
+  nav { position: absolute; top: 75px; right: 10px; width: 220px; background: #111318 !important; border-radius: 12px; flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; box-shadow: none; border: none; }
+  nav.active { max-height: 400px; box-shadow: 0 10px 40px rgba(0,0,0,0.8); }
   nav ul { flex-direction: column; gap: 0; width: 100%; padding: 10px 0; }
   nav a { display: block; width: 100%; text-align: left; padding: 12px 20px; border-radius: 0; white-space: normal; color: #c8cdd6 !important; }
   nav a:hover { background: rgba(255,255,255,0.08) !important; color: #fff !important; }
@@ -304,8 +304,8 @@ footer { background: var(--footer-bg); color: #8a9099; padding-top: 60px; font-s
 
 /* Mobil nav — light temada da koyu kalsın */
 @media (max-width: 900px) {
-  [data-theme="light"] nav { background: #111318 !important; border-color: transparent; }
-  [data-theme="light"] nav.active { border-color: rgba(255,255,255,0.1); }
+  [data-theme="light"] nav { background: #111318 !important; border: none; }
+  [data-theme="light"] nav.active { border: none; }
   [data-theme="light"] nav a { color: #c8cdd6 !important; }
   [data-theme="light"] nav a:hover { background: rgba(255,255,255,0.08) !important; color: #fff !important; }
 }
