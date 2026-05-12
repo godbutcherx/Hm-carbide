@@ -13,7 +13,7 @@ function loadHeader() {
                 <img src="images/gem9.png" alt="Alt Logo" class="logo-img logo-alt">
             </div>
             <div class="logo-text">
-                <span class="brand-name">HM CARBIDE</span>
+                <span class="brand-name">HM Carbide</span>
                 <span class="brand-sub">Swiss GmbH</span>
             </div>
         </a>
@@ -74,7 +74,7 @@ function loadFooter() {
             <div class="footer-col">
                 <div style="display:flex; align-items:center; gap:10px; margin-bottom:20px;">
                     <img src="images/logo.jpg" style="height:50px;border-radius:4px;">
-                    <span style="color:white;font-weight:900;font-size:1.2rem;font-family:'Barlow Condensed','Montserrat',sans-serif;letter-spacing:1px;line-height:1.2;">HM CARBIDE<br><span style="color:var(--secondary);font-size:0.85rem;font-weight:600;letter-spacing:2px;">Swiss GmbH</span></span>
+                    <span style="color:white;font-weight:900;font-size:1.2rem;font-family:'Barlow Condensed','Montserrat',sans-serif;letter-spacing:1px;line-height:1.2;">HM Carbide<br><span style="color:var(--secondary);font-size:0.85rem;font-weight:600;letter-spacing:2px;">Swiss GmbH</span></span>
                 </div>
                 <p data-i18n="footer_desc">Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte. Schweizer Präzision für die Welt.</p>
             </div>
