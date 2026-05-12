@@ -25,27 +25,10 @@ function loadHeader() {
                 <li><a href="certificates.html" data-i18n="nav_certs">Zertifikate</a></li>
                 <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
             </ul>
-            <div class="mobile-controls">
-                <div class="mobile-controls-row">
-                    <span class="mobile-controls-label" data-i18n="mobile_lang">Sprache</span>
-                    <div class="mobile-btn-group">
-                        <button class="mobile-ctrl-btn" onclick="selectLang('de')">🇩🇪</button>
-                        <button class="mobile-ctrl-btn" onclick="selectLang('en')">🇬🇧</button>
-                        <button class="mobile-ctrl-btn" onclick="selectLang('tr')">🇹🇷</button>
-                    </div>
-                </div>
-                <div class="mobile-controls-row">
-                    <span class="mobile-controls-label" data-i18n="mobile_theme">Thema</span>
-                    <div class="mobile-btn-group">
-                        <button class="mobile-ctrl-btn" onclick="selectTheme('dark')">🌙</button>
-                        <button class="mobile-ctrl-btn" onclick="selectTheme('light')">☀️</button>
-                    </div>
-                </div>
-            </div>
         </nav>
         <div class="header-right">
 
-            <!-- DIL SEÇİCİ — bayrak fan -->
+            <!-- DIL SEÇİCİ — bayrak fan (masaüstü) -->
             <div class="fan-selector" id="langFan">
                 <div class="fan-active" id="langActive" onclick="toggleFan('langFan')">
                     <span class="fan-flag" id="activeLangFlag">🇩🇪</span>
@@ -59,6 +42,18 @@ function loadHeader() {
             <!-- TEMA SEÇİCİ — direkt toggle -->
             <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle theme" aria-label="Toggle theme">
                 <span id="activeThemeIcon">🌙</span>
+            </button>
+
+            <!-- MOBİL: dil bayrakları (sadece mobilde görünür) -->
+            <div class="mobile-lang-row" id="mobileLangRow">
+                <button class="mobile-ctrl-btn" id="mlBtn_de" onclick="selectLang('de')">🇩🇪</button>
+                <button class="mobile-ctrl-btn" id="mlBtn_en" onclick="selectLang('en')">🇬🇧</button>
+                <button class="mobile-ctrl-btn" id="mlBtn_tr" onclick="selectLang('tr')">🇹🇷</button>
+            </div>
+
+            <!-- MOBİL: tema toggle (sadece mobilde görünür) -->
+            <button class="theme-toggle-btn mobile-theme-btn" id="mobileThemeBtn" onclick="toggleTheme()" aria-label="Toggle theme">
+                <span id="mobileThemeIcon">🌙</span>
             </button>
 
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
@@ -145,6 +140,9 @@ function applyTheme(theme) {
     localStorage.setItem('hmc_theme', theme);
     const icon = document.getElementById('activeThemeIcon');
     if (icon) icon.textContent = THEME_ICONS[theme];
+    const mobileIcon = document.getElementById('mobileThemeIcon');
+    if (mobileIcon) mobileIcon.textContent = THEME_ICONS[theme];
+    refreshMobileActiveStates();
 }
 
 function toggleTheme() {
@@ -286,14 +284,14 @@ function refreshMobileActiveStates() {
     const lang = localStorage.getItem('hm_lang') || 'de';
     const theme = localStorage.getItem('hmc_theme') || 'dark';
 
-    document.querySelectorAll('.mobile-btn-group .mobile-ctrl-btn[onclick*="selectLang"]').forEach(btn => {
-        const match = btn.getAttribute('onclick').match(/selectLang\('(\w+)'\)/);
-        if (match) btn.classList.toggle('active', match[1] === lang);
+    ['de','en','tr'].forEach(l => {
+        const btn = document.getElementById('mlBtn_' + l);
+        if (btn) btn.classList.toggle('active', l === lang);
     });
-    document.querySelectorAll('.mobile-btn-group .mobile-ctrl-btn[onclick*="selectTheme"]').forEach(btn => {
-        const match = btn.getAttribute('onclick').match(/selectTheme\('(\w+)'\)/);
-        if (match) btn.classList.toggle('active', match[1] === theme);
-    });
+
+    // Mobil tema butonunu aktif göster (toggle olduğu için sadece ikon güncelleniyor)
+    const mobileIcon = document.getElementById('mobileThemeIcon');
+    if (mobileIcon) mobileIcon.textContent = THEME_ICONS[theme];
 }
 
 // Sayfa yüklenince
