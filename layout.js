@@ -25,6 +25,23 @@ function loadHeader() {
                 <li><a href="certificates.html" data-i18n="nav_certs">Zertifikate</a></li>
                 <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
             </ul>
+            <div class="mobile-controls">
+                <div class="mobile-controls-row">
+                    <span class="mobile-controls-label">Sprache</span>
+                    <div class="mobile-btn-group">
+                        <button class="mobile-ctrl-btn" onclick="selectLang('de')">🇩🇪</button>
+                        <button class="mobile-ctrl-btn" onclick="selectLang('en')">🇬🇧</button>
+                        <button class="mobile-ctrl-btn" onclick="selectLang('tr')">🇹🇷</button>
+                    </div>
+                </div>
+                <div class="mobile-controls-row">
+                    <span class="mobile-controls-label">Thema</span>
+                    <div class="mobile-btn-group">
+                        <button class="mobile-ctrl-btn" onclick="selectTheme('dark')">🌙</button>
+                        <button class="mobile-ctrl-btn" onclick="selectTheme('light')">☀️</button>
+                    </div>
+                </div>
+            </div>
         </nav>
         <div class="header-right">
 
@@ -42,9 +59,7 @@ function loadHeader() {
             <!-- TEMA SEÇİCİ — fan -->
             <div class="fan-selector" id="themeFan">
                 <div class="fan-active" id="themeActive" onclick="toggleFan('themeFan')">
-                    <span class="fan-theme-icon" id="activeThemeIcon">
-                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.2"/><path d="M8 1.5 A6.5 6.5 0 0 1 8 14.5 Z" fill="currentColor"/><line x1="8" y1="1.5" x2="8" y2="14.5" stroke="currentColor" stroke-width="0.9"/></svg>
-                    </span>
+                    <span class="fan-theme-icon" id="activeThemeIcon">🌙</span>
                 </div>
                 <div class="fan-options" id="themeOptions">
                     <button type="button" class="fan-option fan-option-theme fan-theme-peer" data-theme="" onclick="selectThemeFromPeer(this)" title="">&nbsp;</button>
@@ -128,12 +143,7 @@ function loadFooter() {
 }
 
 // --- TEMA SİSTEMİ ---
-const THEME_PEER_SVG = {
-    dark:
-        '<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2" fill="currentColor" opacity="0.9"/></svg>',
-    light:
-        '<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="1" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.2" fill="none"/></svg>',
-};
+const THEME_ICONS = { dark: '🌙', light: '☀️' };
 
 function applyTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
@@ -144,6 +154,7 @@ function applyTheme(theme) {
 function selectTheme(theme) {
     applyTheme(theme);
     closeFan('themeFan');
+    refreshMobileActiveStates();
 }
 
 function selectThemeFromPeer(btn) {
@@ -160,11 +171,13 @@ function refreshThemePeer() {
     const other = theme === 'dark' ? 'light' : 'dark';
     const fan = document.getElementById('themeFan');
     const btn = document.querySelector('#themeOptions .fan-theme-peer');
+    const activeIcon = document.getElementById('activeThemeIcon');
 
     if (fan) fan.dataset.currentTheme = theme;
+    if (activeIcon) activeIcon.textContent = THEME_ICONS[theme];
     if (btn) {
         btn.dataset.theme = other;
-        btn.innerHTML = THEME_PEER_SVG[other];
+        btn.textContent = THEME_ICONS[other];
         btn.title = other === 'dark' ? 'Dark' : 'Light';
         btn.setAttribute('aria-label', other === 'dark' ? 'Dark theme' : 'Light theme');
     }
@@ -202,6 +215,7 @@ function selectLang(lang) {
     localStorage.setItem('hm_lang', lang);
     refreshLangPeers();
     closeFan('langFan');
+    refreshMobileActiveStates();
 }
 
 function selectLangFromPeer(btn) {
@@ -270,6 +284,20 @@ function initCookie() {
     }
 }
 
+function refreshMobileActiveStates() {
+    const lang = localStorage.getItem('hm_lang') || 'de';
+    const theme = localStorage.getItem('hmc_theme') || 'dark';
+
+    document.querySelectorAll('.mobile-btn-group .mobile-ctrl-btn[onclick*="selectLang"]').forEach(btn => {
+        const match = btn.getAttribute('onclick').match(/selectLang\('(\w+)'\)/);
+        if (match) btn.classList.toggle('active', match[1] === lang);
+    });
+    document.querySelectorAll('.mobile-btn-group .mobile-ctrl-btn[onclick*="selectTheme"]').forEach(btn => {
+        const match = btn.getAttribute('onclick').match(/selectTheme\('(\w+)'\)/);
+        if (match) btn.classList.toggle('active', match[1] === theme);
+    });
+}
+
 // Sayfa yüklenince
 document.addEventListener('DOMContentLoaded', () => {
     loadHeader();
@@ -277,4 +305,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     initLangFlag();
     initCookie();
+    refreshMobileActiveStates();
 });
