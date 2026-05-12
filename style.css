@@ -55,7 +55,7 @@ header.scrolled, header.header-inner { background: var(--header-scrolled); heigh
 @keyframes logoAnimation { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } 100% { opacity: 1; } }
 header.scrolled .logo-wrapper, header.header-inner .logo-wrapper { width: 60px; height: 60px; }
 .logo-text { margin-left: 12px; padding-left: 12px; border-left: 1px solid rgba(255,255,255,0.15); display: flex; flex-direction: column; justify-content: center; }
-.brand-name { font-weight: 900; font-size: 1.4rem; line-height: 1; text-transform: uppercase; letter-spacing: 1px; color: white; }
+.brand-name { font-weight: 900; font-size: 1.4rem; line-height: 1; letter-spacing: 1px; color: white; font-family: 'Barlow Condensed', 'Montserrat', sans-serif; }
 .brand-sub { font-weight: 600; font-size: 0.8rem; color: var(--secondary); letter-spacing: 2px; margin-top: 4px; }
 nav { flex: 3; display: flex; justify-content: center; z-index: 10001; }
 nav ul { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; align-items: center; }
@@ -205,8 +205,8 @@ footer { background: var(--footer-bg); color: #8a9099; padding-top: 60px; font-s
   .menu-toggle { display: block; }
   header { padding: 0 4%; }
   /* Nav dropdown — HER ZAMAN koyu, saydamlık yok */
-  nav { position: absolute; top: 75px; right: 10px; width: 220px; background: #111318 !important; border-radius: 12px; flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; box-shadow: 0 10px 40px rgba(0,0,0,0.8); border: 1px solid rgba(255,255,255,0.1); }
-  nav.active { max-height: 400px; }
+  nav { position: absolute; top: 75px; right: 10px; width: 220px; background: #111318 !important; border-radius: 12px; flex-direction: column; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, border-color 0.1s; box-shadow: none; border: 1px solid transparent; }
+  nav.active { max-height: 400px; box-shadow: 0 10px 40px rgba(0,0,0,0.8); border-color: rgba(255,255,255,0.1); }
   nav ul { flex-direction: column; gap: 0; width: 100%; padding: 10px 0; }
   nav a { display: block; width: 100%; text-align: left; padding: 12px 20px; border-radius: 0; white-space: normal; color: #c8cdd6 !important; }
   nav a:hover { background: rgba(255,255,255,0.08) !important; color: #fff !important; }
@@ -302,7 +302,13 @@ footer { background: var(--footer-bg); color: #8a9099; padding-top: 60px; font-s
 
 [data-theme="light"] nav { background: transparent; }
 
-/* Hero — değişmez, zaten karanlık overlay var */
+/* Mobil nav — light temada da koyu kalsın */
+@media (max-width: 900px) {
+  [data-theme="light"] nav { background: #111318 !important; border-color: transparent; }
+  [data-theme="light"] nav.active { border-color: rgba(255,255,255,0.1); }
+  [data-theme="light"] nav a { color: #c8cdd6 !important; }
+  [data-theme="light"] nav a:hover { background: rgba(255,255,255,0.08) !important; color: #fff !important; }
+}
 
 /* İç sayfa başlık */
 [data-theme="light"] .page-header-section {
@@ -385,9 +391,6 @@ footer { background: var(--footer-bg); color: #8a9099; padding-top: 60px; font-s
 [data-theme="light"] .cookie-banner { box-shadow: 0 -10px 40px rgba(0,0,0,0.1); }
 [data-theme="light"] .cookie-text strong { color: var(--primary); }
 [data-theme="light"] .cookie-reject { border-color: var(--border); color: var(--text-muted); }
-
-/* Mobil nav */
-[data-theme="light"] nav { border-color: var(--border); }
 
 /* Particle background — light temada gizle */
 [data-theme="light"] #hmc-bg-canvas { opacity: 0 !important; }
