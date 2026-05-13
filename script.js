@@ -3,7 +3,7 @@ const translations = {
     de: { 
         nav_home: "Startseite", nav_about: "&Uuml;ber Uns", nav_products: "Produkte", nav_certs: "Zertifikate", nav_contact: "Kontakt",
         nav_quick: "Schnellzugriff", footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte.",
-        hero_title: "SCHWEIZER DISZIPLIN, MAXIMALE BESTÄNDIGKEIT", hero_sub: "PRÄZISION AUS DER SCHWEIZ FÜR DIE WELT", hero_btn_contact: "KONTAKT AUFNEHMEN",
+        hero_title: "SCHWEIZER DISZIPLIN | MAXIMALE BESTÄNDIGKEIT", hero_sub: "PRÄZISION AUS DER SCHWEIZ FÜR DIE WELT", hero_btn_contact: "KONTAKT AUFNEHMEN",
         nat_title: "Tungsten, Karbon, Kobalt... Unser Wesen ist Natur.", nat_sub: "Wir bieten die stärksten Erze der Natur mit Schweizer Präzision.", nat_desc: "Die einzigartige Haltbarkeit von Hartmetallstäben entsteht aus der Kraft der Elemente aus den Tiefen der Erde. Wir als HM Carbide wählen sorgfältig Produkte aus, die die Härte von Wolfram und die Bindekraft von Kobalt am besten widerspiegeln, und bringen sie zu Ihnen. Wir respektieren das Gleichgewicht der Natur in unseren Lieferprozessen; wir sind stolz darauf, diese Kraft, die die Industrie benötigt, mit Umweltbewusstsein und Schweizer Qualitätsstandards anzubieten.",
         about_title: "&Uuml;ber Uns", about_text: "HM Carbide Swiss GmbH ist Ihr zuverlässiger Partner.", about_btn: "MEHR ERFAHREN",
         p1: "Hartmetallstab Voll", p2: "Stab mit Kühlkanal", p3: "Gekürzter Stab", 
@@ -18,7 +18,7 @@ const translations = {
     en: { 
         nav_home: "Home", nav_about: "About Us", nav_products: "Products", nav_certs: "Certificates", nav_contact: "Contact",
         nav_quick: "Quick Links", footer_desc: "Your reliable partner for carbide products.",
-        hero_title: "SWISS DISCIPLINE, MAXIMUM DURABILITY", hero_sub: "SWISS PRECISION FOR THE WORLD", hero_btn_contact: "CONTACT US",
+        hero_title: "SWISS DISCIPLINE | MAXIMUM DURABILITY", hero_sub: "SWISS PRECISION FOR THE WORLD", hero_btn_contact: "CONTACT US",
         nat_title: "Tungsten, Carbon, Cobalt... Our Essence is Nature.", nat_sub: "Nature's strongest ores with Swiss precision.", nat_desc: "The unique durability of carbide rods stems from the power of elements from deep within the earth. As HM Carbide, we carefully select products that best reflect the hardness of tungsten and the binding power of cobalt, bringing them to you. We respect nature's balance in our supply processes; we are proud to offer this strength required by the industry with environmental awareness and Swiss quality standards.",
         about_title: "About Us", about_text: "Your reliable partner for high-quality carbide products.", about_btn: "LEARN MORE",
         p1: "Solid Carbide Rod", p2: "Rod with Coolant", p3: "Cut-to-Length Rod", 
@@ -33,7 +33,7 @@ const translations = {
     tr: { 
         nav_home: "Anasayfa", nav_about: "Hakkımızda", nav_products: "Ürünlerimiz", nav_certs: "Sertifikalar", nav_contact: "İletişim",
         nav_quick: "Hızlı Linkler", footer_desc: "Aşınmaya ve basınca dayanıklı karbür ürünler için güvenilir ortağınız.",
-        hero_title: "İSVİÇRE DİSİPLİNİ, MAKSİMUM DAYANIKLILIK", hero_sub: "DÜNYA İÇİN İSVİÇRE HASSASİYETİ", hero_btn_contact: "İLETİŞİME GEÇİN",
+        hero_title: "İSVİÇRE DİSİPLİNİ | MAKSİMUM DAYANIKLILIK", hero_sub: "DÜNYA İÇİN İSVİÇRE HASSASİYETİ", hero_btn_contact: "İLETİŞİME GEÇİN",
         nat_title: "Tungsten, Karbon, Kobalt... Özümüz Doğa.", nat_sub: "Doğanın en güçlü cevherlerini sunuyoruz.", nat_desc: "Karbür çubukların eşsiz dayanıklılığı, yerin derinliklerinden gelen elementlerin gücünden doğar. HM Carbide olarak, tungstenin sertliğini ve kobaltın bağlayıcı gücünü en iyi yansıtan ürünleri özenle seçiyor ve size ulaştırıyoruz. Tedarik süreçlerimizde doğanın dengesine saygı duyuyor; endüstrinin ihtiyaç duyduğu bu gücü, çevre bilinci ve İsviçre kalite standartlarıyla sunmaktan gurur duyuyoruz.",
         about_title: "Hakkımızda", about_text: "Yüksek kaliteli karbür ürünleri için güvenilir ortağınız.", about_btn: "DAHA FAZLA",
         p1: "Dolu Karbür Çubuk", p2: "Soğutma Kanallı Çubuk", p3: "Kesilmiş Çubuk",
