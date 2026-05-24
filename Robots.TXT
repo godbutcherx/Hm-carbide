@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.hmcarbide.ch/sitemap.xml
+LLMs: https://www.hmcarbide.ch/llms.txt
