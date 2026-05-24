@@ -2,48 +2,75 @@
 <urlset
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:xhtml="http://www.w3.org/1999/xhtml"
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
+<!-- Ana Sayfa -->
 <url>
   <loc>https://www.hmcarbide.ch/</loc>
-  <lastmod>2025-01-11</lastmod>
+  <lastmod>2026-05-24</lastmod>
+  <changefreq>monthly</changefreq>
   <priority>1.00</priority>
+  <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/"/>
+  <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/"/>
 </url>
 
-<url>
-  <loc>https://www.hmcarbide.ch/index.html</loc>
-  <lastmod>2025-01-11</lastmod>
-  <priority>1.00</priority>
-</url>
-
-<url>
-  <loc>https://www.hmcarbide.ch/about.html</loc>
-  <lastmod>2025-01-11</lastmod>
-  <priority>0.80</priority>
-</url>
-
+<!-- Ürünler — en yüksek ticari değer -->
 <url>
   <loc>https://www.hmcarbide.ch/products.html</loc>
-  <lastmod>2025-01-11</lastmod>
-  <priority>0.80</priority>
+  <lastmod>2026-05-24</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.95</priority>
+  <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/products.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/products.html"/>
+  <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/products.html"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/products.html"/>
 </url>
 
+<!-- Hakkımızda + FAQ -->
 <url>
-  <loc>https://www.hmcarbide.ch/certificates.html</loc>
-  <lastmod>2025-01-11</lastmod>
-  <priority>0.60</priority>
+  <loc>https://www.hmcarbide.ch/about.html</loc>
+  <lastmod>2026-05-24</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.85</priority>
+  <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/about.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/about.html"/>
+  <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/about.html"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/about.html"/>
 </url>
 
+<!-- İletişim -->
 <url>
   <loc>https://www.hmcarbide.ch/contact.html</loc>
-  <lastmod>2025-01-11</lastmod>
-  <priority>0.60</priority>
+  <lastmod>2026-05-24</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+  <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/contact.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/contact.html"/>
+  <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/contact.html"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/contact.html"/>
 </url>
 
+<!-- Sertifikalar -->
+<url>
+  <loc>https://www.hmcarbide.ch/certificates.html</loc>
+  <lastmod>2026-05-24</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.70</priority>
+  <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/certificates.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/certificates.html"/>
+  <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/certificates.html"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/certificates.html"/>
+</url>
+
+<!-- Gizlilik Politikası -->
 <url>
   <loc>https://www.hmcarbide.ch/privacy.html</loc>
-  <lastmod>2026-05-04</lastmod>
+  <lastmod>2026-05-24</lastmod>
+  <changefreq>yearly</changefreq>
   <priority>0.30</priority>
 </url>
 
