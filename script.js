@@ -50,7 +50,7 @@ const translations = {
         hero_title: "İSVİÇRE DİSİPLİNİ | MAKSİMUM DAYANIKLILIK", hero_sub: "DÜNYA İÇİN İSVİÇRE HASSASİYETİ", hero_btn_contact: "İLETİŞİME GEÇİN",
         nat_title: "Tungsten, Karbon, Kobalt... Özümüz Doğa.", nat_sub: "Doğanın en güçlü cevherlerini sunuyoruz.", nat_desc: "Karbür çubukların eşsiz dayanıklılığı, yerin derinliklerinden gelen elementlerin gücünden doğar. HM Carbide olarak, tungstenin sertliğini ve kobaltın bağlayıcı gücünü en iyi yansıtan ürünleri özenle seçiyor ve size ulaştırıyoruz. Tedarik süreçlerimizde doğanın dengesine saygı duyuyor; endüstrinin ihtiyaç duyduğu bu gücü, çevre bilinci ve İsviçre kalite standartlarıyla sunmaktan gurur duyuyoruz.",
         about_title: "Hakkımızda", about_text: "Yüksek kaliteli karbür ürünleri için güvenilir ortağınız.", about_btn: "DAHA FAZLA",
-        p1: "Dolu Karbür Çubuk", p2: "Soğutma Kanallı Çubuk", p3: "Kesilmiş Çubuk",
+        p1: "Karbür Çubuklar", p2: "Soğutma Kanallı Çubuk", p3: "Kesilmiş Çubuk",
         prod_subtitle: "Yüksek Performanslı Karbür Çubuklar",
         tech_title: "Teknik Özellikler", th_grain: "Tane Boyutu", th_density: "Yoğunluk", th_hard: "Sertlik", th_trs: "Kırılma Dayanımı", search_ph: "Ölçü ara (örn. 12x330)...",
         swiss_title: "İSVİÇRE KALİTESİ", swiss_desc: "ORİJİNAL KALİTE",
