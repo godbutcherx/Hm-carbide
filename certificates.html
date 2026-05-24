@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Zertifikate & Qualität | HM Carbide Swiss GmbH</title>
-    <meta name="description" content="Wie stellt HM Carbide Qualität sicher? ISO 9001:2015 zertifiziert, Schweizer Produktionsstandards – transparente Qualitätsnachweise für Hartmetallprodukte.">
+    <meta name="description" content="Qualität ist unser Versprechen. Sehen Sie unsere ISO 9001:2015 Zertifizierung und unser Engagement für Schweizer Originalqualität.">
     <link rel="canonical" href="https://www.hmcarbide.ch/certificates.html">
 
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.hmcarbide.ch/certificates.html">
     <meta property="og:title" content="Zertifikate & Schweizer Qualität - HM Carbide">
-    <meta property="og:description" content="Wie stellt HM Carbide Qualität sicher? ISO 9001:2015 zertifiziert. Schweizer Originalqualität für Hartmetallprodukte – transparent und nachweisbar.">
+    <meta property="og:description" content="Unsere Verpflichtung zu Qualität und Präzision. ISO 9001:2015 zertifiziert. Original Schweizer Qualität.">
     <meta property="og:image" content="https://www.hmcarbide.ch/images/meta.jpg">
     <meta itemprop="image" content="https://www.hmcarbide.ch/images/meta.jpg">
     <meta name="twitter:image" content="https://www.hmcarbide.ch/images/meta.jpg">
@@ -19,40 +19,19 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@400;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/jpg" href="images/logo.jpg">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebPage",
-          "@id": "https://www.hmcarbide.ch/certificates.html#webpage",
-          "url": "https://www.hmcarbide.ch/certificates.html",
-          "name": "Zertifikate & Qualität – HM Carbide Swiss GmbH",
-          "description": "ISO 9001:2015 zertifiziert. Schweizer Qualitätsstandards für Hartmetallprodukte.",
-          "publisher": { "@id": "https://www.hmcarbide.ch/#organization" }
-        },
-        {
-          "@type": "Organization",
-          "@id": "https://www.hmcarbide.ch/#organization",
-          "name": "HM Carbide Swiss GmbH",
-          "url": "https://www.hmcarbide.ch",
-          "hasCredential": [
-            {
-              "@type": "EducationalOccupationalCredential",
-              "name": "ISO 9001:2015",
-              "description": "Quality Management System Certification",
-              "credentialCategory": "Quality Management"
-            }
-          ],
-          "knowsAbout": [
-            "ISO 9001:2015 Quality Management",
-            "Swiss Manufacturing Standards",
-            "Carbide Production Quality Control"
-          ]
+    <style>
+        .swiss-badge {
+            width: 140px;
+            height: 140px;
+            margin: 20px auto 0;
+            filter: drop-shadow(0 4px 16px rgba(200,16,46,0.25));
+            transition: transform 0.4s ease, filter 0.4s ease;
         }
-      ]
-    }
-    </script>
+        .cert-card:hover .swiss-badge {
+            transform: rotate(8deg) scale(1.08);
+            filter: drop-shadow(0 8px 24px rgba(200,16,46,0.4));
+        }
+    </style>
 </head>
 <body>
     <div class="page-header-section">
@@ -66,7 +45,29 @@
         <div class="cert-card reveal">
             <h3 data-i18n="swiss_title">SCHWEIZER QUALITÄT</h3>
             <p data-i18n="swiss_desc">Original Qualität</p>
-            <img src="images/gem9.png" class="cert-watermark" alt="Swiss Quality">
+            <div class="swiss-badge">
+                <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Dış halka -->
+                    <circle cx="80" cy="80" r="76" fill="none" stroke="#c8102e" stroke-width="2.5" stroke-dasharray="6 3"/>
+                    <!-- İç daire -->
+                    <circle cx="80" cy="80" r="64" fill="#c8102e"/>
+                    <!-- İsviçre haçı -->
+                    <rect x="67" y="44" width="26" height="72" rx="3" fill="white"/>
+                    <rect x="44" y="67" width="72" height="26" rx="3" fill="white"/>
+                    <!-- Üst metin yayı -->
+                    <path id="topArc" d="M 24,80 A 56,56 0 0,1 136,80" fill="none"/>
+                    <text font-family="Montserrat,sans-serif" font-size="11" font-weight="700" fill="#c8102e" letter-spacing="2">
+                        <textPath href="#topArc" startOffset="50%" text-anchor="middle">SWISS QUALITY</textPath>
+                    </text>
+                    <!-- Alt metin yayı -->
+                    <path id="botArc" d="M 26,88 A 56,56 0 0,0 134,88" fill="none"/>
+                    <text font-family="Montserrat,sans-serif" font-size="9.5" font-weight="600" fill="#c8102e" letter-spacing="1.5">
+                        <textPath href="#botArc" startOffset="50%" text-anchor="middle">GUARANTEED</textPath>
+                    </text>
+                    <!-- Yıldızlar -->
+                    <text x="80" y="152" text-anchor="middle" font-size="8" fill="#c8102e">★ ★ ★</text>
+                </svg>
+            </div>
         </div>
     </div>
     <script src="layout.js"></script>
