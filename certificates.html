@@ -20,16 +20,34 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@400;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/jpg" href="images/logo.jpg">
     <style>
+        .cert-card { position: relative; overflow: hidden; }
+
+        /* Normal halde rozet gizli */
         .swiss-badge {
-            width: 140px;
-            height: 140px;
-            margin: 20px auto 0;
-            filter: drop-shadow(0 4px 16px rgba(200,16,46,0.25));
-            transition: transform 0.4s ease, filter 0.4s ease;
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            background: rgba(20,20,30,0.82);
+            backdrop-filter: blur(4px);
         }
+        .swiss-badge svg {
+            width: 160px;
+            height: 160px;
+            filter: drop-shadow(0 6px 24px rgba(200,16,46,0.5));
+            transform: scale(0.8) rotate(-10deg);
+            transition: transform 0.45s cubic-bezier(.34,1.56,.64,1);
+        }
+
+        /* Hover'da rozet belirir */
         .cert-card:hover .swiss-badge {
-            transform: rotate(8deg) scale(1.08);
-            filter: drop-shadow(0 8px 24px rgba(200,16,46,0.4));
+            opacity: 1;
+        }
+        .cert-card:hover .swiss-badge svg {
+            transform: scale(1) rotate(0deg);
         }
     </style>
 </head>
@@ -46,26 +64,33 @@
             <h3 data-i18n="swiss_title">SCHWEIZER QUALITÄT</h3>
             <p data-i18n="swiss_desc">Original Qualität</p>
             <div class="swiss-badge">
-                <svg viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Dış halka -->
-                    <circle cx="80" cy="80" r="76" fill="none" stroke="#c8102e" stroke-width="2.5" stroke-dasharray="6 3"/>
-                    <!-- İç daire -->
-                    <circle cx="80" cy="80" r="64" fill="#c8102e"/>
+                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <path id="topArc" d="M 20,100 A 80,80 0 0,1 180,100"/>
+                        <path id="botArc" d="M 30,115 A 72,72 0 0,0 170,115"/>
+                    </defs>
+                    <!-- Dış kesik çizgi halkası -->
+                    <circle cx="100" cy="100" r="95" fill="none" stroke="#c8102e" stroke-width="2" stroke-dasharray="5 3" opacity="0.6"/>
+                    <!-- İkinci halka -->
+                    <circle cx="100" cy="100" r="88" fill="none" stroke="#c8102e" stroke-width="0.8" opacity="0.4"/>
+                    <!-- Ana kırmızı daire -->
+                    <circle cx="100" cy="100" r="78" fill="#c8102e"/>
+                    <!-- İnce iç halka -->
+                    <circle cx="100" cy="100" r="74" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
                     <!-- İsviçre haçı -->
-                    <rect x="67" y="44" width="26" height="72" rx="3" fill="white"/>
-                    <rect x="44" y="67" width="72" height="26" rx="3" fill="white"/>
-                    <!-- Üst metin yayı -->
-                    <path id="topArc" d="M 24,80 A 56,56 0 0,1 136,80" fill="none"/>
-                    <text font-family="Montserrat,sans-serif" font-size="11" font-weight="700" fill="#c8102e" letter-spacing="2">
+                    <rect x="85" y="56" width="30" height="88" rx="4" fill="white"/>
+                    <rect x="56" y="85" width="88" height="30" rx="4" fill="white"/>
+                    <!-- Üst yay yazısı -->
+                    <text font-family="Montserrat,sans-serif" font-size="13" font-weight="800" fill="#c8102e" letter-spacing="3">
                         <textPath href="#topArc" startOffset="50%" text-anchor="middle">SWISS QUALITY</textPath>
                     </text>
-                    <!-- Alt metin yayı -->
-                    <path id="botArc" d="M 26,88 A 56,56 0 0,0 134,88" fill="none"/>
-                    <text font-family="Montserrat,sans-serif" font-size="9.5" font-weight="600" fill="#c8102e" letter-spacing="1.5">
+                    <!-- Alt yay yazısı -->
+                    <text font-family="Montserrat,sans-serif" font-size="11" font-weight="600" fill="#c8102e" letter-spacing="2">
                         <textPath href="#botArc" startOffset="50%" text-anchor="middle">GUARANTEED</textPath>
                     </text>
-                    <!-- Yıldızlar -->
-                    <text x="80" y="152" text-anchor="middle" font-size="8" fill="#c8102e">★ ★ ★</text>
+                    <!-- Yıldızlar sol ve sağ -->
+                    <text x="22" y="104" text-anchor="middle" font-size="10" fill="#c8102e">★</text>
+                    <text x="178" y="104" text-anchor="middle" font-size="10" fill="#c8102e">★</text>
                 </svg>
             </div>
         </div>
