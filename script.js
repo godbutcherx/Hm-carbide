@@ -3,10 +3,10 @@ const translations = {
     de: { 
         nav_home: "Startseite", nav_about: "&Uuml;ber Uns", nav_products: "Produkte", nav_certs: "Zertifikate", nav_contact: "Kontakt",
         nav_quick: "Schnellzugriff", footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte.",
-        hero_title: "SCHWEIZER DISZIPLIN | MAXIMALE BESTÄNDIGKEIT", hero_sub: "PRÄZISION AUS DER SCHWEIZ FÜR DIE WELT", hero_btn_contact: "KONTAKT AUFNEHMEN",
+        hero_l1: "Schweizer Disziplin.", hero_l2: "Maximale Beständigkeit.", hero_lede: "Hartmetallstäbe für die Werkzeugherstellung, geliefert aus der Schweiz in die ganze Welt.", home_cta: "Anfrage senden", home_all: "Alle Produkte ansehen", home_about: "Mehr über uns", fact1: "ISO 9001:2015 zertifiziert", fact2: "Durchmesser 1 bis 32 mm", fact3: "Lieferung weltweit", hero_title: "SCHWEIZER DISZIPLIN | MAXIMALE BESTÄNDIGKEIT", hero_sub: "PRÄZISION AUS DER SCHWEIZ FÜR DIE WELT", hero_btn_contact: "KONTAKT AUFNEHMEN",
         nat_title: "Tungsten, Karbon, Kobalt... Unser Wesen ist Natur.", nat_sub: "Wir bieten die stärksten Erze der Natur mit Schweizer Präzision.", nat_desc: "Die einzigartige Haltbarkeit von Hartmetallstäben entsteht aus der Kraft der Elemente aus den Tiefen der Erde. Wir als HM Carbide wählen sorgfältig Produkte aus, die die Härte von Wolfram und die Bindekraft von Kobalt am besten widerspiegeln, und bringen sie zu Ihnen. Wir respektieren das Gleichgewicht der Natur in unseren Lieferprozessen; wir sind stolz darauf, diese Kraft, die die Industrie benötigt, mit Umweltbewusstsein und Schweizer Qualitätsstandards anzubieten.",
         about_title: "&Uuml;ber Uns", about_text: "HM Carbide Swiss GmbH ist Ihr zuverlässiger Partner.", about_btn: "MEHR ERFAHREN",
-        p1: "Hartmetallstab Voll", p2: "Stab mit Kühlkanal", p3: "Gekürzter Stab", 
+        p1_desc: "Rohling für Vollhartmetall-Werkzeuge wie Bohrer, Fräser und Reibahlen.", p2_desc: "Mit innenliegenden Kühlkanälen für Hochleistungs-Bohr- und Fräswerkzeuge.", p3_desc: "Auf Länge geschnittene Rohlinge – bereit zum Schleifen.", lbl_dia: "Durchmesser", lbl_len: "Länge", lbl_grade: "Sorte", lbl_channel: "Kühlkanal", lbl_sizes: "Abmessungen", lbl_variants: "Varianten", lbl_avail: "Verfügbare Abmessungen", th_dim: "Abmessung (mm)", th_channel: "Kanal-ø (mm)", th_dist: "Abstand (mm)", note_p1: "Stirnseiten maßstabsgetreu. Klicken Sie auf einen Durchmesser, um ihn anzufragen.", note_p2: "Querschnitte maßstabsgetreu, mit Kanal-ø und Abstand in mm. Klicken Sie auf eine Größe, um sie anzufragen.", note_p3: "Seitenansicht maßstabsgetreu, ø × Länge in mm. Klicken Sie auf eine Größe, um sie anzufragen.", lbl_ch: "Kanal", lbl_dist: "Abstand", req_tpl: "Anfrage: {p}, {d} mm\nMenge: ", no_results: "Keine passende Abmessung gefunden.", p1: "Hartmetallstab Voll", p2: "Stab mit Kühlkanal", p3: "Gekürzter Stab", 
         prod_subtitle: "Hochleistungs-Hartmetallstäbe",
         tech_title: "Technische Daten", th_grain: "Korngröße", th_density: "Dichte", th_hard: "Härte", th_trs: "Biegefestigkeit", search_ph: "Dimension suchen (z.B. 12x330)...",
         swiss_title: "SCHWEIZER QUALITÄT", swiss_desc: "Original Qualität",
@@ -25,10 +25,10 @@ const translations = {
     en: { 
         nav_home: "Home", nav_about: "About Us", nav_products: "Products", nav_certs: "Certificates", nav_contact: "Contact",
         nav_quick: "Quick Links", footer_desc: "Your reliable partner for carbide products.",
-        hero_title: "SWISS DISCIPLINE | MAXIMUM DURABILITY", hero_sub: "SWISS PRECISION FOR THE WORLD", hero_btn_contact: "CONTACT US",
+        hero_l1: "Swiss discipline.", hero_l2: "Maximum durability.", hero_lede: "Carbide rods for tool manufacturing, shipped from Switzerland to the whole world.", home_cta: "Send an inquiry", home_all: "View all products", home_about: "More about us", fact1: "ISO 9001:2015 certified", fact2: "Diameters from 1 to 32 mm", fact3: "Worldwide delivery", hero_title: "SWISS DISCIPLINE | MAXIMUM DURABILITY", hero_sub: "SWISS PRECISION FOR THE WORLD", hero_btn_contact: "CONTACT US",
         nat_title: "Tungsten, Carbon, Cobalt... Our Essence is Nature.", nat_sub: "Nature's strongest ores with Swiss precision.", nat_desc: "The unique durability of carbide rods stems from the power of elements from deep within the earth. As HM Carbide, we carefully select products that best reflect the hardness of tungsten and the binding power of cobalt, bringing them to you. We respect nature's balance in our supply processes; we are proud to offer this strength required by the industry with environmental awareness and Swiss quality standards.",
         about_title: "About Us", about_text: "Your reliable partner for high-quality carbide products.", about_btn: "LEARN MORE",
-        p1: "Solid Carbide Rod", p2: "Rod with Coolant", p3: "Cut-to-Length Rod", 
+        p1_desc: "Blank for solid carbide tools such as drills, end mills and reamers.", p2_desc: "With internal coolant channels for high-performance drilling and milling tools.", p3_desc: "Cut-to-length blanks, ready for grinding.", lbl_dia: "Diameter", lbl_len: "Length", lbl_grade: "Grade", lbl_channel: "Coolant channel", lbl_sizes: "Dimensions", lbl_variants: "Variants", lbl_avail: "Available dimensions", th_dim: "Dimension (mm)", th_channel: "Channel ø (mm)", th_dist: "Distance (mm)", note_p1: "End faces to scale. Click a diameter to request it.", note_p2: "Cross-sections to scale, with channel ø and distance in mm. Click a size to request it.", note_p3: "Side view to scale, ø × length in mm. Click a size to request it.", lbl_ch: "Channel", lbl_dist: "Distance", req_tpl: "Inquiry: {p}, {d} mm\nQuantity: ", no_results: "No matching dimension found.", p1: "Solid Carbide Rod", p2: "Rod with Coolant", p3: "Cut-to-Length Rod", 
         prod_subtitle: "High Performance Carbide Rods",
         tech_title: "Technical Specs", th_grain: "Grain Size", th_density: "Density", th_hard: "Hardness", th_trs: "TRS", search_ph: "Search dimension (e.g. 12x330)...",
         swiss_title: "SWISS QUALITY", swiss_desc: "Original Quality",
@@ -47,10 +47,10 @@ const translations = {
     tr: { 
         nav_home: "Anasayfa", nav_about: "Hakkımızda", nav_products: "Ürünlerimiz", nav_certs: "Sertifikalar", nav_contact: "İletişim",
         nav_quick: "Hızlı Linkler", footer_desc: "Aşınmaya ve basınca dayanıklı karbür ürünler için güvenilir ortağınız.",
-        hero_title: "İSVİÇRE DİSİPLİNİ | MAKSİMUM DAYANIKLILIK", hero_sub: "DÜNYA İÇİN İSVİÇRE HASSASİYETİ", hero_btn_contact: "İLETİŞİME GEÇİN",
+        hero_l1: "İsviçre disiplini.", hero_l2: "Maksimum dayanıklılık.", hero_lede: "Takım üretimi için karbür çubuklar; İsviçre’den tüm dünyaya.", home_cta: "Teklif isteyin", home_all: "Tüm ürünleri görün", home_about: "Hakkımızda daha fazlası", fact1: "ISO 9001:2015 sertifikalı", fact2: "1 ile 32 mm arası çaplar", fact3: "Dünya geneline teslimat", hero_title: "İSVİÇRE DİSİPLİNİ | MAKSİMUM DAYANIKLILIK", hero_sub: "DÜNYA İÇİN İSVİÇRE HASSASİYETİ", hero_btn_contact: "İLETİŞİME GEÇİN",
         nat_title: "Tungsten, Karbon, Kobalt... Özümüz Doğa.", nat_sub: "Doğanın en güçlü cevherlerini sunuyoruz.", nat_desc: "Karbür çubukların eşsiz dayanıklılığı, yerin derinliklerinden gelen elementlerin gücünden doğar. HM Carbide olarak, tungstenin sertliğini ve kobaltın bağlayıcı gücünü en iyi yansıtan ürünleri özenle seçiyor ve size ulaştırıyoruz. Tedarik süreçlerimizde doğanın dengesine saygı duyuyor; endüstrinin ihtiyaç duyduğu bu gücü, çevre bilinci ve İsviçre kalite standartlarıyla sunmaktan gurur duyuyoruz.",
         about_title: "Hakkımızda", about_text: "Yüksek kaliteli karbür ürünleri için güvenilir ortağınız.", about_btn: "DAHA FAZLA",
-        p1: "Karbür Çubuklar", p2: "Soğutma Kanallı Çubuk", p3: "Kesilmiş Çubuk",
+        p1_desc: "Matkap, freze ve rayba gibi tam karbür takımlar için hammadde.", p2_desc: "Yüksek performanslı delme ve frezeleme takımları için iç soğutma kanallı.", p3_desc: "Boyuna kesilmiş, taşlamaya hazır rolyeler.", lbl_dia: "Çap", lbl_len: "Boy", lbl_grade: "Kalite", lbl_channel: "Soğutma kanalı", lbl_sizes: "Ölçüler", lbl_variants: "Çeşit", lbl_avail: "Mevcut ölçüler", th_dim: "Ölçü (mm)", th_channel: "Kanal ø (mm)", th_dist: "Mesafe (mm)", note_p1: "Uç yüzeyler gerçek oranlarında. Teklif istemek için bir çapa tıklayın.", note_p2: "Kesitler gerçek oranlarında; kanal çapı ve mesafe mm cinsinden. Teklif istemek için bir ölçüye tıklayın.", note_p3: "Yandan görünüş gerçek oranlarında, ø × boy (mm). Teklif istemek için bir ölçüye tıklayın.", lbl_ch: "Kanal", lbl_dist: "Mesafe", req_tpl: "Talep: {p}, {d} mm\nAdet: ", no_results: "Eşleşen ölçü bulunamadı.", p1: "Karbür Çubuklar", p2: "Soğutma Kanallı Çubuk", p3: "Kesilmiş Çubuk",
         prod_subtitle: "Yüksek Performanslı Karbür Çubuklar",
         tech_title: "Teknik Özellikler", th_grain: "Tane Boyutu", th_density: "Yoğunluk", th_hard: "Sertlik", th_trs: "Kırılma Dayanımı", search_ph: "Ölçü ara (örn. 12x330)...",
         swiss_title: "İSVİÇRE KALİTESİ", swiss_desc: "ORİJİNAL KALİTE",
@@ -70,6 +70,8 @@ const translations = {
 
 function changeLanguage(lang) {
     localStorage.setItem('hm_lang', lang);
+    // HTML lang attribute'unu güncelle
+    document.documentElement.setAttribute('lang', lang);
     const select = document.getElementById('langSel');
     if(select) select.value = lang;
 
@@ -157,28 +159,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- FORM GÖNDERME İŞLEMİ ---
     const contactForm = document.getElementById('contact-form');
-    // Eğer form varsa VE emailjs yüklüyse çalıştır
     if (contactForm && typeof emailjs !== 'undefined') {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault();
+
+            // Honeypot kontrolü — bot doldurmuşsa sessizce durdur
+            const honeypot = document.getElementById('honeypot');
+            if (honeypot && honeypot.value) return;
+
+            // Rate limiting — son 60 saniyede gönderilmişse engelle
+            const lastSent = localStorage.getItem('hmc_last_form');
+            if (lastSent && Date.now() - parseInt(lastSent) < 60000) {
+                const currentLang = localStorage.getItem('hm_lang') || 'de';
+                const waitMsg = { de: 'Bitte warten Sie 60 Sekunden.', en: 'Please wait 60 seconds.', tr: 'Lütfen 60 saniye bekleyin.' };
+                alert(waitMsg[currentLang]);
+                return;
+            }
+
             const btn = document.getElementById('submit-btn');
             const originalText = btn.innerText;
-            btn.innerText = "Senden..."; 
+            btn.innerText = "Senden...";
+            btn.disabled = true;
 
-            const serviceID = "gorrxcaveman@gmail.com"; 
+            const serviceID = "gorrxcaveman@gmail.com";
             const templateID = "template_u11karb";
-
-            // GÖNDERME ANINDAKİ DİLİ AL (DÜZELTME BURADA YAPILDI)
             const currentLang = localStorage.getItem('hm_lang') || 'de';
 
             emailjs.sendForm(serviceID, templateID, this)
                 .then(function() {
-                    alert(translations[currentLang].alert_success); // ŞİMDİ DOĞRU DİLDE GELECEK
+                    localStorage.setItem('hmc_last_form', Date.now().toString());
+                    alert(translations[currentLang].alert_success);
                     btn.innerText = originalText;
+                    btn.disabled = false;
                     contactForm.reset();
                 }, function(error) {
                     alert(translations[currentLang].alert_error + "\n" + JSON.stringify(error));
                     btn.innerText = originalText;
+                    btn.disabled = false;
                 });
         });
     }
