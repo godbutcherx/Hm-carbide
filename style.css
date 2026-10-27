@@ -55,8 +55,8 @@ header.scrolled, header.header-inner { background: var(--header-scrolled); heigh
 @keyframes logoAnimation { 0%, 45% { opacity: 1; } 50%, 95% { opacity: 0; } 100% { opacity: 1; } }
 header.scrolled .logo-wrapper, header.header-inner .logo-wrapper { width: 60px; height: 60px; }
 .logo-text { margin-left: 12px; padding-left: 12px; border-left: 1px solid rgba(255,255,255,0.15); display: flex; flex-direction: column; justify-content: center; }
-.brand-name { font-weight: 900; font-size: 1.4rem; line-height: 1; letter-spacing: 1px; color: white; font-family: 'Barlow Condensed', 'Montserrat', sans-serif; }
-.brand-sub { font-weight: 600; font-size: 0.8rem; color: var(--secondary); letter-spacing: 2px; margin-top: 4px; }
+.brand-name { font-weight: 700; font-size: 1.22rem; line-height: 1.05; letter-spacing: 0.005em; color: white; font-family: 'Montserrat', sans-serif; }
+.brand-sub { font-family: 'Lato', sans-serif; font-weight: 700; font-size: 0.78rem; color: var(--secondary); letter-spacing: 0.14em; margin-top: 5px; }
 nav { flex: 3; display: flex; justify-content: center; z-index: 10001; }
 nav ul { display: flex; gap: 10px; list-style: none; margin: 0; padding: 0; align-items: center; }
 nav a { position: relative; font-size: 0.9rem; font-weight: 700; padding: 10px 15px; color: var(--text); border-radius: 25px; transition: all 0.3s ease; white-space: nowrap; letter-spacing: 0.5px; }
@@ -213,8 +213,8 @@ footer { background: var(--footer-bg); color: #8a9099; padding-top: 60px; font-s
   .logo-container { flex: unset; }
   .header-right { flex: unset; gap: 5px; }
   /* Logo yazısı küçük */
-  .brand-name { font-size: 0.85rem; }
-  .brand-sub { font-size: 0.58rem; letter-spacing: 1px; }
+  .brand-name { font-size: 1rem; }
+  .brand-sub { font-size: 0.66rem; letter-spacing: 0.1em; margin-top: 3px; }
   .logo-wrapper { width: 50px !important; height: 50px !important; }
   /* Masaüstü fan seçiciyi gizle */
   .fan-selector { display: none !important; }
@@ -1180,3 +1180,17 @@ body .page-header-section h1.page-title { letter-spacing: 0; }
 [data-theme="light"] .mlang-menu button.active { color: #1a252f; }
 [data-theme="light"] .mlang-menu button:hover, [data-theme="light"] .mlang-menu button:active { background: rgba(0,0,0,0.04); }
 @media (max-width: 900px) { [data-theme="light"] .menu-toggle { color: #1a252f; } }
+
+/* Harita: sitenin tonuna uygun, iki uygulama seçeneği */
+.map-box iframe { filter: grayscale(1) contrast(1.05) brightness(0.98); }
+[data-theme="dark"] .map-box iframe { filter: grayscale(1) invert(0.92) contrast(0.9) brightness(0.95); }
+.map-links { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.map-links a { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 13px 14px; border: 1px solid var(--border); border-radius: 2px; color: var(--primary); text-decoration: none; font-family: 'Lato', sans-serif; font-size: 0.95rem; transition: border-color 0.2s, background 0.2s; }
+.map-links a span { font: inherit; }
+.map-links a:hover { border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.03); }
+[data-theme="light"] .map-links a:hover { border-color: rgba(0,0,0,0.3); background: rgba(0,0,0,0.02); }
+.map-links a:focus-visible { outline: 2px solid var(--secondary); outline-offset: 2px; }
+@media (max-width: 480px) { .map-links { grid-template-columns: 1fr; } }
+.contact-list a { font-family: inherit; }
+
+.logo-text .brand-name, .footer-col .brand-name { font-family: 'Montserrat', sans-serif !important; letter-spacing: 0.005em !important; }
