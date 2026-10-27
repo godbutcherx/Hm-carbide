@@ -12,13 +12,16 @@
     <meta property="og:url" content="https://www.hmcarbide.ch/products.html">
     <meta property="og:title" content="Unsere Produkte - Hochleistungs-Hartmetallstäbe">
     <meta property="og:description" content="Welcher Hartmetallstab passt zu Ihrer Anwendung? Vollhartmetall, Kühlkanal oder gekürzt – Schweizer Qualität für Ihre Zerspanungsanforderungen.">
-    <meta property="og:image" content="https://www.hmcarbide.ch/images/meta.jpg">
-    <meta itemprop="image" content="https://www.hmcarbide.ch/images/meta.jpg">
-    <meta name="twitter:image" content="https://www.hmcarbide.ch/images/meta.jpg">
+    <meta property="og:image" content="https://www.hmcarbide.ch/thumb.jpg">
+    <meta itemprop="image" content="https://www.hmcarbide.ch/thumb.jpg">
+    <meta name="twitter:image" content="https://www.hmcarbide.ch/thumb.jpg">
 
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@400;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/jpg" href="images/logo.jpg">
+    <link rel="icon" type="image/png" href="images/logo.jpg">
+    <link rel="apple-touch-icon" href="images/logo.jpg">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -158,44 +161,64 @@
     }
     </script>
 </head>
-<body>
+<body class="inner">
     <div class="page-header-section">
-        <h1 class="page-title reveal" data-i18n="nav_products">PRODUKTE</h1>
-        <p class="page-subtitle reveal" style="color:rgba(255,255,255,0.7);" data-i18n="prod_subtitle">High Performance Carbide Rods</p>
-        <div class="search-wrapper reveal">
-            <input type="text" id="productSearch" class="search-input" placeholder="Dimension suchen..." onkeyup="filterProducts()" data-i18n-ph="search_ph">
-            <span class="search-icon">🔍</span>
+        <h1 class="page-title" data-i18n="nav_products">Produkte</h1>
+        <p class="page-subtitle" data-i18n="prod_subtitle">Hochleistungs-Hartmetallstäbe</p>
+        <div class="search-wrapper">
+            <input type="text" id="productSearch" class="search-input" placeholder="Dimension suchen..." oninput="filterProducts()" data-i18n-ph="search_ph" aria-label="Dimension suchen">
+            <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
         </div>
     </div>
 
-    <div class="prod-container">
-        <div class="grid">
-            <div class="card reveal">
-                <div class="card-head"><h3 data-i18n="p1">Hartmetallstab Voll</h3></div>
-                <div class="card-img-wrapper"><img src="images/prod1.jpg" alt="Rod"></div>
-                <div class="table-wrap"><table id="t1" class="prod-table"><thead><tr><th>Dimension (mm)</th></tr></thead><tbody></tbody></table></div>
+    <div class="pl">
+        <article class="pl-item" id="p1">
+            <img class="pl-photo" src="images/prod1.jpg" alt="Hartmetallstab Voll" loading="lazy">
+            <div class="pl-body">
+                <h2 class="pl-name" data-i18n="p1">Hartmetallstab Voll</h2>
+                <p class="pl-desc" data-i18n="p1_desc"></p>
+                <dl class="pl-specs"><div><dt data-i18n="lbl_dia">Durchmesser</dt><dd>ø 1–32 mm</dd></div><div><dt data-i18n="lbl_len">Länge</dt><dd>330 mm</dd></div><div><dt data-i18n="lbl_grade">Sorte</dt><dd>HM 10Co, HM 12Co</dd></div></dl>
+                <h3 class="pl-label" data-i18n="lbl_avail_dia">Lieferbare Durchmesser in mm</h3>
+                <div class="pl-nums" id="t1"></div>
+                <a href="contact.html?p=p1" class="home-btn pl-btn" data-i18n="btn_quote">Angebot anfordern</a>
             </div>
-            <div class="card reveal">
-                <div class="card-head"><h3 data-i18n="p2">Su Kanallı Çubuk</h3></div>
-                <div class="card-img-wrapper"><img src="images/prod6.jpg" alt="Coolant"></div>
-                <div class="table-wrap"><table id="t2" class="prod-table detailed"><thead><tr><th>Dim (mm)</th><th>ID (mm)</th><th>DIST</th></tr></thead><tbody></tbody></table></div>
+        </article>
+        <article class="pl-item" id="p2">
+            <img class="pl-photo" src="images/prod6.jpg" alt="Stab mit Kühlkanal" loading="lazy">
+            <div class="pl-body">
+                <h2 class="pl-name" data-i18n="p2">Stab mit Kühlkanal</h2>
+                <p class="pl-desc" data-i18n="p2_desc"></p>
+                <dl class="pl-specs"><div><dt data-i18n="lbl_dia">Durchmesser</dt><dd>ø 4–25 mm</dd></div><div><dt data-i18n="lbl_len">Länge</dt><dd>330 mm</dd></div><div><dt data-i18n="lbl_channel">Kühlkanal</dt><dd>ø 0,5–2,0 mm</dd></div></dl>
+                <h3 class="pl-label" data-i18n="lbl_avail">Lieferbare Abmessungen</h3>
+                <table class="pl-table" id="t2">
+                    <thead><tr><th data-i18n="th_dim">Abmessung (mm)</th><th data-i18n="th_channel">Kanal-ø (mm)</th><th data-i18n="th_dist">Abstand (mm)</th></tr></thead>
+                    <tbody></tbody>
+                </table>
+                <a href="contact.html?p=p2" class="home-btn pl-btn" data-i18n="btn_quote">Angebot anfordern</a>
             </div>
-            <div class="card reveal">
-                <div class="card-head"><h3 data-i18n="p3">Gekürzt</h3></div>
-                <div class="card-img-wrapper"><img src="images/gem7.png" alt="Cut"></div>
-                <div class="table-wrap"><table id="t3" class="prod-table"><thead><tr><th>Dimension (mm)</th></tr></thead><tbody></tbody></table></div>
+        </article>
+        <article class="pl-item" id="p3">
+            <img class="pl-photo" src="images/gem7.png" alt="Gekürzter Stab" loading="lazy">
+            <div class="pl-body">
+                <h2 class="pl-name" data-i18n="p3">Gekürzter Stab</h2>
+                <p class="pl-desc" data-i18n="p3_desc"></p>
+                <dl class="pl-specs"><div><dt data-i18n="lbl_sizes">Abmessungen</dt><dd>3×40 bis 20×104 mm</dd></div><div><dt data-i18n="lbl_variants">Varianten</dt><dd>8</dd></div></dl>
+                <h3 class="pl-label" data-i18n="lbl_avail_cut">Lieferbare Abmessungen, ø × Länge in mm</h3>
+                <ul class="pl-cuts" id="t3"></ul>
+                <a href="contact.html?p=p3" class="home-btn pl-btn" data-i18n="btn_quote">Angebot anfordern</a>
             </div>
-        </div>
+        </article>
+        <p class="no-results" id="noResults" data-i18n="no_results" hidden>Keine passende Abmessung gefunden.</p>
     </div>
 
-    <section class="tech-specs-section reveal" style="padding:0 5% 80px;">
-        <h2 class="section-title" style="text-align:center; margin-bottom:40px; color:white;" data-i18n="tech_title">Technische Daten</h2>
+    <section class="tech-specs-section">
+        <h2 class="section-title" data-i18n="tech_title">Technische Daten</h2>
         <div class="tech-table-wrapper">
             <table class="tech-table">
-                <thead><tr><th>Grade</th><th>WC %</th><th>Co %</th><th data-i18n="th_grain">Grain Size</th><th data-i18n="th_density">Density</th><th data-i18n="th_hard">Hardness</th><th data-i18n="th_trs">TRS</th></tr></thead>
+                <thead><tr><th data-i18n="th_gradecol">Sorte</th><th>WC %</th><th>Co %</th><th><span data-i18n="th_grain">Korngröße</span> <small>µm</small></th><th><span data-i18n="th_density">Dichte</span> <small>g/cm³</small></th><th><span data-i18n="th_hard">Härte</span> <small>HRA</small></th><th><span data-i18n="th_trs">Biegefestigkeit</span> <small>N/mm²</small></th></tr></thead>
                 <tbody>
-                    <tr><td>HM 12Co</td><td>88</td><td>12</td><td>0.4</td><td>14.25 ± 0.1</td><td>92.5 ± 0.5</td><td>>350</td></tr>
-                    <tr><td>HM 10Co</td><td>90</td><td>10</td><td>0.8</td><td>14.4 ± 0.1</td><td>91.8 ± 0.5</td><td>>350</td></tr>
+                    <tr><td>HM 12Co</td><td>88</td><td>12</td><td>0.4</td><td>14.25 ± 0.1</td><td>92.5 ± 0.5</td><td>&gt;350</td></tr>
+                    <tr><td>HM 10Co</td><td>90</td><td>10</td><td>0.8</td><td>14.4 ± 0.1</td><td>91.8 ± 0.5</td><td>&gt;350</td></tr>
                 </tbody>
             </table>
         </div>

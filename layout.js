@@ -39,22 +39,18 @@ function loadHeader() {
                 </div>
             </div>
 
-            <!-- TEMA SEÇİCİ — direkt toggle -->
-            <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle theme" aria-label="Toggle theme">
-                <span id="activeThemeIcon">🌙</span>
-            </button>
-
-            <!-- MOBİL: dil bayrakları (sadece mobilde görünür) -->
-            <div class="mobile-lang-row" id="mobileLangRow">
-                <button class="mobile-ctrl-btn" id="mlBtn_de" onclick="selectLang('de')">🇩🇪</button>
-                <button class="mobile-ctrl-btn" id="mlBtn_en" onclick="selectLang('en')">🇬🇧</button>
-                <button class="mobile-ctrl-btn" id="mlBtn_tr" onclick="selectLang('tr')">🇹🇷</button>
+            <!-- MOBİL: dil menüsü (sadece mobilde görünür) -->
+            <div class="mlang" id="mobileLang">
+                <button type="button" class="mlang-btn" id="mlangBtn" aria-haspopup="true" aria-expanded="false" aria-controls="mlangMenu" onclick="toggleMobileLang(event)">
+                    <span class="mlang-flag" id="mlangFlag">🇩🇪</span>
+                    <svg class="mlang-chev" viewBox="0 0 12 12" width="10" height="10" aria-hidden="true"><path d="M2 4.5l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+                <ul class="mlang-menu" id="mlangMenu" role="menu">
+                    <li><button type="button" role="menuitemradio" id="mlBtn_de" onclick="selectLang('de')"><span class="mlang-flag">🇩🇪</span>Deutsch</button></li>
+                    <li><button type="button" role="menuitemradio" id="mlBtn_en" onclick="selectLang('en')"><span class="mlang-flag">🇬🇧</span>English</button></li>
+                    <li><button type="button" role="menuitemradio" id="mlBtn_tr" onclick="selectLang('tr')"><span class="mlang-flag">🇹🇷</span>Türkçe</button></li>
+                </ul>
             </div>
-
-            <!-- MOBİL: tema toggle (sadece mobilde görünür) -->
-            <button class="theme-toggle-btn mobile-theme-btn" id="mobileThemeBtn" onclick="toggleTheme()" aria-label="Toggle theme">
-                <span id="mobileThemeIcon">🌙</span>
-            </button>
 
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         </div>
@@ -233,6 +229,25 @@ function closeFan(id) {
     if (fan) fan.classList.remove('open');
 }
 
+// Mobil dil menüsü
+function toggleMobileLang(e) {
+    if (e) e.stopPropagation();
+    const box = document.getElementById('mobileLang');
+    const btn = document.getElementById('mlangBtn');
+    if (!box) return;
+    const open = !box.classList.contains('open');
+    box.classList.toggle('open', open);
+    if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+function closeMobileLang() {
+    const box = document.getElementById('mobileLang');
+    const btn = document.getElementById('mlangBtn');
+    if (box) box.classList.remove('open');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
+}
+document.addEventListener('click', e => { if (!e.target.closest('#mobileLang')) closeMobileLang(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobileLang(); });
+
 // Dışarı tıklayınca kapat
 document.addEventListener('click', e => {
     if (!e.target.closest('.fan-selector')) {
@@ -241,15 +256,13 @@ document.addEventListener('click', e => {
 });
 
 function initTheme() {
-    const saved = localStorage.getItem('hmc_theme');
-    let theme;
-    if (saved) {
-        theme = saved;
-    } else {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        theme = prefersDark ? 'dark' : 'light';
-    }
-    applyTheme(theme);
+    // Tema butonu kaldırıldı: site cihazın açık/koyu mod ayarını izler.
+    try { localStorage.removeItem('hmc_theme'); } catch (e) {}
+    const mq = window.matchMedia('(prefers-color-scheme: dark)');
+    const set = () => document.documentElement.setAttribute('data-theme', mq.matches ? 'dark' : 'light');
+    set();
+    if (mq.addEventListener) mq.addEventListener('change', set);
+    else if (mq.addListener) mq.addListener(set);
 }
 
 function initLangFlag() {
@@ -282,12 +295,15 @@ function initCookie() {
 
 function refreshMobileActiveStates() {
     const lang = localStorage.getItem('hm_lang') || 'de';
-    const theme = localStorage.getItem('hmc_theme') || 'dark';
+    const theme = document.documentElement.getAttribute('data-theme') || 'dark';
 
     ['de','en','tr'].forEach(l => {
         const btn = document.getElementById('mlBtn_' + l);
-        if (btn) btn.classList.toggle('active', l === lang);
+        if (btn) { btn.classList.toggle('active', l === lang); btn.setAttribute('aria-checked', l === lang ? 'true' : 'false'); }
     });
+    const mf = document.getElementById('mlangFlag');
+    if (mf) mf.textContent = LANG_FLAGS[lang] || LANG_FLAGS.de;
+    closeMobileLang();
 
     // Mobil tema butonunu aktif göster (toggle olduğu için sadece ikon güncelleniyor)
     const mobileIcon = document.getElementById('mobileThemeIcon');
