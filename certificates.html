@@ -24,34 +24,27 @@
     <link rel="apple-touch-icon" href="images/logo.jpg">
     <style>
         .cert-card { position: relative; overflow: hidden; }
-
-        /* Normal halde rozet gizli */
+        /* Seal: Uhren-Lünette, Stahl, einziges Rot ist das Schweizer Kreuz */
         .swiss-badge {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-            background: rgba(20,20,30,0.82);
-            backdrop-filter: blur(4px);
+            --seal-steel: #aab1ba; --seal-face: #15181e; --seal-face-hi: #232831;
+            position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+            background: var(--bg2); opacity: 0; transition: opacity 0.5s ease;
         }
-        .swiss-badge svg {
-            width: 160px;
-            height: 160px;
-            filter: drop-shadow(0 6px 24px rgba(200,16,46,0.5));
-            transform: scale(0.8) rotate(-10deg);
-            transition: transform 0.45s cubic-bezier(.34,1.56,.64,1);
-        }
-
-        /* Hover'da rozet belirir */
-        .cert-card:hover .swiss-badge {
-            opacity: 1;
-        }
-        .cert-card:hover .swiss-badge svg {
-            transform: scale(1) rotate(0deg);
-        }
+        .seal { width: min(72%, 270px); height: auto; overflow: visible; transform: scale(0.94); opacity: 0; transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease; }
+        .seal-rim { fill: none; stroke: var(--seal-steel); stroke-width: 0.8; opacity: 0.55; }
+        .seal-bezel { stroke: var(--seal-steel); transform-origin: 100px 100px; transition: transform 1.6s cubic-bezier(0.22, 1, 0.36, 1); }
+        .seal-inner { stroke: var(--seal-steel); stroke-width: 0.8; }
+        .seal-hair { fill: none; stroke: var(--seal-steel); stroke-width: 0.35; opacity: 0.5; }
+        .seal-text { font-family: 'Barlow Condensed', sans-serif; font-weight: 600; font-size: 10.5px; letter-spacing: 3.4px; fill: var(--seal-steel); }
+        .seal-text--b { font-size: 10px; letter-spacing: 4.4px; }
+        .seal-text textPath { font: inherit; letter-spacing: inherit; }
+        .seal-flag { fill: #d52b1e; }
+        .cert-card:hover .swiss-badge, .cert-card:focus-within .swiss-badge { opacity: 1; }
+        .cert-card:hover .seal, .cert-card:focus-within .seal { transform: scale(1); opacity: 1; }
+        .cert-card:hover .seal-bezel, .cert-card:focus-within .seal-bezel { transform: rotate(30deg); }
+        [data-theme="light"] .swiss-badge { --seal-steel: #5d646e; --seal-face: #eef0f3; --seal-face-hi: #ffffff; }
+        @media (prefers-reduced-motion: reduce) { .seal, .seal-bezel { transition: opacity 0.3s; transform: none !important; } }
+        .cert-card:focus-visible { outline: 2px solid var(--secondary); outline-offset: 3px; }
     </style>
 </head>
 <body class="inner">
@@ -64,37 +57,26 @@
             <h3>ISO 9001:2015</h3>
             <p data-i18n="iso_desc">Qualitätsmanagementsystem</p>
         </div>
-        <div class="cert-card">
+        <div class="cert-card" tabindex="0">
             <h3 data-i18n="swiss_title">Schweizer Qualität</h3>
             <p data-i18n="swiss_desc">Original Qualität</p>
             <div class="swiss-badge">
-                <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <svg class="seal" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Swiss Quality – HM Carbide Swiss GmbH">
                     <defs>
-                        <path id="topArc" d="M 20,100 A 80,80 0 0,1 180,100"/>
-                        <path id="botArc" d="M 30,115 A 72,72 0 0,0 170,115"/>
+                        <path id="sealTop" d="M 34,100 A 66,66 0 0,1 166,100"/>
+                        <path id="sealBot" d="M 28,100 A 72,72 0 0,0 172,100"/>
+                        <radialGradient id="sealFace" cx="50%" cy="38%" r="70%"><stop offset="0" style="stop-color:var(--seal-face-hi)"/><stop offset="1" style="stop-color:var(--seal-face)"/></radialGradient>
                     </defs>
-                    <!-- Dış kesik çizgi halkası -->
-                    <circle cx="100" cy="100" r="95" fill="none" stroke="#c8102e" stroke-width="2" stroke-dasharray="5 3" opacity="0.6"/>
-                    <!-- İkinci halka -->
-                    <circle cx="100" cy="100" r="88" fill="none" stroke="#c8102e" stroke-width="0.8" opacity="0.4"/>
-                    <!-- Ana kırmızı daire -->
-                    <circle cx="100" cy="100" r="78" fill="#c8102e"/>
-                    <!-- İnce iç halka -->
-                    <circle cx="100" cy="100" r="74" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-                    <!-- İsviçre haçı -->
-                    <rect x="85" y="56" width="30" height="88" rx="4" fill="white"/>
-                    <rect x="56" y="85" width="88" height="30" rx="4" fill="white"/>
-                    <!-- Üst yay yazısı -->
-                    <text font-family="Montserrat,sans-serif" font-size="13" font-weight="800" fill="#c8102e" letter-spacing="3">
-                        <textPath href="#topArc" startOffset="50%" text-anchor="middle">SWISS QUALITY</textPath>
-                    </text>
-                    <!-- Alt yay yazısı -->
-                    <text font-family="Montserrat,sans-serif" font-size="11" font-weight="600" fill="#c8102e" letter-spacing="2">
-                        <textPath href="#botArc" startOffset="50%" text-anchor="middle">GUARANTEED</textPath>
-                    </text>
-                    <!-- Yıldızlar sol ve sağ -->
-                    <text x="22" y="104" text-anchor="middle" font-size="10" fill="#c8102e">★</text>
-                    <text x="178" y="104" text-anchor="middle" font-size="10" fill="#c8102e">★</text>
+                    <circle cx="100" cy="100" r="96" class="seal-rim"/>
+                    <g class="seal-bezel"><line x1="100.00" y1="16.00" x2="100.00" y2="8.00" stroke-width="1.1"/><line x1="104.58" y1="12.62" x2="104.81" y2="8.13" stroke-width="0.6"/><line x1="109.15" y1="12.98" x2="109.62" y2="8.50" stroke-width="0.6"/><line x1="113.69" y1="13.58" x2="114.39" y2="9.13" stroke-width="0.6"/><line x1="118.19" y1="14.41" x2="119.13" y2="10.01" stroke-width="0.6"/><line x1="122.26" y1="16.93" x2="123.81" y2="11.13" stroke-width="0.6"/><line x1="127.04" y1="16.78" x2="128.43" y2="12.50" stroke-width="0.6"/><line x1="131.36" y1="18.31" x2="132.97" y2="14.11" stroke-width="0.6"/><line x1="135.59" y1="20.06" x2="137.42" y2="15.95" stroke-width="0.6"/><line x1="139.72" y1="22.04" x2="141.77" y2="18.03" stroke-width="0.6"/><line x1="142.00" y1="27.25" x2="146.00" y2="20.33" stroke-width="1.1"/><line x1="147.66" y1="26.62" x2="150.11" y2="22.84" stroke-width="0.6"/><line x1="151.43" y1="29.21" x2="154.08" y2="25.57" stroke-width="0.6"/><line x1="155.07" y1="32.00" x2="157.90" y2="28.50" stroke-width="0.6"/><line x1="158.55" y1="34.97" x2="161.56" y2="31.63" stroke-width="0.6"/><line x1="160.81" y1="39.19" x2="165.05" y2="34.95" stroke-width="0.6"/><line x1="165.03" y1="41.45" x2="168.37" y2="38.44" stroke-width="0.6"/><line x1="168.00" y1="44.93" x2="171.50" y2="42.10" stroke-width="0.6"/><line x1="170.79" y1="48.57" x2="174.43" y2="45.92" stroke-width="0.6"/><line x1="173.38" y1="52.34" x2="177.16" y2="49.89" stroke-width="0.6"/><line x1="172.75" y1="58.00" x2="179.67" y2="54.00" stroke-width="1.1"/><line x1="177.96" y1="60.28" x2="181.97" y2="58.23" stroke-width="0.6"/><line x1="179.94" y1="64.41" x2="184.05" y2="62.58" stroke-width="0.6"/><line x1="181.69" y1="68.64" x2="185.89" y2="67.03" stroke-width="0.6"/><line x1="183.22" y1="72.96" x2="187.50" y2="71.57" stroke-width="0.6"/><line x1="183.07" y1="77.74" x2="188.87" y2="76.19" stroke-width="0.6"/><line x1="185.59" y1="81.81" x2="189.99" y2="80.87" stroke-width="0.6"/><line x1="186.42" y1="86.31" x2="190.87" y2="85.61" stroke-width="0.6"/><line x1="187.02" y1="90.85" x2="191.50" y2="90.38" stroke-width="0.6"/><line x1="187.38" y1="95.42" x2="191.87" y2="95.19" stroke-width="0.6"/><line x1="184.00" y1="100.00" x2="192.00" y2="100.00" stroke-width="1.1"/><line x1="187.38" y1="104.58" x2="191.87" y2="104.81" stroke-width="0.6"/><line x1="187.02" y1="109.15" x2="191.50" y2="109.62" stroke-width="0.6"/><line x1="186.42" y1="113.69" x2="190.87" y2="114.39" stroke-width="0.6"/><line x1="185.59" y1="118.19" x2="189.99" y2="119.13" stroke-width="0.6"/><line x1="183.07" y1="122.26" x2="188.87" y2="123.81" stroke-width="0.6"/><line x1="183.22" y1="127.04" x2="187.50" y2="128.43" stroke-width="0.6"/><line x1="181.69" y1="131.36" x2="185.89" y2="132.97" stroke-width="0.6"/><line x1="179.94" y1="135.59" x2="184.05" y2="137.42" stroke-width="0.6"/><line x1="177.96" y1="139.72" x2="181.97" y2="141.77" stroke-width="0.6"/><line x1="172.75" y1="142.00" x2="179.67" y2="146.00" stroke-width="1.1"/><line x1="173.38" y1="147.66" x2="177.16" y2="150.11" stroke-width="0.6"/><line x1="170.79" y1="151.43" x2="174.43" y2="154.08" stroke-width="0.6"/><line x1="168.00" y1="155.07" x2="171.50" y2="157.90" stroke-width="0.6"/><line x1="165.03" y1="158.55" x2="168.37" y2="161.56" stroke-width="0.6"/><line x1="160.81" y1="160.81" x2="165.05" y2="165.05" stroke-width="0.6"/><line x1="158.55" y1="165.03" x2="161.56" y2="168.37" stroke-width="0.6"/><line x1="155.07" y1="168.00" x2="157.90" y2="171.50" stroke-width="0.6"/><line x1="151.43" y1="170.79" x2="154.08" y2="174.43" stroke-width="0.6"/><line x1="147.66" y1="173.38" x2="150.11" y2="177.16" stroke-width="0.6"/><line x1="142.00" y1="172.75" x2="146.00" y2="179.67" stroke-width="1.1"/><line x1="139.72" y1="177.96" x2="141.77" y2="181.97" stroke-width="0.6"/><line x1="135.59" y1="179.94" x2="137.42" y2="184.05" stroke-width="0.6"/><line x1="131.36" y1="181.69" x2="132.97" y2="185.89" stroke-width="0.6"/><line x1="127.04" y1="183.22" x2="128.43" y2="187.50" stroke-width="0.6"/><line x1="122.26" y1="183.07" x2="123.81" y2="188.87" stroke-width="0.6"/><line x1="118.19" y1="185.59" x2="119.13" y2="189.99" stroke-width="0.6"/><line x1="113.69" y1="186.42" x2="114.39" y2="190.87" stroke-width="0.6"/><line x1="109.15" y1="187.02" x2="109.62" y2="191.50" stroke-width="0.6"/><line x1="104.58" y1="187.38" x2="104.81" y2="191.87" stroke-width="0.6"/><line x1="100.00" y1="184.00" x2="100.00" y2="192.00" stroke-width="1.1"/><line x1="95.42" y1="187.38" x2="95.19" y2="191.87" stroke-width="0.6"/><line x1="90.85" y1="187.02" x2="90.38" y2="191.50" stroke-width="0.6"/><line x1="86.31" y1="186.42" x2="85.61" y2="190.87" stroke-width="0.6"/><line x1="81.81" y1="185.59" x2="80.87" y2="189.99" stroke-width="0.6"/><line x1="77.74" y1="183.07" x2="76.19" y2="188.87" stroke-width="0.6"/><line x1="72.96" y1="183.22" x2="71.57" y2="187.50" stroke-width="0.6"/><line x1="68.64" y1="181.69" x2="67.03" y2="185.89" stroke-width="0.6"/><line x1="64.41" y1="179.94" x2="62.58" y2="184.05" stroke-width="0.6"/><line x1="60.28" y1="177.96" x2="58.23" y2="181.97" stroke-width="0.6"/><line x1="58.00" y1="172.75" x2="54.00" y2="179.67" stroke-width="1.1"/><line x1="52.34" y1="173.38" x2="49.89" y2="177.16" stroke-width="0.6"/><line x1="48.57" y1="170.79" x2="45.92" y2="174.43" stroke-width="0.6"/><line x1="44.93" y1="168.00" x2="42.10" y2="171.50" stroke-width="0.6"/><line x1="41.45" y1="165.03" x2="38.44" y2="168.37" stroke-width="0.6"/><line x1="39.19" y1="160.81" x2="34.95" y2="165.05" stroke-width="0.6"/><line x1="34.97" y1="158.55" x2="31.63" y2="161.56" stroke-width="0.6"/><line x1="32.00" y1="155.07" x2="28.50" y2="157.90" stroke-width="0.6"/><line x1="29.21" y1="151.43" x2="25.57" y2="154.08" stroke-width="0.6"/><line x1="26.62" y1="147.66" x2="22.84" y2="150.11" stroke-width="0.6"/><line x1="27.25" y1="142.00" x2="20.33" y2="146.00" stroke-width="1.1"/><line x1="22.04" y1="139.72" x2="18.03" y2="141.77" stroke-width="0.6"/><line x1="20.06" y1="135.59" x2="15.95" y2="137.42" stroke-width="0.6"/><line x1="18.31" y1="131.36" x2="14.11" y2="132.97" stroke-width="0.6"/><line x1="16.78" y1="127.04" x2="12.50" y2="128.43" stroke-width="0.6"/><line x1="16.93" y1="122.26" x2="11.13" y2="123.81" stroke-width="0.6"/><line x1="14.41" y1="118.19" x2="10.01" y2="119.13" stroke-width="0.6"/><line x1="13.58" y1="113.69" x2="9.13" y2="114.39" stroke-width="0.6"/><line x1="12.98" y1="109.15" x2="8.50" y2="109.62" stroke-width="0.6"/><line x1="12.62" y1="104.58" x2="8.13" y2="104.81" stroke-width="0.6"/><line x1="16.00" y1="100.00" x2="8.00" y2="100.00" stroke-width="1.1"/><line x1="12.62" y1="95.42" x2="8.13" y2="95.19" stroke-width="0.6"/><line x1="12.98" y1="90.85" x2="8.50" y2="90.38" stroke-width="0.6"/><line x1="13.58" y1="86.31" x2="9.13" y2="85.61" stroke-width="0.6"/><line x1="14.41" y1="81.81" x2="10.01" y2="80.87" stroke-width="0.6"/><line x1="16.93" y1="77.74" x2="11.13" y2="76.19" stroke-width="0.6"/><line x1="16.78" y1="72.96" x2="12.50" y2="71.57" stroke-width="0.6"/><line x1="18.31" y1="68.64" x2="14.11" y2="67.03" stroke-width="0.6"/><line x1="20.06" y1="64.41" x2="15.95" y2="62.58" stroke-width="0.6"/><line x1="22.04" y1="60.28" x2="18.03" y2="58.23" stroke-width="0.6"/><line x1="27.25" y1="58.00" x2="20.33" y2="54.00" stroke-width="1.1"/><line x1="26.62" y1="52.34" x2="22.84" y2="49.89" stroke-width="0.6"/><line x1="29.21" y1="48.57" x2="25.57" y2="45.92" stroke-width="0.6"/><line x1="32.00" y1="44.93" x2="28.50" y2="42.10" stroke-width="0.6"/><line x1="34.97" y1="41.45" x2="31.63" y2="38.44" stroke-width="0.6"/><line x1="39.19" y1="39.19" x2="34.95" y2="34.95" stroke-width="0.6"/><line x1="41.45" y1="34.97" x2="38.44" y2="31.63" stroke-width="0.6"/><line x1="44.93" y1="32.00" x2="42.10" y2="28.50" stroke-width="0.6"/><line x1="48.57" y1="29.21" x2="45.92" y2="25.57" stroke-width="0.6"/><line x1="52.34" y1="26.62" x2="49.89" y2="22.84" stroke-width="0.6"/><line x1="58.00" y1="27.25" x2="54.00" y2="20.33" stroke-width="1.1"/><line x1="60.28" y1="22.04" x2="58.23" y2="18.03" stroke-width="0.6"/><line x1="64.41" y1="20.06" x2="62.58" y2="15.95" stroke-width="0.6"/><line x1="68.64" y1="18.31" x2="67.03" y2="14.11" stroke-width="0.6"/><line x1="72.96" y1="16.78" x2="71.57" y2="12.50" stroke-width="0.6"/><line x1="77.74" y1="16.93" x2="76.19" y2="11.13" stroke-width="0.6"/><line x1="81.81" y1="14.41" x2="80.87" y2="10.01" stroke-width="0.6"/><line x1="86.31" y1="13.58" x2="85.61" y2="9.13" stroke-width="0.6"/><line x1="90.85" y1="12.98" x2="90.38" y2="8.50" stroke-width="0.6"/><line x1="95.42" y1="12.62" x2="95.19" y2="8.13" stroke-width="0.6"/></g>
+                    <circle cx="100" cy="100" r="80" fill="url(#sealFace)" class="seal-inner"/>
+                    <circle cx="100" cy="100" r="76" class="seal-hair"/>
+                    <text class="seal-text"><textPath href="#sealTop" startOffset="50%" text-anchor="middle">HM CARBIDE SWISS GMBH</textPath></text>
+                    <text class="seal-text seal-text--b"><textPath href="#sealBot" startOffset="50%" text-anchor="middle">SWISS QUALITY</textPath></text>
+                    <g transform="translate(80 80)">
+                        <rect width="40" height="40" rx="3" class="seal-flag"/>
+                        <path d="M16.25 7.5h7.5v8.75h8.75v7.5h-8.75v8.75h-7.5v-8.75H7.5v-7.5h8.75z" fill="#fff"/>
+                    </g>
                 </svg>
             </div>
         </div>
