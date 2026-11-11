@@ -4,9 +4,8 @@
 // =====================================================================
 const LOGO_VARIANT = 'a';
 
-// Google Analytics 4 — Ölçüm Kimliği (G-...) buraya. Boş kaldıkça Analytics yüklenmez.
-// Analytics sadece ziyaretçi çerez onayını verdikten sonra yüklenir.
-const GA_MEASUREMENT_ID = 'G-K6D874YGSX';
+// Google Analytics: etiket her sayfanın <head> bölümünde (G-K6D874YGSX, Consent Mode v2).
+// Analiz çerezleri yalnızca ziyaretçi onay verince açılır (setConsent).
 
 const LANG_ORDER = ['de', 'en', 'tr'];
 const LANG_FLAGS = { de: '🇩🇪', en: '🇬🇧', tr: '🇹🇷' };
@@ -182,24 +181,11 @@ function toggleMenu() {
 
 // --- ÇEREZ ONAYI + GOOGLE ANALYTICS ---
 function getConsent() { try { return localStorage.getItem('hmc_consent'); } catch (e) { return null; } }
-function loadAnalytics() {
-    if (!GA_MEASUREMENT_ID || window.__gaLoaded) return;
-    window.__gaLoaded = true;
-    const s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_MEASUREMENT_ID);
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function () { dataLayer.push(arguments); };
-    gtag('js', new Date());
-    gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
-}
 function setConsent(val) {
     try { localStorage.setItem('hmc_consent', val); localStorage.removeItem('hmc_cookie'); } catch (e) {}
     const banner = document.getElementById('cookieBanner');
     if (banner) banner.classList.remove('show');
-    if (val === 'granted') loadAnalytics();
-    else if (window.__gaLoaded) location.reload();
+    if (typeof gtag === 'function') gtag('consent', 'update', { analytics_storage: val === 'granted' ? 'granted' : 'denied' });
 }
 function openConsent() {
     const banner = document.getElementById('cookieBanner');
@@ -207,8 +193,7 @@ function openConsent() {
 }
 function initCookie() {
     const c = getConsent();
-    if (c === 'granted') { loadAnalytics(); return; }
-    if (c === 'denied') return;
+    if (c === 'granted' || c === 'denied') return;
     setTimeout(openConsent, 1200);
 }
 
