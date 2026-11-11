@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@400;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/logo.jpg">
     <link rel="apple-touch-icon" href="images/logo.jpg">
     <script type="application/ld+json">
@@ -67,7 +67,7 @@
           "name": "Welche Hartmetall-Güten bietet HM Carbide an?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "HM Carbide bietet zwei Hauptgüten an: HM 12Co (88% WC, 12% Co, Härte 92,5 HRA) für zähere Anwendungen mit unterbrochenen Schnitten, und HM 10Co (90% WC, 10% Co, Härte 91,8 HRA) für verschleißfeste Hochleistungsanwendungen."
+            "text": "Unsere Standardsorten sind HM 12Co (88 % WC, 12 % Co, Korngröße 0,4 µm, 92,5 HRA), dank Ultrafeinkorn härter und verschleißfester, und HM 10Co (90 % WC, 10 % Co, Korngröße 0,8 µm, 91,8 HRA), zäher und bruchfester. Darüber hinaus bieten wir zehn weitere Sorten in Ultrafein-, Fein- und Mittelkorn mit 8 bis 20 % Kobalt an."
           }
         },
         {
@@ -108,17 +108,20 @@
 </head>
 <body class="inner">
     
+<main id="main">
     <div class="page-header-section">
-        <h1 class="page-title" data-i18n="nav_about">Über uns</h1>
+        <div class="wrap">
+            <h1 class="page-title" data-i18n="nav_about">Über uns</h1>
+        </div>
     </div>
 
-    <div class="page-wrap">
-        <div id="contentArea" class="about-text"></div>
-    </div>
+    <section class="section">
+        <div class="wrap"><div id="contentArea" class="about-text"></div></div>
+    </section>
 
-    <div class="page-wrap faq-wrap">
-        <div>
-            <h2 class="faq-title" data-i18n="faq_title">Häufig gestellte Fragen</h2>
+    <section class="section section--mist" aria-labelledby="faq-title">
+        <div class="wrap faq-grid">
+            <h2 class="faq-title" id="faq-title" data-i18n="faq_title">Häufig gestellte Fragen</h2>
             <div class="faq-list">
                 <div class="faq-item">
                     <button class="faq-question" onclick="toggleFaq(this)">
@@ -135,7 +138,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p data-i18n="faq_a2">Wir bieten HM 12Co (88% WC, 12% Co, 92,5 HRA) für zähere Anwendungen und HM 10Co (90% WC, 10% Co, 91,8 HRA) für verschleißfeste Hochleistungsanwendungen an.</p>
+                        <p data-i18n="faq_a2">Unsere Standardsorten sind HM 12Co (88 % WC, 12 % Co, Korngröße 0,4 µm, 92,5 HRA), dank Ultrafeinkorn härter und verschleißfester, und HM 10Co (90 % WC, 10 % Co, Korngröße 0,8 µm, 91,8 HRA), zäher und bruchfester. Darüber hinaus bieten wir zehn weitere Sorten in Ultrafein-, Fein- und Mittelkorn mit 8 bis 20 % Kobalt an.</p>
                     </div>
                 </div>
                 <div class="faq-item">
@@ -176,8 +179,7 @@
                 </div>
             </div>
         </div>
-    </div>
-
+    </section>
     <script>
         function toggleFaq(btn) {
             const answer = btn.nextElementSibling;
@@ -193,8 +195,9 @@
         }
     </script>
 
+</main>
+
     <script src="layout.js"></script>
     <script src="script.js"></script>
-    <script src="background.js"></script>
 </body>
 </html>

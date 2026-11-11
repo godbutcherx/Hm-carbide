@@ -8,30 +8,21 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@400;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/logo.jpg">
     <link rel="apple-touch-icon" href="images/logo.jpg">
-    <style>
-        .privacy-wrap { max-width: 1240px; width: 100%; margin: 0 auto 100px; padding: 24px 5% 0; position: relative; z-index: 1; }
-        .privacy-section { margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
-        .privacy-section:last-child { border-bottom: none; }
-        .privacy-section h2 { font-family: 'Barlow Condensed', sans-serif; font-size: 1.6rem; font-weight: 600; color: var(--primary); letter-spacing: 0; margin-bottom: 14px; }
-        .privacy-section p { color: var(--text); line-height: 1.85; font-size: 0.95rem; margin-bottom: 12px; }
-        .privacy-section ul { margin: 10px 0 14px 0; padding-left: 0; list-style: none; }
-        .privacy-section ul li { color: var(--text); font-size: 0.95rem; line-height: 1.75; padding: 4px 0 4px 18px; position: relative; }
-        .privacy-section ul li::before { content: '—'; position: absolute; left: 0; color: var(--secondary); font-weight: 700; }
-        .privacy-section a { color: var(--secondary); text-decoration: underline; text-underline-offset: 3px; }
-        .contact-strong { color: white; }
-        [data-theme="light"] .contact-strong { color: var(--primary); }
-    </style>
 </head>
 <body class="inner">
+<main id="main">
     <div class="page-header-section">
-        <h1 class="page-title" id="pageTitle">Datenschutz</h1>
-        <p class="page-subtitle" id="pageSubtitle">Datenschutzerklärung &amp; Cookie-Information</p>
+        <div class="wrap">
+            <h1 class="page-title" id="pageTitle">Datenschutz</h1>
+            <p class="page-subtitle" id="pageSubtitle">Datenschutzerklärung &amp; Cookie-Information</p>
+        </div>
     </div>
 
-    <div class="privacy-wrap">
+    <section class="section">
+    <div class="wrap legal">
 
         <!-- DE -->
         <div class="lang-block" data-lang="de">
@@ -54,13 +45,14 @@
             </div>
             <div class="privacy-section">
                 <h2>Cookies &amp; Google Analytics</h2>
-                <p>Unsere Website verwendet Cookies – kleine Textdateien im Browser. Einige sind für Grundfunktionen erforderlich (z. B. Sprach- und Theme-Einstellung).</p>
+                <p>Unsere Website verwendet Cookies – kleine Textdateien im Browser. Einige sind für Grundfunktionen erforderlich (z. B. Spracheinstellung).</p>
                 <p>Wir nutzen Google Analytics für anonymisierte Nutzungsstatistiken (Google Ireland Limited, Dublin). Die IP-Anonymisierung ist aktiv – Ihre IP wird vor der Übertragung an Google innerhalb des EWR gekürzt. Sie können Cookies im Browser deaktivieren oder das <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out-Add-on</a> nutzen.</p>
+                <p>Google Analytics wird erst geladen, wenn Sie im Cookie-Hinweis zustimmen. Ihre Wahl können Sie jederzeit über „Cookie-Einstellungen“ in der Fusszeile ändern.</p>
             </div>
             <div class="privacy-section">
                 <h2>Ihre Rechte</h2>
                 <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Widerspruch Ihrer Daten. Kontakt: <a href="mailto:info@hmcarbide.ch">info@hmcarbide.ch</a></p>
-                <p style="color:var(--text-muted);font-size:0.85rem;">Stand: Mai 2026</p>
+                <p style="color:var(--ink-3);font-size:0.88rem;">Stand: Mai 2026</p>
             </div>
         </div>
 
@@ -85,13 +77,14 @@
             </div>
             <div class="privacy-section">
                 <h2>Cookies &amp; Google Analytics</h2>
-                <p>Our website uses cookies — small text files stored in your browser. Some are required for basic functions (e.g. language and theme preference).</p>
+                <p>Our website uses cookies — small text files stored in your browser. Some are required for basic functions (e.g. language preference).</p>
                 <p>We use Google Analytics for anonymised usage statistics (Google Ireland Limited, Dublin). IP anonymisation is enabled — your IP is truncated within the EEA before being sent to Google. You can disable cookies in your browser settings or use the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics opt-out add-on</a>.</p>
+                <p>Google Analytics is only loaded after you consent in the cookie notice. You can change your choice at any time via “Cookie settings” in the footer.</p>
             </div>
             <div class="privacy-section">
                 <h2>Your Rights</h2>
                 <p>You have the right to access, rectify, delete, and object to the processing of your data. Contact: <a href="mailto:info@hmcarbide.ch">info@hmcarbide.ch</a></p>
-                <p style="color:var(--text-muted);font-size:0.85rem;">Last updated: May 2026</p>
+                <p style="color:var(--ink-3);font-size:0.88rem;">Last updated: May 2026</p>
             </div>
         </div>
 
@@ -116,21 +109,24 @@
             </div>
             <div class="privacy-section">
                 <h2>Çerezler &amp; Google Analytics</h2>
-                <p>Web sitemiz çerezler kullanmaktadır — tarayıcınıza kaydedilen küçük metin dosyaları. Bazıları temel işlevler için gereklidir (örn. dil ve tema tercihi).</p>
+                <p>Web sitemiz çerezler kullanmaktadır — tarayıcınıza kaydedilen küçük metin dosyaları. Bazıları temel işlevler için gereklidir (örn. dil tercihi).</p>
                 <p>Anonim kullanım istatistikleri için Google Analytics kullanıyoruz (Google Ireland Limited, Dublin). IP anonimleştirme etkindir — IP adresiniz Google'a iletilmeden önce Avrupa Ekonomik Alanı içinde kısaltılır. Çerezleri tarayıcı ayarlarından devre dışı bırakabilir veya <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics eklentisini</a> kullanabilirsiniz.</p>
+                <p>Google Analytics yalnızca çerez bildiriminde onay verdiğinizde yüklenir. Seçiminizi istediğiniz zaman alt bilgideki “Çerez ayarları” bağlantısından değiştirebilirsiniz.</p>
             </div>
             <div class="privacy-section">
                 <h2>Haklarınız</h2>
                 <p>Verilerinize erişim, düzeltme, silme ve itiraz haklarına sahipsiniz. İletişim: <a href="mailto:info@hmcarbide.ch">info@hmcarbide.ch</a></p>
-                <p style="color:var(--text-muted);font-size:0.85rem;">Son güncelleme: Mayıs 2026</p>
+                <p style="color:var(--ink-3);font-size:0.88rem;">Son güncelleme: Mayıs 2026</p>
             </div>
         </div>
 
     </div>
 
+    </section>
+</main>
+
     <script src="layout.js"></script>
     <script src="script.js"></script>
-    <script src="background.js"></script>
     <script>
         const pageTitles = {
             de: { title: 'Datenschutz',          sub: 'Datenschutzerklärung & Cookie-Information' },

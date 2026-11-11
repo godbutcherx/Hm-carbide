@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@400;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/logo.jpg">
     <link rel="apple-touch-icon" href="images/logo.jpg">
     <script type="application/ld+json">
@@ -74,12 +74,16 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" integrity="sha384-rRoXxn2yHlrZYB587Ki9RO1tONhLdM6XfORg7Rw4uwH4/Fh/5nP7IUX91bkaKUgs" crossorigin="anonymous"></script>
 </head>
 <body class="inner">
+<main id="main">
     <div class="page-header-section">
-        <h1 class="page-title" data-i18n="nav_contact">Kontakt</h1>
-        <p class="page-subtitle" data-i18n="contact_sub">Schreiben Sie uns. Wir antworten auf Deutsch, Englisch und Türkisch.</p>
+        <div class="wrap">
+            <h1 class="page-title" data-i18n="nav_contact">Kontakt</h1>
+            <p class="page-subtitle" data-i18n="contact_sub">Schreiben Sie uns. Wir antworten auf Deutsch, Englisch und Türkisch.</p>
+        </div>
     </div>
 
-    <div class="contact-grid">
+    <section class="section">
+    <div class="wrap contact-grid">
         <div class="contact-info">
             <h2 class="contact-h" data-i18n="contact_info_title">Kontaktinformationen</h2>
             <ul class="contact-list">
@@ -98,7 +102,7 @@
             <h2 class="contact-h" data-i18n="form_title">Nachricht senden</h2>
             <form id="contact-form">
                 <!-- Honeypot: botlar doldurur, insanlar görmez -->
-                <input type="text" name="website" id="honeypot" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; opacity:0; height:0; width:0;">
+                <input type="text" name="website" id="honeypot" tabindex="-1" autocomplete="off" style="position:absolute; left:-9999px; opacity:0; height:0; width:0;" aria-hidden="true">
                 <label class="field"><span data-i18n="ph_name">Name</span><input type="text" name="name" id="user_name" required maxlength="100" autocomplete="name"></label>
                 <label class="field"><span data-i18n="ph_email">E-Mail</span><input type="email" name="email" id="user_email" required maxlength="150" autocomplete="email"></label>
                 <label class="field"><span data-i18n="lbl_message">Nachricht</span><textarea name="message" id="user_message" rows="6" required maxlength="2000"></textarea></label>
@@ -107,8 +111,10 @@
         </div>
     </div>
 
+    </section>
+</main>
+
     <script src="layout.js"></script>
     <script src="script.js"></script>
-    <script src="background.js"></script>
 </body>
 </html>

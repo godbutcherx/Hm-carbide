@@ -19,16 +19,16 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Barlow+Condensed:wght@400;600;700;800;900&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="images/logo.jpg">
     <link rel="apple-touch-icon" href="images/logo.jpg">
     <style>
-        .cert-card { position: relative; overflow: hidden; }
+        
         /* Seal: Uhren-Lünette, Stahl, einziges Rot ist das Schweizer Kreuz */
         .swiss-badge {
             --seal-steel: #aab1ba; --seal-face: #15181e; --seal-face-hi: #232831;
             position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-            background: var(--bg2); opacity: 0; transition: opacity 0.5s ease;
+            background: var(--anth); opacity: 0; transition: opacity 0.5s ease;
         }
         .seal { width: min(72%, 270px); height: auto; overflow: visible; transform: scale(0.94); opacity: 0; transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease; }
         .seal-rim { fill: none; stroke: var(--seal-steel); stroke-width: 0.8; opacity: 0.55; }
@@ -42,17 +42,20 @@
         .cert-card:hover .swiss-badge, .cert-card:focus-within .swiss-badge { opacity: 1; }
         .cert-card:hover .seal, .cert-card:focus-within .seal { transform: scale(1); opacity: 1; }
         .cert-card:hover .seal-bezel, .cert-card:focus-within .seal-bezel { transform: rotate(30deg); }
-        [data-theme="light"] .swiss-badge { --seal-steel: #5d646e; --seal-face: #eef0f3; --seal-face-hi: #ffffff; }
         @media (prefers-reduced-motion: reduce) { .seal, .seal-bezel { transition: opacity 0.3s; transform: none !important; } }
         .cert-card:focus-visible { outline: 2px solid var(--secondary); outline-offset: 3px; }
     </style>
 </head>
 <body class="inner">
+<main id="main">
     <div class="page-header-section">
-        <h1 class="page-title" data-i18n="nav_certs">Zertifikate</h1>
-        <p class="page-subtitle" data-i18n="cert_sub">Qualität, die sich nachweisen lässt.</p>
+        <div class="wrap">
+            <h1 class="page-title" data-i18n="nav_certs">Zertifikate</h1>
+            <p class="page-subtitle" data-i18n="cert_sub">Qualität, die sich nachweisen lässt.</p>
+        </div>
     </div>
-    <div class="cert-container">
+    <section class="section">
+    <div class="wrap cert-container">
         <div class="cert-card">
             <h3>ISO 9001:2015</h3>
             <p data-i18n="iso_desc">Qualitätsmanagementsystem</p>
@@ -72,7 +75,7 @@
                     <circle cx="100" cy="100" r="80" fill="url(#sealFace)" class="seal-inner"/>
                     <circle cx="100" cy="100" r="76" class="seal-hair"/>
                     <text class="seal-text"><textPath href="#sealTop" startOffset="50%" text-anchor="middle">HM CARBIDE SWISS GMBH</textPath></text>
-                    <text class="seal-text seal-text--b"><textPath href="#sealBot" startOffset="50%" text-anchor="middle">SWISS QUALITY</textPath></text>
+                    <text class="seal-text seal-text--b"><textPath href="#sealBot" startOffset="50%" text-anchor="middle" data-brand-seal>SWISS QUALITY</textPath></text>
                     <g transform="translate(80 80)">
                         <rect width="40" height="40" rx="3" class="seal-flag"/>
                         <path d="M16.25 7.5h7.5v8.75h8.75v7.5h-8.75v8.75h-7.5v-8.75H7.5v-7.5h8.75z" fill="#fff"/>
@@ -81,8 +84,25 @@
             </div>
         </div>
     </div>
+    </section>
+
+    <section class="section section--mist" id="downloads" aria-labelledby="dl-title">
+        <div class="wrap section-head">
+            <h2 class="display-2" id="dl-title" data-i18n="dl_title">Downloads</h2>
+            <p class="lede" data-i18n="dl_intro"></p>
+        </div>
+        <div class="wrap">
+            <ul class="downloads">
+                <li><span><span class="dl-name" data-i18n="dl_iso"></span><br><span class="dl-meta">PDF</span></span><a href="downloads/hm-carbide-iso-9001-2015.pdf" class="file-link" data-optional-file="" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M12 11v6M9 14l3 3 3-3"/></svg><span data-file-state data-i18n="dl_pdf">PDF herunterladen</span></a></li>
+                <li><span><span class="dl-name" data-i18n="dl_ds1"></span><br><span class="dl-meta">PDF</span></span><a href="downloads/datenblatt-p1.pdf" class="file-link" data-optional-file="p1" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M12 11v6M9 14l3 3 3-3"/></svg><span data-file-state data-i18n="dl_pdf">PDF herunterladen</span></a></li>
+                <li><span><span class="dl-name" data-i18n="dl_ds2"></span><br><span class="dl-meta">PDF</span></span><a href="downloads/datenblatt-p2.pdf" class="file-link" data-optional-file="p2" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M12 11v6M9 14l3 3 3-3"/></svg><span data-file-state data-i18n="dl_pdf">PDF herunterladen</span></a></li>
+                <li><span><span class="dl-name" data-i18n="dl_ds3"></span><br><span class="dl-meta">PDF</span></span><a href="downloads/datenblatt-p3.pdf" class="file-link" data-optional-file="p3" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 3H6a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V8z"/><path d="M14 3v5h5M12 11v6M9 14l3 3 3-3"/></svg><span data-file-state data-i18n="dl_pdf">PDF herunterladen</span></a></li>
+            </ul>
+        </div>
+    </section>
+</main>
+
     <script src="layout.js"></script>
     <script src="script.js"></script>
-    <script src="background.js"></script>
 </body>
 </html>

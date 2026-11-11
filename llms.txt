@@ -5,6 +5,7 @@
 HM Carbide Swiss GmbH is a Swiss-based manufacturer and supplier of tungsten carbide rods for the precision machining and cutting tool industry. Founded in Bottighofen, Switzerland, we combine decades of carbide industry expertise with Swiss quality standards to deliver reliable raw material solutions worldwide.
 
 - Legal name: HM Carbide Swiss GmbH
+- Founded: 2025, family business
 - UID: CHE-477.630.623 MWST
 - Address: Müligässli 1, 8598 Bottighofen, Switzerland
 - Phone: +41 76 290 91 93
@@ -20,28 +21,51 @@ We supply solid tungsten carbide rods used as raw material for manufacturing pre
 ### Product 1: Solid Carbide Rod (Vollhartmetallstab)
 - Diameters: ø 1 mm to ø 32 mm
 - Length: 330 mm
+- Diameter tolerance: h6
 - Grades: HM 12Co (WC 88%, Co 12%) and HM 10Co (WC 90%, Co 10%)
 - Hardness: 91.8–92.5 HRA
 - Density: 14.25–14.4 g/cm³
-- TRS: >350 N/mm²
+- TRS: >3432 N/mm²
 - Use case: Raw material for solid carbide cutting tools
 
 ### Product 2: Carbide Rod with Coolant Channel (Kühlkanal)
 - Diameters: ø 4 mm to ø 25 mm
 - Length: 330 mm
 - Internal coolant hole diameter: 0.5–2.0 mm
+- Diameter tolerance: h6
 - Use case: High-performance drilling and milling tools requiring internal coolant supply
 
 ### Product 3: Cut-to-Length Carbide Rod (Gekürzter Stab)
 - Sizes: 3×40 mm to 20×104 mm
+- Diameter tolerance: h6
 - Use case: Ready-to-grind blanks for tool production
+
+## Grade Program (by grain size)
+
+Ultrafine grain (0.2–0.4 µm) — hard and wear-resistant:
+- H08U-K — 8% Co — hardest grade; watchmaking and micro tools
+- GU10F — 10% Co — medical and engraving
+- GU15F — 12% Co — stainless steel
+- GU15UF — 12% Co — ultrafine; stainless steel and titanium
+
+Fine grain (0.6 µm) — balanced, most in demand:
+- GU20F — 10% Co — small-diameter end mills
+- GU25UF — 12% Co — general purpose; best-selling grade
+- GU25F — 12% Co — end mills and drills
+
+Medium grain (0.8–1.0 µm) — tough and fracture-resistant:
+- H10F — 10% Co — wood and aluminium
+- GU30F — 15% Co — heavy machining
+- GU40F — 20% Co — impact applications
+
+Most requested for ø 16 × 330 mm: H08U-K and GU25UF.
 
 ## Technical Grades
 
 | Grade   | WC % | Co % | Grain Size (µm) | Density (g/cm³) | Hardness (HRA) | TRS (N/mm²) |
 |---------|------|------|-----------------|-----------------|----------------|-------------|
-| HM 12Co | 88   | 12   | 0.4             | 14.25 ± 0.1     | 92.5 ± 0.5     | >350        |
-| HM 10Co | 90   | 10   | 0.8             | 14.4 ± 0.1      | 91.8 ± 0.5     | >350        |
+| HM 12Co | 88   | 12   | 0.4             | 14.25 ± 0.1     | 92.5 ± 0.5     | >3432       |
+| HM 10Co | 90   | 10   | 0.8             | 14.4 ± 0.1      | 91.8 ± 0.5     | >3432       |
 
 ## Why Choose HM Carbide
 - Swiss-based operations with European production standards
@@ -51,13 +75,23 @@ We supply solid tungsten carbide rods used as raw material for manufacturing pre
 - Maximizes tool life for end users
 - Serves customers worldwide from Switzerland
 
+## Applications
+- Drills (solid carbide; coolant-channel rods for deep holes): GU25F, GU25UF
+- End mills (general purpose to small diameter): GU20F, GU25F, GU25UF
+- Reamers and countersinks
+- Micro and watchmaking tools: H08U-K
+- Medical and engraving: GU10F
+- Stainless steel and titanium: GU15F, GU15UF
+- Wood and aluminium: H10F
+- Heavy and interrupted cuts: GU30F, GU40F
+
 ## Frequently Asked Questions
 
 **What is a carbide rod used for?**
 Carbide rods (Hartmetallstäbe) are the primary raw material for manufacturing solid carbide cutting tools. They are ground and shaped into drills, end mills, reamers, and other precision tools used in CNC machining.
 
 **What grades does HM Carbide offer?**
-HM Carbide offers two main grades: HM 12Co (88% WC, 12% Co — tougher, for interrupted cuts) and HM 10Co (90% WC, 10% Co — harder, for wear-resistant applications).
+Our standard grades are HM 12Co (88% WC, 12% Co, 0.4 µm grain, 92.5 HRA), harder and more wear-resistant thanks to its ultrafine grain, and HM 10Co (90% WC, 10% Co, 0.8 µm grain, 91.8 HRA), tougher and more fracture-resistant. We also offer ten further grades in ultrafine, fine and medium grain, with 8 to 20% cobalt.
 
 **Does HM Carbide ship internationally?**
 Yes. HM Carbide Swiss GmbH ships worldwide from Switzerland.
@@ -75,3 +109,5 @@ Solid rods are standard blanks. Coolant channel rods have an internal hole that 
 - Certificates: https://www.hmcarbide.ch/certificates.html
 - Contact: https://www.hmcarbide.ch/contact.html
 - Privacy Policy: https://www.hmcarbide.ch/privacy.html
+- Legal notice (Impressum): https://www.hmcarbide.ch/impressum.html
+- Downloads (certificate, data sheets): https://www.hmcarbide.ch/certificates.html#downloads

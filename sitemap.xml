@@ -9,7 +9,7 @@
 <!-- Ana Sayfa -->
 <url>
   <loc>https://www.hmcarbide.ch/</loc>
-  <lastmod>2026-05-24</lastmod>
+  <lastmod>2026-11-11</lastmod>
   <changefreq>monthly</changefreq>
   <priority>1.00</priority>
   <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/"/>
@@ -21,7 +21,7 @@
 <!-- Ürünler — en yüksek ticari değer -->
 <url>
   <loc>https://www.hmcarbide.ch/products.html</loc>
-  <lastmod>2026-05-24</lastmod>
+  <lastmod>2026-11-11</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.95</priority>
   <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/products.html"/>
@@ -33,7 +33,7 @@
 <!-- Hakkımızda + FAQ -->
 <url>
   <loc>https://www.hmcarbide.ch/about.html</loc>
-  <lastmod>2026-05-24</lastmod>
+  <lastmod>2026-11-11</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.85</priority>
   <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/about.html"/>
@@ -45,7 +45,7 @@
 <!-- İletişim -->
 <url>
   <loc>https://www.hmcarbide.ch/contact.html</loc>
-  <lastmod>2026-05-24</lastmod>
+  <lastmod>2026-11-11</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.80</priority>
   <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/contact.html"/>
@@ -57,7 +57,7 @@
 <!-- Sertifikalar -->
 <url>
   <loc>https://www.hmcarbide.ch/certificates.html</loc>
-  <lastmod>2026-05-24</lastmod>
+  <lastmod>2026-11-11</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.70</priority>
   <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/certificates.html"/>
@@ -69,9 +69,22 @@
 <!-- Gizlilik Politikası -->
 <url>
   <loc>https://www.hmcarbide.ch/privacy.html</loc>
-  <lastmod>2026-05-24</lastmod>
+  <lastmod>2026-11-11</lastmod>
   <changefreq>yearly</changefreq>
   <priority>0.30</priority>
+</url>
+
+
+<!-- Impressum -->
+<url>
+  <loc>https://www.hmcarbide.ch/impressum.html</loc>
+  <lastmod>2026-11-11</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.20</priority>
+  <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/impressum.html"/>
+  <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/impressum.html"/>
+  <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/impressum.html"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/impressum.html"/>
 </url>
 
 </urlset>
