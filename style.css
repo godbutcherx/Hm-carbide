@@ -415,3 +415,6 @@ h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 700; line-height: 1
 }
 .slant-top.slant-bottom { clip-path: polygon(0 var(--slant), 100% 0, 100% 100%, 0 calc(100% - var(--slant))); }
 .pl-table td a { font: inherit; }
+
+.grade-code { font-family: var(--f-display); font-weight: 700; font-size: clamp(2.6rem, 4vw, 3.6rem); line-height: 1; letter-spacing: 0.01em; color: var(--ink); padding-top: 22px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.grade-code .g-best { font-family: var(--f-text); font-size: 0.78rem; letter-spacing: 0.02em; margin-left: 0; padding: 4px 9px; }
