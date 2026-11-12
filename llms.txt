@@ -1,8 +1,8 @@
 # HM Carbide Swiss GmbH
-> Schweizer Hersteller von Hochleistungs-Hartmetallstäben. ISO 9001:2015 zertifiziert.
+> Schweizer Anbieter von Hochleistungs-Hartmetallstäben aus ISO-9001:2015-zertifizierter Fertigung.
 
 ## Who We Are
-HM Carbide Swiss GmbH is a Swiss-based manufacturer and supplier of tungsten carbide rods for the precision machining and cutting tool industry. Founded in Bottighofen, Switzerland, we combine decades of carbide industry expertise with Swiss quality standards to deliver reliable raw material solutions worldwide.
+HM Carbide Swiss GmbH is a Swiss-based supplier of tungsten carbide rods for the precision machining and cutting tool industry. Founded in Bottighofen, Switzerland, we combine many years of carbide industry experience with reliable supply to customers worldwide.
 
 - Legal name: HM Carbide Swiss GmbH
 - Founded: 2025, family business
@@ -13,7 +13,7 @@ HM Carbide Swiss GmbH is a Swiss-based manufacturer and supplier of tungsten car
 - Website: https://www.hmcarbide.ch
 - LinkedIn: https://www.linkedin.com/company/hmcarbideswiss/
 - Languages: German (primary), English, Turkish
-- Certification: ISO 9001:2015 Quality Management System
+- Certification: rods are produced in our manufacturer’s ISO 9001:2015 certified plant (manufacturer’s certificate available)
 
 ## What We Sell
 We supply solid tungsten carbide rods used as raw material for manufacturing precision cutting tools such as drills, end mills, and reamers.
@@ -36,7 +36,8 @@ We supply solid tungsten carbide rods used as raw material for manufacturing pre
 - Use case: High-performance drilling and milling tools requiring internal coolant supply
 
 ### Product 3: Cut-to-Length Carbide Rod (Gekürzter Stab)
-- Sizes: 3×40 mm to 20×104 mm
+- Sizes (ø × length, mm): 3×40, 4×50, 5×50, 6×50, 6×57, 8×63, 10×70, 10×72, 12×75, 12×83, 16×92, 16×93, 20×104
+- Custom lengths and sizes: produced to customer specification on request
 - Diameter tolerance: h6
 - Use case: Ready-to-grind blanks for tool production
 
@@ -53,8 +54,8 @@ We supply solid tungsten carbide rods used as raw material for manufacturing pre
 | HM 10Co | 90   | 10   | 0.8             | 14.4 ± 0.1      | 91.8 ± 0.5     | >3432       |
 
 ## Why Choose HM Carbide
-- Swiss-based operations with European production standards
-- ISO 9001:2015 certified quality management
+- Swiss-based company, family-owned
+- Produced in an ISO 9001:2015 certified plant
 - Competitive pricing with reliable supply chain management
 - Minimizes downtime in production lines
 - Maximizes tool life for end users
