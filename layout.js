@@ -14,12 +14,12 @@ const LANG_NAMES = { de: 'Deutsch', en: 'English', tr: 'Türkçe' };
 function logoMarkup(variant) {
     const cross = '<svg class="wm-cross" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="3"/><path d="M13 6h6v7h7v6h-7v7h-6v-7H6v-6h7z" fill="#fff"/></svg>';
     if (variant === 'b') {
-        return `<span lang="en" class="wordmark wordmark--b"><span class="wm-mono">HM</span><span class="wm-stack"><span class="wm-name">Carbide</span><span class="wm-sub">Swiss GmbH</span></span></span>`;
+        return `<span class="wordmark wordmark--b"><span class="wm-mono">HM</span><span class="wm-stack"><span class="wm-name">Carbide</span><span class="wm-sub">Swiss GmbH</span></span></span>`;
     }
     if (variant === 'c') {
-        return `<span lang="en" class="wordmark wordmark--c"><svg class="wm-rod" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18"/><circle cx="20" cy="20" r="13.5"/><circle cx="14.5" cy="20" r="2.2"/><circle cx="25.5" cy="20" r="2.2"/></svg><span class="wm-stack"><span class="wm-name">HM Carbide</span><span class="wm-sub">Swiss GmbH</span></span></span>`;
+        return `<span class="wordmark wordmark--c"><svg class="wm-rod" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18"/><circle cx="20" cy="20" r="13.5"/><circle cx="14.5" cy="20" r="2.2"/><circle cx="25.5" cy="20" r="2.2"/></svg><span class="wm-stack"><span class="wm-name">HM Carbide</span><span class="wm-sub">Swiss GmbH</span></span></span>`;
     }
-    return `<span lang="en" class="wordmark wordmark--a"><span class="wm-name">HM Carbide</span><span class="wm-sub">${cross}Swiss GmbH</span></span>`;
+    return `<span class="wordmark wordmark--a"><span class="wm-name">HM Carbide</span><span class="wm-sub">${cross}Swiss GmbH</span></span>`;
 }
 
 function langMenuMarkup(id) {
