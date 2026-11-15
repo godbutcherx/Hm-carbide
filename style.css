@@ -137,6 +137,8 @@ h1, h2, h3, h4 { font-family: var(--f-display); font-weight: 700; line-height: 1
 .hero .wrap { position: relative; z-index: 1; padding-top: 96px; padding-bottom: 120px; }
 .hero h1 { color: #fff; margin-bottom: 28px; max-width: 12ch; }
 .hero h1 span { display: block; }
+/* Almanca: "BESTÄNDIGKEIT." 12ch sınırına sığmıyor, son harf alt satıra kayıyordu */
+html[lang="de"] .hero h1 { max-width: 13.5ch; }
 .hero .lede { color: #c9ced5; margin-bottom: 40px; max-width: 42ch; }
 .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 28px; }
 .hero .text-link { color: #fff; text-decoration-color: rgba(255,255,255,0.35); }

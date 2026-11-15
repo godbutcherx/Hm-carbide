@@ -26,7 +26,7 @@ Yanıt tarzı: selamlama/önsöz yok, doğrudan cevap, iş bitince dur.
 - Her değişiklik **üç dilde birden** (DE/EN/TR).
 - SEO/GEO kurulumunu bozma: JSON-LD, hreflang, sitemap, llms.txt, FAQ.
 - Değiştirdikten sonra derle ve tarayıcıda (Playwright) masaüstü + mobil kontrol et: konsol hatası, 404, yatay taşma.
-- CSS/JS değişince HTML'deki `?v=YYYYMMDD` sürümünü artır (şu an 20261117).
+- CSS/JS değişince HTML'deki `?v=YYYYMMDD` sürümünü artır (şu an 20261118).
 
 ## Mimari
 Statik site, GitHub Pages (repo `godbutcherx/Hm-carbide`, CNAME www.hmcarbide.ch). Derleyici yok; Python ile önceden üretilmiş çok dilli sayfalar.

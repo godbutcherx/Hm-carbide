@@ -6,7 +6,7 @@ import os
 HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.path.join(os.path.dirname(HERE), '_src')
 BASE = 'https://www.hmcarbide.ch'
-V = '20261117'
+V = '20261118'
 DATE = '2026-11-15'
 
 GA = """    <!-- Google tag (gtag.js) + Consent Mode v2: Cookies erst nach Einwilligung -->
