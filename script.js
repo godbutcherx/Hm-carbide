@@ -5,7 +5,7 @@
 const BRAND = {
     claim:   { de: "Schweizer Qualität",     en: "Swiss quality",        tr: "İsviçre kalitesi" },
     slogan2: { de: "Maximale Beständigkeit", en: "Maximum durability",   tr: "Maksimum dayanıklılık" },
-    sealText: "SWISS QUALITY"
+    company: "HM Carbide Swiss GmbH"
 };
 
 // --- DİL ÇEVİRİLERİ (HTML Entity - %100 Güvenli) ---
@@ -15,12 +15,12 @@ const translations = {
         nav_quick: "Schnellzugriff", footer_desc: "Ihr zuverlässiger Partner für verschleiß- und druckfeste Hartmetallprodukte.",
         gr_title: "Die richtige Hartmetallsorte", gr_intro: "Kobaltanteil und Korngröße bestimmen das Verhältnis von Härte und Zähigkeit eines Stabes und damit, für welches Werkzeug er sich eignet.", gr_axis_hard: "Härter, verschleißfester", gr_axis_tough: "Zäher, bruchfester", gr_ask: "Sorte anfragen", g_best: "Meistverkauft", gc_uf: "Ultrafeinkorn", gc_f: "Feinkorn", gc_m: "Mittelkorn", gc_uf_d: "Hart und verschleißfest", gc_f_d: "Ausgewogen und am meisten gefragt", gc_m_d: "Zäh und bruchfest", hero_l1: "Schweizer Qualität.", hero_l2: "Maximale Beständigkeit.", hero_lede: "Hartmetallstäbe für die Werkzeugherstellung, geliefert aus der Schweiz in die ganze Welt.", home_cta: "Anfrage senden", home_all: "Alle Produkte ansehen", home_about: "Mehr über uns", fact1: "Fertigung nach ISO 9001:2015 zertifiziert", fact2: "Durchmesser 1 bis 32 mm", fact3: "Lieferung weltweit",
         about_title: "&Uuml;ber uns", about_text: "HM Carbide Swiss GmbH ist Ihr zuverlässiger Partner.",
-        p1_desc: "Rohling für Vollhartmetall-Werkzeuge wie Bohrer, Fräser und Reibahlen.", p2_desc: "Mit innenliegenden Kühlkanälen für Hochleistungs-Bohr- und Fräswerkzeuge.", p3_desc: "Auf Länge geschnittene Rohlinge – bereit zum Schleifen.", lbl_dia: "Durchmesser", lbl_len: "Länge", lbl_grade: "Sorte", lbl_channel: "Kühlkanal", lbl_sizes: "Abmessungen", lbl_variants: "Varianten", lbl_avail: "Lieferbare Abmessungen", th_dim: "Abmessung (mm)", th_channel: "Kanal-ø (mm)", th_dist: "Abstand (mm)", note_p1: "Stirnseiten maßstabsgetreu. Klicken Sie auf einen Durchmesser, um ihn anzufragen.", note_p2: "Querschnitte maßstabsgetreu, mit Kanal-ø und Abstand in mm. Klicken Sie auf eine Größe, um sie anzufragen.", note_p3: "Seitenansicht maßstabsgetreu, ø × Länge in mm. Klicken Sie auf eine Größe, um sie anzufragen.", lbl_ch: "Kanal", lbl_dist: "Abstand", req_tpl: "Anfrage: {p}, {d} mm\nMenge: ", no_results: "Keine passende Abmessung gefunden.", lbl_avail_dia: "Lieferbare Durchmesser in mm", lbl_avail_cut: "Lieferbare Abmessungen, ø × Länge in mm", th_gradecol: "Sorte", cert_sub: "Qualität, die sich nachweisen lässt.", iso_desc: "Zertifizierte Fertigung unseres Herstellers", contact_sub: "Schreiben Sie uns. Wir antworten auf Deutsch, Englisch und Türkisch.", country_ch: "Schweiz", lbl_message: "Nachricht", btn_quote: "Angebot anfordern", map_apple: "In Apple Karten öffnen", map_google: "In Google Maps öffnen", p1: "Hartmetallstab Voll", p2: "Stab mit Kühlkanal", p3: "Gekürzter Stab", 
+        p1_desc: "Rohling für Vollhartmetall-Werkzeuge wie Bohrer, Fräser und Reibahlen.", p2_desc: "Mit innenliegenden Kühlkanälen für Hochleistungs-Bohr- und Fräswerkzeuge.", p3_desc: "Auf Länge geschnittene Rohlinge – bereit zum Schleifen.", lbl_dia: "Durchmesser", lbl_len: "Länge", lbl_grade: "Sorte", lbl_channel: "Kühlkanal", lbl_sizes: "Abmessungen", lbl_variants: "Varianten", lbl_avail: "Lieferbare Abmessungen", th_dim: "Abmessung (mm)", th_channel: "Kanal-ø (mm)", th_dist: "Abstand (mm)", note_p1: "Stirnseiten maßstabsgetreu. Klicken Sie auf einen Durchmesser, um ihn anzufragen.", note_p2: "Querschnitte maßstabsgetreu, mit Kanal-ø und Abstand in mm. Klicken Sie auf eine Größe, um sie anzufragen.", note_p3: "Seitenansicht maßstabsgetreu, ø × Länge in mm. Klicken Sie auf eine Größe, um sie anzufragen.", lbl_ch: "Kanal", lbl_dist: "Abstand", req_tpl: "Anfrage: {p}, {d} mm\nMenge: ", no_results: "Keine passende Abmessung gefunden.", lbl_avail_dia: "Lieferbare Durchmesser in mm", lbl_avail_cut: "Lieferbare Abmessungen, ø × Länge in mm", th_gradecol: "Sorte", cert_sub: "Qualität, die sich nachweisen lässt.", iso_desc: "Zertifizierte Fertigung unseres Produktionspartners", contact_sub: "Schreiben Sie uns. Wir antworten auf Deutsch, Englisch und Türkisch.", country_ch: "Schweiz", lbl_message: "Nachricht", btn_quote: "Angebot anfordern", map_apple: "In Apple Karten öffnen", map_google: "In Google Maps öffnen", p1: "Hartmetallstab Voll", p2: "Stab mit Kühlkanal", p3: "Gekürzter Stab", 
         prod_subtitle: "Hochleistungs-Hartmetallstäbe",
         tech_title: "Technische Daten", th_grain: "Korngröße", th_density: "Dichte", th_hard: "Härte", th_trs: "Biegefestigkeit", search_ph: "Dimension suchen (z.B. 12x330)...",
         swiss_title: "Schweizer Qualität", swiss_desc: "Originalqualität",
         contact_info_title: "Kontaktinformationen", form_title: "Nachricht senden", form_btn: "Nachricht senden", ph_name: "Name", ph_email: "E-Mail", ph_message: "Ihre Nachricht...",
-        about_content: `<h3>Ein Familienunternehmen, das Hartmetall kennt</h3><p>HM Carbide Swiss GmbH ist ein 2025 gegründetes Familienunternehmen. Einer unserer Inhaber bringt langjährige Erfahrung aus der Zerspanungs- und Hartmetallbranche mit. Wir wissen aus der Praxis, was Werkzeughersteller von ihrem Rohmaterial erwarten: Stäbe, die maßhaltig sind, sich in jeder Charge gleich verhalten und pünktlich ankommen.</p><p>Wir liefern Hartmetallstäbe für die Werkzeugherstellung: Vollhartmetall-, Kühlkanal- und gekürzte Stäbe von ø 1 bis 32 mm. Gefertigt werden sie in einem nach ISO 9001:2015 zertifizierten Werk.</p><p>Unser Sitz ist in Bottighofen in der Schweiz. Von hier liefern wir weltweit. Mit unseren Kunden arbeiten wir direkt, auf Deutsch, Englisch und Türkisch.</p>`,
+        about_content: `<h3>Ein Familienunternehmen, das Hartmetall kennt</h3><p>HM Carbide Swiss GmbH ist ein 2025 gegründetes Familienunternehmen. Einer unserer Inhaber bringt langjährige Erfahrung aus der Zerspanungs- und Hartmetallbranche mit. Wir wissen aus der Praxis, was Werkzeughersteller von ihrem Rohmaterial erwarten: Stäbe, die maßhaltig sind, sich in jeder Charge gleich verhalten und pünktlich ankommen.</p><p>Wir liefern Hartmetallstäbe für die Werkzeugherstellung: Vollhartmetall-, Kühlkanal- und gekürzte Stäbe von ø 1 bis 32 mm. Wir sind Lieferant und Ansprechpartner, nicht Hersteller: Gefertigt werden die Stäbe im nach ISO 9001:2015 zertifizierten Werk unseres Produktionspartners. Wir wählen Sorten und Abmessungen aus, prüfen die Lieferungen und betreuen Sie direkt.</p><p>Unser Sitz ist in Bottighofen in der Schweiz. Von hier liefern wir weltweit. Mit unseren Kunden arbeiten wir direkt, auf Deutsch, Englisch und Türkisch.</p>`,
         alert_success: "Ihre Nachricht wurde erfolgreich gesendet!", alert_error: "Fehler beim Senden der Nachricht.",
         cookie_title: "🍪 Cookie-Einstellungen", cookie_desc: "Wir verwenden Cookies gemäß DSGVO, um Ihre Erfahrung zu verbessern.", cookie_more: "Mehr erfahren", cookie_reject: "Ablehnen", cookie_accept: "Alle akzeptieren",
         faq_title: "Häufig gestellte Fragen",
@@ -28,7 +28,7 @@ const translations = {
         faq_q2: "Welche Hartmetall-Güten bietet HM Carbide an?", faq_a2: "Unsere Standardsorten sind HM 12Co (88 % WC, 12 % Co, Korngröße 0,4 µm, 92,5 HRA), dank Ultrafeinkorn härter und verschleißfester, und HM 10Co (90 % WC, 10 % Co, Korngröße 0,8 µm, 91,8 HRA), zäher und bruchfester. Darüber hinaus bieten wir die Sorten HM12F (Ultrafeinkorn, 0,4 µm), HM10S (Feinkorn, 0,6 µm) und H10F (Mittelkorn, 0,8 µm) an.",
         faq_q3: "Was ist der Unterschied zwischen Vollhartmetall und Kühlkanal-Stäben?", faq_a3: "Vollhartmetallstäbe sind massive Rohlinge. Kühlkanal-Stäbe haben einen innenliegenden Kanal (Ø 0,5–2,0 mm) für Kühlmittelzufuhr direkt zur Schneidkante – ideal für Tiefbohrungen mit längerer Standzeit.",
         faq_q4: "Liefert HM Carbide international?", faq_a4: "Ja. HM Carbide Swiss GmbH liefert weltweit von der Schweiz aus.",
-        faq_q5: "Sind Ihre Stäbe ISO-zertifiziert?", faq_a5: "Unsere Stäbe werden in einem nach ISO 9001:2015 zertifizierten Werk unseres Herstellers gefertigt. Das Zertifikat des Herstellers stellen wir Ihnen gerne zur Verfügung.",
+        faq_q5: "Sind Ihre Stäbe ISO-zertifiziert?", faq_a5: "HM Carbide Swiss GmbH ist Lieferant, nicht Hersteller: Unsere Stäbe werden im nach ISO 9001:2015 zertifizierten Werk unseres Produktionspartners gefertigt. Das Zertifikat des Produktionspartners stellen wir Ihnen gerne zur Verfügung.",
         faq_q6: "Wie kann ich ein Angebot anfordern?", faq_a6: "Per E-Mail unter <a href='mailto:info@hmcarbide.ch'>info@hmcarbide.ch</a>, telefonisch unter <a href='tel:+41762909193'>+41 76 290 91 93</a> oder über unser <a href='contact.html'>Kontaktformular</a>. Wir antworten auf Deutsch, Englisch und Türkisch."
     },
     en: { 
@@ -36,12 +36,12 @@ const translations = {
         nav_quick: "Quick links", footer_desc: "Your reliable partner for carbide products.",
         gr_title: "The right carbide grade", gr_intro: "Cobalt content and grain size set the balance between hardness and toughness of a rod, and with it the tools it suits.", gr_axis_hard: "Harder, more wear-resistant", gr_axis_tough: "Tougher, more fracture-resistant", gr_ask: "Ask about a grade", g_best: "Best seller", gc_uf: "Ultrafine grain", gc_f: "Fine grain", gc_m: "Medium grain", gc_uf_d: "Hard and wear-resistant", gc_f_d: "Balanced and most in demand", gc_m_d: "Tough and fracture-resistant", hero_l1: "Swiss quality.", hero_l2: "Maximum durability.", hero_lede: "Carbide rods for tool manufacturing, shipped from Switzerland to the whole world.", home_cta: "Send an inquiry", home_all: "View all products", home_about: "More about us", fact1: "ISO 9001:2015 certified production", fact2: "Diameters from 1 to 32 mm", fact3: "Worldwide delivery",
         about_title: "About us", about_text: "Your reliable partner for high-quality carbide products.",
-        p1_desc: "Blank for solid carbide tools such as drills, end mills and reamers.", p2_desc: "With internal coolant channels for high-performance drilling and milling tools.", p3_desc: "Cut-to-length blanks, ready for grinding.", lbl_dia: "Diameter", lbl_len: "Length", lbl_grade: "Grade", lbl_channel: "Coolant channel", lbl_sizes: "Dimensions", lbl_variants: "Variants", lbl_avail: "Available dimensions", th_dim: "Dimension (mm)", th_channel: "Channel ø (mm)", th_dist: "Distance (mm)", note_p1: "End faces to scale. Click a diameter to request it.", note_p2: "Cross-sections to scale, with channel ø and distance in mm. Click a size to request it.", note_p3: "Side view to scale, ø × length in mm. Click a size to request it.", lbl_ch: "Channel", lbl_dist: "Distance", req_tpl: "Inquiry: {p}, {d} mm\nQuantity: ", no_results: "No matching dimension found.", lbl_avail_dia: "Available diameters in mm", lbl_avail_cut: "Available dimensions, ø × length in mm", th_gradecol: "Grade", cert_sub: "Quality you can verify.", iso_desc: "Our manufacturer’s certified production", contact_sub: "Write to us. We reply in German, English and Turkish.", country_ch: "Switzerland", lbl_message: "Message", btn_quote: "Request a quote", map_apple: "Open in Apple Maps", map_google: "Open in Google Maps", p1: "Solid Carbide Rod", p2: "Rod with Coolant", p3: "Cut-to-Length Rod", 
+        p1_desc: "Blank for solid carbide tools such as drills, end mills and reamers.", p2_desc: "With internal coolant channels for high-performance drilling and milling tools.", p3_desc: "Cut-to-length blanks, ready for grinding.", lbl_dia: "Diameter", lbl_len: "Length", lbl_grade: "Grade", lbl_channel: "Coolant channel", lbl_sizes: "Dimensions", lbl_variants: "Variants", lbl_avail: "Available dimensions", th_dim: "Dimension (mm)", th_channel: "Channel ø (mm)", th_dist: "Distance (mm)", note_p1: "End faces to scale. Click a diameter to request it.", note_p2: "Cross-sections to scale, with channel ø and distance in mm. Click a size to request it.", note_p3: "Side view to scale, ø × length in mm. Click a size to request it.", lbl_ch: "Channel", lbl_dist: "Distance", req_tpl: "Inquiry: {p}, {d} mm\nQuantity: ", no_results: "No matching dimension found.", lbl_avail_dia: "Available diameters in mm", lbl_avail_cut: "Available dimensions, ø × length in mm", th_gradecol: "Grade", cert_sub: "Quality you can verify.", iso_desc: "Our production partner’s certified production", contact_sub: "Write to us. We reply in German, English and Turkish.", country_ch: "Switzerland", lbl_message: "Message", btn_quote: "Request a quote", map_apple: "Open in Apple Maps", map_google: "Open in Google Maps", p1: "Solid Carbide Rod", p2: "Rod with Coolant", p3: "Cut-to-Length Rod", 
         prod_subtitle: "High Performance Carbide Rods",
         tech_title: "Technical data", th_grain: "Grain size", th_density: "Density", th_hard: "Hardness", th_trs: "TRS", search_ph: "Search dimension (e.g. 12x330)...",
         swiss_title: "Swiss quality", swiss_desc: "Original quality",
         contact_info_title: "Contact details", form_title: "Send a message", form_btn: "Send message", ph_name: "Name", ph_email: "Email", ph_message: "Your Message...",
-        about_content: `<h3>A family business that knows carbide</h3><p>HM Carbide Swiss GmbH is a family business founded in 2025. One of our owners brings many years of experience in the machining and carbide industry. We know from practice what toolmakers expect from their raw material: rods that hold their dimensions, behave the same in every batch and arrive on time.</p><p>We supply carbide rods for tool manufacturing: solid carbide, coolant-channel and cut-to-length rods from ø 1 to 32 mm. They are produced in an ISO 9001:2015 certified plant.</p><p>We are based in Bottighofen, Switzerland, and deliver worldwide from here. We work with our customers directly, in German, English and Turkish.</p>`,
+        about_content: `<h3>A family business that knows carbide</h3><p>HM Carbide Swiss GmbH is a family business founded in 2025. One of our owners brings many years of experience in the machining and carbide industry. We know from practice what toolmakers expect from their raw material: rods that hold their dimensions, behave the same in every batch and arrive on time.</p><p>We supply carbide rods for tool manufacturing: solid carbide, coolant-channel and cut-to-length rods from ø 1 to 32 mm. We are the supplier and your point of contact, not the manufacturer: the rods are produced in our production partner’s ISO 9001:2015 certified plant. We select grades and sizes, check deliveries and look after you directly.</p><p>We are based in Bottighofen, Switzerland, and deliver worldwide from here. We work with our customers directly, in German, English and Turkish.</p>`,
         alert_success: "Your message has been sent successfully!", alert_error: "Error sending message.",
         cookie_title: "🍪 Cookie Settings", cookie_desc: "We use cookies in accordance with GDPR to improve your experience.", cookie_more: "Learn more", cookie_reject: "Reject", cookie_accept: "Accept all",
         faq_title: "Frequently asked questions",
@@ -49,7 +49,7 @@ const translations = {
         faq_q2: "What carbide grades does HM Carbide offer?", faq_a2: "Our standard grades are HM 12Co (88% WC, 12% Co, 0.4 µm grain, 92.5 HRA), harder and more wear-resistant thanks to its ultrafine grain, and HM 10Co (90% WC, 10% Co, 0.8 µm grain, 91.8 HRA), tougher and more fracture-resistant. We also offer the grades HM12F (ultrafine, 0.4 µm), HM10S (fine, 0.6 µm) and H10F (medium, 0.8 µm).",
         faq_q3: "What is the difference between solid and coolant channel rods?", faq_a3: "Solid rods are standard blanks. Coolant channel rods have an internal bore (Ø 0.5–2.0 mm) that delivers coolant directly to the cutting edge — ideal for deep-hole drilling with longer tool life.",
         faq_q4: "Does HM Carbide ship internationally?", faq_a4: "Yes. HM Carbide Swiss GmbH ships worldwide from Switzerland.",
-        faq_q5: "Are your rods ISO certified?", faq_a5: "Our rods are produced in our manufacturer’s ISO 9001:2015 certified plant. We are happy to provide the manufacturer’s certificate on request.",
+        faq_q5: "Are your rods ISO certified?", faq_a5: "HM Carbide Swiss GmbH is a supplier, not a manufacturer: our rods are produced in our production partner’s ISO 9001:2015 certified plant. We are happy to provide the production partner’s certificate on request.",
         faq_q6: "How can I request a quote?", faq_a6: "By email at <a href='mailto:info@hmcarbide.ch'>info@hmcarbide.ch</a>, by phone at <a href='tel:+41762909193'>+41 76 290 91 93</a>, or via our <a href='contact.html'>contact form</a>. We respond in German, English and Turkish."
     },
     tr: { 
@@ -57,12 +57,12 @@ const translations = {
         nav_quick: "Hızlı linkler", footer_desc: "Aşınmaya ve basınca dayanıklı karbür ürünler için güvenilir ortağınız.",
         gr_title: "Doğru karbür sınıfı", gr_intro: "Kobalt oranı ve tane boyutu, bir çubuğun sertlik ile tokluk arasındaki dengesini ve dolayısıyla hangi takıma uygun olduğunu belirler.", gr_axis_hard: "Daha sert, aşınmaya dayanıklı", gr_axis_tough: "Daha tok, kırılmaya dayanıklı", gr_ask: "Kalite sorun", g_best: "En çok satan", gc_uf: "Ultra ince tane", gc_f: "İnce tane", gc_m: "Orta tane", gc_uf_d: "Sert ve aşınmaya dayanıklı", gc_f_d: "Dengeli, en çok tercih edilen", gc_m_d: "Tok, kırılmaya dayanıklı", hero_l1: "İsviçre kalitesi.", hero_l2: "Maksimum dayanıklılık.", hero_lede: "Takım üretimi için karbür çubuklar; İsviçre’den tüm dünyaya.", home_cta: "Teklif isteyin", home_all: "Tüm ürünleri görün", home_about: "Hakkımızda daha fazlası", fact1: "ISO 9001:2015 sertifikalı üretim", fact2: "1 ile 32 mm arası çaplar", fact3: "Dünya geneline teslimat",
         about_title: "Hakkımızda", about_text: "Yüksek kaliteli karbür ürünleri için güvenilir ortağınız.",
-        p1_desc: "Matkap, freze ve rayba gibi tam karbür takımlar için hammadde.", p2_desc: "Yüksek performanslı delme ve frezeleme takımları için iç soğutma kanallı.", p3_desc: "Boyuna kesilmiş, taşlamaya hazır rolyeler.", lbl_dia: "Çap", lbl_len: "Boy", lbl_grade: "Kalite", lbl_channel: "Soğutma kanalı", lbl_sizes: "Ölçüler", lbl_variants: "Çeşit", lbl_avail: "Mevcut ölçüler", th_dim: "Ölçü (mm)", th_channel: "Kanal ø (mm)", th_dist: "Mesafe (mm)", note_p1: "Uç yüzeyler gerçek oranlarında. Teklif istemek için bir çapa tıklayın.", note_p2: "Kesitler gerçek oranlarında; kanal çapı ve mesafe mm cinsinden. Teklif istemek için bir ölçüye tıklayın.", note_p3: "Yandan görünüş gerçek oranlarında, ø × boy (mm). Teklif istemek için bir ölçüye tıklayın.", lbl_ch: "Kanal", lbl_dist: "Mesafe", req_tpl: "Talep: {p}, {d} mm\nAdet: ", no_results: "Eşleşen ölçü bulunamadı.", lbl_avail_dia: "Mevcut çaplar (mm)", lbl_avail_cut: "Mevcut ölçüler, ø × boy (mm)", th_gradecol: "Kalite", cert_sub: "Belgelenebilir kalite.", iso_desc: "Üreticimizin sertifikalı üretimi", contact_sub: "Bize yazın. Türkçe, Almanca ve İngilizce yanıt veriyoruz.", country_ch: "İsviçre", lbl_message: "Mesajınız", btn_quote: "Teklif isteyin", map_apple: "Apple Haritalar’da aç", map_google: "Google Haritalar’da aç", p1: "Karbür Çubuklar", p2: "Soğutma Kanallı Çubuk", p3: "Kesilmiş Çubuk",
+        p1_desc: "Matkap, freze ve rayba gibi tam karbür takımlar için hammadde.", p2_desc: "Yüksek performanslı delme ve frezeleme takımları için iç soğutma kanallı.", p3_desc: "Boyuna kesilmiş, taşlamaya hazır rolyeler.", lbl_dia: "Çap", lbl_len: "Boy", lbl_grade: "Kalite", lbl_channel: "Soğutma kanalı", lbl_sizes: "Ölçüler", lbl_variants: "Çeşit", lbl_avail: "Mevcut ölçüler", th_dim: "Ölçü (mm)", th_channel: "Kanal ø (mm)", th_dist: "Mesafe (mm)", note_p1: "Uç yüzeyler gerçek oranlarında. Teklif istemek için bir çapa tıklayın.", note_p2: "Kesitler gerçek oranlarında; kanal çapı ve mesafe mm cinsinden. Teklif istemek için bir ölçüye tıklayın.", note_p3: "Yandan görünüş gerçek oranlarında, ø × boy (mm). Teklif istemek için bir ölçüye tıklayın.", lbl_ch: "Kanal", lbl_dist: "Mesafe", req_tpl: "Talep: {p}, {d} mm\nAdet: ", no_results: "Eşleşen ölçü bulunamadı.", lbl_avail_dia: "Mevcut çaplar (mm)", lbl_avail_cut: "Mevcut ölçüler, ø × boy (mm)", th_gradecol: "Kalite", cert_sub: "Belgelenebilir kalite.", iso_desc: "Üretim ortağımızın sertifikalı üretimi", contact_sub: "Bize yazın. Türkçe, Almanca ve İngilizce yanıt veriyoruz.", country_ch: "İsviçre", lbl_message: "Mesajınız", btn_quote: "Teklif isteyin", map_apple: "Apple Haritalar’da aç", map_google: "Google Haritalar’da aç", p1: "Karbür Çubuklar", p2: "Soğutma Kanallı Çubuk", p3: "Kesilmiş Çubuk",
         prod_subtitle: "Yüksek Performanslı Karbür Çubuklar",
         tech_title: "Teknik veriler", th_grain: "Tane boyutu", th_density: "Yoğunluk", th_hard: "Sertlik", th_trs: "Eğilme dayanımı", search_ph: "Ölçü ara (örn. 12x330)...",
         swiss_title: "İsviçre kalitesi", swiss_desc: "Orijinal kalite",
         contact_info_title: "İletişim bilgileri", form_title: "Mesaj gönderin", form_btn: "Mesajı gönder", ph_name: "Adınız", ph_email: "E-posta", ph_message: "Mesajınız...",
-        about_content: `<h3>Karbürü bilen bir aile şirketi</h3><p>HM Carbide Swiss GmbH, 2025 yılında kurulmuş bir aile şirketidir. Ortaklarımızdan biri talaşlı imalat ve karbür sektöründe yıllara dayanan bir deneyime sahip. Takım üreticilerinin bir hammaddeden ne beklediğini sahadan biliyoruz: ölçüsü tutan, her partide aynı davranan ve zamanında gelen çubuklar.</p><p>Takım üretimi için karbür çubuk tedarik ediyoruz: tam karbür, soğutma kanallı ve boyuna kesilmiş çubuklar, ø 1–32 mm. Çubuklarımız ISO 9001:2015 sertifikalı bir tesiste üretilir.</p><p>Merkezimiz İsviçre’de, Bottighofen’de. Buradan dünyanın her yerine teslimat yapıyoruz. Müşterilerimizle Almanca, İngilizce ve Türkçe, doğrudan çalışıyoruz.</p>`,
+        about_content: `<h3>Karbürü bilen bir aile şirketi</h3><p>HM Carbide Swiss GmbH, 2025 yılında kurulmuş bir aile şirketidir. Ortaklarımızdan biri talaşlı imalat ve karbür sektöründe yıllara dayanan bir deneyime sahip. Takım üreticilerinin bir hammaddeden ne beklediğini sahadan biliyoruz: ölçüsü tutan, her partide aynı davranan ve zamanında gelen çubuklar.</p><p>Takım üretimi için karbür çubuk tedarik ediyoruz: tam karbür, soğutma kanallı ve boyuna kesilmiş çubuklar, ø 1–32 mm. Biz üretici değil, tedarikçi ve muhatabınızız: Çubuklar, üretim ortağımızın ISO 9001:2015 sertifikalı tesisinde üretilir. Kalite ve ölçüleri biz seçer, teslimatları kontrol eder ve sizinle doğrudan ilgileniriz.</p><p>Merkezimiz İsviçre’de, Bottighofen’de. Buradan dünyanın her yerine teslimat yapıyoruz. Müşterilerimizle Almanca, İngilizce ve Türkçe, doğrudan çalışıyoruz.</p>`,
         alert_success: "Mesajınız başarıyla gönderildi!", alert_error: "Bir hata oluştu, lütfen tekrar deneyin.",
         cookie_title: "🍪 Çerez Ayarları", cookie_desc: "GDPR kapsamında deneyiminizi geliştirmek için çerezler kullanıyoruz.", cookie_more: "Daha fazla", cookie_reject: "Reddet", cookie_accept: "Tümünü kabul et",
         faq_title: "Sık sorulan sorular",
@@ -70,7 +70,7 @@ const translations = {
         faq_q2: "HM Carbide hangi karbür kalitelerini sunuyor?", faq_a2: "Standart kalitelerimiz HM 12Co (%88 WC, %12 Co, 0,4 µm tane, 92,5 HRA) ve HM 10Co’dur (%90 WC, %10 Co, 0,8 µm tane, 91,8 HRA). HM 12Co ultra ince tanesi sayesinde daha sert ve aşınmaya dayanıklı, HM 10Co ise daha tok ve kırılmaya dayanıklıdır. Bunların yanında HM12F (ultra ince, 0,4 µm), HM10S (ince, 0,6 µm) ve H10F (orta, 0,8 µm) kalitelerini de sunuyoruz.",
         faq_q3: "Dolu çubuk ile soğutma kanallı çubuk arasındaki fark nedir?", faq_a3: "Dolu çubuklar standart rolyelerdir. Soğutma kanallı çubuklar, soğutma sıvısını doğrudan kesme kenarına ileten iç kanala (Ø 0,5–2,0 mm) sahiptir — derin delik delme için idealdir.",
         faq_q4: "HM Carbide uluslararası teslimat yapıyor mu?", faq_a4: "Evet. HM Carbide Swiss GmbH, İsviçre’den tüm dünyaya teslimat yapmaktadır.",
-        faq_q5: "Çubuklarınız ISO sertifikalı mı?", faq_a5: "Çubuklarımız, üreticimizin ISO 9001:2015 sertifikalı tesisinde üretilir. Üreticinin sertifikasını talep üzerine paylaşırız.",
+        faq_q5: "Çubuklarınız ISO sertifikalı mı?", faq_a5: "HM Carbide Swiss GmbH üretici değil, tedarikçidir: Çubuklarımız, üretim ortağımızın ISO 9001:2015 sertifikalı tesisinde üretilir. Üretim ortağımızın sertifikasını talep üzerine paylaşırız.",
         faq_q6: "Nasıl teklif alabilirim?", faq_a6: "<a href='mailto:info@hmcarbide.ch'>info@hmcarbide.ch</a> e-postası, <a href='tel:+41762909193'>+41 76 290 91 93</a> telefonu veya <a href='contact.html'>iletişim formumuz</a> aracılığıyla ulaşabilirsiniz. Türkçe, Almanca ve İngilizce yanıt veriyoruz."
     }
 };
@@ -94,9 +94,9 @@ Object.assign(translations.de, {
     alt_hero: "Geschliffener Hartmetallstab auf dunklem Grund", alt_p1: "Vollhartmetallstäbe in fünf Durchmessern nebeneinander", alt_p2: "Stirnseite eines Hartmetallstabs mit zwei Kühlkanälen", alt_p3: "Gekürzte Hartmetallstäbe in verschiedenen Durchmessern und Längen",
     lbl_tol: "Toleranz", lbl_custom: "Sonderlängen", t_custom: "Auf Anfrage gefertigt", p3_custom: "Sonderlängen und -abmessungen fertigen wir nach Ihren Vorgaben.", lbl_finish: "Ausführung", t_on_request: "Auf Anfrage", lbl_dims_all: "ø 1–30 mm in 1-mm-Schritten, ø 32 mm",
     dl_title: "Downloads", dl_intro: "Zertifikat und technische Datenblätter als PDF. Fehlt eine Datei, senden wir sie Ihnen auf Anfrage.",
-    dl_iso: "ISO 9001:2015 Zertifikat des Herstellers", dl_ds1: "Datenblatt Vollhartmetallstab", dl_ds2: "Datenblatt Stab mit Kühlkanal", dl_ds3: "Datenblatt gekürzter Stab",
+    dl_iso: "ISO 9001:2015 Zertifikat des Produktionspartners", dl_ds1: "Datenblatt Vollhartmetallstab", dl_ds2: "Datenblatt Stab mit Kühlkanal", dl_ds3: "Datenblatt gekürzter Stab",
     dl_pdf: "PDF herunterladen", dl_request: "Auf Anfrage", dl_sheet: "Datenblatt (PDF)",
-    imp_title: "Impressum", prod_subtitle: "Hartmetallstäbe für die Werkzeugherstellung"
+    imp_title: "Impressum", prod_subtitle: "Hartmetallstäbe für die Werkzeugherstellung", nav_guide: "Sorten-Ratgeber", nav_blog: "Fachwissen", p3_article: "Wann sich gekürzte Stäbe lohnen", gr_guide: "Zum Sorten-Ratgeber", guide_title: "Hartmetall-Sorten-Ratgeber", guide_sub: "Korngröße, Kobaltanteil und Toleranz: So wählen Sie den passenden Hartmetallstab.", tech_guide: "Wie Korngröße und Kobalt die Werte bestimmen, erklärt unser Sorten-Ratgeber."
 });
 Object.assign(translations.en, {
     skip_link: "Skip to content", nav_impressum: "Legal notice", nav_privacy: "Privacy",
@@ -116,9 +116,9 @@ Object.assign(translations.en, {
     alt_hero: "Ground carbide rod on a dark background", alt_p1: "Solid carbide rods in five diameters side by side", alt_p2: "End face of a carbide rod with two coolant channels", alt_p3: "Cut-to-length carbide rods in various diameters and lengths",
     lbl_tol: "Tolerance", lbl_custom: "Custom lengths", t_custom: "Made to order", p3_custom: "Custom lengths and sizes can be produced to your specifications.", lbl_finish: "Finish", t_on_request: "On request", lbl_dims_all: "ø 1–30 mm in 1 mm steps, ø 32 mm",
     dl_title: "Downloads", dl_intro: "Certificate and technical data sheets as PDF. If a file is missing, we will send it on request.",
-    dl_iso: "Manufacturer’s ISO 9001:2015 certificate", dl_ds1: "Data sheet: solid carbide rod", dl_ds2: "Data sheet: rod with coolant channels", dl_ds3: "Data sheet: cut-to-length rod",
+    dl_iso: "Production partner’s ISO 9001:2015 certificate", dl_ds1: "Data sheet: solid carbide rod", dl_ds2: "Data sheet: rod with coolant channels", dl_ds3: "Data sheet: cut-to-length rod",
     dl_pdf: "Download PDF", dl_request: "On request", dl_sheet: "Data sheet (PDF)",
-    imp_title: "Legal notice", prod_subtitle: "Carbide rods for tool manufacturing"
+    imp_title: "Legal notice", prod_subtitle: "Carbide rods for tool manufacturing", nav_guide: "Grade guide", nav_blog: "Know-how", p3_article: "When cut rods pay off", gr_guide: "Read the grade guide", guide_title: "Carbide grade guide", guide_sub: "Grain size, cobalt content and tolerance: how to choose the right carbide rod.", tech_guide: "How grain size and cobalt determine these values is explained in our grade guide."
 });
 Object.assign(translations.tr, {
     skip_link: "İçeriğe geç", nav_impressum: "Künye", nav_privacy: "Gizlilik",
@@ -138,9 +138,9 @@ Object.assign(translations.tr, {
     alt_hero: "Koyu zemin üzerinde taşlanmış karbür çubuk", alt_p1: "Yan yana beş farklı çapta tam karbür çubuk", alt_p2: "İki soğutma kanallı karbür çubuğun uç yüzeyi", alt_p3: "Farklı çap ve boylarda kesilmiş karbür çubuklar",
     lbl_tol: "Tolerans", lbl_custom: "Özel boylar", t_custom: "Talebe göre üretilir", p3_custom: "Özel boy ve ölçüler isteğinize göre üretilebilir.", lbl_finish: "Yüzey durumu", t_on_request: "Talep üzerine", lbl_dims_all: "ø 1–30 mm, 1 mm adımlarla; ø 32 mm",
     dl_title: "İndirmeler", dl_intro: "Sertifika ve teknik veri sayfaları PDF olarak. Eksik bir dosya varsa talep üzerine gönderiyoruz.",
-    dl_iso: "Üreticinin ISO 9001:2015 sertifikası", dl_ds1: "Veri sayfası: tam karbür çubuk", dl_ds2: "Veri sayfası: soğutma kanallı çubuk", dl_ds3: "Veri sayfası: kesilmiş çubuk",
+    dl_iso: "Üretim ortağımızın ISO 9001:2015 sertifikası", dl_ds1: "Veri sayfası: tam karbür çubuk", dl_ds2: "Veri sayfası: soğutma kanallı çubuk", dl_ds3: "Veri sayfası: kesilmiş çubuk",
     dl_pdf: "PDF indir", dl_request: "Talep üzerine", dl_sheet: "Veri sayfası (PDF)",
-    imp_title: "Künye", prod_subtitle: "Takım üretimi için karbür çubuklar"
+    imp_title: "Künye", prod_subtitle: "Takım üretimi için karbür çubuklar", nav_guide: "Kalite rehberi", nav_blog: "Bilgi merkezi", p3_article: "Kesilmiş çubuk ne zaman avantajlı?", gr_guide: "Kalite rehberine git", guide_title: "Karbür kalite rehberi", guide_sub: "Tane boyutu, kobalt oranı ve tolerans: doğru karbür çubuğu nasıl seçersiniz?", tech_guide: "Tane boyutu ve kobaltın bu değerleri nasıl belirlediğini kalite rehberimizde anlatıyoruz."
 });
 ['de', 'en', 'tr'].forEach(l => {
     translations[l].hero_l1 = BRAND.claim[l] + '.';
@@ -148,12 +148,34 @@ Object.assign(translations.tr, {
     translations[l].swiss_title = BRAND.claim[l];
 });
 
+// Dil adresten gelir (<html lang>). Dil değiştirmek = karşılık gelen sayfaya gitmek.
+function currentLang() {
+    const l = (document.documentElement.lang || 'de').slice(0, 2);
+    return translations[l] ? l : 'de';
+}
+// Yalnızca kök ana sayfada (/) ve dışarıdan gelindiğinde: kayıtlı dil tercihi ya da tarayıcı dili TR/EN ise o sürüme yönlendir. Botlar yönlendirilmez.
+(function autoLang() {
+    try {
+        if (location.pathname !== '/' && location.pathname !== '/index.html') return;
+        if (/bot|crawl|spider|slurp|google|bing|yandex|baidu|duckduck|lighthouse|headless/i.test(navigator.userAgent)) return;
+        if (document.referrer && new URL(document.referrer).host === location.host) return;
+        if (sessionStorage.getItem('hm_auto')) return;
+        sessionStorage.setItem('hm_auto', '1');
+        let pref = localStorage.getItem('hm_lang');
+        if (!pref) { const b = (navigator.language || '').toLowerCase(); pref = b.startsWith('tr') ? 'tr' : (b.startsWith('en') ? 'en' : ''); }
+        if (pref === 'en' || pref === 'tr') location.replace('/' + pref + '/' + location.search + location.hash);
+    } catch (e) {}
+})();
+
 function changeLanguage(lang) {
-    localStorage.setItem('hm_lang', lang);
-    // HTML lang attribute'unu güncelle
-    document.documentElement.setAttribute('lang', lang);
-    const select = document.getElementById('langSel');
-    if(select) select.value = lang;
+    if (lang !== currentLang() && typeof langUrl === 'function') {
+        try { localStorage.setItem('hm_lang', lang); } catch (e) {}
+        window.location.href = langUrl(lang);
+        return;
+    }
+    applyLanguage(lang);
+}
+function applyLanguage(lang) {
     if (typeof refreshLangPeers === 'function') refreshLangPeers();
     if (typeof refreshMobileActiveStates === 'function') refreshMobileActiveStates();
 
@@ -170,7 +192,9 @@ function changeLanguage(lang) {
         const t = translations[lang][e.getAttribute('data-i18n-aria')];
         if (t) e.setAttribute('aria-label', t);
     });
-    document.querySelectorAll('[data-brand-seal]').forEach(e => { e.textContent = BRAND.sealText; });
+    // Mühür yazıları sayfa diline göre (Türkçede İ ile)
+    document.querySelectorAll('[data-brand-seal]').forEach(e => { e.textContent = BRAND.claim[lang].toLocaleUpperCase(lang); });
+    document.querySelectorAll('[data-brand-name]').forEach(e => { e.textContent = BRAND.company.toLocaleUpperCase(lang); });
     document.querySelectorAll('[data-num]').forEach(e => { e.textContent = lang === 'en' ? e.dataset.num : e.dataset.num.replace(/\./g, ','); });
 
     document.querySelectorAll('[data-i18n-ph]').forEach(e => {
@@ -192,7 +216,7 @@ const d3 = ["3 x 40", "4 x 50", "5 x 50", "6 x 50", "6 x 57", "8 x 63", "10 x 70
 
 function fillProducts() {
     const norm = x => x.toLowerCase().replace(/\s+/g, '');
-    const lang = localStorage.getItem('hm_lang') || 'de';
+    const lang = currentLang();
     const dec = v => lang === 'en' ? v : v.replace('.', ',');
     const href = (p, d) => `contact.html?p=${p}&d=${encodeURIComponent(d)}`;
     const t1 = document.getElementById('t1');
@@ -229,7 +253,7 @@ function prefillInquiry() {
     const q = new URLSearchParams(location.search);
     const p = q.get('p'), d = q.get('d');
     if (!p || !/^p[123]$/.test(p)) return;
-    const lang = localStorage.getItem('hm_lang') || 'de';
+    const lang = currentLang();
     const T = translations[lang] || translations.de;
     const tmp = document.createElement('div'); tmp.innerHTML = T[p] || '';
     const dim = d && /^[0-9 .x]{1,20}$/.test(d) ? d.replace(' x ', ' × ') : '';
@@ -246,12 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
         emailjs.init("YZquRq4Ohz6CEdGZJ");
     }
 
-    let lang = localStorage.getItem('hm_lang');
-    if (!lang) {
-        const browserLang = navigator.language || navigator.userLanguage;
-        lang = browserLang.startsWith('tr') ? 'tr' : (browserLang.startsWith('en') ? 'en' : 'de');
-    }
-    changeLanguage(lang);
+    applyLanguage(currentLang());
     fillProducts();
     prefillInquiry();
     
@@ -289,30 +308,30 @@ document.addEventListener('DOMContentLoaded', () => {
             // Rate limiting — son 60 saniyede gönderilmişse engelle
             const lastSent = localStorage.getItem('hmc_last_form');
             if (lastSent && Date.now() - parseInt(lastSent) < 60000) {
-                const currentLang = localStorage.getItem('hm_lang') || 'de';
+                const uiLang = currentLang();
                 const waitMsg = { de: 'Bitte warten Sie 60 Sekunden.', en: 'Please wait 60 seconds.', tr: 'Lütfen 60 saniye bekleyin.' };
-                alert(waitMsg[currentLang]);
+                alert(waitMsg[uiLang]);
                 return;
             }
 
             const btn = document.getElementById('submit-btn');
             const originalText = btn.innerText;
-            btn.innerText = ({ de: "Wird gesendet…", en: "Sending…", tr: "Gönderiliyor…" })[localStorage.getItem('hm_lang') || 'de'];
+            btn.innerText = ({ de: "Wird gesendet…", en: "Sending…", tr: "Gönderiliyor…" })[currentLang()];
             btn.disabled = true;
 
             const serviceID = "gorrxcaveman@gmail.com";
             const templateID = "template_u11karb";
-            const currentLang = localStorage.getItem('hm_lang') || 'de';
+            const uiLang = currentLang();
 
             emailjs.sendForm(serviceID, templateID, this)
                 .then(function() {
                     localStorage.setItem('hmc_last_form', Date.now().toString());
-                    alert(translations[currentLang].alert_success);
+                    alert(translations[uiLang].alert_success);
                     btn.innerText = originalText;
                     btn.disabled = false;
                     contactForm.reset();
                 }, function(error) {
-                    alert(translations[currentLang].alert_error + "\n" + JSON.stringify(error));
+                    alert(translations[uiLang].alert_error + "\n" + JSON.stringify(error));
                     btn.innerText = originalText;
                     btn.disabled = false;
                 });

@@ -11,6 +11,19 @@ const LANG_ORDER = ['de', 'en', 'tr'];
 const LANG_FLAGS = { de: '🇩🇪', en: '🇬🇧', tr: '🇹🇷' };
 const LANG_NAMES = { de: 'Deutsch', en: 'English', tr: 'Türkçe' };
 
+// Her dilin kendi adresi var: DE kök dizinde, EN /en/, TR /tr/ altında.
+function pageLang() {
+    const l = (document.documentElement.lang || 'de').slice(0, 2);
+    return LANG_ORDER.includes(l) ? l : 'de';
+}
+function pageFile() {
+    const f = window.location.pathname.split('/').pop() || '';
+    return f === 'index.html' ? '' : f;
+}
+function langUrl(lang) {
+    return (lang === 'de' ? '/' : '/' + lang + '/') + pageFile() + window.location.search + window.location.hash;
+}
+
 function logoMarkup(variant) {
     const cross = '<svg class="wm-cross" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="3"/><path d="M13 6h6v7h7v6h-7v7h-6v-7H6v-6h7z" fill="#fff"/></svg>';
     if (variant === 'b') {
@@ -24,7 +37,7 @@ function logoMarkup(variant) {
 
 function langMenuMarkup(id) {
     const items = LANG_ORDER.map(l =>
-        `<li><button type="button" role="menuitemradio" data-lang="${l}" onclick="selectLang('${l}')"><span class="lang-flag">${LANG_FLAGS[l]}</span>${LANG_NAMES[l]}</button></li>`
+        `<li><a role="menuitemradio" data-lang="${l}" href="${langUrl(l)}" hreflang="${l}" lang="${l}" onclick="rememberLang('${l}')"><span class="lang-flag">${LANG_FLAGS[l]}</span>${LANG_NAMES[l]}</a></li>`
     ).join('');
     return `
         <div class="lang" id="${id}">
@@ -85,6 +98,7 @@ function loadFooter() {
                     <li><a href="products.html" data-i18n="nav_products">Produkte</a></li>
                     <li><a href="about.html" data-i18n="nav_about">Über uns</a></li>
                     <li><a href="certificates.html" data-i18n="nav_certs">Zertifikate</a></li>
+                    <li><a href="wissen.html" data-i18n="nav_blog">Fachwissen</a></li>
                     <li><a href="certificates.html#downloads" data-i18n="dl_title">Downloads</a></li>
                     <li><a href="contact.html" data-i18n="nav_contact">Kontakt</a></li>
                 </ul>
@@ -126,10 +140,10 @@ function loadFooter() {
 
 // --- DİL MENÜSÜ ---
 function refreshLangPeers() {
-    const lang = localStorage.getItem('hm_lang') || 'de';
+    const lang = pageLang();
     document.querySelectorAll('[data-lang-flag]').forEach(el => el.textContent = LANG_FLAGS[lang] || LANG_FLAGS.de);
     document.querySelectorAll('[data-lang-code]').forEach(el => el.textContent = lang.toUpperCase());
-    document.querySelectorAll('.lang-menu button').forEach(b => {
+    document.querySelectorAll('.lang-menu [data-lang]').forEach(b => {
         const on = b.dataset.lang === lang;
         b.classList.toggle('active', on);
         b.setAttribute('aria-checked', on ? 'true' : 'false');
@@ -154,11 +168,8 @@ function closeLangMenus() {
         if (btn) btn.setAttribute('aria-expanded', 'false');
     });
 }
-function selectLang(lang) {
-    changeLanguage(lang);
-    refreshLangPeers();
-    closeLangMenus();
-}
+function rememberLang(lang) { try { localStorage.setItem('hm_lang', lang); } catch (e) {} }
+function selectLang(lang) { rememberLang(lang); if (lang !== pageLang()) window.location.href = langUrl(lang); }
 document.addEventListener('click', e => { if (!e.target.closest('.lang')) closeLangMenus(); });
 document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
@@ -206,9 +217,9 @@ function checkOptionalFiles() {
             .catch(() => {
                 a.classList.add('is-missing');
                 a.setAttribute('href', 'contact.html?p=' + (a.dataset.optionalFile || ''));
-                a.removeAttribute('download');
+                a.removeAttribute('download'); a.removeAttribute('target');
                 const lbl = a.querySelector('[data-file-state]');
-                if (lbl) { lbl.setAttribute('data-i18n', 'dl_request'); const l = localStorage.getItem('hm_lang') || 'de'; if (typeof translations !== 'undefined' && translations[l]) lbl.textContent = translations[l].dl_request; }
+                if (lbl) { lbl.setAttribute('data-i18n', 'dl_request'); const l = pageLang(); if (typeof translations !== 'undefined' && translations[l]) lbl.textContent = translations[l].dl_request; }
             });
     });
 }

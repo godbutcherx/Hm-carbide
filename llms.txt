@@ -13,7 +13,7 @@ HM Carbide Swiss GmbH is a Swiss-based supplier of tungsten carbide rods for the
 - Website: https://www.hmcarbide.ch
 - LinkedIn: https://www.linkedin.com/company/hmcarbideswiss/
 - Languages: German (primary), English, Turkish
-- Certification: rods are produced in our manufacturer’s ISO 9001:2015 certified plant (manufacturer’s certificate available)
+- Certification: HM Carbide Swiss GmbH is a supplier/distributor, not a manufacturer; rods are produced in our production partner’s ISO 9001:2015 certified plant (partner’s certificate available)
 
 ## What We Sell
 We supply solid tungsten carbide rods used as raw material for manufacturing precision cutting tools such as drills, end mills, and reamers.
@@ -55,7 +55,7 @@ We supply solid tungsten carbide rods used as raw material for manufacturing pre
 
 ## Why Choose HM Carbide
 - Swiss-based company, family-owned
-- Produced in an ISO 9001:2015 certified plant
+- Produced in our production partner’s ISO 9001:2015 certified plant
 - Competitive pricing with reliable supply chain management
 - Minimizes downtime in production lines
 - Maximizes tool life for end users
@@ -89,11 +89,17 @@ Email info@hmcarbide.ch or call +41 76 290 91 93. You can also use the contact f
 Solid rods are standard blanks. Coolant channel rods have an internal hole that allows cutting fluid to reach the tip during machining, enabling higher speeds and longer tool life in deep-hole drilling.
 
 ## Pages
-- Home: https://www.hmcarbide.ch/
-- About: https://www.hmcarbide.ch/about.html
-- Products: https://www.hmcarbide.ch/products.html
-- Certificates: https://www.hmcarbide.ch/certificates.html
-- Contact: https://www.hmcarbide.ch/contact.html
+Each page exists in German (root), English (/en/) and Turkish (/tr/).
+- Home: https://www.hmcarbide.ch/ | https://www.hmcarbide.ch/en/ | https://www.hmcarbide.ch/tr/
+- Products: https://www.hmcarbide.ch/products.html | https://www.hmcarbide.ch/en/products.html | https://www.hmcarbide.ch/tr/products.html
+- Carbide grade guide (grain size, cobalt, tolerance h6): https://www.hmcarbide.ch/hartmetall-ratgeber.html | https://www.hmcarbide.ch/en/hartmetall-ratgeber.html | https://www.hmcarbide.ch/tr/hartmetall-ratgeber.html
+- About: https://www.hmcarbide.ch/about.html | https://www.hmcarbide.ch/en/about.html | https://www.hmcarbide.ch/tr/about.html
+- Certificates: https://www.hmcarbide.ch/certificates.html | https://www.hmcarbide.ch/en/certificates.html | https://www.hmcarbide.ch/tr/certificates.html
+- Contact: https://www.hmcarbide.ch/contact.html | https://www.hmcarbide.ch/en/contact.html | https://www.hmcarbide.ch/tr/contact.html
 - Privacy Policy: https://www.hmcarbide.ch/privacy.html
 - Legal notice (Impressum): https://www.hmcarbide.ch/impressum.html
-- Downloads (certificate, data sheets): https://www.hmcarbide.ch/certificates.html#downloads
+
+## Downloads (PDF)
+- Data sheet, solid carbide rod: https://www.hmcarbide.ch/downloads/hartmetallstab-vollhartmetall-datenblatt.pdf
+- Data sheet, rod with coolant channels: https://www.hmcarbide.ch/downloads/hartmetallstab-kuehlkanal-datenblatt.pdf
+- Data sheet, cut-to-length rod: https://www.hmcarbide.ch/downloads/hartmetallstab-gekuerzt-datenblatt.pdf

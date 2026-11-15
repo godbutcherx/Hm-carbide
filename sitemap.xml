@@ -1,90 +1,315 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xmlns:xhtml="http://www.w3.org/1999/xhtml"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-
-<!-- Ana Sayfa -->
-<url>
-  <loc>https://www.hmcarbide.ch/</loc>
-  <lastmod>2026-11-11</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>1.00</priority>
-  <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/"/>
-  <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/"/>
-</url>
-
-<!-- Ürünler — en yüksek ticari değer -->
-<url>
-  <loc>https://www.hmcarbide.ch/products.html</loc>
-  <lastmod>2026-11-11</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.95</priority>
-  <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/products.html"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/products.html"/>
-  <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/products.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/products.html"/>
-</url>
-
-<!-- Hakkımızda + FAQ -->
-<url>
-  <loc>https://www.hmcarbide.ch/about.html</loc>
-  <lastmod>2026-11-11</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.85</priority>
-  <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/about.html"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/about.html"/>
-  <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/about.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/about.html"/>
-</url>
-
-<!-- İletişim -->
-<url>
-  <loc>https://www.hmcarbide.ch/contact.html</loc>
-  <lastmod>2026-11-11</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.80</priority>
-  <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/contact.html"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/contact.html"/>
-  <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/contact.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/contact.html"/>
-</url>
-
-<!-- Sertifikalar -->
-<url>
-  <loc>https://www.hmcarbide.ch/certificates.html</loc>
-  <lastmod>2026-11-11</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.70</priority>
-  <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/certificates.html"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/certificates.html"/>
-  <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/certificates.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/certificates.html"/>
-</url>
-
-<!-- Gizlilik Politikası -->
-<url>
-  <loc>https://www.hmcarbide.ch/privacy.html</loc>
-  <lastmod>2026-11-11</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.30</priority>
-</url>
-
-
-<!-- Impressum -->
-<url>
-  <loc>https://www.hmcarbide.ch/impressum.html</loc>
-  <lastmod>2026-11-11</lastmod>
-  <changefreq>yearly</changefreq>
-  <priority>0.20</priority>
-  <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/impressum.html"/>
-  <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/impressum.html"/>
-  <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/impressum.html"/>
-  <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/impressum.html"/>
-</url>
-
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.hmcarbide.ch/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/en/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/tr/</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/products.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/products.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/products.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/products.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/products.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/en/products.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/products.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/products.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/products.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/products.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/tr/products.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/products.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/products.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/products.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/products.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/wissen.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/wissen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/wissen.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/wissen.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/wissen.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/en/wissen.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/wissen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/wissen.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/wissen.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/wissen.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/tr/wissen.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/wissen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/wissen.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/wissen.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/wissen.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/hartmetall-ratgeber.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/hartmetall-ratgeber.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/hartmetall-ratgeber.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/hartmetall-ratgeber.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/hartmetall-ratgeber.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/en/hartmetall-ratgeber.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/hartmetall-ratgeber.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/hartmetall-ratgeber.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/hartmetall-ratgeber.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/hartmetall-ratgeber.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/tr/hartmetall-ratgeber.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/hartmetall-ratgeber.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/hartmetall-ratgeber.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/hartmetall-ratgeber.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/hartmetall-ratgeber.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/mikrowerkzeuge-ultrafeinkorn.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/mikrowerkzeuge-ultrafeinkorn.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/mikrowerkzeuge-ultrafeinkorn.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/mikrowerkzeuge-ultrafeinkorn.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/mikrowerkzeuge-ultrafeinkorn.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/en/mikrowerkzeuge-ultrafeinkorn.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/mikrowerkzeuge-ultrafeinkorn.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/mikrowerkzeuge-ultrafeinkorn.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/mikrowerkzeuge-ultrafeinkorn.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/mikrowerkzeuge-ultrafeinkorn.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/tr/mikrowerkzeuge-ultrafeinkorn.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/mikrowerkzeuge-ultrafeinkorn.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/mikrowerkzeuge-ultrafeinkorn.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/mikrowerkzeuge-ultrafeinkorn.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/mikrowerkzeuge-ultrafeinkorn.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/gekuerzte-hartmetallstaebe-sonderlaengen.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/gekuerzte-hartmetallstaebe-sonderlaengen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/gekuerzte-hartmetallstaebe-sonderlaengen.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/gekuerzte-hartmetallstaebe-sonderlaengen.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/gekuerzte-hartmetallstaebe-sonderlaengen.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/en/gekuerzte-hartmetallstaebe-sonderlaengen.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/gekuerzte-hartmetallstaebe-sonderlaengen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/gekuerzte-hartmetallstaebe-sonderlaengen.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/gekuerzte-hartmetallstaebe-sonderlaengen.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/gekuerzte-hartmetallstaebe-sonderlaengen.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/tr/gekuerzte-hartmetallstaebe-sonderlaengen.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/gekuerzte-hartmetallstaebe-sonderlaengen.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/gekuerzte-hartmetallstaebe-sonderlaengen.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/gekuerzte-hartmetallstaebe-sonderlaengen.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/gekuerzte-hartmetallstaebe-sonderlaengen.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/about.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/about.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/en/about.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/about.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/tr/about.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/about.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/about.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/certificates.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/certificates.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/certificates.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/certificates.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/certificates.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/en/certificates.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/certificates.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/certificates.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/certificates.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/certificates.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/tr/certificates.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/certificates.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/certificates.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/certificates.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/certificates.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/contact.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/contact.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/en/contact.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/contact.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/tr/contact.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/contact.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/privacy.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/en/privacy.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/tr/privacy.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/privacy.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/privacy.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/impressum.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/impressum.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/en/impressum.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/impressum.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/tr/impressum.html</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="de" href="https://www.hmcarbide.ch/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.hmcarbide.ch/en/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.hmcarbide.ch/tr/impressum.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.hmcarbide.ch/impressum.html"/>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/downloads/hartmetallstab-gekuerzt-datenblatt.pdf</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/downloads/hartmetallstab-kuehlkanal-datenblatt.pdf</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.hmcarbide.ch/downloads/hartmetallstab-vollhartmetall-datenblatt.pdf</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.5</priority>
+  </url>
 </urlset>
