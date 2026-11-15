@@ -1,0 +1,4 @@
+# GitHub Pages (Jekyll): bu dosyalar yayınlanmaz. _src ve _build alt çizgiyle başladığı için zaten hariç.
+exclude:
+  - CLAUDE.md
+  - README.md

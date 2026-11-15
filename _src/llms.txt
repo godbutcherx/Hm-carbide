@@ -1,0 +1,105 @@
+# HM Carbide Swiss GmbH
+> Schweizer Anbieter von Hochleistungs-Hartmetallstäben aus ISO-9001:2015-zertifizierter Fertigung.
+
+## Who We Are
+HM Carbide Swiss GmbH is a Swiss-based supplier of tungsten carbide rods for the precision machining and cutting tool industry. Founded in Bottighofen, Switzerland, we combine many years of carbide industry experience with reliable supply to customers worldwide.
+
+- Legal name: HM Carbide Swiss GmbH
+- Founded: 2025, family business
+- UID: CHE-477.630.623 MWST
+- Address: Müligässli 1, 8598 Bottighofen, Switzerland
+- Phone: +41 76 290 91 93
+- Email: info@hmcarbide.ch
+- Website: https://www.hmcarbide.ch
+- LinkedIn: https://www.linkedin.com/company/hmcarbideswiss/
+- Languages: German (primary), English, Turkish
+- Certification: HM Carbide Swiss GmbH is a supplier/distributor, not a manufacturer; rods are produced in our production partner’s ISO 9001:2015 certified plant (partner’s certificate available)
+
+## What We Sell
+We supply solid tungsten carbide rods used as raw material for manufacturing precision cutting tools such as drills, end mills, and reamers.
+
+### Product 1: Solid Carbide Rod (Vollhartmetallstab)
+- Diameters: ø 1 mm to ø 32 mm
+- Length: 330 mm
+- Diameter tolerance: h6
+- Grades: HM 12Co (WC 88%, Co 12%) and HM 10Co (WC 90%, Co 10%)
+- Hardness: 91.8–92.5 HRA
+- Density: 14.25–14.4 g/cm³
+- TRS: >3432 N/mm²
+- Use case: Raw material for solid carbide cutting tools
+
+### Product 2: Carbide Rod with Coolant Channel (Kühlkanal)
+- Diameters: ø 4 mm to ø 25 mm
+- Length: 330 mm
+- Internal coolant hole diameter: 0.5–2.0 mm
+- Diameter tolerance: h6
+- Use case: High-performance drilling and milling tools requiring internal coolant supply
+
+### Product 3: Cut-to-Length Carbide Rod (Gekürzter Stab)
+- Sizes (ø × length, mm): 3×40, 4×50, 5×50, 6×50, 6×57, 8×63, 10×70, 10×72, 12×75, 12×83, 16×92, 16×93, 20×104
+- Custom lengths and sizes: produced to customer specification on request
+- Diameter tolerance: h6
+- Use case: Ready-to-grind blanks for tool production
+
+## Grade Program (by grain size)
+- HM12F — ultrafine grain, 0.4 µm — hard and wear-resistant
+- HM10S — fine grain, 0.6 µm — balanced; best-selling grade
+- H10F — medium grain, 0.8 µm — tough and fracture-resistant
+
+## Technical Grades
+
+| Grade   | WC % | Co % | Grain Size (µm) | Density (g/cm³) | Hardness (HRA) | TRS (N/mm²) |
+|---------|------|------|-----------------|-----------------|----------------|-------------|
+| HM 12Co | 88   | 12   | 0.4             | 14.25 ± 0.1     | 92.5 ± 0.5     | >3432       |
+| HM 10Co | 90   | 10   | 0.8             | 14.4 ± 0.1      | 91.8 ± 0.5     | >3432       |
+
+## Why Choose HM Carbide
+- Swiss-based company, family-owned
+- Produced in our production partner’s ISO 9001:2015 certified plant
+- Competitive pricing with reliable supply chain management
+- Minimizes downtime in production lines
+- Maximizes tool life for end users
+- Serves customers worldwide from Switzerland
+
+## Applications
+- Drills (solid carbide; coolant-channel rods for deep holes)
+- End mills (general purpose to small diameter)
+- Reamers and countersinks
+- Micro and watchmaking tools
+- Medical and engraving
+- Stainless steel and titanium
+- Wood and aluminium
+- Heavy and interrupted cuts
+
+## Frequently Asked Questions
+
+**What is a carbide rod used for?**
+Carbide rods (Hartmetallstäbe) are the primary raw material for manufacturing solid carbide cutting tools. They are ground and shaped into drills, end mills, reamers, and other precision tools used in CNC machining.
+
+**What grades does HM Carbide offer?**
+Our standard grades are HM 12Co (88% WC, 12% Co, 0.4 µm grain, 92.5 HRA), harder and more wear-resistant thanks to its ultrafine grain, and HM 10Co (90% WC, 10% Co, 0.8 µm grain, 91.8 HRA), tougher and more fracture-resistant. We also offer the grades HM12F (ultrafine, 0.4 µm), HM10S (fine, 0.6 µm) and H10F (medium, 0.8 µm).
+
+**Does HM Carbide ship internationally?**
+Yes. HM Carbide Swiss GmbH ships worldwide from Switzerland.
+
+**How do I contact HM Carbide for a quote?**
+Email info@hmcarbide.ch or call +41 76 290 91 93. You can also use the contact form at https://www.hmcarbide.ch/contact.html
+
+**What is the difference between solid and coolant channel rods?**
+Solid rods are standard blanks. Coolant channel rods have an internal hole that allows cutting fluid to reach the tip during machining, enabling higher speeds and longer tool life in deep-hole drilling.
+
+## Pages
+Each page exists in German (root), English (/en/) and Turkish (/tr/).
+- Home: https://www.hmcarbide.ch/ | https://www.hmcarbide.ch/en/ | https://www.hmcarbide.ch/tr/
+- Products: https://www.hmcarbide.ch/products.html | https://www.hmcarbide.ch/en/products.html | https://www.hmcarbide.ch/tr/products.html
+- Carbide grade guide (grain size, cobalt, tolerance h6): https://www.hmcarbide.ch/hartmetall-ratgeber.html | https://www.hmcarbide.ch/en/hartmetall-ratgeber.html | https://www.hmcarbide.ch/tr/hartmetall-ratgeber.html
+- About: https://www.hmcarbide.ch/about.html | https://www.hmcarbide.ch/en/about.html | https://www.hmcarbide.ch/tr/about.html
+- Certificates: https://www.hmcarbide.ch/certificates.html | https://www.hmcarbide.ch/en/certificates.html | https://www.hmcarbide.ch/tr/certificates.html
+- Contact: https://www.hmcarbide.ch/contact.html | https://www.hmcarbide.ch/en/contact.html | https://www.hmcarbide.ch/tr/contact.html
+- Privacy Policy: https://www.hmcarbide.ch/privacy.html
+- Legal notice (Impressum): https://www.hmcarbide.ch/impressum.html
+
+## Downloads (PDF)
+- Data sheet, solid carbide rod: https://www.hmcarbide.ch/downloads/hartmetallstab-vollhartmetall-datenblatt.pdf
+- Data sheet, rod with coolant channels: https://www.hmcarbide.ch/downloads/hartmetallstab-kuehlkanal-datenblatt.pdf
+- Data sheet, cut-to-length rod: https://www.hmcarbide.ch/downloads/hartmetallstab-gekuerzt-datenblatt.pdf
